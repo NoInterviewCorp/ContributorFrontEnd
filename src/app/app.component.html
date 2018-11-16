@@ -17,7 +17,7 @@
       <a *ngIf="!hasSignedIn" mat-button href="#learn">Learn</a>
     <a  *ngIf="!hasSignedIn" mat-button href="#contribute">Contribute</a>
     <a  *ngIf="!hasSignedIn" mat-button href="#blooms">Bloom's Taxonomy</a>
-    <a  *ngIf="hasSignedIn" mat-button routerLink="/learner">Learn</a>
+    <a  *ngIf="hasSignedIn" mat-button>Learn</a>
     <a  *ngIf="hasSignedIn" mat-button routerLink="/contribute" >Contribute</a>
     <button mat-button *ngIf="hasSignedIn" [matMenuTriggerFor]="menu">
         <img class="header-image" src="../../assets/placeholder-team.jpg" style="height: 50px; width: 50px;" />
@@ -46,7 +46,7 @@
             </mat-card>
         <a mat-button *ngIf="hasSignedIn" routerLink="/profilepage" style="font-size: 15px;">My Profile</a>
         <a mat-button *ngIf="hasSignedIn" routerLink="/contact" style="font-size: 15px;">My Reports</a>
-        <a mat-button *ngIf="hasSignedIn" routerLink="/learner" style="font-size: 15px;">Learn</a>
+        <a mat-button *ngIf="hasSignedIn" style="font-size: 15px;">Learn</a>
         <a mat-button *ngIf="hasSignedIn" routerLink="/contribute" style="font-size: 15px;">Contribute</a>
         <a mat-button *ngIf="hasSignedIn" routerLink="/start-page" style="font-size: 15px;">Settings</a>
         <a mat-button *ngIf="hasSignedIn" style="font-size: 15px;">Sign Out</a>

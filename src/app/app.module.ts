@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LearnerComponent } from './learner/learner.component';
-import { SearchComponent } from './learner/search/search.component';
 import { TestComponent } from './test/test.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,7 +20,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { LandingComponent } from './landing/landing.component';
 import { TabsComponent } from './landing/tabs/tabs.component';
 import { ScrollingContainerComponent } from './scrolling-container/scrolling-container.component';
-import { LearnComponent } from './learn/learn.component';
 import { ContributeComponent } from './contribute/contribute.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
@@ -33,10 +30,8 @@ import { ResourceformComponent } from './resourceform/resourceform.component';
 import { QuestionformComponent } from './questionform/questionform.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CardComponent } from './learner/card/card.component';
 import { AddtopicComponent } from './addtopic/addtopic.component';
 import { SubscribecardComponent } from './scrolling-container/subscribecard/subscribecard.component';
-import { YoursubscriptionscardComponent } from './scrolling-container/yoursubscriptionscard/yoursubscriptionscard.component';
 import { YourcontributionscardComponent } from './scrolling-container/yourcontributionscard/yourcontributionscard.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
 
@@ -62,14 +57,11 @@ export function getAuthServiceConfigs() {
     LandingComponent,
     TabsComponent,
     ScrollingContainerComponent,
-    LearnComponent,
     ContributeComponent,
     SignInComponent,
     SignUpComponent,
     NavbarComponent,
     HomeComponent,
-    LearnerComponent,
-    SearchComponent,
     TestComponent,
     ContibutorhomeComponent,
     AddlearningplanComponent,
@@ -79,7 +71,6 @@ export function getAuthServiceConfigs() {
     QuestionsComponent,
     AddtopicComponent,
     SubscribecardComponent,
-    YoursubscriptionscardComponent,
     YourcontributionscardComponent,
     EditlearningplanComponent,
   ],
