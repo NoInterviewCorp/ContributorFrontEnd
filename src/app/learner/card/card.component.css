@@ -1,0 +1,12 @@
+
+
+  .card {
+    flex: 0 0 200px;
+    width:300px;
+    margin: 10px;
+    margin-left:0;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    background-color: antiquewhite;
+}
+

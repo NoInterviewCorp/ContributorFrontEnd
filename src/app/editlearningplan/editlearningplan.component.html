@@ -1,0 +1,40 @@
+<h1>Learning Plan</h1>
+<form class="example-form">
+  <div class="fields">
+    <mat-form-field appearance="outline" class="field">
+        <mat-label>Learning Plan Name</mat-label>
+        <input matInput placeholder="Learning Plan Name">
+        <mat-hint>Name your Learning Plan</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="field">
+    <mat-label>Technology Name</mat-label>
+    <input matInput placeholder="Technology">
+    <mat-hint>Give technology for better recommendations</mat-hint>
+  </mat-form-field>
+ </div><br>
+<mat-form-field appearance="outline" class="textarea">
+    <mat-label>Description</mat-label>
+  <textarea matInput placeholder="Description"></textarea>
+  <mat-hint>Describe your plan</mat-hint>
+</mat-form-field><br>
+<mat-form-field appearance="outline" class="textarea">
+    <button mat-raised-button style="float: right"><mat-icon matSuffix>search</mat-icon></button>
+    <mat-label>Search Resource</mat-label>
+    <input matInput placeholder="Search Resource">
+    <mat-hint>Search if your Resource already exists</mat-hint>
+  </mat-form-field>
+  </form><br>
+<h3 style="font-family: cursive">Your Plan starts here....</h3>
+  <div class="accordian">
+    <mat-accordion>
+            <app-addtopic *ngFor="let index of topics" [id]="index"></app-addtopic><br><br>
+    </mat-accordion>
+    <div class="buttons">
+    <div>
+            <button mat-raised-button color="black" routerLink="/profile" routerLinkActive="active" (click)="postLearningPlan()">Submit</button>
+     </div>
+     <div>
+            <button mat-raised-button color="black" (click)="addResource()">Add</button>
+     </div>
+     </div>
+     </div><br>

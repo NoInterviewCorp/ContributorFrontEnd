@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    align-content: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.flex1{
+  max-width: 100%;
+}
+.flex2{
+  width: 70%;
+}
+.flex3{
+  max-width: 100%;
+}
+.less-margin{
+  margin: 0 0 5px 5px;
+  padding-left: 10px;
+}
+
+.profile{
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-image {
+  flex:4;
+  max-width:  150px;
+  max-height: 150px;
+  border-radius: 16px;
+  align-self: center;
+}
+
+.info-card{
+    flex:1 1 auto;
+}

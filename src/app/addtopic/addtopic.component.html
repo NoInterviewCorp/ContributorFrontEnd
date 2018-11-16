@@ -1,0 +1,33 @@
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+    <mat-panel-title>
+    {{topicname}}
+    </mat-panel-title><br><br>
+    <mat-panel-description>
+    
+    </mat-panel-description>
+    <mat-icon>done_outline</mat-icon>
+    </mat-expansion-panel-header>
+
+<mat-accordion>
+  <div class="flex-container">
+    <div>
+    <mat-form-field class="example-full-width"  >
+        <input matInput placeholder="Topic Name" [(ngModel)]="topicname">
+    </mat-form-field>
+    </div>
+    <div class="accordian">
+        <!-- <mat-accordion>
+                <app-resourceform *ngFor="let index of resources" [id]="index"></app-resourceform><br><br>
+        </mat-accordion> -->
+        <app-addresource></app-addresource>
+        <div class="buttons">
+         <!-- <div>
+                <button mat-raised-button color="primary" (click)="addResource()">Add</button>
+         </div> -->
+         </div>
+         </div>
+         </div>
+</mat-accordion>
+
+</mat-expansion-panel>

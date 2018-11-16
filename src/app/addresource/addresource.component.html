@@ -1,0 +1,19 @@
+<h1>Resource</h1>
+<div class="accordian">
+<mat-accordion>
+        <app-resourceform *ngFor="let index of resources" [id]="index" (noError)="handleEventEmitter($event)"></app-resourceform><br><br>
+</mat-accordion>
+<div class="buttons">
+<div>
+        <button mat-raised-button color="black" routerLink="/profile" routerLinkActive="active" (click()="postResources()">Submit</button>
+ </div>
+ <div>
+        <button mat-raised-button color="black" (click)="addResource()">Add</button>
+ </div>
+ <div>
+                <button mat-raised-button color="black" (click)="onClick()">save</button>
+         </div>
+ </div>
+ </div>
+ <p *ngIf="haserror">you have to give all the required fields</p>
+<p *ngIf="hasnoerror"> your questions have been posted successfully</p>

@@ -1,0 +1,30 @@
+.example-chip-list {
+    width: 80%;
+  }
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+mat-form-field{
+    width: 80%;
+}
+
+mat-icon{
+    color: green;
+    padding-right: 10px;
+}
+mat-expansion-panel-header{
+    padding-top: 15px;
+}
+.help{
+    color: black;
+}
+button{
+    background-color: black;
+    color: white;
+}
+
+

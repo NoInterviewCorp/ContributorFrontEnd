@@ -1,0 +1,110 @@
+.radio-group { 
+  margin: 5%;
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
+  background-color: snow;
+ 
+}
+  
+.radio-button {
+  margin: 5%;
+  margin: 0 auto;
+  width: 90%;
+  height: auto;
+  background-color: snow;
+  
+  display : inline-block;
+} 
+
+.question{
+  margin: 5%;
+  /* background-color: lightblue; */
+  /* border: 1px solid black; */
+}
+
+.progressbar-section
+{
+  width: 100%;
+  margin: 10px;
+  margin-top: 35px;
+  height: 3em;
+}
+
+.button-flex {
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  width: 30%;
+  margin: auto; */
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+/* .badge {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+} */
+
+/* new css */
+
+.timr {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    color: #fff;
+}
+
+.timer-container {
+  display: flex;
+  padding: 10px;
+}
+
+.test {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    /* min-height: 88vh; */
+    /* height: auto; */
+    /* padding: 10px; */
+}
+
+.test-box {
+  width: 70vw;
+  height: auto;
+  padding-bottom: 50px;
+
+}
+
+.ques-box {
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    background-color: snow;
+}
+
+.ques-title {
+  margin-bottom: 0;
+}
+
+/* .radio-group {
+  display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-flow: row wrap;
+    padding: 10px;
+    flex-wrap:wrap;
+    width: 100%;
+} */

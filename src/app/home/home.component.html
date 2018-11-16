@@ -1,0 +1,98 @@
+<div *ngIf="!hasSignedIn">
+<div class="img">
+  <!-- <img class="d-block" src="assets/image/1.jpg" alt="First slide"> -->
+  <img class="d-block" src="../../assets/image/mains.PNG" alt="First slide">
+
+</div>
+
+<div class="hero-image">
+<div class="flex-container" id="learn">
+  <div class="flex">
+    <mat-card class="example-card">
+      <div class="flexx" style="flex: 30%" >
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title style="font-size: 40px;font-family:cursive">Learn</mat-card-title><br>
+        <mat-card-subtitle style="font-size: 20px;font-family: cursive;">Why should you Learn?</mat-card-subtitle>
+      </mat-card-header><br>
+    </div>
+    <div class="flexx1" style="flex: 50%">
+      <mat-card-content>
+              <div class="hero-text">
+                  <p>This Plan helps you to understand and apply the concepts of Technologies and allows you to 
+                      assess yourself in a technology.This system provides you with the learning plans which will 
+                      help you in learning.You can take assessments and compete with others.
+              </p>
+              </div><br><br><br><br>
+      </mat-card-content>
+    </div>
+      </mat-card>
+  </div>
+</div>
+</div>
+<div class="hero-image">
+<div class="flex-container" id="contribute">
+  <div class="flex">
+    <mat-card class="example-card">
+        <div class="flexx" style="flex: 50%;" >
+      <mat-card-content>
+      <div class="hero-text">
+          <p>This Plan helps you to understand and apply the concepts of Technologies and allows you to 
+              assess yourself in a technology.This system provides you with the learning plans which will 
+              help you in learning.You can take assessments and compete with others.
+      </p>
+      </div><br><br><br>
+    </mat-card-content>
+        </div>
+        <div class="flexx1" style="flex: 20%;" >
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title style="font-size: 40px;font-family:cursive">Contribute</mat-card-title>
+        <mat-card-subtitle style="font-size: 20px;font-family: cursive;">Why should you contribute?</mat-card-subtitle>
+      </mat-card-header>
+    </div>
+    </mat-card>
+  </div>
+</div>
+</div>
+<div class="hero-image">
+    <div class="flex-container" id="blooms">
+      <div class="flex">
+        <mat-card class="example-card">
+          <div class="flexx" style="flex: 30%;" >
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title style="font-size: 40px;font-family:cursive">Bloom's Taxonomy</mat-card-title><br>
+            <mat-card-subtitle style="font-size: 20px;font-family: cursive;">What is bloom's taxonomy?</mat-card-subtitle>
+          </mat-card-header><br>
+        </div>
+        <div class="flexx1" style="flex: 50%">
+          <mat-card-content>
+                  <div class="hero-text">
+                      <p>This Plan helps you to understand and apply the concepts of Technologies and allows you to 
+                          assess yourself in a technology.This system provides you with the learning plans which will 
+                          help you in learning.You can take assessments and compete with others.
+                  </p>
+                  </div><br><br><br><br>
+          </mat-card-content>
+        </div>
+          </mat-card>
+      </div>
+    </div>
+    </div><br>
+<h2>Popular Technologies</h2>
+<div class="flex-container1">
+  <div class="flex1" *ngFor="let item of content">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title style="font-size: 20px">Java</mat-card-title>
+        <mat-card-subtitle>By John</mat-card-subtitle>
+      </mat-card-header><br><br>
+      <mat-card-content>
+        <p>This Plan helps you to understand and  JAVA</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div><br><br>
+
