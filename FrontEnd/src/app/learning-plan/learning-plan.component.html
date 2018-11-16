@@ -1,0 +1,40 @@
+<mat-card>
+  <mat-card-header>
+    <img mat-card-avatar [src]="plan?.avatar" />
+    <mat-card-title>
+      {{plan?.technology}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      <em>-by {{plan?.owner}}</em>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{plan?.summary}}
+    </p>
+    <h3>
+      Course Content:
+    </h3>
+    <p *ngFor="let item of data">
+      <a routerLink=''>{{item}}</a>
+    </p>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="votes">
+      <h4>
+        <a [routerLink]="">
+          <mat-icon>thumb_up</mat-icon>
+        </a> {{plan?.upVotes}}
+      </h4>
+      <h4>
+        <a [routerLink]="">
+          <mat-icon>thumb_down</mat-icon>
+        </a> {{plan?.downVotes}}
+      </h4>
+    </div>
+    <button mat-button [routerLink]=''>
+      SUBSCRIBE
+    </button>
+  </mat-card-actions>
+</mat-card>

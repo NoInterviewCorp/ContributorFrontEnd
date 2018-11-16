@@ -1,0 +1,26 @@
+.example-form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding-top: 20px;
+}
+mat-form-field{
+    width: 50%;   
+}
+
+.accordian{
+    padding-top: 10px;
+}
+.buttons{
+    display: inline-flex;
+    flex-direction: row;
+}
+button{
+    margin-right: 10px;
+}
+p{
+    font-size: 13px;
+}

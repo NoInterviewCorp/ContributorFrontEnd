@@ -1,0 +1,94 @@
+
+.d-block
+{
+    width:100%;
+    height: 600px;
+}
+.img{
+    margin-top:0px;
+}
+.header{
+    position: fixed;
+    top:0;
+}
+.companyName{
+    font-size: 150%;
+}
+a{
+    text-decoration: none;
+    font-size: 110%;
+    white-space: normal;
+}
+button{
+    font-size: 110%;
+    min-width: min-content;
+}
+.example-icon {
+    padding: 0 14px;
+  }
+
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+  .mat-sidenav-content{
+      font-size: 200%;
+      text-align: center;
+} 
+ 
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
+ 
+  .flex{
+      width: 100%;
+  }
+  .flex-container1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
+ 
+  .flex1{
+      width: 25%;
+  }
+  
+* {
+    box-sizing: border-box;
+}
+
+
+.topnav .search-container {
+  float: right;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 18px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 18px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
+}
+.cont{
+    position: fixed;
+    z-index: 99999;
+    top:0;
+    width:100%;
+}

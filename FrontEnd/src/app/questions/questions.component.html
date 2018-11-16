@@ -1,0 +1,14 @@
+<mat-accordion>
+  <app-questionform *ngFor="let index of questions; " [id]="index" (noError)="handleEventEmitter($event)"></app-questionform><br><br>
+</mat-accordion>
+<div class="buttons">
+  <div class="button-row">
+      <button mat-flat-button color="primary" id="add" (click)="addQuestion()">Add a Question</button><br><br>
+  </div>
+  <div class="button-row" >
+      <button mat-flat-button color="primary" *ngIf="hasAdded5Qs" (click)="onClick()" id="submit">Submit</button>
+  </div>
+</div><br><br>
+<p *ngIf="haserror">you have to give all the required fields</p>
+<p *ngIf="hasnoerror"> your questions have been posted successfully</p>
+<p *ngIf="!hasAdded5Qs"> You need to add at least <strong>FIVE</strong> Questions to publish.</p>

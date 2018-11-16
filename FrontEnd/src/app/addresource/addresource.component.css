@@ -1,0 +1,10 @@
+.accordian{
+    padding-top: 10px;
+}
+.buttons{
+    display: inline-flex;
+    flex-direction: row;
+}
+button{
+    margin-right: 10px;
+}

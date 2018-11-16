@@ -1,0 +1,72 @@
+<mat-expansion-panel>
+<mat-expansion-panel-header>
+<mat-panel-title>
+Resource {{id}}
+</mat-panel-title><br><br>
+<mat-panel-description>
+
+</mat-panel-description>
+<mat-icon>done_outline</mat-icon>
+</mat-expansion-panel-header>
+<form class="example-form">
+<div class="flex-container">
+<div class="flex" style="flex-grow: 5">
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Resource Link" [formControl]="resourcelink" required>
+    <mat-error *ngIf="resourcelink.invalid">{{getErrorMessage()}}</mat-error>
+    <mat-error *ngIf="resourcelink.valid">{{getValidMessage(0)}}</mat-error>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Description"></textarea>
+</mat-form-field>
+
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Technology">
+</mat-form-field>
+</div>
+<div class="flex" style="flex-grow: 5">
+<mat-form-field class="example-chip-list">
+    <mat-chip-list #chipList>
+        <mat-chip *ngFor="let concept of concepts" [selectable]="selectable" [removable]="removable"
+            (removed)="remove(concept)">
+            {{concept.name}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Concepts Covered" [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+            (matChipInputTokenEnd)="add($event)" [formControl]="concept" required>
+            <mat-error *ngIf="concept.invalid">{{getErrorMessage1()}}</mat-error>
+            <mat-error *ngIf="concept.valid">{{getValidMessage(1)}}</mat-error>
+    </mat-chip-list>
+</mat-form-field>
+<mat-form-field>
+    <mat-select [(value)]="selected" placeholder="Give Bloom's Taxanomy Level" [formControl]="bloomlevel"
+        required>
+        <mat-error *ngIf="bloomlevel.invalid">{{getErrorMessage2()}}</mat-error>
+        <mat-error *ngIf="bloomlevel.valid">{{getValidMessage(2)}}</mat-error>
+        <mat-option value="1">Knowledge</mat-option>
+        <mat-option value="2">Comprehension</mat-option>
+        <mat-option value="3">Application</mat-option>
+        <mat-option value="4">Analysis</mat-option>
+        <mat-option value="5">Synthesis</mat-option>
+        <mat-option value="6">Evaluation</mat-option>
+    </mat-select>
+</mat-form-field>
+ <a matTooltip="know about Bloom's Taxonomy" aria-label="Button that displays a tooltip when focused or hovered over" href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
+    <mat-icon class="help">help</mat-icon>
+</a> 
+<!-- <button mat-raised-button
+        matTooltip="Info about the action"
+        aria-label="Button that displays a tooltip when focused or hovered over">
+  Action
+</button> -->
+<br><br>
+<div>
+    <button mat-raised-button color="primary" (click)="openBottomSheet()">Add Questions</button>
+</div>
+</div>
+
+</div>
+</form>
+</mat-expansion-panel>

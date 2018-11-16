@@ -1,0 +1,94 @@
+<div class="cont">
+  <mat-toolbar color="primary">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <a mat-button class="companyName" routerLink="/">
+      <span>PotentiOMeter</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button>
+        <div class="topnav">
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </a></div>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/Learn">Learn</a>
+      <a mat-button routerLink="/Contribute">Contribute</a>
+      <a mat-button routerLink="sign-in" tabindex="2">Log In</a>
+      <a mat-button routerLink="sign-up">Sign Up</a>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column">
+        <form class="example" style="margin:auto;max-width:300px">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit">Submit</button>
+        </form>
+        <a mat-button routerLink="/Learn">Learn</a>
+        <a mat-button routerLink="/Contribute">Contribute</a>
+        <!-- <a mat-button routerLink="sign-in">Log In</a>
+        <a mat-button routerLink="sign-up">Sign Up</a> -->
+        <a mat-button (click)="openDialog()">Log In</a>
+        <a mat-button (click)="openDialog()">Sign Up</a>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+<div class="img">
+  <img class="d-block" src="assets/image/1.jpg" alt="First slide">
+</div>
+<div class="flex-container">
+  <div class="flex">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title style="font-size: 20px">Learn</mat-card-title>
+        <mat-card-subtitle>Why should you Learn?</mat-card-subtitle>
+      </mat-card-header><br><br>
+      <mat-card-content>
+        <p>This Plan helps you to understand and apply the concepts of Technologies</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<div class="flex-container">
+  <div class="flex">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title style="font-size: 20px">Contribute</mat-card-title>
+        <mat-card-subtitle>Why should you contribute?</mat-card-subtitle>
+      </mat-card-header><br><br>
+      <mat-card-content>
+        <p>This Plan helps you to understand and apply the concepts</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+<h2>Popular Technologies</h2>
+<div class="flex-container1">
+  <div class="flex1" *ngFor="let item of content">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title style="font-size: 20px">Java</mat-card-title>
+        <mat-card-subtitle>By John</mat-card-subtitle>
+      </mat-card-header><br><br>
+      <mat-card-content>
+        <p>This Plan helps you to understand and apply the concepts of JAVA</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.buttons{
+    /* display: flex; 
+    flex-wrap: wrap;
+    padding-top: 30px;
+    flex-direction: row; */
+    text-align: center;
+}
+
+ button{
+     margin-top: 20px;
+     margin-right: 20px;
+ }
+ .column {
+    flex: 50%;
+    justify-content: space-evenly;
+}
+
+.example-header-image {
+    background-image: url('../../assets/images/profile.png');
+    background-size: cover;
+  }
+
+  img{
+    height: 60px; 
+    width: 60px;
+    margin: auto;
+}
+  
+

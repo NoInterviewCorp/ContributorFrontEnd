@@ -1,0 +1,24 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width"  >
+      <input matInput placeholder="Technology Name">
+  </mat-form-field>
+  <p><b>Note:</b>Give Technology for better recommendations</p>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Description"></textarea>
+</mat-form-field>
+  </form>
+
+  <div class="accordian">
+    <mat-accordion>
+            <app-resourceform *ngFor="let index of resources" [id]="index"></app-resourceform><br><br>
+    </mat-accordion>
+    <div class="buttons">
+    <div>
+            <button mat-raised-button color="primary" routerLink="/contribute" routerLinkActive="active">Submit</button>
+     </div>
+     <div>
+            <button mat-raised-button color="primary" (click)="addResource()">Add</button>
+     </div>
+     </div>
+     </div>
+  

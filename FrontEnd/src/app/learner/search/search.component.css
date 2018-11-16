@@ -1,0 +1,43 @@
+.flex-container{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    justify-content:space-around
+  }
+  .flex-container1{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 10px;
+  }
+  .example-card
+  {
+      flex: 20%;
+  }
+
+
+  .flex{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    justify-content: center;
+  }
+
+  .flex1{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    justify-content: center;
+  }
+
+  .wrapper {
+      text-align: center;
+  }
+
+  .button-flex{
+      margin-left: 40px;
+      margin-right:16px
+  }
