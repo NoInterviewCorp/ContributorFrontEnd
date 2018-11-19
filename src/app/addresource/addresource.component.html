@@ -1,11 +1,19 @@
 <h1>Resource</h1>
-<div class="accordian">
-<mat-accordion>
-        <app-resourceform *ngFor="let index of resources" [id]="index" (noError)="handleEventEmitter($event)"></app-resourceform><br><br>
-</mat-accordion>
+<div class="accordian">  
+<div class="resourcequestions">             
+  <mat-accordion style="flex: 4;">
+        <app-resourceform *ngFor="let index of resources" [id]="index" (noError)="handleEventEmitter($event)" (addQuestions)="handleAddQuestions($event)"></app-resourceform><br><br>
+  </mat-accordion>
+  <div class="questionbutton">
+    <app-questions *ngIf="hasClickedAddQuestions" style="flex: 6;padding-left: 10px;"></app-questions>
+    <div>
+    <button mat-raised-button color="white" *ngIf="hasClickedAddQuestions" >close</button>
+    </div>
+  </div>
+</div>
 <div class="buttons">
 <div>
-        <button mat-raised-button color="black" routerLink="/profile" routerLinkActive="active" (click()="postResources()">Submit</button>
+        <button mat-raised-button color="black" routerLink="/profile" routerLinkActive="active" (click)="postResources()">Submit</button>
  </div>
  <div>
         <button mat-raised-button color="black" (click)="addResource()">Add</button>

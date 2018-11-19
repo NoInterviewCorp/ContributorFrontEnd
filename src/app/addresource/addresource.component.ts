@@ -13,6 +13,7 @@ export class AddresourceComponent implements OnInit {
   noerror: Array<boolean> = [false];
   haserror: boolean = false;
   hasnoerror: boolean = false;
+  hasClickedAddQuestions:boolean;
   constructor() { }
 
   ngOnInit() {
@@ -29,6 +30,9 @@ export class AddresourceComponent implements OnInit {
     let index = errorstatus.MemberId - 1;
     this.noerror[index] = errorstatus.HasError;
     //this.questionObjs[index] = errorstatus.QuestionObj;
+  }
+  handleAddQuestions(addquestions){
+    this.hasClickedAddQuestions=addquestions;
   }
   onClick() {
     let result: boolean;

@@ -19,6 +19,8 @@ export interface Concept {
 export class ResourceformComponent implements OnInit {
   @Input() id: number;
   @Output() noError = new EventEmitter();
+  @Output() addQuestions = new EventEmitter();
+  //  hasClickedAddQuestions:boolean;
    results:any=[];
   constructor(private com: CommunicatorService) { }
 
@@ -80,8 +82,8 @@ export class ResourceformComponent implements OnInit {
     }
     this.noError.emit({ MemberId: this.id, HasError: areAllValid});
   }
-  // conceptSearch(){
-  //  this.com.getconcepts().subscribe(res=>this.results=res);
-  // console.log(this.results);
-  // }
+  clickedAddQuestions(){
+    // this.hasClickedAddQuestions = true;
+    this.addQuestions.emit(true);
+  }
 }

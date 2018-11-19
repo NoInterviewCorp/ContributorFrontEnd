@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'app-addlearningplan',
@@ -10,15 +12,17 @@ export class AddlearningplanComponent implements OnInit {
   topics: Array<number> = [1];
   lastNumber = this.topics.length;
   topicName:string;
+
   constructor() { }
 
   ngOnInit() {
   }
+  
   addResource() {
     this.hasClickedAdd = true;
     this.topics.push(++this.lastNumber);
   }
-   postLearningPlan(){
-     
+   postLearningPlan(){ 
    }
+    
 }

@@ -15,10 +15,13 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSidenavModule, MatListModule, MatChipsModule, MatSelectModule, MatExpansionModule, MatBottomSheetModule, MatTooltipModule } from '@angular/material';
+import { NgxSortableModule } from 'ngx-sortable'
+
 
 
 @NgModule({
   imports: [
+   NgxSortableModule,
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,

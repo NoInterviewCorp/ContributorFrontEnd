@@ -10,3 +10,11 @@ button{
     background-color: black;
     color: white;
 }
+.resourcequestions{
+    display: flex;
+    flex-direction: row;
+}
+.questionbutton{
+    display: flex;
+    flex-direction: column;
+}
