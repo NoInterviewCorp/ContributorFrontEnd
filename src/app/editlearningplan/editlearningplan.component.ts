@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { CommunicatorService } from '../services/communicator.service';
 import { LearningPlan } from 'src/models/learningplan.model';
+import { CommunicatorService } from '../services/communicator.service';
 
 @Component({
   selector: 'app-editlearningplan',
@@ -9,17 +8,14 @@ import { LearningPlan } from 'src/models/learningplan.model';
   styleUrls: ['./editlearningplan.component.css']
 })
 export class EditlearningplanComponent implements OnInit {
-  plan: LearningPlan[];
-  constructor(private com: CommunicatorService, private http: HttpClient) { }
+  plan: LearningPlan;
+  constructor(private com:CommunicatorService) { }
 
   ngOnInit() {
-    this.getPlanToEdit();
+    this.plan=this.com.editSelectedPlan;
+    console.log(this.plan);
   }
-  getPlanToEdit() {
-    // this.com.getPlansById().subscribe((res:any)=>{
-    //   this.plan=res;
-    //  console.log(res);
-    // });
-  }
+  
+  
 
 }

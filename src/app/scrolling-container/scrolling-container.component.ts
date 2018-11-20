@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ScrollingContainerComponent implements OnInit {
   plan: LearningPlan[];
+  contributions: LearningPlan[];
   // links: string[]= [];
   @Input() choice: number;
   constructor(private com: CommunicatorService, private http: HttpClient) { }

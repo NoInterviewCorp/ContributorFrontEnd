@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { LearningPlan } from 'src/models/learningplan.model';
 
 
 @Injectable({
@@ -7,7 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CommunicatorService {
   private title: string;
-  hasClickedAddResources: boolean;
+  // hasClickedAddResources: boolean;
+  editSelectedPlan:LearningPlan;
+
   constructor(private http: HttpClient) { }
   getTitle() {
     return this.title;

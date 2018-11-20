@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { LearningPlan } from 'src/models/learningplan.model';
+import { CommunicatorService } from 'src/app/services/communicator.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-yourcontributionscard',
@@ -8,10 +10,14 @@ import { LearningPlan } from 'src/models/learningplan.model';
 })
 export class YourcontributionscardComponent implements OnInit {
   @Input() plan: LearningPlan;
-  constructor() {
+
+  constructor(private com:CommunicatorService,private http:HttpClient) {
   }
   ngOnInit() {
     console.log(this.plan.LearningPlanID);
+  }
+  getPlanOfId(){
+      this.com.editSelectedPlan=this.plan;
   }
 
 }
