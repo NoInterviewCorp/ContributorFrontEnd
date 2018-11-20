@@ -19,10 +19,10 @@ export class QuestionsComponent implements OnInit {
   hasClickedAdd: boolean = false;
   hasAdded5Qs: boolean = false;
   constructor() { }
-//private bottomSheetRef: MatBottomSheetRef<QuestionsComponent>
+  //private bottomSheetRef: MatBottomSheetRef<QuestionsComponent>
   ngOnInit() {
   }
-  
+
 
   onClick() {
     let result: boolean;
@@ -81,7 +81,7 @@ export class QuestionsComponent implements OnInit {
     this.questions.push(++this.lastNumber);
     this.noerror.push(false);
     this.questionObjs.push(new Questions);
-    if(this.questions.length >= 5){
+    if (this.questions.length >= 5) {
       this.hasAdded5Qs = true;
     }
   }

@@ -7,41 +7,41 @@ import { MAT_DRAWER_DEFAULT_AUTOSIZE } from '@angular/material';
   styleUrls: ['./contibutorhome.component.css']
 })
 export class ContibutorhomeComponent implements OnInit {
-  LearningPlan: Array<number> = [1,2,3,4,5];
-  hasClickedContributions:boolean;
-  hasClickedAddLP:boolean;
-  hasClickedAddResource:boolean;
-  hasClickedRight:boolean;
-  hasClickedLeft:boolean;
+  LearningPlan: Array<number> = [1, 2, 3, 4, 5];
+  hasClickedContributions: boolean;
+  hasClickedAddLP: boolean;
+  hasClickedAddResource: boolean;
+  hasClickedRight: boolean;
+  hasClickedLeft: boolean;
   constructor() { }
 
   ngOnInit() {
-    this.hasClickedContributions=true;
-    this.hasClickedLeft=true;
-    this.hasClickedRight=false;
+    this.hasClickedContributions = true;
+    this.hasClickedLeft = true;
+    this.hasClickedRight = false;
   }
-  clickedRight(){
-    this.hasClickedRight=true;
-    this.hasClickedLeft=false;
+  clickedRight() {
+    this.hasClickedRight = true;
+    this.hasClickedLeft = false;
   }
-  clickedLeft(){
-    this.hasClickedRight=false;
-    this.hasClickedLeft=true;
+  clickedLeft() {
+    this.hasClickedRight = false;
+    this.hasClickedLeft = true;
   }
-  
-  clickedAddLP(){
-     this.hasClickedAddLP=true;
-     this.hasClickedAddResource=false;
-     this.hasClickedContributions=false;
+
+  clickedAddLP() {
+    this.hasClickedAddLP = true;
+    this.hasClickedAddResource = false;
+    this.hasClickedContributions = false;
   }
-  clickedAddResource(){
-     this.hasClickedAddResource=true;
-     this.hasClickedAddLP=false;
-     this.hasClickedContributions=false;
+  clickedAddResource() {
+    this.hasClickedAddResource = true;
+    this.hasClickedAddLP = false;
+    this.hasClickedContributions = false;
   }
-  clickedContributions(){
-    this.hasClickedAddResource=false;
-    this.hasClickedAddLP=false;
-    this.hasClickedContributions=true;
- }
+  clickedContributions() {
+    this.hasClickedAddResource = false;
+    this.hasClickedAddLP = false;
+    this.hasClickedContributions = true;
+  }
 }

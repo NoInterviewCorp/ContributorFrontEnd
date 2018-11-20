@@ -7,13 +7,14 @@ import { ErrorStatus } from '../questions/errorstatus.model';
   styleUrls: ['./addresource.component.css']
 })
 export class AddresourceComponent implements OnInit {
-  hasClickedAdd:boolean;
+  hasClickedAdd: boolean;
   resources: Array<number> = [1];
   lastNumber = this.resources.length;
   noerror: Array<boolean> = [false];
   haserror: boolean = false;
   hasnoerror: boolean = false;
-  hasClickedAddQuestions:boolean;
+  hasClickedAddQuestions: boolean;
+  hasClickedClose: boolean;
   constructor() { }
 
   ngOnInit() {
@@ -31,8 +32,9 @@ export class AddresourceComponent implements OnInit {
     this.noerror[index] = errorstatus.HasError;
     //this.questionObjs[index] = errorstatus.QuestionObj;
   }
-  handleAddQuestions(addquestions){
-    this.hasClickedAddQuestions=addquestions;
+  handleAddQuestions(addquestions) {
+    this.hasClickedAddQuestions = addquestions;
+    this.hasClickedClose = false;
   }
   onClick() {
     let result: boolean;
@@ -48,7 +50,10 @@ export class AddresourceComponent implements OnInit {
       this.hasnoerror = false;
     }
   }
-  postResources(){
-    
+  postResources() {
+
+  }
+  clickedClose() {
+    this.hasClickedClose = true;
   }
 }

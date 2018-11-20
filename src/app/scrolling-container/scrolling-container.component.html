@@ -1,6 +1,6 @@
 <div class="contribution-card-container">
-<div *ngFor="let item of plan">
-            <app-yourcontributionscard [plan]="item" *ngIf="choice==1"></app-yourcontributionscard>
-            <app-subscribecard [plan]="item" *ngIf="choice==3"></app-subscribecard>
-        </div>  
- </div>
+    <div *ngFor="let item of plan">
+        <app-yourcontributionscard [plan]="item" *ngIf="choice==1"></app-yourcontributionscard>
+        <app-subscribecard [plan]="item" *ngIf="choice==3"></app-subscribecard>
+    </div>
+</div>

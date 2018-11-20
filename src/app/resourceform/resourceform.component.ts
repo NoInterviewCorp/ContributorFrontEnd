@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatChipInputEvent} from '@angular/material';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material';
 import { QuestionsComponent } from '../questions/questions.component';
 import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CommunicatorService } from '../services/communicator.service';
@@ -21,7 +21,7 @@ export class ResourceformComponent implements OnInit {
   @Output() noError = new EventEmitter();
   @Output() addQuestions = new EventEmitter();
   //  hasClickedAddQuestions:boolean;
-   results:any=[];
+  results: any = [];
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class ResourceformComponent implements OnInit {
   }
   resourcelink = new FormControl('', [Validators.required]);
   bloomlevel = new FormControl('', [Validators.required]);
-  concept=new FormControl('',[Validators.required]);
+  concept = new FormControl('', [Validators.required]);
   isValidArray: boolean[] = new Array(3).fill(false);
   visible = true;
   selectable = true;
@@ -42,7 +42,7 @@ export class ResourceformComponent implements OnInit {
     const value = event.value;
     // Add our fruit
     if ((value || '').trim()) {
-      this.concepts.push({name: value.trim()});
+      this.concepts.push({ name: value.trim() });
     }
     // Reset the input value
     if (input) {
@@ -55,7 +55,7 @@ export class ResourceformComponent implements OnInit {
       this.concepts.splice(index, 1);
     }
   }
-  
+
 
   getErrorMessage() {
     this.noError.emit({ MemberId: this.id, HasError: false });
@@ -80,9 +80,9 @@ export class ResourceformComponent implements OnInit {
     for (let i = 0; i < this.isValidArray.length; i++) {
       areAllValid = (areAllValid && this.isValidArray[i]);
     }
-    this.noError.emit({ MemberId: this.id, HasError: areAllValid});
+    this.noError.emit({ MemberId: this.id, HasError: areAllValid });
   }
-  clickedAddQuestions(){
+  clickedAddQuestions() {
     // this.hasClickedAddQuestions = true;
     this.addQuestions.emit(true);
   }

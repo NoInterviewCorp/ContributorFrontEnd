@@ -9,13 +9,13 @@ import { LearningPlan } from 'src/models/learningplan.model';
   styleUrls: ['./editlearningplan.component.css']
 })
 export class EditlearningplanComponent implements OnInit {
-plan: LearningPlan[];
-  constructor(private com:CommunicatorService,private http:HttpClient) { }
+  plan: LearningPlan[];
+  constructor(private com: CommunicatorService, private http: HttpClient) { }
 
   ngOnInit() {
     this.getPlanToEdit();
   }
-  getPlanToEdit(){
+  getPlanToEdit() {
     // this.com.getPlansById().subscribe((res:any)=>{
     //   this.plan=res;
     //  console.log(res);

@@ -3,10 +3,10 @@
 </mat-accordion>
 <div class="buttons">
   <div class="button-row">
-      <button mat-flat-button color="black" id="add" (click)="addQuestion()">Add a Question</button><br><br>
+    <button mat-flat-button color="black" id="add" (click)="addQuestion()">Add a Question</button><br><br>
   </div>
-  <div class="button-row" >
-      <button mat-flat-button color="black" *ngIf="hasAdded5Qs" (click)="onClick()" id="submit">Submit</button>
+  <div class="button-row">
+    <button mat-flat-button color="black" *ngIf="hasAdded5Qs" (click)="onClick()" id="submit">Submit</button>
   </div>
 </div><br><br>
 <p *ngIf="haserror">you have to give all the required fields</p>

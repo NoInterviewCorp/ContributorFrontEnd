@@ -37,16 +37,16 @@ import { EditlearningplanComponent } from './editlearningplan/editlearningplan.c
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
-      [
-        {
-          id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider("350286072374588")
-        },
-        {
-          id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider("454238831817-sristf7mn9g39ckeemne85df5rm1lg3b.apps.googleusercontent.com")
-        }
-      ]
+    [
+      {
+        id: FacebookLoginProvider.PROVIDER_ID,
+        provider: new FacebookLoginProvider("350286072374588")
+      },
+      {
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider("454238831817-sristf7mn9g39ckeemne85df5rm1lg3b.apps.googleusercontent.com")
+      }
+    ]
   );
   return config;
 }
@@ -87,13 +87,13 @@ export function getAuthServiceConfigs() {
     NgMatSearchBarModule,
     HttpClientModule
   ],
-  entryComponents:[
+  entryComponents: [
     SignInComponent
   ],
   providers: [
     {
-    provide: AuthServiceConfig,
-    useFactory: getAuthServiceConfigs
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
     }
   ],
   bootstrap: [AppComponent]

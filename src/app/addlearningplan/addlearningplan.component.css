@@ -10,7 +10,7 @@ body{
     align-content: center;
 }
 .field{
-    width: 80%;
+    width: 100%;
     padding-top: 20px;
 }
 .fields{
@@ -18,11 +18,11 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 80%; 
+    width: 100%; 
     padding-top: 20px;  
 }
 .textarea{
-    width: 70%; 
+    width: 100%; 
     padding-top: 20px;    
 }
 .accordianandbuttons{
@@ -37,7 +37,7 @@ body{
     padding-right: 20px; 
 }
 mat-accordion{
-    width: 70%;
+    width: 110%;
     padding-top: 20px;
 }
 h3{

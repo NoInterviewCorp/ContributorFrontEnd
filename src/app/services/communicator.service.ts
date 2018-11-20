@@ -6,42 +6,42 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CommunicatorService {
-  private title:string;
-  hasClickedAddResources:boolean;
+  private title: string;
+  hasClickedAddResources: boolean;
   constructor(private http: HttpClient) { }
-  getTitle(){
+  getTitle() {
     return this.title;
   }
-  setTitle(title:string){
-   this.title=title;
+  setTitle(title: string) {
+    this.title = title;
   }
-  getconcepts(){
+  getconcepts() {
     return this.http.get('http://localhost:3000/Concept');
   }
-  getContributions(){
+  getContributions() {
     return this.http.get('http://localhost:3000/LearningPlan')
   }
-  getSubscriptions(){
+  getSubscriptions() {
     return this.http.get('http://localhost:3000/LearningPlan')
   }
-  getPopularPlans(){
+  getPopularPlans() {
     return this.http.get('http://localhost:3000/LearningPlan')
   }
-  getPlansById(LearningPlanID:string){
-    return this.http.get('http://localhost:3000/LearningPlan'+LearningPlanID+'?text=id')
+  getPlansById(LearningPlanID: string) {
+    return this.http.get('http://localhost:3000/LearningPlan' + LearningPlanID + '?text=id')
   }
-  postQuestions(){
+  postQuestions() {
 
   }
-  postResources(){
+  postResources() {
 
   }
-  postLearningPlan(){
-    
+  postLearningPlan() {
+
   }
   getYourSubs() {
     return this.http.get('http://localhost:3000/LearningPlan');
   }
-  
-  
+
+
 }

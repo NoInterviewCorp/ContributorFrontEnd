@@ -7,8 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class AddtopicComponent implements OnInit {
   //@Input() id: number;
-  topicname:string='';
-  hasClickedAdd:boolean;
+  topicname: string = '';
+  hasClickedAdd: boolean;
   resources: Array<number> = [1];
   lastNumber = this.resources.length;
   constructor() { }

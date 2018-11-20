@@ -13,11 +13,11 @@ export class AppComponent {
   hasSignedIn = false;
   content = [1, 2, 3, 4]
   title = 'PotentiOMeter';
-  
-  
-  handleEvent(event){
+
+
+  handleEvent(event) {
     console.log(event);
-    this.hasSignedIn  = event;
+    this.hasSignedIn = event;
   }
   @Output() onSignIn = new EventEmitter();
   //hasSignedIn:boolean = false;

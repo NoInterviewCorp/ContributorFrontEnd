@@ -80,7 +80,7 @@ export class QuestionformComponent implements OnInit {
     // })
     this.createQuestionObject(index);
     // console.log(this.questionObj);
-    this.noError.emit({ MemberId: this.id, HasError: areAllValid, QuestionObj:this.questionObj });
+    this.noError.emit({ MemberId: this.id, HasError: areAllValid, QuestionObj: this.questionObj });
   }
 
   createQuestionObject(index) {

@@ -1,27 +1,32 @@
 <h1>Resource</h1>
-<div class="accordian">  
-<div class="resourcequestions">             
-  <mat-accordion style="flex: 4;">
-        <app-resourceform *ngFor="let index of resources" [id]="index" (noError)="handleEventEmitter($event)" (addQuestions)="handleAddQuestions($event)"></app-resourceform><br><br>
-  </mat-accordion>
-  <div class="questionbutton">
-    <app-questions *ngIf="hasClickedAddQuestions" style="flex: 6;padding-left: 10px;"></app-questions>
-    <div>
-    <button mat-raised-button color="white" *ngIf="hasClickedAddQuestions" >close</button>
+<div class="accordian">
+
+  <div class="resourcequestions">
+    <div class="accordianbuttons" style="flex: 4;">
+      <mat-accordion>
+        <app-resourceform *ngFor="let index of resources" [id]="index" (noError)="handleEventEmitter($event)"
+          (addQuestions)="handleAddQuestions($event)"></app-resourceform><br><br>
+      </mat-accordion>
+      <div class="buttons">
+        <div>
+          <button mat-raised-button color="black" routerLink="/profile" routerLinkActive="active" (click)="postResources()">Submit</button>
+        </div>
+        <div>
+          <button mat-raised-button color="black" (click)="addResource()">Add</button>
+        </div>
+        <div>
+          <button mat-raised-button color="black" (click)="onClick()">save</button>
+        </div>
+      </div>
+    </div>
+    <app-questions *ngIf="hasClickedAddQuestions && !hasClickedClose" style="flex: 6;padding-left: 10px;"></app-questions>
+    <div class="closebutton">
+      <button mat-button *ngIf="hasClickedAddQuestions && !hasClickedClose" (click)="clickedClose()" style="background-color:black;color:white;float:right">
+        <mat-icon>clear</mat-icon>
+      </button>
     </div>
   </div>
+
 </div>
-<div class="buttons">
-<div>
-        <button mat-raised-button color="black" routerLink="/profile" routerLinkActive="active" (click)="postResources()">Submit</button>
- </div>
- <div>
-        <button mat-raised-button color="black" (click)="addResource()">Add</button>
- </div>
- <div>
-                <button mat-raised-button color="black" (click)="onClick()">save</button>
-         </div>
- </div>
- </div>
- <p *ngIf="haserror">you have to give all the required fields</p>
+<p *ngIf="haserror">you have to give all the required fields</p>
 <p *ngIf="hasnoerror"> your questions have been posted successfully</p>

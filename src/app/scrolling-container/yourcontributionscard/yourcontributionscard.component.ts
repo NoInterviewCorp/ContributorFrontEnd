@@ -9,7 +9,7 @@ import { LearningPlan } from 'src/models/learningplan.model';
 export class YourcontributionscardComponent implements OnInit {
   @Input() plan: LearningPlan;
   constructor() {
-   }
+  }
   ngOnInit() {
     console.log(this.plan.LearningPlanID);
   }

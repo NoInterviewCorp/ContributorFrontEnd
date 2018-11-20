@@ -9,21 +9,21 @@ export class TestService {
 
   constructor(private http: HttpClient) { }
 
-  static tech : Technology;
+  static tech: Technology;
 
-  setTechName(t:Technology) {
-    
-    TestService.tech=t;
+  setTechName(t: Technology) {
+
+    TestService.tech = t;
   }
   getTechName() {
     return TestService.tech;
   }
- 
+
   getQuestions() {
     // console.log("No of Questions are : "+TestService.tech.Questions );
-    console.log((TestService.tech==null?"NACHO NULL HUA":TestService.tech.Questions));
+    console.log((TestService.tech == null ? "NACHO NULL HUA" : TestService.tech.Questions));
     return TestService.tech.Questions;
   }
 
- 
+
 }
