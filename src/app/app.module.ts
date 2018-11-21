@@ -34,6 +34,10 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
 import { SubscribecardComponent } from './scrolling-container/subscribecard/subscribecard.component';
 import { YourcontributionscardComponent } from './scrolling-container/yourcontributionscard/yourcontributionscard.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
+import { LearnComponent } from './learn/learn.component';
+import { LearnerComponent } from './learner/learner.component';
+import { SearchComponent } from './learner/search/search.component';
+import { YoursubscriptionscardComponent } from './scrolling-container/yoursubscriptionscard/yoursubscriptionscard.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -53,16 +57,18 @@ export function getAuthServiceConfigs() {
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
+
+    // Landing Page Components
     LandingComponent,
     TabsComponent,
-    ScrollingContainerComponent,
-    ContributeComponent,
+    ProfileComponent,
     SignInComponent,
     SignUpComponent,
     NavbarComponent,
     HomeComponent,
-    TestComponent,
+
+    // Contributor Page Components
+    ContributeComponent,
     ContibutorhomeComponent,
     AddlearningplanComponent,
     AddresourceComponent,
@@ -70,9 +76,21 @@ export function getAuthServiceConfigs() {
     QuestionformComponent,
     QuestionsComponent,
     AddtopicComponent,
-    SubscribecardComponent,
     YourcontributionscardComponent,
     EditlearningplanComponent,
+
+    // Learner Page Components
+    LearnComponent,
+    LearnerComponent,
+    SearchComponent,
+    TestComponent,
+    YoursubscriptionscardComponent,
+    TestComponent,
+    SubscribecardComponent,
+
+    // Commons
+    ScrollingContainerComponent,
+
   ],
   imports: [
     BrowserModule,

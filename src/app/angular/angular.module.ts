@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgMatSearchBarModule } from 'ng-mat-search-bar'; 
+import { NgMatSearchBarModule } from 'ng-mat-search-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -14,7 +14,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSidenavModule, MatListModule, MatChipsModule, MatSelectModule, MatExpansionModule, MatBottomSheetModule, MatTooltipModule } from '@angular/material';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import {
+  MatSidenavModule,
+  MatListModule,
+  MatChipsModule,
+  MatSelectModule,
+  MatExpansionModule,
+  MatBottomSheetModule,
+  MatTooltipModule
+} from '@angular/material';
 import { NgxSortableModule } from 'ngx-sortable'
 
 
@@ -44,7 +53,8 @@ import { NgxSortableModule } from 'ngx-sortable'
     MatTooltipModule,
     MatProgressBarModule,
     MatRadioModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule,
   ],
   exports: [
     CommonModule,
@@ -69,7 +79,8 @@ import { NgxSortableModule } from 'ngx-sortable'
     MatTooltipModule,
     MatProgressBarModule,
     MatRadioModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule,
   ],
   declarations: []
 })

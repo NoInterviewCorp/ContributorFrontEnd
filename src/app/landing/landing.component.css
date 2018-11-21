@@ -1,7 +1,8 @@
-.container{
-    margin-top: 2rem;
+.pom-l-container {
+  margin-top: 4rem;
 }
-.card{
+
+.card {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -10,23 +11,12 @@
     height: 100%;
     /* padding-top: 10px; */
 }
-.example-card{
-    /* padding-right: 60px; */
-    /* padding: 40px; */
-    height: 100%;
+.pom-c-card {
+  height: 100%;
+  border-radius: 8px;
 }
 .button{
 background-color: black;
 color: aliceblue;
 font-size: 30px;
 }
-.body {
-    /* background-color: #ccff90; */
-    background-color: rgb(238, 234, 234);
-    height: 100%;
- }
- .body1 {
-    background-color: rgb(238, 234, 234);
-    height: 100%;
- }
- 

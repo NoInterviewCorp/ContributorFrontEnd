@@ -12,9 +12,11 @@ import { AddresourceComponent } from './addresource/addresource.component';
 import { AddlearningplanComponent } from './addlearningplan/addlearningplan.component';
 import { AppComponent } from './app.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
+import { LearnerComponent } from './learner/learner.component';
 
 const routes: Routes = [
   //{path: 'home',component: HomeComponent},
+  { path: '', component: HomeComponent },
   { path: 'profile', component: LandingComponent },
   { path: 'contribute', component: ContibutorhomeComponent },
   { path: 'questions', component: QuestionsComponent },
@@ -22,8 +24,11 @@ const routes: Routes = [
   { path: 'addlearningplan', component: AddlearningplanComponent },
   { path: 'test', component: TestComponent },
   { path: 'home' , component: AppComponent},
-  {path: 'profilepage',component: ProfileComponent},
-  {path: 'editlearningplan', component: EditlearningplanComponent}
+  { path: 'profilepage',component: ProfileComponent},
+  { path: 'editlearningplan', component: EditlearningplanComponent},
+  { path: 'test', component: TestComponent },
+  { path: 'learner', component: LearnerComponent },
+  { path: 'login', component: SignInComponent },
 ];
 
 @NgModule({
