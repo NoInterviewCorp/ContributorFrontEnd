@@ -1,4 +1,9 @@
 .contribution-card-container{
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+}
+.contributionedit{
+  display: flex;
+  flex-direction: row;
 }

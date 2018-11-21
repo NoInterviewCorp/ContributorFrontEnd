@@ -1,25 +1,22 @@
-<br>
 <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side">
-        <mat-list> <br><br><br><br>
-            <mat-list-item><button mat-button (click)="clickedContributions()">Your Contributions</button></mat-list-item>
-            <mat-list-item><button mat-button (click)="clickedAddLP()">Add Learning Plan</button></mat-list-item>
-            <mat-list-item><button mat-button (click)="clickedAddResource()">Add Resource</button></mat-list-item>
-        </mat-list>
-    </mat-drawer>
+  <mat-drawer #drawer class="example-sidenav" mode="side"><br><br><br><br>
+    <mat-list>
+      <mat-list-item><button mat-button (click)="clickedContributions()">Your Contributions</button></mat-list-item>
+      <mat-list-item><button mat-button (click)="clickedAddLP()">Add Learning Plan</button></mat-list-item>
+      <mat-list-item><button mat-button (click)="clickedAddResource()">Add Resource</button></mat-list-item>
+    </mat-list>
+  </mat-drawer>
 
-    <div class="example-sidenav-content">
-
-        <button type="button" mat-button (click)="drawer.toggle(); clickedRight();" *ngIf="hasClickedLeft">
-            <mat-icon style="color: rgb(18, 150, 18);">add</mat-icon>
-        </button>
-
-        <button type="button" mat-button (click)="drawer.toggle();clickedLeft()" *ngIf="hasClickedRight">
-            <mat-icon style="color:rgb(2, 2, 150);">clear</mat-icon>
-        </button>
-        <app-contribute *ngIf="hasClickedContributions && !hasClickedAddLP && !hasClickedAddResource"></app-contribute><br><br><br>
-        <app-addlearningplan *ngIf="hasClickedAddLP"></app-addlearningplan>
-        <app-addresource *ngIf="hasClickedAddResource"></app-addresource>
-    </div>
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle(); clickedRight();" *ngIf="hasClickedLeft">
+        <mat-icon class="add">add</mat-icon>
+    </button>
+    <button type="button" mat-button (click)="drawer.toggle();clickedLeft()" *ngIf="hasClickedRight">
+        <mat-icon  class="clear">clear</mat-icon>
+    </button>
+    <app-contribute *ngIf="hasClickedContributions && !hasClickedAddLP && !hasClickedAddResource"></app-contribute><br><br><br>
+    <app-addlearningplan *ngIf="hasClickedAddLP"></app-addlearningplan>
+    <app-addresource *ngIf="hasClickedAddResource"></app-addresource>
+  </div>
 
 </mat-drawer-container>

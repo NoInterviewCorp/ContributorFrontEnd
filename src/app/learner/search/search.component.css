@@ -1,0 +1,94 @@
+.example-form{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding-top: 20px;
+}
+mat-form-field{
+  width: 50%;   
+}
+  .example-card
+  {
+      flex: 20%;
+  }
+
+
+  .flex{
+    display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  padding-top: 20px;
+  }
+
+  .flex1{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    justify-content: center;
+  }
+
+  .wrapper {
+      text-align: center;
+  }
+
+  .button-flex{
+      margin-left: 40px;
+      margin-right:16px
+  }
+
+  /* .cards {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+  } */
+  .cards2 {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    /* align-items: center;
+    align-content: center;
+    justify-content: center; */
+    /* width: 100%; */
+ }
+ .cards a:hover{
+  text-decoration: none;
+}
+  
+
+.techCard_ {
+    flex: 0 0 200px;
+    width:300px;
+    margin: 10px;
+    margin-left:0;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    text-align : center;
+}
+
+
+  .askq {
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 20px;
+  }
+
+  .card-title_ {
+    text-align : center;
+  }
+
+
+  .cards_3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  

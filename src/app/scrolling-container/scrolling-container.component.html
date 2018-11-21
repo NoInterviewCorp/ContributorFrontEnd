@@ -1,6 +1,12 @@
+<!-- <h1 *ngIf="choice==1">Your Contributions</h1><br> -->
+<div class="contributionedit" style="flex:200px;">
 <div class="contribution-card-container">
     <div *ngFor="let item of plan">
-        <app-yourcontributionscard [plan]="item" *ngIf="choice==1"></app-yourcontributionscard>
+        <app-yourcontributionscard [plan]="item" *ngIf="choice==1" (hasClickedEdit)=handleEdit($event)></app-yourcontributionscard>
         <app-subscribecard [plan]="item" *ngIf="choice==3"></app-subscribecard>
     </div>
+</div>
+
+<app-editlearningplan *ngIf="hasClickedEditLP" style="flex:800px;"></app-editlearningplan>
+
 </div>
