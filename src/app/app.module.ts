@@ -34,6 +34,7 @@ import { AddtopicComponent } from './addtopic/addtopic.component';
 import { SubscribecardComponent } from './scrolling-container/subscribecard/subscribecard.component';
 import { YourcontributionscardComponent } from './scrolling-container/yourcontributionscard/yourcontributionscard.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
+import { LearningplanviewComponent } from './learningplanview/learningplanview.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -73,6 +74,7 @@ export function getAuthServiceConfigs() {
     SubscribecardComponent,
     YourcontributionscardComponent,
     EditlearningplanComponent,
+    LearningplanviewComponent,
   ],
   imports: [
     BrowserModule,

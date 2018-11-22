@@ -12,6 +12,7 @@ import { AddresourceComponent } from './addresource/addresource.component';
 import { AddlearningplanComponent } from './addlearningplan/addlearningplan.component';
 import { AppComponent } from './app.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
+import { LearningplanviewComponent } from './learningplanview/learningplanview.component';
 
 const routes: Routes = [
   //{path: 'home',component: HomeComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'test', component: TestComponent },
   { path: 'home' , component: AppComponent},
   {path: 'profilepage',component: ProfileComponent},
-  {path: 'editlearningplan', component: EditlearningplanComponent}
+  {path: 'editlearningplan', component: EditlearningplanComponent},
+  {path: 'learningplanview', component: LearningplanviewComponent}
 ];
 
 @NgModule({
