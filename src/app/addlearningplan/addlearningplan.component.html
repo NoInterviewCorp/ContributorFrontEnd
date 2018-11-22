@@ -18,14 +18,24 @@
                 <mat-hint>Describe your plan</mat-hint>
             </mat-form-field>
             <div>
-                <button mat-button color="black" (click)="clickedAddResource()">Add Resource</button>
+                <button mat-raised-button color="black" (click)="clickedAddResource()">Add Resource</button>
             </div>
         </form>
+        <div class="pom-c-resourcecard" *ngFor="let res of resources">
+            <mat-card  class="pom-c-card">{{res.ResourceName}}</mat-card>
+            <button mat-raised-button class="pom-c-button">Add Questions</button>
+        </div>
     </div>
     <div class="resource">
         <app-addresource *ngIf="hasClickedAddResource && !hasClickedSaveResource" (hasClickedSave)="handleSave($event)"></app-addresource>
     </div>
 </div>
+
+
+
+
+
+
 <!-- <h3>Your Plan starts here....</h3>
 <div class="accordianandbuttons">
     <div class="buttons">

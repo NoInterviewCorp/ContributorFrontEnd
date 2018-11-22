@@ -47,7 +47,7 @@ export class TestComponent implements OnInit {
     //  console.log(this.questions);
     this.showTimer = true;
     this.showProgressBar = true;
-    this.questions = this.testService.getQuestions();
+    // this.questions = this.testService.getQuestions();
     this.showNextButton = true;
     this.showQuesButton = false;
     this.questionCounter = 0;

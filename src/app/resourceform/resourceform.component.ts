@@ -19,9 +19,20 @@ export interface Concept {
 
 export class ResourceformComponent implements OnInit {
   @Input() id: number;
-  @Output() noError = new EventEmitter();
-  @Output() addQuestions = new EventEmitter();
-  resource:Resource;
+   @Output() noError = new EventEmitter();
+   @Output() addQuestions = new EventEmitter();
+  @Output() hasClickedDone=new EventEmitter();
+  resource:Resource = {
+    ResourceId:"",
+    ResourceName:"",
+    ResourceLink:"",
+    Description:"",
+    BloomsTaxonomy: 1,
+    Technology: {
+      technologyId : 0,
+      Name : ""
+    }
+  };
   //  hasClickedAddQuestions:boolean;
   results: any = [];
   constructor(private com: CommunicatorService) { }
@@ -87,5 +98,9 @@ export class ResourceformComponent implements OnInit {
   clickedAddQuestions() {
     // this.hasClickedAddQuestions = true;
     this.addQuestions.emit(true);
+  }
+  clickedDone(){
+    this.com.addResource=this.resource;
+    this.hasClickedDone.emit(true);
   }
 }

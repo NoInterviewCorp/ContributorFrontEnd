@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Technology } from 'src/app/technology.model';
+import { Questions} from 'src/app/question.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +20,11 @@ export class TestService {
     return TestService.tech;
   }
 
-  getQuestions() {
-    // console.log("No of Questions are : "+TestService.tech.Questions );
-    console.log((TestService.tech == null ? "NACHO NULL HUA" : TestService.tech.Questions));
-    return TestService.tech.Questions;
-  }
+  // getQuestions() {
+  //   // console.log("No of Questions are : "+TestService.tech.Questions );
+  //   console.log((TestService.tech == null ? "NACHO NULL HUA" : TestService.tech.Questions));
+  //   return TestService.tech.Questions;
+  // }
 
 
 }

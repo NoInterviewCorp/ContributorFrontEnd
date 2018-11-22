@@ -17,12 +17,16 @@ export class AddresourceComponent implements OnInit {
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
   @Output() hasClickedSave = new EventEmitter();
+  hasClickedDone:boolean;
   constructor() { }
 
   ngOnInit() {
   }
   clickedSave() {
     this.hasClickedSave.emit(true);
+    }
+    handleDone(done){
+      this.hasClickedDone=done;
     }
   // addResource() {
   //   //console.log("clicked");

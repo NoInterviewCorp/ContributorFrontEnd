@@ -25,8 +25,6 @@ mat-form-field{
 }
 button {
   margin-top: 20px;
-  /* background-color: black;
-  color: white; */
 }
 .example-form {
   display: flex;
@@ -36,3 +34,18 @@ button {
   justify-content: center;
   align-content: center;
 }
+.pom-c-resourcecard{
+  margin-top: 20px;
+   display: flex;
+  flex-direction: row; 
+}
+.pom-c-card{
+  background-color: #080357;
+  color: white;
+  flex: 7;
+  margin-right: 20px;
+}
+.pom.c.button{
+  flex: 3;
+}
+

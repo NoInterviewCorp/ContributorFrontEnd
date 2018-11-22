@@ -1,10 +1,3 @@
-
-.closebutton{
-    padding-left: 10px;
-    padding-bottom: 20px;
+button{
+    margin-top: 10px;
 }
-
-/* .questionbutton{
-    display: flex;
-    flex-direction: column;
-} */
