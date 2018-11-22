@@ -4,7 +4,9 @@
 }
 
 .pom-c-navbar {
-  position: sticky;
+  position: fixed;
+  z-index: 99999;
+  height: 11vh;
 }
 
 .pom-l-spacer {

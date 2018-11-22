@@ -4,6 +4,7 @@ import { MatChipInputEvent } from '@angular/material';
 import { QuestionsComponent } from '../questions/questions.component';
 import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CommunicatorService } from '../services/communicator.service';
+import { Resource } from 'src/models/resource.model';
 
 
 export interface Concept {
@@ -20,6 +21,7 @@ export class ResourceformComponent implements OnInit {
   @Input() id: number;
   @Output() noError = new EventEmitter();
   @Output() addQuestions = new EventEmitter();
+  resource:Resource;
   //  hasClickedAddQuestions:boolean;
   results: any = [];
   constructor(private com: CommunicatorService) { }

@@ -1,32 +1,16 @@
-
-.example-container {
-  width: 100%;
+.example-sidenav {
+  position: fixed;
+  padding: 0;
+}
+  .example-container {
   height: 100%;
 }
 
 .example-sidenav-content {
-  display: flex;
+  margin-top: 100px;
   flex-wrap: wrap;
 }
-
-.example-sidenav {
-    position: fixed;
-    height: 100%;
-    padding: 0;
+mat-list{
+  margin-top: 70px;
 }
 
-button {
-  font-size: 18px;
-}
-
-mat-icon {
-  font-size: 50px;
-}
-
-.add{
-  color: rgb(18, 150, 18);
-}
-
-.clear {
-color:rgb(2, 2, 150);
-}

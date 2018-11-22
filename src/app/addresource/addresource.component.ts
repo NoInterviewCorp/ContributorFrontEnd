@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ErrorStatus } from '../questions/errorstatus.model';
+// import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-addresource',
@@ -15,16 +16,19 @@ export class AddresourceComponent implements OnInit {
   hasnoerror: boolean = false;
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
+  @Output() hasClickedSave = new EventEmitter();
   constructor() { }
 
   ngOnInit() {
   }
-
-  addResource() {
-    //console.log("clicked");
-    this.hasClickedAdd = true;
-    this.resources.push(++this.lastNumber);
-  }
+  clickedSave() {
+    this.hasClickedSave.emit(true);
+    }
+  // addResource() {
+  //   //console.log("clicked");
+  //   this.hasClickedAdd = true;
+  //   this.resources.push(++this.lastNumber);
+  // }
   handleEventEmitter(errorstatus: ErrorStatus) {
     //this.noerror = hasNoError
     // console.log(hasNoError);
@@ -32,10 +36,10 @@ export class AddresourceComponent implements OnInit {
     this.noerror[index] = errorstatus.HasError;
     //this.questionObjs[index] = errorstatus.QuestionObj;
   }
-  handleAddQuestions(addquestions) {
-    this.hasClickedAddQuestions = addquestions;
-    this.hasClickedClose = false;
-  }
+  // handleAddQuestions(addquestions) {
+  //   this.hasClickedAddQuestions = addquestions;
+  //   this.hasClickedClose = false;
+  // }
   onClick() {
     let result: boolean;
     for (let i = 0; i < this.noerror.length - 1; i++) {

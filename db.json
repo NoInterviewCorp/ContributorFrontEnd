@@ -1,321 +1,574 @@
 {
-"Technology" :[ 
-{   
-"Name": "Angular",
-"Questions": [
-{
-"QuestionId": 1,
-"ProblemStatement": "Angular-Components and templates",
-"Options": [
-{
-    "OptionId": 1,
-    "Content": "angular-components and templates- q1o1",
-    "IsCorrect": true
-},
-{
-    "OptionId": 2,
-    "Content": "angular-components and templates- q1o2",
-    "IsCorrect": false
-},
-{
-    "OptionId": 3,
-    "Content": "angular-components and templates- q1o3",
-    "IsCorrect": false
-},
-{
-    "OptionId": 4,
-    "Content": "angular-components and templates- q1o4",
-    "IsCorrect": false
-}
-],
-"ResourceLink": "your.web.site",
-"BloomLevel": 1
-}
-]
-},
-{   
-"Name": "Python",
-"Questions": [
-{
-"QuestionId": 1,
-"ProblemStatement": "Python",
-"Options": [
-{
-    "OptionId": 1,
-    "Content": "Python- q1o1",
-    "IsCorrect": true
-},
-{
-    "OptionId": 2,
-    "Content": "Python- q1o2",
-    "IsCorrect": false
-},
-{
-    "OptionId": 3,
-    "Content": "Python- q1o3",
-    "IsCorrect": false
-},
-{
-    "OptionId": 4,
-    "Content": "Python q1o4",
-    "IsCorrect": false
-}
-],
-"ResourceLink": "your.web.site",
-"BloomLevel": 1
-}
-]
-},
-{   
-"Name": "Cloud Computing",
-"Questions": [
-{
-"QuestionId": 1,
-"ProblemStatement": "Cloud Computing",
-"Options": [
-{
-    "OptionId": 1,
-    "Content": "Cloud Computing- q1o1",
-    "IsCorrect": true
-},
-{
-    "OptionId": 2,
-    "Content": "Cloud Computing- q1o2",
-    "IsCorrect": false
-},
-{
-    "OptionId": 3,
-    "Content": "Cloud Computing- q1o3",
-    "IsCorrect": false
-},
-{
-    "OptionId": 4,
-    "Content": "Cloud Computing q1o4",
-    "IsCorrect": false
-}
-],
-"ResourceLink": "your.web.site",
-"BloomLevel": 1
-}
-]
-},
-
-{   
-"Name": "C",
-"Questions": [
-{
-"QuestionId": 1,
-"ProblemStatement": "C",
-"Options": [
-{
-    "OptionId": 1,
-    "Content": "c- q1o1",
-    "IsCorrect": true
-},
-{
-    "OptionId": 2,
-    "Content": "c q1o2",
-    "IsCorrect": false
-},
-{
-    "OptionId": 3,
-    "Content": "c- q1o3",
-    "IsCorrect": false
-},
-{
-    "OptionId": 4,
-    "Content": "c- q1o4",
-    "IsCorrect": false
-}
-],
-"ResourceLink": "your.web.site",
-"BloomLevel": 1
-}
-]
-},
-{   
-"Name": "C#",
-"Questions": [
-{
-"QuestionId": 1,
-"ProblemStatement": "c#",
-"Options": [
-{
-    "OptionId": 1,
-    "Content": "c#- q1o1",
-    "IsCorrect": true
-},
-{
-    "OptionId": 2,
-    "Content": "c#- q1o2",
-    "IsCorrect": false
-},
-{
-    "OptionId": 3,
-    "Content": "c#- q1o3",
-    "IsCorrect": false
-},
-{
-    "OptionId": 4,
-    "Content": "c#- q1o4",
-    "IsCorrect": false
-}
-],
-"ResourceLink": "your.web.site",
-"BloomLevel": 1
-}
-]
-},
-{   
-"Name": "dbms",
-"Questions": [
-{
-"QuestionId": 1,
-"ProblemStatement": "c#",
-"Options": [
-{
-    "OptionId": 1,
-    "Content": "c#- q1o1",
-    "IsCorrect": true
-},
-{
-    "OptionId": 2,
-    "Content": "c#- q1o2",
-    "IsCorrect": false
-},
-{
-    "OptionId": 3,
-    "Content": "c#- q1o3",
-    "IsCorrect": false
-},
-{
-    "OptionId": 4,
-    "Content": "c#- q1o4",
-    "IsCorrect": false
-}
-],
-"ResourceLink": "your.web.site",
-"BloomLevel": 1
-}
-]
-}
-],
-
-"LearningPlan" :[
-{
-"LearningPlanID": 1,
-"Avatar":"../../assets/placeholder-team.jpg",
-"DownVotes": 15,
-"UpVotes": 22,
-"Owner": "Max",
-"Summary": "Java learning plan suited for beginners, experts.",
-"Technology": "Java",
-"Topics": [
-{"TopicId":101,
-"Name":"OOPS",
-"Resources":[{"ResourceId":1,"ResourceLink":"link1"},{"ResourceId":2,"ResourceLink":"link2"},
-{"ResourceId":3,"ResourceLink":"link3"},{"ResourceId":4,"ResourceLink":"link4"}]
-},
-{"TopicId":102,
-"Name":"Loops",
-"Resources":[{"ResourceId":5,"ResourceLink":"link1"},{"ResourceId":6,"ResourceLink":"link2"},
-{"ResourceId":7,"ResourceLink":"link3"},{"ResourceId":8,"ResourceLink":"link4"}]
-},
-{"TopicId":103,
-"Name":"Collections",
-"Resources":[{"ResourceId":9,"ResourceLink":"link1"},{"ResourceId":10,"ResourceLink":"link2"},
-{"ResourceId":11,"ResourceLink":"link3"},{"ResourceId":12,"ResourceLink":"link4"}]
-}
-]
-
-},
-{
-"LearningPlanID": 2,
-"Avatar":"../../assets/placeholder-team.jpg",
-"DownVotes": 15,
-"UpVotes": 22,
-"Owner": "Max",
-"Summary": "Python learning plan suited for beginners, experts.",
-"Technology": "Python",
-"Topics": [
-{"TopicId":104,
-    "Name":"OOPS",
-    "Resources":[{"ResourceId":1,"ResourceLink":"link1"},{"ResourceId":2,"ResourceLink":"link2"},
-    {"ResourceId":3,"ResourceLink":"link3"},{"ResourceId":4,"ResourceLink":"link4"}]
-},
-{"TopicId":105,
-    "Name":"Loops",
-    "Resources":[{"ResourceId":5,"ResourceLink":"link5"},{"ResourceId":6,"ResourceLink":"link6"},
-        {"ResourceId":7,"ResourceLink":"link7"},{"ResourceId":8,"ResourceLink":"link8"}]
-    },
-    {"TopicId":106,
-    "Name":"Arrays",
-    "Resources":[{"ResourceId":9,"ResourceLink":"link1"},{"ResourceId":10,"ResourceLink":"link2"},
-        {"ResourceId":11,"ResourceLink":"link3"},{"ResourceId":12,"ResourceLink":"link4"}]
-    }
-]
-
-},
-{
-    "LearningPlanID": 3,
-    "Avatar":"../../assets/placeholder-team.jpg",
-    "DownVotes": 15,
-    "UpVotes": 22,
-    "Owner": "Max",
-    "Summary": "C learning plan suited for beginners, experts.",
-    "Technology": "C",
-    "Topics": [
-        {"TopicId":107,
-            "Name":"OOPS",
-            "Resources":[{"ResourceId":1,"ResourceLink":"link1"},{"ResourceId":2,"ResourceLink":"link2"},
-            {"ResourceId":3,"ResourceLink":"link3"},{"ResourceId":4,"ResourceLink":"link4"}]
+    "Technology": [
+        {
+            "Name": "Angular",
+            "Questions": [
+                {
+                    "QuestionId": 1,
+                    "ProblemStatement": "Angular-Components and templates",
+                    "Options": [
+                        {
+                            "OptionId": 1,
+                            "Content": "angular-components and templates- q1o1",
+                            "IsCorrect": true
+                        },
+                        {
+                            "OptionId": 2,
+                            "Content": "angular-components and templates- q1o2",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 3,
+                            "Content": "angular-components and templates- q1o3",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 4,
+                            "Content": "angular-components and templates- q1o4",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "ResourceLink": "your.web.site",
+                    "BloomLevel": 1
+                }
+            ]
         },
-        {"TopicId":108,
-            "Name":"Loops",
-            "Resources":[{"ResourceId":5,"ResourceLink":"link5"},{"ResourceId":6,"ResourceLink":"link6"},
-                {"ResourceId":7,"ResourceLink":"link7"},{"ResourceId":8,"ResourceLink":"link8"}]
-            },
-            {"TopicId":109,
-            "Name":"Arrays",
-            "Resources":[{"ResourceId":9,"ResourceLink":"link9"},{"ResourceId":10,"ResourceLink":"link10"},
-                {"ResourceId":11,"ResourceLink":"link11"},{"ResourceId":12,"ResourceLink":"link12"}]
-            }
-    ]
-    
+        {
+            "Name": "Python",
+            "Questions": [
+                {
+                    "QuestionId": 1,
+                    "ProblemStatement": "Python",
+                    "Options": [
+                        {
+                            "OptionId": 1,
+                            "Content": "Python- q1o1",
+                            "IsCorrect": true
+                        },
+                        {
+                            "OptionId": 2,
+                            "Content": "Python- q1o2",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 3,
+                            "Content": "Python- q1o3",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 4,
+                            "Content": "Python q1o4",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "ResourceLink": "your.web.site",
+                    "BloomLevel": 1
+                }
+            ]
+        },
+        {
+            "Name": "Cloud Computing",
+            "Questions": [
+                {
+                    "QuestionId": 1,
+                    "ProblemStatement": "Cloud Computing",
+                    "Options": [
+                        {
+                            "OptionId": 1,
+                            "Content": "Cloud Computing- q1o1",
+                            "IsCorrect": true
+                        },
+                        {
+                            "OptionId": 2,
+                            "Content": "Cloud Computing- q1o2",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 3,
+                            "Content": "Cloud Computing- q1o3",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 4,
+                            "Content": "Cloud Computing q1o4",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "ResourceLink": "your.web.site",
+                    "BloomLevel": 1
+                }
+            ]
+        },
+        {
+            "Name": "C",
+            "Questions": [
+                {
+                    "QuestionId": 1,
+                    "ProblemStatement": "C",
+                    "Options": [
+                        {
+                            "OptionId": 1,
+                            "Content": "c- q1o1",
+                            "IsCorrect": true
+                        },
+                        {
+                            "OptionId": 2,
+                            "Content": "c q1o2",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 3,
+                            "Content": "c- q1o3",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 4,
+                            "Content": "c- q1o4",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "ResourceLink": "your.web.site",
+                    "BloomLevel": 1
+                }
+            ]
+        },
+        {
+            "Name": "C#",
+            "Questions": [
+                {
+                    "QuestionId": 1,
+                    "ProblemStatement": "c#",
+                    "Options": [
+                        {
+                            "OptionId": 1,
+                            "Content": "c#- q1o1",
+                            "IsCorrect": true
+                        },
+                        {
+                            "OptionId": 2,
+                            "Content": "c#- q1o2",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 3,
+                            "Content": "c#- q1o3",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 4,
+                            "Content": "c#- q1o4",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "ResourceLink": "your.web.site",
+                    "BloomLevel": 1
+                }
+            ]
+        },
+        {
+            "Name": "dbms",
+            "Questions": [
+                {
+                    "QuestionId": 1,
+                    "ProblemStatement": "c#",
+                    "Options": [
+                        {
+                            "OptionId": 1,
+                            "Content": "c#- q1o1",
+                            "IsCorrect": true
+                        },
+                        {
+                            "OptionId": 2,
+                            "Content": "c#- q1o2",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 3,
+                            "Content": "c#- q1o3",
+                            "IsCorrect": false
+                        },
+                        {
+                            "OptionId": 4,
+                            "Content": "c#- q1o4",
+                            "IsCorrect": false
+                        }
+                    ],
+                    "ResourceLink": "your.web.site",
+                    "BloomLevel": 1
+                }
+            ]
+        }
+    ],
+    "LearningPlan": [
+        {
+            "LearningPlanID": 1,
+            "Avatar": "../../assets/placeholder-team.jpg",
+            "DownVotes": 15,
+            "UpVotes": 22,
+            "Owner": "Max",
+            "Summary": "Java learning plan suited for beginners, experts.",
+            "Technology": "Java",
+            "Topics": [
+                {
+                    "TopicId": 101,
+                    "Name": "OOPS",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 1,
+                            "ResourceLink": "link1"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 2,
+                            "ResourceLink": "link2"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 3,
+                            "ResourceLink": "link3"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 4,
+                            "ResourceLink": "link4"
+                        }
+                    ]
+                },
+                {
+                    "TopicId": 102,
+                    "Name": "Loops",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 5,
+                            "ResourceLink": "link1"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 6,
+                            "ResourceLink": "link2"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 7,
+                            "ResourceLink": "link3"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 8,
+                            "ResourceLink": "link4"
+                        }
+                    ]
+                },
+                {
+                    "TopicId": 103,
+                    "Name": "Collections",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 9,
+                            "ResourceLink": "link1"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 10,
+                            "ResourceLink": "link2"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 11,
+                            "ResourceLink": "link3"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 12,
+                            "ResourceLink": "link4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "LearningPlanID": 2,
+            "Avatar": "../../assets/placeholder-team.jpg",
+            "DownVotes": 15,
+            "UpVotes": 22,
+            "Owner": "Max",
+            "Summary": "Python learning plan suited for beginners, experts.",
+            "Technology": "Python",
+            "Topics": [
+                {
+                    "TopicId": 104,
+                    "Name": "OOPS",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 1,
+                            "ResourceLink": "link1"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 2,
+                            "ResourceLink": "link2"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 3,
+                            "ResourceLink": "link3"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 4,
+                            "ResourceLink": "link4"
+                        }
+                    ]
+                },
+                {
+                    "TopicId": 105,
+                    "Name": "Loops",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 5,
+                            "ResourceLink": "link5"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 6,
+                            "ResourceLink": "link6"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 7,
+                            "ResourceLink": "link7"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 8,
+                            "ResourceLink": "link8"
+                        }
+                    ]
+                },
+                {
+                    "TopicId": 106,
+                    "Name": "Arrays",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 9,
+                            "ResourceLink": "link1"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 10,
+                            "ResourceLink": "link2"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 11,
+                            "ResourceLink": "link3"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 12,
+                            "ResourceLink": "link4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "LearningPlanID": 3,
+            "Avatar": "../../assets/placeholder-team.jpg",
+            "DownVotes": 15,
+            "UpVotes": 22,
+            "Owner": "Max",
+            "Summary": "C learning plan suited for beginners, experts.",
+            "Technology": "C",
+            "Topics": [
+                {
+                    "TopicId": 107,
+                    "Name": "OOPS",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 1,
+                            "ResourceLink": "link1"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 2,
+                            "ResourceLink": "link2"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 3,
+                            "ResourceLink": "link3"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 4,
+                            "ResourceLink": "link4"
+                        }
+                    ]
+                },
+                {
+                    "TopicId": 108,
+                    "Name": "Loops",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 5,
+                            "ResourceLink": "link5"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 6,
+                            "ResourceLink": "link6"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 7,
+                            "ResourceLink": "link7"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 8,
+                            "ResourceLink": "link8"
+                        }
+                    ]
+                },
+                {
+                    "TopicId": 109,
+                    "Name": "Arrays",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 9,
+                            "ResourceLink": "link9"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 10,
+                            "ResourceLink": "link10"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 11,
+                            "ResourceLink": "link11"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 12,
+                            "ResourceLink": "link12"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "LearningPlanID": 4,
-            "Avatar":"../../assets/placeholder-team.jpg",
+            "Avatar": "../../assets/placeholder-team.jpg",
             "DownVotes": 15,
             "UpVotes": 22,
             "Owner": "Max",
             "Summary": "Angular learning plan suited for beginners, experts.",
             "Technology": "Angular",
             "Topics": [
-                {"TopicId":107,
-                    "Name":"OOPS",
-                    "Resources":[{"ResourceId":1,"ResourceLink":"link1"},{"ResourceId":2,"ResourceLink":"link2"},
-                    {"ResourceId":3,"ResourceLink":"link3"},{"ResourceId":4,"ResourceLink":"link4"}]
+                {
+                    "TopicId": 107,
+                    "Name": "OOPS",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 1,
+                            "ResourceLink": "link1"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 2,
+                            "ResourceLink": "link2"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 3,
+                            "ResourceLink": "link3"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 4,
+                            "ResourceLink": "link4"
+                        }
+                    ]
                 },
-                {"TopicId":108,
-                    "Name":"Loops",
-                    "Resources":[{"ResourceId":5,"ResourceLink":"link5"},{"ResourceId":6,"ResourceLink":"link6"},
-                        {"ResourceId":7,"ResourceLink":"link7"},{"ResourceId":8,"ResourceLink":"link8"}]
-                    },
-                    {"TopicId":109,
-                    "Name":"Arrays",
-                    "Resources":[{"ResourceId":9,"ResourceLink":"link9"},{"ResourceId":10,"ResourceLink":"link10"},
-                        {"ResourceId":11,"ResourceLink":"link11"},{"ResourceId":12,"ResourceLink":"link12"}]
-                    }
-            ]
-            
+                {
+                    "TopicId": 108,
+                    "Name": "Loops",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 5,
+                            "ResourceLink": "link5"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 6,
+                            "ResourceLink": "link6"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 7,
+                            "ResourceLink": "link7"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 8,
+                            "ResourceLink": "link8"
+                        }
+                    ]
+                },
+                {
+                    "TopicId": 109,
+                    "Name": "Arrays",
+                    "Resources": [
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 9,
+                            "ResourceLink": "link9"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 10,
+                            "ResourceLink": "link10"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 11,
+                            "ResourceLink": "link11"
+                        },
+                        {
+                            "ResourceName": "aa",
+                            "ResourceId": 12,
+                            "ResourceLink": "link12"
+                        }
+                    ]
                 }
-        
-
-],
-"Concept":[
-{"name":"OOPS"}, {"name":"File Handling"},{"name":"API"},{"name": "Loops"}
-]
-
-
+            ]
+        }
+    ],
+    "Concept": [
+        {
+            "name": "OOPS"
+        },
+        {
+            "name": "File Handling"
+        },
+        {
+            "name": "API"
+        },
+        {
+            "name": "Loops"
+        }
+    ]
 }

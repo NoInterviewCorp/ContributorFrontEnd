@@ -8,21 +8,31 @@ import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
   styleUrls: ['./addlearningplan.component.css']
 })
 export class AddlearningplanComponent implements OnInit {
-  hasClickedAdd:boolean;
-  topics: Array<number> = [1];
-  lastNumber = this.topics.length;
-  topicName:string;
+  // hasClickedAdd:boolean;
+  // topics: Array<number> = [1];
+  // lastNumber = this.topics.length;
+  // topicName:string;
+  hasClickedAddResource:boolean;
+  hasClickedSaveResource:boolean;
 
   constructor() { }
 
   ngOnInit() {
   }
-  
-  addResource() {
-    this.hasClickedAdd = true;
-    this.topics.push(++this.lastNumber);
+  handleSave(save:boolean){
+    this.hasClickedSaveResource=save;
+    console.log(this.hasClickedSaveResource);
   }
+  
+  // addResource() {
+  //   this.hasClickedAdd = true;
+  //   this.topics.push(++this.lastNumber);
+  // }
    postLearningPlan(){ 
+   }
+   clickedAddResource(){
+     this.hasClickedAddResource=true;
+     this.hasClickedSaveResource=false;
    }
     
 }

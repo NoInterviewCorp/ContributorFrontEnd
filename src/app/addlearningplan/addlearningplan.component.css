@@ -1,7 +1,33 @@
 body {
   font-size: 10px;
 }
+.LPresource{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  margin-bottom: 20px;
+}
+.learningplan{
+  flex: 5;
+  height: 100%;
 
+}
+.resource{
+  flex: 5;
+  margin-left: 25px;
+  height: 100%;
+}
+mat-form-field{
+  width: 100%;
+  font-size: 17px;
+  margin-top: 20px;
+}
+button {
+  margin-top: 20px;
+  /* background-color: black;
+  color: white; */
+}
 .example-form {
   display: flex;
   flex-direction: column;
@@ -10,65 +36,3 @@ body {
   justify-content: center;
   align-content: center;
 }
-
-.field {
-  width: 100%;
-  padding-top: 20px;
-}
-
-.fields {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-  padding-top: 20px;
-}
-
-.textarea {
-  width: 100%;
-  padding-top: 20px;
-}
-
-.accordianandbuttons {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  padding-top: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-mat-accordion {
-  width: 110%;
-  padding-top: 20px;
-}
-
-h3 {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  padding-top: 10px;
-}
-
-.buttons {
-  display: inline-flex;
-  flex-direction: row;
-}
-
-button {
-  margin-right: 10px;
-  background-color: black;
-  color: white;
-}
-
-p {
-  font-size: 13px;
-}
-
