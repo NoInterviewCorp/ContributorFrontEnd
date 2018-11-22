@@ -13,9 +13,11 @@ import { AddlearningplanComponent } from './addlearningplan/addlearningplan.comp
 import { AppComponent } from './app.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
 import { LearningplanviewComponent } from './learningplanview/learningplanview.component';
+import { LearnerComponent } from './learner/learner.component';
 
 const routes: Routes = [
   //{path: 'home',component: HomeComponent},
+  { path: '', component: HomeComponent },
   { path: 'profile', component: LandingComponent },
   { path: 'contribute', component: ContibutorhomeComponent },
   { path: 'questions', component: QuestionsComponent },
@@ -25,7 +27,12 @@ const routes: Routes = [
   { path: 'home' , component: AppComponent},
   {path: 'profilepage',component: ProfileComponent},
   {path: 'editlearningplan', component: EditlearningplanComponent},
-  {path: 'learningplanview', component: LearningplanviewComponent}
+  {path: 'learningplanview', component: LearningplanviewComponent},
+  { path: 'profilepage',component: ProfileComponent},
+  { path: 'editlearningplan', component: EditlearningplanComponent},
+  { path: 'test', component: TestComponent },
+  { path: 'learner', component: LearnerComponent },
+  { path: 'login', component: SignInComponent },
 ];
 
 @NgModule({

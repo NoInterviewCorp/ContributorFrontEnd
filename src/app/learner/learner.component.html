@@ -1,55 +1,23 @@
-<br> 
-<!-- <app-search>
-  
-</app-search>
-<h1>Your Subscriptions...</h1>
-<app-scrolling-container [choice]=2>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <mat-list>
+      <mat-list-item><button mat-button (click)="clickedTech()">Technologies</button></mat-list-item>
+      <mat-list-item><button mat-button (click)="clickedSubs()">Your Subscriptions</button></mat-list-item>
+    </mat-list>
+  </mat-drawer>
 
-    </app-scrolling-container> --> 
+  <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle(); clickedRight();" *ngIf="hasClickedLeft">
+      <mat-icon>add</mat-icon>
+    </button>
 
-    <!-- <br>
-    <mat-drawer-container class="example-container">
-       <mat-drawer mode="side" opened>
-           <mat-list>
-               <mat-list-item><button mat-button (click)="clickedTech()">Technologies</button></mat-list-item>
-               <mat-list-item><button mat-button (click)="clickedSubs()">Your Subscriptions</button></mat-list-item>
-               <mat-list-item><button mat-button (click)="clickedLearn()">Learn</button></mat-list-item>
-              </mat-list>
-       </mat-drawer>
-       <mat-drawer-content>
-         <app-search *ngIf="hasClickedTech && !hasClickedSubs && !hasClickedLearn"></app-search>
-         <app-scrolling-container [choice]=2 *ngIf="hasClickedSubs">
-         </app-scrolling-container>
-         <app-scrolling-container [choice]=1 *ngIf="hasClickedLearn">
-         </app-scrolling-container>
-       </mat-drawer-content>
-     </mat-drawer-container> -->
+    <button type="button" mat-button (click)="drawer.toggle();clickedLeft()" *ngIf="hasClickedRight">
+      <mat-icon>clear</mat-icon>
+    </button>
 
+    <app-search *ngIf="hasClickedTech && !hasClickedSubs && !hasClickedLearn"></app-search>
+    <app-scrolling-container [choice]=2 *ngIf="hasClickedSubs"></app-scrolling-container>
+    <app-scrolling-container [choice]=1 *ngIf="hasClickedLearn"></app-scrolling-container>
+  </div>
 
-     <mat-drawer-container class="example-container" autosize>
-        <mat-drawer #drawer class="example-sidenav" mode="side">
-            <mat-list> <br><br><br><br>
-                <mat-list-item><button mat-button (click)="clickedTech()">Technologies</button></mat-list-item>
-                <mat-list-item><button mat-button (click)="clickedSubs()">Your Subscriptions</button></mat-list-item>
-                <!-- <mat-list-item><button mat-button (click)="clickedLearn()">Learn</button></mat-list-item> -->
-               </mat-list>
-        </mat-drawer>
-
-        <div class="example-sidenav-content">
-      
-            <button type="button" mat-button (click)="drawer.toggle(); clickedRight();" *ngIf="hasClickedLeft">
-                <mat-icon style="color: rgb(18, 150, 18);">add</mat-icon>
-            </button>
-            
-            <button type="button" mat-button (click)="drawer.toggle();clickedLeft()" *ngIf="hasClickedRight">
-                <mat-icon style="color:rgb(2, 2, 150);">clear</mat-icon>
-            </button>
-
-            <app-search *ngIf="hasClickedTech && !hasClickedSubs && !hasClickedLearn"></app-search>
-         <app-scrolling-container [choice]=2 *ngIf="hasClickedSubs">
-         </app-scrolling-container>
-         <app-scrolling-container [choice]=1 *ngIf="hasClickedLearn">
-         </app-scrolling-container>
-          </div>
-        
-        </mat-drawer-container>
+  </mat-drawer-container>

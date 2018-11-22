@@ -1,28 +1,25 @@
-<div>
-<div class="cards_3">
-  <div *ngFor="let tech of technology">
-    <div *ngIf="showTech">
-
-      <mat-card class="techCard_">
-        <mat-card-title class="card-title_">
+<div class="pom-l-container">
+  <h2>Domains</h2>
+  <div class="pom-l-flex_container">
+    <div *ngFor="let tech of technology">
+      <mat-card class="pom-c-card">
+        <mat-card-title>
           {{tech.Name}}
         </mat-card-title>
-        <br/><br/>
-        <div class="buttons_">
-        <mat-card-actions>
-            <button mat-button class="btn" (click)="setTech(tech)" routerLink="/test" routerLinkActive="active"><b>Take Test</b></button>
-            <button mat-button class="btn" (click)="noToggle(tech)"><b>Learn</b></button>
+        <mat-card-content class="pom-c-card__content">
+        </mat-card-content>
+        <mat-card-actions class="pom-l-action_buttons">
+          <button mat-button (click)="setTech(tech)" routerLink="/test" routerLinkActive="active">Take Test</button>
+          <button mat-button (click)="noToggle(tech)">Learn</button>
         </mat-card-actions>
-        </div>
-        </mat-card>
-      </div>
+      </mat-card>
     </div>
   </div>
-  <div *ngIf="showPopular">
-      <h1> Popular Plans for {{selectedTech}} >></h1>
-      <app-scrolling-container [choice]=3>
-        </app-scrolling-container>
-  </div>
+</div>
+
+<div *ngIf="showPopular">
+  <h1> Popular Plans for {{selectedTech}} >></h1>
+  <app-scrolling-container [choice]=3></app-scrolling-container>
 </div>
 
 
