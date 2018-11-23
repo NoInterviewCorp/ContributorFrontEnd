@@ -5,6 +5,7 @@ import { QuestionsComponent } from '../questions/questions.component';
 import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CommunicatorService } from '../services/communicator.service';
 import { Resource } from 'src/models/resource.model';
+import { Questions } from '../question.model';
 
 
 export interface Concept {
@@ -19,19 +20,25 @@ export interface Concept {
 
 export class ResourceformComponent implements OnInit {
   @Input() id: number;
-   @Output() noError = new EventEmitter();
-   @Output() addQuestions = new EventEmitter();
-  @Output() hasClickedDone=new EventEmitter();
-  resource:Resource = {
-    ResourceId:"",
-    ResourceName:"",
-    ResourceLink:"",
-    Description:"",
+  @Output() noError = new EventEmitter();
+  @Output() addQuestions = new EventEmitter();
+  @Output() hasClickedDone = new EventEmitter();
+  resource: Resource = {
+    ResourceId: "",
+    ResourceName: "",
+    ResourceLink: "",
+    Description: "",
     BloomsTaxonomy: 1,
     Technology: {
-      technologyId : 0,
-      Name : ""
-    }
+      technologyId: 0,
+      Name: ""
+    },
+    Questions: [{
+      QuestionId: 0,
+      ProblemStatement: "",
+      Options: [],
+    BloomLevel: 1,
+    }],
   };
   //  hasClickedAddQuestions:boolean;
   results: any = [];
@@ -99,8 +106,8 @@ export class ResourceformComponent implements OnInit {
     // this.hasClickedAddQuestions = true;
     this.addQuestions.emit(true);
   }
-  clickedDone(){
-    this.com.addResource=this.resource;
+  clickedDone() {
+    this.com.addResource = this.resource;
     this.hasClickedDone.emit(true);
   }
 }

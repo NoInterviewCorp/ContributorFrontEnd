@@ -1,21 +1,17 @@
-.inputs{
+ .inputs{
     display: inline-flex;
     flex-direction: row;
 }
+/*
 .options{
     width: 50%;
-}
-.flex-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-around;
-}
-
+} */
 mat-form-field{
-    width: 90%;
+    /* width: 90%; */
+    font-size: 17px;
 }
 button{
     background-color: rgb(33, 158, 207)
 }
+
 

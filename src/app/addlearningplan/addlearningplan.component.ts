@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { Resource } from 'src/models/resource.model';
 import { CommunicatorService } from '../services/communicator.service';
 
@@ -18,6 +17,7 @@ export class AddlearningplanComponent implements OnInit {
   hasClickedSaveResource:boolean;
   resource:Resource;
   resources:Resource[]=[];
+  hasClickedAddQuestions:boolean;
   constructor(private com:CommunicatorService) { }
 
   ngOnInit() {
@@ -39,6 +39,9 @@ export class AddlearningplanComponent implements OnInit {
    clickedAddResource(){
      this.hasClickedAddResource=true;
      this.hasClickedSaveResource=false;
+   }
+   clickedAddQuestions(){
+     this.hasClickedAddQuestions=true;
    }
     
 }

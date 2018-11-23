@@ -1,5 +1,6 @@
 import { BloomTaxonomy } from "src/app/bloomTaxonomy.model";
 import { Technology } from "src/app/technology.model";
+import { Questions } from "src/app/question.model";
 
 export class Resource{
     ResourceId:string;
@@ -8,4 +9,5 @@ export class Resource{
     Description:string;
     BloomsTaxonomy:BloomTaxonomy;
     Technology:Technology;
+    Questions:Questions[];
 }

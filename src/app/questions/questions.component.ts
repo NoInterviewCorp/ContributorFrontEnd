@@ -10,6 +10,7 @@ import { ErrorStatus } from './errorstatus.model';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
+  hasClickedSaveQuestion:boolean;
   questions: Array<number> = [1];
   questionObjs: Questions[] = [new Questions()];
   lastNumber = this.questions.length;
@@ -17,36 +18,36 @@ export class QuestionsComponent implements OnInit {
   haserror: boolean = false;
   hasnoerror: boolean = false;
   hasClickedAdd: boolean = false;
-  hasAdded5Qs: boolean = false;
+  hasAdded3Qs: boolean = false;
   constructor() { }
   //private bottomSheetRef: MatBottomSheetRef<QuestionsComponent>
   ngOnInit() {
   }
+handleSave(save){
+  this.hasClickedSaveQuestion=save;
+}
 
-
-  onClick() {
+  onClickOfSubmit() {
     let result: boolean;
     console.log("error is " + this.noerror);
-    // TURN THIS ON FOR TESTING ONE OR LESS THAN 5 QUESTION SUBMIT
-    // ******** TESTING PART STARTS HERE *********
-    // if (this.noerror.length > 1) {
-    //   for (let i = 0; i < this.noerror.length - 1; i++) {
-    //     result = (this.noerror[i]) && (this.noerror[i + 1]);
-    //   }
-    // } else {
-    //   result = this.noerror[0];
-    // }
-    // // *********** END *****************
-    // // Development Part FOR AT LEAST 5 QS
-    // // ******DEVELOPMENT BUILD PART STARTS HERE*****
-    if (!this.hasAdded5Qs) {
-      return;
-    }
-    else {
+    if (this.noerror.length > 1) {
       for (let i = 0; i < this.noerror.length - 1; i++) {
         result = (this.noerror[i]) && (this.noerror[i + 1]);
       }
+    } else {
+      result = this.noerror[0];
     }
+    // // *********** END *****************
+    // // Development Part FOR AT LEAST 5 QS
+    // // ******DEVELOPMENT BUILD PART STARTS HERE*****
+    // if (!this.hasAdded3Qs) {
+    //   return;
+    // }
+    // else {
+    //   for (let i = 0; i < this.noerror.length - 1; i++) {
+    //     result = (this.noerror[i]) && (this.noerror[i + 1]);
+    //   }
+    // }
     // // *********** END *****************
 
     console.log("result is " + result);
@@ -81,8 +82,8 @@ export class QuestionsComponent implements OnInit {
     this.questions.push(++this.lastNumber);
     this.noerror.push(false);
     this.questionObjs.push(new Questions);
-    if (this.questions.length >= 5) {
-      this.hasAdded5Qs = true;
-    }
+    // if (this.questions.length >= 3) {
+    //   this.hasAdded3Qs = true;
+    // }
   }
 }

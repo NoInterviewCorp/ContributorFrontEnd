@@ -4,6 +4,7 @@ import { OptionForm } from './optionform.model';
 import { Questions } from '../question.model';
 import { Options } from '../option.model';
 import { BloomTaxonomy } from '../bloomTaxonomy.model';
+import { CommunicatorService } from '../services/communicator.service';
 
 @Component({
   selector: 'app-questionform',
@@ -13,9 +14,17 @@ import { BloomTaxonomy } from '../bloomTaxonomy.model';
 export class QuestionformComponent implements OnInit {
   @Input() id: number;
   @Output() noError = new EventEmitter();
+  @Output() hasClickedSave = new EventEmitter();
+
+  // options:Options[] = ?
+  questions: Questions = {
+    QuestionId: 0,
+    ProblemStatement: "",
+    Options:[] ,
+    BloomLevel: 1,
+  }
   question = new FormControl('', [Validators.required]);
   options: OptionForm[] = [];
-
   questionObj: Questions = new Questions();
   resourcelink = new FormControl('', [Validators.required]);
   bloomlevel = new FormControl('', [Validators.required]);
@@ -27,11 +36,12 @@ export class QuestionformComponent implements OnInit {
     { key: 'item3' },
     { key: 'item4' },
   ];
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private com: CommunicatorService) {
     for (let i = 0; i < 4; i++) {
       this.options.push(new OptionForm());
+      this.questions.Options.push(new Options());
     }
-    this.questionObj.options = new Array(4).fill(new Options());
+    this.questionObj.Options = new Array(4).fill(new Options());
   }
 
   ngOnInit() {
@@ -60,7 +70,10 @@ export class QuestionformComponent implements OnInit {
     //this.selectedITEMS = selectedItems;
     return selectedItems.length ? selectedItems : null;
   }
-
+  clickedSave() {
+    this.hasClickedSave.emit(true);
+    this.com.addQuestion = this.questions;
+  }
   getErrorMessage() {
     this.noError.emit({ MemberId: this.id, HasError: false });
     this.isValidArray[0] = false;
@@ -86,25 +99,25 @@ export class QuestionformComponent implements OnInit {
   createQuestionObject(index) {
     switch (index) {
       case 0:
-        this.questionObj.problemStatement = this.question.value;
+        this.questionObj.ProblemStatement = this.question.value;
         break;
       case 1: case 2: case 3: case 4:
-        this.options[index - 1].option.content = this.options[index - 1].formControl.value;
+        this.options[index - 1].option.Content = this.options[index - 1].formControl.value;
         // console.log(this.options[index - 1].formControl.value)
-        this.options[index - 1].option.isCorrect = this.form.controls.items.value[index - 1].checkbox;
+        this.options[index - 1].option.IsCorrect = this.form.controls.items.value[index - 1].checkbox;
         break;
       case 5:
-        this.questionObj.resourceLink = this.resourcelink.value;
+        // this.questionObj.ResourceLink = this.resourcelink.value;
         break;
       case 6:
-        this.questionObj.bloomLevel = this.bloomlevel.value as BloomTaxonomy;
+        this.questionObj.BloomLevel = this.bloomlevel.value as BloomTaxonomy;
         break;
       default:
         console.log("Invalid value");
         break;
     }
     if (index < 5 && index > 0) {
-      this.questionObj.options[index - 1] = this.options[index - 1].option;
+      this.questionObj.Options[index - 1] = this.options[index - 1].option;
       // console.log( this.options[index-1].option);
     }
   }

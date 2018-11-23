@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ErrorStatus } from '../questions/errorstatus.model';
+import { Resource } from 'src/models/resource.model';
+import { CommunicatorService } from '../services/communicator.service';
 // import { EventEmitter } from 'events';
 
 @Component({
@@ -16,14 +18,17 @@ export class AddresourceComponent implements OnInit {
   hasnoerror: boolean = false;
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
+  resource:Resource;
   @Output() hasClickedSave = new EventEmitter();
   hasClickedDone:boolean;
-  constructor() { }
+  constructor(private com:CommunicatorService) { }
 
   ngOnInit() {
   }
   clickedSave() {
     this.hasClickedSave.emit(true);
+    // this.resource=this.com.addResource;
+    // console.log(this.resource);
     }
     handleDone(done){
       this.hasClickedDone=done;

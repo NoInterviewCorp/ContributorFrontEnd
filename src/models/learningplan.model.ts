@@ -1,4 +1,5 @@
 import { Topic } from "./topic.model";
+import { Resource } from "./resource.model";
 
 export class LearningPlan{
     LearningPlanID:number;
@@ -8,5 +9,5 @@ export class LearningPlan{
     DownVotes:number;
     Owner:string;
     Avatar:string;
-    Topics:Topic[];
+    Resources:Resource[];
 }
