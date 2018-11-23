@@ -12,7 +12,7 @@ import { CommunicatorService } from '../services/communicator.service';
   styleUrls: ['./questionform.component.css']
 })
 export class QuestionformComponent implements OnInit {
-  @Input() id: number;
+  id: number;
   @Output() noError = new EventEmitter();
   @Output() hasClickedSave = new EventEmitter();
 
@@ -20,8 +20,9 @@ export class QuestionformComponent implements OnInit {
   questions: Questions = {
     QuestionId: 0,
     ProblemStatement: "",
-    Options:[] ,
+    Options: [],
     BloomLevel: 1,
+    
   }
   question = new FormControl('', [Validators.required]);
   options: OptionForm[] = [];
@@ -42,6 +43,7 @@ export class QuestionformComponent implements OnInit {
       this.questions.Options.push(new Options());
     }
     this.questionObj.Options = new Array(4).fill(new Options());
+    this.id = this.com.getLastResourceIndex();
   }
 
   ngOnInit() {
@@ -71,8 +73,8 @@ export class QuestionformComponent implements OnInit {
     return selectedItems.length ? selectedItems : null;
   }
   clickedSave() {
-    this.hasClickedSave.emit(true);
-    this.com.addQuestion = this.questions;
+    this.com.addQuestionToResourceOfIndex(this.id, this.questions);
+    this.hasClickedSave.emit(this.id);
   }
   getErrorMessage() {
     this.noError.emit({ MemberId: this.id, HasError: false });

@@ -21,14 +21,14 @@
                 <button mat-raised-button color="black" (click)="clickedAddResource()">Add Resource</button>
             </div>
         </form>
-        <div class="pom-c-resourcecard" *ngFor="let res of resources">
-            <mat-card  class="pom-c-card">{{res.ResourceName}}</mat-card>
-            <button mat-raised-button class="pom-c-button" (click)="clickedAddQuestions()">Add Questions</button>
+        <div class="pom-c-resourcecard" *ngFor="let res of resources;let i = index">
+            <mat-card class="pom-c-card">{{res?.ResourceName}}</mat-card>
+            <button mat-raised-button class="pom-c-button" (click)="clickedAddQuestions(i)">Add Questions</button>
         </div>
     </div>
     <div class="resource">
         <app-addresource *ngIf="hasClickedAddResource && !hasClickedSaveResource" (hasClickedSave)="handleSave($event)"></app-addresource>
-        <app-questions *ngIf="hasClickedAddQuestions"></app-questions>
+        <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion"(hasClickedSubmit)="handleSubmit($event)"></app-questions>
     </div>
 </div>
 

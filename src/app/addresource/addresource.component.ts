@@ -1,7 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ErrorStatus } from '../questions/errorstatus.model';
 import { Resource } from 'src/models/resource.model';
 import { CommunicatorService } from '../services/communicator.service';
+import { Questions } from '../question.model';
 // import { EventEmitter } from 'events';
 
 @Component({
@@ -18,21 +19,27 @@ export class AddresourceComponent implements OnInit {
   hasnoerror: boolean = false;
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
-  resource:Resource;
+  resource: Resource;
   @Output() hasClickedSave = new EventEmitter();
-  hasClickedDone:boolean;
-  constructor(private com:CommunicatorService) { }
+  index:number = -1;
+  hasClickedDone: boolean;
+  questions: Questions[]
+  @Input() hasClickedSubmit: boolean
+  constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
+
   }
   clickedSave() {
-    this.hasClickedSave.emit(true);
+    console.log("addresource index is "+this.index)
+    this.hasClickedSave.emit(this.index);
     // this.resource=this.com.addResource;
     // console.log(this.resource);
-    }
-    handleDone(done){
-      this.hasClickedDone=done;
-    }
+  }
+  handleDone(index) {
+    this.hasClickedDone = true;
+    this.index = index;
+  }
   // addResource() {
   //   //console.log("clicked");
   //   this.hasClickedAdd = true;

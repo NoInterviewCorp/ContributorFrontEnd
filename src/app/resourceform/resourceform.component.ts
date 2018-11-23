@@ -25,20 +25,15 @@ export class ResourceformComponent implements OnInit {
   @Output() hasClickedDone = new EventEmitter();
   resource: Resource = {
     ResourceId: "",
-    ResourceName: "",
-    ResourceLink: "",
-    Description: "",
-    BloomsTaxonomy: 1,
+    ResourceName: "Resource",
+    ResourceLink: "your.resource.link",
+    Description: "this is your resource, duh!",
+    BloomsTaxonomy: 2,
     Technology: {
-      technologyId: 0,
-      Name: ""
+      technologyId: 1,
+      Name: "GenericTechnology"
     },
-    Questions: [{
-      QuestionId: 0,
-      ProblemStatement: "",
-      Options: [],
-    BloomLevel: 1,
-    }],
+    Questions: [],
   };
   //  hasClickedAddQuestions:boolean;
   results: any = [];
@@ -60,11 +55,9 @@ export class ResourceformComponent implements OnInit {
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
-    // Add our fruit
     if ((value || '').trim()) {
       this.concepts.push({ name: value.trim() });
     }
-    // Reset the input value
     if (input) {
       input.value = '';
     }
@@ -107,7 +100,8 @@ export class ResourceformComponent implements OnInit {
     this.addQuestions.emit(true);
   }
   clickedDone() {
-    this.com.addResource = this.resource;
-    this.hasClickedDone.emit(true);
+    let index = this.com.addResource(this.resource);
+    console.log("index is "+index);
+    this.hasClickedDone.emit(index);
   }
 }

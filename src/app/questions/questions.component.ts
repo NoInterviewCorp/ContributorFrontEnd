@@ -1,8 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 //import { SMEService } from '../../services/sme.service';
 import { Questions } from '../question.model';
 import { ErrorStatus } from './errorstatus.model';
+import { CommunicatorService } from '../services/communicator.service';
 //import { CommunicatorService } from '../../services/communicator.service'
 @Component({
   selector: 'app-questions',
@@ -10,8 +11,10 @@ import { ErrorStatus } from './errorstatus.model';
   styleUrls: ['./questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-  hasClickedSaveQuestion:boolean;
-  questions: Array<number> = [1];
+  hasClickedSaveQuestion: boolean;
+  @Output() hasClickedSubmit = new EventEmitter();
+  index: number;
+  questions: Array<number> = [this.index];
   questionObjs: Questions[] = [new Questions()];
   lastNumber = this.questions.length;
   noerror: Array<boolean> = [false];
@@ -19,13 +22,16 @@ export class QuestionsComponent implements OnInit {
   hasnoerror: boolean = false;
   hasClickedAdd: boolean = false;
   hasAdded3Qs: boolean = false;
-  constructor() { }
+  constructor() {
+  }
   //private bottomSheetRef: MatBottomSheetRef<QuestionsComponent>
   ngOnInit() {
   }
-handleSave(save){
-  this.hasClickedSaveQuestion=save;
-}
+
+  handleSave(index) {
+    this.hasClickedSaveQuestion = true;
+    this.index = index;
+  }
 
   onClickOfSubmit() {
     let result: boolean;
@@ -37,19 +43,6 @@ handleSave(save){
     } else {
       result = this.noerror[0];
     }
-    // // *********** END *****************
-    // // Development Part FOR AT LEAST 5 QS
-    // // ******DEVELOPMENT BUILD PART STARTS HERE*****
-    // if (!this.hasAdded3Qs) {
-    //   return;
-    // }
-    // else {
-    //   for (let i = 0; i < this.noerror.length - 1; i++) {
-    //     result = (this.noerror[i]) && (this.noerror[i + 1]);
-    //   }
-    // }
-    // // *********** END *****************
-
     console.log("result is " + result);
     if (result) {
       this.haserror = false;
@@ -61,6 +54,7 @@ handleSave(save){
       this.haserror = true;
       this.hasnoerror = false;
     }
+    this.hasClickedSubmit.emit(this.index);
   }
 
   handleEventEmitter(errorstatus: ErrorStatus) {

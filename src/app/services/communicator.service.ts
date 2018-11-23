@@ -11,9 +11,10 @@ import { Questions } from '../question.model';
 export class CommunicatorService {
   private title: string;
   // hasClickedAddResources: boolean;
-  editSelectedPlan:LearningPlan;
-  addResource:Resource;
-  addQuestion:Questions;
+  editSelectedPlan: LearningPlan;
+  private resourceArray: Resource[] = [];
+  private lastResourceIndex:number;
+  addQuestion: Questions;
 
   constructor(private http: HttpClient) { }
   getTitle() {
@@ -21,6 +22,27 @@ export class CommunicatorService {
   }
   setTitle(title: string) {
     this.title = title;
+  }
+  addResource(resource: Resource) {
+    // adds the resource to it's local variable
+    this.resourceArray.push(resource);
+    // returns the index of the most recent added resource
+    return this.resourceArray.length - 1;
+  }
+  getResource(index) {
+    return this.resourceArray[index];
+  }
+  addQuestionToResourceOfIndex(index: number, question: Questions) {
+    this.resourceArray[index].Questions.push(question);
+  }
+  getQuestionOfResource(index:number){
+    return this.resourceArray[index].Questions;
+  }
+  setLastResourceIndex(index){
+    this.lastResourceIndex = index;
+  }
+  getLastResourceIndex(){
+    return this.lastResourceIndex;
   }
   getconcepts() {
     return this.http.get('http://localhost:3000/Concept');
