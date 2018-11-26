@@ -10,8 +10,11 @@ import { Technology } from '../technology.model';
 })
 export class TestComponent implements OnInit {
 
+  //toggle = true;
+  toggle:any;
+  // toggle='green';
+  status = 'Enable'; 
   selectedTech: any;
-
   questions: any;
   duration = 1000; //timer duration
   counter: number = this.duration;
@@ -29,16 +32,51 @@ export class TestComponent implements OnInit {
   callResult = false;
   value = 0;
   valueInc = 0;
-
+  concepts:any;
+  conceptarray:any;
   techName: string; subTopicName: string;
-
+  toggles=[true, true, true, true];
+  
 
   constructor(private testService: TestService) { }
 
   ngOnInit() {
+
+    this.getConceptsFunction();
+
+  }
+  enableDisableRule(job) {
+    this.toggle = !this.toggle;
+      // this.getConceptsFunction();
   }
 
+  selectConcept(j) {
+  // console.log(j);
+  // console.log(this.toggles[j]);
+  // this.toggles[j] = !this.toggles[j];
+  if(this.toggles[j]==true) {
+    // console.log("yay false .. duh");
+    this.toggles[j]=false;
+  }
+  else if (this.toggles[j]==false) {
+    // console.log("from false to true");
+    this.toggles[j]=true;
+  }
+  // console.log(this.toggles[j]);
+  // console.log("concept selected is::::"+this.concepts[j]);
+  }
+
+  getConceptsFunction(){
+    this.testService.getConcepts()
+    .subscribe((res: any) => {
+      this.concepts = res;
+      console.log(this.concepts);
+      console.log(this.concepts[0].Name);
+  });
+
+  }
   display() {
+
     //  this.testService.getQuestions();
     //  this.showTimer = true;
     //  this.showProgressBar = true;
@@ -47,7 +85,7 @@ export class TestComponent implements OnInit {
     //  console.log(this.questions);
     this.showTimer = true;
     this.showProgressBar = true;
-    // this.questions = this.testService.getQuestions();
+    this.questions = this.testService.getQuestions();
     this.showNextButton = true;
     this.showQuesButton = false;
     this.questionCounter = 0;
@@ -92,7 +130,6 @@ export class TestComponent implements OnInit {
   }
 
   resetTimer() {
-    //this.score+=this.counter*2;
     this.quesCount++;
     this.counter = this.duration;
   }

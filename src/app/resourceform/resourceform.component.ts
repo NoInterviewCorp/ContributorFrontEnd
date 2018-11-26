@@ -31,7 +31,8 @@ export class ResourceformComponent implements OnInit {
     BloomsTaxonomy: 2,
     Technology: {
       technologyId: 1,
-      Name: "GenericTechnology"
+      Name: "GenericTechnology",
+      Questions: [] //remove it laterr !!!!!!
     },
     Questions: [],
   };

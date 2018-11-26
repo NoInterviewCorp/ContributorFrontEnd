@@ -1,44 +1,74 @@
 <div class="test">
 
-  <div class="button-flex">
-    <button mat-raised-button color="primary" *ngIf="showQuesButton" (click)="display()">Show Questions</button><br><br>
-  </div>
-
-  <div class="test-box" *ngIf="!callResult">
-    <!-- <div *ngIf="showTimer" class="badge">Time Left: {{counter}}</div> -->
-
-    <div class="timer-container">
-      <div class="timr" *ngIf="showTimer"> {{counter}}</div>
+  <div class="startTest" *ngIf="showQuesButton">
+    <div class="heading"><h2>
+      Test Instructions
+    </h2>
     </div>
-
-    <div *ngIf="showProgressBar">
-      <section class="progressbar-section">
-        <mat-progress-bar mode="determinate" class="progressbar-margin" [value]="value">
-        </mat-progress-bar>
-      </section>
+    <div class = "instructions">
+      <ul>
+          <li>The quizzes consists of questions carefully designed to help you self-assess your comprehension of the information presented on the topics covered in the module.</li>
+          <li>Each question in the quiz is of multiple-choice or "true or false" format. Read each question carefully, and click on the button next to your response that is based on the information covered on the topic in the module. </li>
+          <li>The total score for the quiz is based on your responses to all questions.</li>
+      </ul>
     </div>
-
-    <div *ngIf="counter>=1" class="question">
-      <div class="ques-box">
-        <div class="ques-title">
-          {{currentQuestion?.QuestionId}} {{currentQuestion?.ProblemStatement}}
-        </div>
+    <div class="concepts">
+      <p>
+        Concepts:
+      </p>
+      <!-- <mat-card (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}">Concept 1</mat-card>
+      <mat-card (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}">Concept 2</mat-card> 
+      <mat-card (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}">Concept 3</mat-card> 
+      <mat-card (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}">Concept 4</mat-card>  -->
+      <div *ngFor="let c of concepts; index as i" >
+        <button mat-raised-button (click)="selectConcept(i)" [ngClass]="{'green' : toggles[i], 'red': !toggles[i]}"> {{c?.Name}}</button>
       </div>
-
-      <mat-radio-group class="radio-group" [(ngModel)]="selectedOption">
-        <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.Options">
-          {{o.Content}}
-        </mat-radio-button>
-      </mat-radio-group>
-      <p class="example-selected-value">{{selectedOption}}</p>
     </div>
-
+    <div class = "Btn">
+      <button mat-raised-button *ngIf="showQuesButton" (click)="display()">Start Test</button>
+    </div>
   </div>
 
-  <div class="button-flex">
-    <button mat-raised-button color="primary" *ngIf="showNextButton" (click)="nextQuestion()">Next</button>
-    <a routerLink="/result" routerLinkActive="active" button mat-raised-button color="primary" *ngIf="callResult"> Show
-      Results</a>
-  </div>
+<div class="test-box" *ngIf="!callResult &&!showQuesButton">
+<div class="timer-container">
+<div class="timr" *ngIf="showTimer">Time Remaining: {{counter}}</div>
+</div>
+
+<div *ngIf="showProgressBar">
+<section class="progressbar-section">
+<mat-progress-bar mode="determinate"
+    class="progressbar-margin"
+    [value]="value">
+</mat-progress-bar>
+</section> 
+</div>
+
+<div *ngIf="counter>=1" class="question">
+<div class = "ques-box">
+<div class="ques-title">
+  <h3>
+   Q{{currentQuestion?.QuestionId}} {{currentQuestion?.ProblemStatement}}
+  </h3>
+</div>
+</div>
+<div class="options">
+<mat-radio-group class="radio-group" [(ngModel)]="selectedOption">
+ 
+  <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.Options" [value]="o">
+    {{o?.Content}}
+  </mat-radio-button>
+  
+</mat-radio-group>
+<p>{{selectedOption?.Content}}</p>
+</div>
+</div>
 
 </div>
+
+<div class="button-flex">
+<button mat-raised-button class="Btn" *ngIf="showNextButton" (click)="nextQuestion()">Next</button>
+<a routerLink="/result" routerLinkActive="active" class="Btn" button mat-raised-button color="primary"  *ngIf="callResult" > Show Results</a>
+</div>
+
+</div>
+

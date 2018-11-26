@@ -49,4 +49,8 @@ mat-accordian{
 button{
     background-color: black;
     color: white;
+    margin-right: 10px;
+}
+.pom-c-buttons{
+    display:inline;
 }
