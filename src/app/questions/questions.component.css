@@ -6,6 +6,7 @@ body{
     flex-direction: row;
 }
 button{
-    margin-right: 10px;
+    margin:10px;
+    float: right;
 }
    

@@ -1,5 +1,4 @@
 <h3>Resource</h3>
-
 <app-resourceform *ngFor="let index of resources" [id]="index" (noError)="handleEventEmitter($event)" (addQuestions)="handleAddQuestions($event)"
   (hasClickedDone)="handleDone($event)"></app-resourceform>
 <div>
