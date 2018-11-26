@@ -13,6 +13,8 @@ export class ScrollingContainerComponent implements OnInit {
   contributions: LearningPlan[];
   hasClickedEditLP:boolean;
   hasClickedViewLP:boolean;
+  hasClickedSaveChangesInEdit:boolean;
+  hasClickedClearEdit:boolean;
   // links: string[]= [];
   @Input() choice: number;
   constructor(private com: CommunicatorService, private http: HttpClient) { }
@@ -51,9 +53,16 @@ export class ScrollingContainerComponent implements OnInit {
   }
   handleEdit(edit){
     this.hasClickedEditLP=edit;
+    this.hasClickedSaveChangesInEdit=false;
+    this.hasClickedClearEdit=false;
   }
   handleView(view){
     this.hasClickedViewLP=view;
   }
-
+  handleSaveEdit(savechanges){
+    this.hasClickedSaveChangesInEdit=savechanges
+  }
+  handleClearEdit(clear){
+    this.hasClickedClearEdit=clear;
+  }
 }

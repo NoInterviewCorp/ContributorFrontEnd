@@ -20,8 +20,9 @@ export class AddresourceComponent implements OnInit {
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
   resource: Resource;
+  disableButton:boolean;
   @Output() hasClickedSave = new EventEmitter();
-  index:number = -1;
+  index: number = -1;
   hasClickedDone: boolean;
   questions: Questions[]
   @Input() hasClickedSubmit: boolean
@@ -31,8 +32,10 @@ export class AddresourceComponent implements OnInit {
 
   }
   clickedSave() {
-    console.log("addresource index is "+this.index)
+    console.log("addresource index is " + this.index)
     this.hasClickedSave.emit(this.index);
+    this.disableButton = true;
+
     // this.resource=this.com.addResource;
     // console.log(this.resource);
   }

@@ -30,7 +30,7 @@ import { NgxSortableModule } from 'ngx-sortable'
 
 @NgModule({
   imports: [
-   NgxSortableModule,
+    NgxSortableModule,
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,

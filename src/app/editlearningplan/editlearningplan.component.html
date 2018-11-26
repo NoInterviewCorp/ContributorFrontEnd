@@ -1,37 +1,63 @@
+<button mat-button (click)="clickedClearInEdit()"><mat-icon>clear</mat-icon></button>
 <form class="example-form">
-  <div class="fields">
-    <mat-form-field appearance="outline" class="field">
-      <mat-label>Learning Plan Name</mat-label>
-      <input matInput>
-    </mat-form-field>
-    <mat-form-field appearance="outline" class="field">
-      <mat-label>Technology Name</mat-label>
-      <input matInput value="{{plan.Technology}}">
-    </mat-form-field>
-  </div><br>
+  <mat-form-field appearance="outline" class="field">
+    <mat-label>Learning Plan Name</mat-label>
+    <input matInput value={{plan.LearningPlanName}}>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="field">
+    <mat-label>Technology Name</mat-label>
+    <input matInput value="{{plan.Technology}}">
+  </mat-form-field>
   <mat-form-field appearance="outline" class="textarea">
     <mat-label>Description</mat-label>
     <textarea matInput value="{{plan.Summary}}"></textarea>
-  </mat-form-field><br>
-  <!-- <mat-form-field appearance="outline" class="textarea">
-    <button mat-raised-button style="float: right">
-      <mat-icon matSuffix>search</mat-icon>
-    </button>
-    <mat-label>Search Resource</mat-label>
-    <input matInput placeholder="Search Resource">
-  </mat-form-field> -->
-</form><br>
+  </mat-form-field>
+</form>
 <h3 style="font-family: cursive">Your Plan starts here....</h3>
-<div class="accordian">
-  <mat-accordion>
-    <app-addtopic *ngFor="let index of topics" [id]="index"></app-addtopic><br><br>
-  </mat-accordion>
-  <div class="buttons">
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let item of plan.Resources">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{item.ResourceName}}
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Resource Name" value="{{item.ResourceName}}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Description" value="{{item.Description}}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Resource Link" value="{{item.ResourceLink}}">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Blooms Taxonomy" value="{{item.BloomsTaxonomy}}">
+    </mat-form-field>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let question of item.Questions">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Question
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="ProblemStatement" value="{{question.ProblemStatement}}">
+          </mat-form-field>
+          <mat-form-field class="example-full-width" *ngFor="let option of question.Options">
+            <input matInput placeholder="Option" value="{{option.Content}}">
+            <mat-checkbox>{{option.IsCorrect}}</mat-checkbox>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="BloomsTaxonomy" value="{{question.BloomLevel}}">
+          </mat-form-field>
+        </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        </mat-accordion>
+      </mat-expansion-panel>
+    </mat-accordion>
     <div>
-      <button mat-raised-button color="black" routerLink="/profile" routerLinkActive="active" (click)="postLearningPlan()">Submit</button>
+      <button mat-raised-button color="black" (click)="clickedSaveInEdit()" [disabled]="disableButton">Save</button>
     </div>
-    <div>
-      <button mat-raised-button color="black" (click)="addResource()">Add</button>
-    </div>
-  </div>
-</div><br>

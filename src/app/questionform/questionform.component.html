@@ -42,6 +42,6 @@
     </mat-select>
   </mat-form-field>
   <div class="button-row">
-    <button mat-flat-button (click)="clickedSave()">Save</button>
+    <button mat-flat-button (click)="clickedSave()" [disabled]="disableButton">Save</button>
   </div>
 </div>

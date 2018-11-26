@@ -2,8 +2,17 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  flex: 600px;
 }
+
 .contributionedit{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+/* .cards{
+  flex: 4;
+} */
+.editview{
+  flex: 400px;
 }

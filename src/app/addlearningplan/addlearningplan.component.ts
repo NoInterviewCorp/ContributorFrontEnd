@@ -10,13 +10,14 @@ import { Questions } from '../question.model';
   styleUrls: ['./addlearningplan.component.css']
 })
 export class AddlearningplanComponent implements OnInit {
-  resIndexForAddingQuestions:number;
+  resIndexForAddingQuestions: number;
   hasClickedAddResource: boolean;
   hasClickedSaveResource: boolean;
   hasClickedSubmitQuestion: boolean
   resource: Resource;
   resources: Resource[] = [];
   hasClickedAddQuestions: boolean;
+  hasClickedClearQuestions:boolean;
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -34,7 +35,9 @@ export class AddlearningplanComponent implements OnInit {
     this.resources[index].Questions = this.com.getQuestionOfResource(index);
     console.log(this.resources);
   }
-
+  handleClearInQuestions(clear){
+this.hasClickedClearQuestions=clear;
+  }
   // addResource() {
   //   this.hasClickedAdd = true;
   //   this.topics.push(++this.lastNumber);
@@ -46,11 +49,13 @@ export class AddlearningplanComponent implements OnInit {
     this.hasClickedSaveResource = false;
   }
   clickedAddQuestions(index) {
+    this.hasClickedClearQuestions=false;
     this.hasClickedAddQuestions = true;
     this.hasClickedSubmitQuestion = false;
     this.resIndexForAddingQuestions = index;
     this.com.setLastResourceIndex(this.resIndexForAddingQuestions);
     console.log(this.resIndexForAddingQuestions);
+
   }
 
 }

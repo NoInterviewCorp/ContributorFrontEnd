@@ -1,13 +1,13 @@
 <h1>{{plan.Name}}</h1>
 <h2>{{plan.Technology}}</h2>
 <h2>Summary</h2>
-<p>{{plan.Summary}}</p> 
-<div class="votes">       
+<p>{{plan.Summary}}</p>
+<div class="votes">
   <mat-icon>thumb_up</mat-icon>
   {{plan.UpVotes}}
   <mat-icon>thumb_down</mat-icon>
-   {{plan.DownVotes}}
-</div> 
+  {{plan.DownVotes}}
+</div>
 <div *ngFor="let item of plan.Topics" class="topics">
   <p><b>{{item.Name}}</b></p>
   <div *ngFor="let result of item.Resources">

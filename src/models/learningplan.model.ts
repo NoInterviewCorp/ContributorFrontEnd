@@ -3,6 +3,7 @@ import { Resource } from "./resource.model";
 
 export class LearningPlan{
     LearningPlanID:number;
+    LearningPlanName:string;
     Technology:string;
     Summary:string;
     UpVotes:number;

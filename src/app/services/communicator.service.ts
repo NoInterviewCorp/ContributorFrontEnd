@@ -17,12 +17,6 @@ export class CommunicatorService {
   addQuestion: Questions;
 
   constructor(private http: HttpClient) { }
-  getTitle() {
-    return this.title;
-  }
-  setTitle(title: string) {
-    this.title = title;
-  }
   addResource(resource: Resource) {
     // adds the resource to it's local variable
     this.resourceArray.push(resource);

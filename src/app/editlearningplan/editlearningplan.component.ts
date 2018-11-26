@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { LearningPlan } from 'src/models/learningplan.model';
 import { CommunicatorService } from '../services/communicator.service';
+import { Resource } from 'src/models/resource.model';
 
 @Component({
   selector: 'app-editlearningplan',
@@ -9,13 +10,23 @@ import { CommunicatorService } from '../services/communicator.service';
 })
 export class EditlearningplanComponent implements OnInit {
   plan: LearningPlan;
-  constructor(private com:CommunicatorService) { }
+  @Output() hasClickedSaveInEdit = new EventEmitter;
+  @Output() hasClickedClearInEdit = new EventEmitter;
+  disableButton: boolean;
+  // resources[]=LearningPlan.Resources[];
+  constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
-    this.plan=this.com.editSelectedPlan;
+    this.plan = this.com.editSelectedPlan;
     console.log(this.plan);
   }
-  
-  
+  clickedSaveInEdit() {
+    this.hasClickedSaveInEdit.emit(true);
+    this.disableButton = true;
+  }
+  clickedClearInEdit() {
+    this.hasClickedClearInEdit.emit(true);
+
+  }
 
 }

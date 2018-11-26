@@ -3,7 +3,7 @@
 <app-resourceform *ngFor="let index of resources" [id]="index" (noError)="handleEventEmitter($event)" (addQuestions)="handleAddQuestions($event)"
   (hasClickedDone)="handleDone($event)"></app-resourceform>
 <div>
-  <button mat-raised-button *ngIf="hasClickedDone" (click)="clickedSave()">Save</button>
+  <button mat-raised-button *ngIf="hasClickedDone" (click)="clickedSave()" [disabled]="disableButton">Save</button>
 </div>
 <!-- <div class="buttons">
         <div>

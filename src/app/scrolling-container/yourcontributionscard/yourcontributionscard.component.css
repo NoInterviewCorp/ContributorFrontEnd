@@ -1,18 +1,14 @@
 mat-card{
     width:300px;
     margin: 10px;
-    margin-left:0;
     background-color:white;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-radius: 0;
 }
-.header{
+/* .header{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: flex-start;
-}
+} */
 
 .votes{
     display: flex;
@@ -34,15 +30,15 @@ a{
 }
 
 
-.card{
-    width:300px;
+/* .card{
+    width:200px;
     margin: 10px;
     margin-left:0;
     background-color: white;
     margin-bottom: 0;
     padding-bottom: 0;
     border-radius: 0;
-}
+} */
 mat-accordian{
     width:300px;
 }

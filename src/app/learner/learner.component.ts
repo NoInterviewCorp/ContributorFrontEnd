@@ -9,42 +9,42 @@ export class LearnerComponent implements OnInit {
 
   constructor() { }
 
-  hasClickedTech : boolean;
-  hasClickedSubs : boolean;
-  hasClickedLearn : boolean;
-  hasClickedRight : boolean;
-  hasClickedLeft : boolean;
+  hasClickedTech: boolean;
+  hasClickedSubs: boolean;
+  hasClickedLearn: boolean;
+  hasClickedRight: boolean;
+  hasClickedLeft: boolean;
 
   ngOnInit() {
-    this.hasClickedTech=true;
-    this.hasClickedLeft=true;
-    this.hasClickedRight=false;
+    this.hasClickedTech = true;
+    this.hasClickedLeft = true;
+    this.hasClickedRight = false;
   }
 
-  clickedRight(){
-    this.hasClickedRight=true;
-    this.hasClickedLeft=false;
+  clickedRight() {
+    this.hasClickedRight = true;
+    this.hasClickedLeft = false;
   }
-  clickedLeft(){
-    this.hasClickedRight=false;
-    this.hasClickedLeft=true;
+  clickedLeft() {
+    this.hasClickedRight = false;
+    this.hasClickedLeft = true;
   }
   clickedTech() {
-    this.hasClickedTech=true;
-    this.hasClickedSubs=false;
-    this.hasClickedLearn=false;
+    this.hasClickedTech = true;
+    this.hasClickedSubs = false;
+    this.hasClickedLearn = false;
   }
 
   clickedSubs() {
-    this.hasClickedTech=false;
-    this.hasClickedSubs=true;
-    this.hasClickedLearn=false;
+    this.hasClickedTech = false;
+    this.hasClickedSubs = true;
+    this.hasClickedLearn = false;
   }
-  
+
   clickedLearn() {
-    this.hasClickedTech=false;
-    this.hasClickedSubs=false;
-    this.hasClickedLearn=true;
+    this.hasClickedTech = false;
+    this.hasClickedSubs = false;
+    this.hasClickedLearn = true;
   }
 
 }

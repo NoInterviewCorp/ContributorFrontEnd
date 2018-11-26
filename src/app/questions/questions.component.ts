@@ -13,6 +13,7 @@ import { CommunicatorService } from '../services/communicator.service';
 export class QuestionsComponent implements OnInit {
   hasClickedSaveQuestion: boolean;
   @Output() hasClickedSubmit = new EventEmitter();
+  @Output() hasClickedClearInQuestions = new EventEmitter();
   index: number;
   questions: Array<number> = [this.index];
   questionObjs: Questions[] = [new Questions()];
@@ -22,6 +23,7 @@ export class QuestionsComponent implements OnInit {
   hasnoerror: boolean = false;
   hasClickedAdd: boolean = false;
   hasAdded3Qs: boolean = false;
+  disableButton:boolean;
   constructor() {
   }
   //private bottomSheetRef: MatBottomSheetRef<QuestionsComponent>
@@ -55,6 +57,7 @@ export class QuestionsComponent implements OnInit {
       this.hasnoerror = false;
     }
     this.hasClickedSubmit.emit(this.index);
+    this.disableButton = true;
   }
 
   handleEventEmitter(errorstatus: ErrorStatus) {
@@ -79,5 +82,9 @@ export class QuestionsComponent implements OnInit {
     // if (this.questions.length >= 3) {
     //   this.hasAdded3Qs = true;
     // }
+  }
+  clickedClearInQuestions() {
+    this.hasClickedClearInQuestions.emit(true);
+
   }
 }

@@ -15,7 +15,7 @@ export class QuestionformComponent implements OnInit {
   id: number;
   @Output() noError = new EventEmitter();
   @Output() hasClickedSave = new EventEmitter();
-
+  disableButton:boolean;
   // options:Options[] = ?
   questions: Questions = {
     QuestionId: 0,
@@ -75,6 +75,7 @@ export class QuestionformComponent implements OnInit {
   clickedSave() {
     this.com.addQuestionToResourceOfIndex(this.id, this.questions);
     this.hasClickedSave.emit(this.id);
+    this.disableButton = true;
   }
   getErrorMessage() {
     this.noError.emit({ MemberId: this.id, HasError: false });

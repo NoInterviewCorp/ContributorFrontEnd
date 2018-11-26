@@ -28,7 +28,8 @@
     </div>
     <div class="resource">
         <app-addresource *ngIf="hasClickedAddResource && !hasClickedSaveResource" (hasClickedSave)="handleSave($event)"></app-addresource>
-        <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion"(hasClickedSubmit)="handleSubmit($event)"></app-questions>
+        <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion && !hasClickedClearQuestions" 
+        (hasClickedSubmit)="handleSubmit($event)" (hasClickedClearInQuestions)="handleClearInQuestions($event)"></app-questions>
     </div>
 </div>
 

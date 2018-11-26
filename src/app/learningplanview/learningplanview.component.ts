@@ -8,11 +8,11 @@ import { CommunicatorService } from '../services/communicator.service';
   styleUrls: ['./learningplanview.component.css']
 })
 export class LearningplanviewComponent implements OnInit {
-plan:LearningPlan;
-  constructor(private com:CommunicatorService) { }
+  plan: LearningPlan;
+  constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
-    this.plan=this.com.editSelectedPlan;
+    this.plan = this.com.editSelectedPlan;
     console.log(this.plan);
   }
 

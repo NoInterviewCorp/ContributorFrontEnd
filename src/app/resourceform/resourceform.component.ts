@@ -25,19 +25,20 @@ export class ResourceformComponent implements OnInit {
   @Output() hasClickedDone = new EventEmitter();
   resource: Resource = {
     ResourceId: "",
-    ResourceName: "Resource",
-    ResourceLink: "your.resource.link",
-    Description: "this is your resource, duh!",
-    BloomsTaxonomy: 2,
+    ResourceName: "",
+    ResourceLink: "",
+    Description: "",
+    BloomsTaxonomy: 1,
     Technology: {
       technologyId: 1,
-      Name: "GenericTechnology",
+      Name: "",
       Questions: [] //remove it laterr !!!!!!
     },
     Questions: [],
   };
   //  hasClickedAddQuestions:boolean;
   results: any = [];
+  disableButton:boolean;
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -104,5 +105,7 @@ export class ResourceformComponent implements OnInit {
     let index = this.com.addResource(this.resource);
     console.log("index is "+index);
     this.hasClickedDone.emit(index);
+    this.disableButton = true;
+
   }
 }

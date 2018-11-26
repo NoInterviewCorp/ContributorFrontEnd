@@ -17,22 +17,22 @@ export class SearchComponent implements OnInit {
   isNoSelected = false;
   showSearch = true;
   LearningPlan: Array<number> = [1, 2, 3, 4, 5];
-  technology=[];
-  showBtn=true;
+  technology = [];
+  showBtn = true;
 
   showTech = true;
-  ask=false;
+  ask = false;
   showPopular = false;
 
 
-  constructor(private testService: TestService,private http: HttpClient ) { }
+  constructor(private testService: TestService, private http: HttpClient) { }
 
   ngOnInit() {
 
     this.http.get('http://localhost:3000/Technology').subscribe((res: any) => {
       this.technology = res;
       console.log(this.technology);
-  });
+    });
 
   }
 
@@ -42,34 +42,34 @@ export class SearchComponent implements OnInit {
   //   this.showSearch = false;
   // }
 
-  noToggle(t:Technology) {
+  noToggle(t: Technology) {
     this.setTech(t);
     this.popularPlans = this.prefixPopularPlans + this.selectedTech;
-    console.log("selected tech for learning:"+this.selectedTech);
+    console.log("selected tech for learning:" + this.selectedTech);
     this.isNoSelected = true;
     this.hasClickedSearch = false;
     // this.showSearch = false;
     this.showPopular = true;
-    this.ask=false;
-    
+    this.ask = false;
+
     // console.log("called noToggle");
   }
 
-  setTech(t:Technology) {
+  setTech(t: Technology) {
     this.testService.setTechName(t);
-    let x  = this.testService.getTechName();
+    let x = this.testService.getTechName();
     // console.log("techname:"+x.Name);
     // console.log(x.Questions);
-    this.selectedTech=t.Name;
-    this.ask=true;
+    this.selectedTech = t.Name;
+    this.ask = true;
     this.showPopular = false;
   }
- 
-//   showTechs() {
-//     this.http.get('http://localhost:3000/Technology').subscribe((res: any) => {
-//       this.technology = res;
-//       console.log(this.technology);
-//   });
-//   this.showBtn=false;
-// }
+
+  //   showTechs() {
+  //     this.http.get('http://localhost:3000/Technology').subscribe((res: any) => {
+  //       this.technology = res;
+  //       console.log(this.technology);
+  //   });
+  //   this.showBtn=false;
+  // }
 }

@@ -1,11 +1,15 @@
 <!-- <h1 *ngIf="choice==1">Your Contributions</h1><br> -->
-<div class="contributionedit" style="flex:200px;">
-<div class="contribution-card-container">
-    <div *ngFor="let item of plan">
-        <app-yourcontributionscard [plan]="item" *ngIf="choice==1" (hasClickedEdit)=handleEdit($event) (hasClickedView)=handleView($event)></app-yourcontributionscard>
-        <app-subscribecard [plan]="item" *ngIf="choice==3"></app-subscribecard>
+<div class="contributionedit">
+    <div class="contribution-card-container">
+        <div  class="cards" *ngFor="let item of plan">
+            <app-yourcontributionscard [plan]="item" *ngIf="choice==1" (hasClickedEdit)=handleEdit($event)
+                (hasClickedView)=handleView($event)></app-yourcontributionscard>
+            <app-subscribecard [plan]="item" *ngIf="choice==3"></app-subscribecard>
+        </div>
     </div>
-</div>
-<app-editlearningplan *ngIf="hasClickedEditLP" style="flex:800px;"></app-editlearningplan>
-<app-learningplanview *ngIf="hasClickedViewLP" style="flex:800px;"></app-learningplanview>
+    <div class="editview">
+        <app-editlearningplan *ngIf="hasClickedEditLP && !hasClickedSaveChangesInEdit && !hasClickedClearEdit " 
+        (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
+        <app-learningplanview *ngIf="hasClickedViewLP"></app-learningplanview>
+    </div>
 </div>
