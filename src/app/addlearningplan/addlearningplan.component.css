@@ -15,8 +15,9 @@ body {
 }
 .resource{
   flex: 5;
-  margin-left: 25px;
+  padding-left: 25px;
   height: 100%;
+  background-color: rgb(230, 230, 230);
 }
 mat-form-field{
   width: 100%;
