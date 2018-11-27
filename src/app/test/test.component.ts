@@ -10,9 +10,8 @@ import { Technology } from '../technology.model';
 })
 export class TestComponent implements OnInit {
 
-  //toggle = true;
+  
   toggle: any;
-  // toggle='green';
   status = 'Enable';
   selectedTech: any;
   questions: any;
@@ -33,13 +32,14 @@ export class TestComponent implements OnInit {
   value = 0;
   valueInc = 0;
   concepts: any[];
-  selectedConceptArray: any[];
-  techName: string; subTopicName: string;
-  // toggles=[true, true, true, true];
+  selectedConceptArray:any[]=[];
+  techName: string;
+  subTopicName: string;
   toggles: boolean[];
   isSelected: boolean[];
   maxSelectableConcepts = 0;
   hasSelectedMaxConcepts = false;
+  deselectedConcept: string;
 
   constructor(private testService: TestService) { }
 
@@ -60,21 +60,23 @@ export class TestComponent implements OnInit {
     if (this.isSelected[k] == false) {
       this.maxSelectableConcepts++;
       this.isSelected[k] = true;
+      this.selectedConceptArray.push(this.concepts[k].Name);
+      console.log("selected concepts are:"+this.selectedConceptArray);
       if (this.maxSelectableConcepts >= 4) {
         console.log("dont select more");
         this.hasSelectedMaxConcepts = true;
         this.disableButtons();
       }
-
-      // console.log("count after selection:"+this.maxSelectableConcepts+this.isSelected);
     }
     else if (this.isSelected[k] == true) {
       this.isSelected[k] = false;
       this.maxSelectableConcepts--;
+      this.deselectedConcept=this.concepts[k].Name;
+      this.selectedConceptArray.splice(this.selectedConceptArray.indexOf(this.deselectedConcept),1);
+      console.log("selected concepts are now:"+this.selectedConceptArray);
       if (this.hasSelectedMaxConcepts && this.maxSelectableConcepts < 4) {
         this.enableButtons();
       }
-      // console.log("count after deselection:"+this.maxSelectableConcepts+this.isSelected);
     }
   }
 
@@ -93,9 +95,6 @@ export class TestComponent implements OnInit {
     this.isSelected.forEach((isSelectedItem, itemIndex) => {
       if (!isSelectedItem) {
         let element = document.getElementById("Concept_" + itemIndex).removeAttribute("disabled");
-
-        // let attr = document.createAttribute("disabled");
-        // element.attributes.setNamedItem(attr);
       }
     });
   }
@@ -108,18 +107,10 @@ export class TestComponent implements OnInit {
         console.log(this.concepts.length);
         this.toggles = new Array(this.concepts.length).fill(true); //initialize all with true
         this.isSelected = new Array(this.concepts.length).fill(false); //initialize all with false since nothing is selected at firssst
-        // console.log(this.concepts[0].Name);
       });
 
   }
   display() {
-
-    //  this.testService.getQuestions();
-    //  this.showTimer = true;
-    //  this.showProgressBar = true;
-    //  this.questions = this.testService.getQuestions();
-    //  console.log(this.testService.getQuestions());
-    //  console.log(this.questions);
     this.showTimer = true;
     this.showProgressBar = true;
     this.questions = this.testService.getQuestions();
@@ -130,18 +121,15 @@ export class TestComponent implements OnInit {
     this.shouldDisplayQuestions = true;
     this.totalQues = this.questions.length;
     this.valueInc = 100 / this.totalQues;
-
     this.gameClock();
   }
 
   gameClock() {
     const intervalMain = setInterval(() => {
       this.counter--;
-      // console.log("counter:"+this.counter);
       if (this.counter <= 0) {
         this.nextQuestion();
       }
-      //this.resetTimer();}
       if (this.quesCount == this.totalQues) {
         clearInterval(intervalMain);
       }
@@ -151,7 +139,6 @@ export class TestComponent implements OnInit {
   }
 
   nextQuestion() {
-
     this.resetTimer();
     console.log(this.selectedOption);
     this.selectedOption = "";
@@ -174,4 +161,3 @@ export class TestComponent implements OnInit {
 
 
 }
-
