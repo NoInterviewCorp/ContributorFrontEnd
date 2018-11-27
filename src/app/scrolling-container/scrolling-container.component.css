@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  flex: 600px;
 }
 
 .contributionedit{
@@ -10,9 +9,10 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-/* .cards{
-  flex: 4;
-} */
+
+.pom-card{
+  flex: 5;
+}
 .editview{
-  flex: 400px;
+  flex: 5;
 }

@@ -15,7 +15,7 @@ export class ScrollingContainerComponent implements OnInit {
   hasClickedViewLP:boolean;
   hasClickedSaveChangesInEdit:boolean;
   hasClickedClearEdit:boolean;
-  // links: string[]= [];
+  hasClickedClearView:boolean;
   @Input() choice: number;
   constructor(private com: CommunicatorService, private http: HttpClient) { }
 
@@ -58,11 +58,15 @@ export class ScrollingContainerComponent implements OnInit {
   }
   handleView(view){
     this.hasClickedViewLP=view;
+    this.hasClickedClearView=false;
   }
   handleSaveEdit(savechanges){
     this.hasClickedSaveChangesInEdit=savechanges
   }
   handleClearEdit(clear){
     this.hasClickedClearEdit=clear;
+  }
+  handleClearView(clear){
+    this.hasClickedClearView=clear;
   }
 }

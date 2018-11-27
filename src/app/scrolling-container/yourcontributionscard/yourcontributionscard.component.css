@@ -1,52 +1,24 @@
-mat-card{
-    width:300px;
+
+.pom-c-card__content {
+    height: 0px;
+  }
+  
+.pom-c-card {
+    border-radius: 8px;
     margin: 10px;
-    background-color:white;
-}
-/* .header{
+    width: 200px;
+    color: whitesmoke;
+    background: #080357;
+  }
+  
+.pom-l-action_buttons {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-start;
-} */
-
-.votes{
-    display: flex;
-    justify-content: space-around;
-}
-mat-expansion-panel{
-    background-color:none;
-    width: 100%;
-    margin-top: 8px;
-    border-radius: 0;
-    margin-left: 0;
-}
-mat-accordian:hover{
-background:none;
-}
-
-a{
-    color: black;
-}
-
-
-/* .card{
-    width:200px;
-    margin: 10px;
-    margin-left:0;
-    background-color: white;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-radius: 0;
-} */
-mat-accordian{
-    width:300px;
-}
-button{
-    background-color: black;
-    color: white;
-    margin-right: 10px;
-}
-.pom-c-buttons{
-    display:inline;
-}
+    flex: 1 1 auto;
+  }
+mat-card-subtitle{
+      color: white;
+  }
+.pom-c-cardtitle{
+    word-wrap: break-word;
+   }

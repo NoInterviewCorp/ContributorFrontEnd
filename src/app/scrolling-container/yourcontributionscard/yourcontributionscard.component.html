@@ -1,12 +1,10 @@
-<mat-card>
+<!-- <mat-card>
   <mat-card-header class="header">
     <div style="flex-grow: 3">
-      <!-- <img mat-card-avatar [src]="plan?.Avatar" /> -->
       <mat-card-title>
         {{plan?.Technology}}
       </mat-card-title>
       <mat-card-subtitle>
-        <!-- <em>-by {{plan?.Owner}}</em> -->
       </mat-card-subtitle>
     </div>
     <div style="flex-grow: 7">
@@ -71,4 +69,18 @@
   <mat-card-actions>
   </mat-card-actions>
 
-</mat-card>
+</mat-card> -->
+
+<mat-card class="pom-c-card">
+    <mat-card-header>
+      <mat-card-title class="pom-c-cardtitle">{{plan.LearningPlanName}}</mat-card-title>
+      <!-- <mat-card-subtitle>{{plan.Technology}}</mat-card-subtitle> -->
+    </mat-card-header>
+    <mat-card-content class="pom-c-card__content">
+    </mat-card-content>
+    <mat-card-actions class="pom-l-action_buttons">
+      <button mat-button (click)="getPlanOfId()">Edit</button>
+      <button mat-button (click)="viewPlanOfId()">View</button>
+    </mat-card-actions>
+  </mat-card>
+  

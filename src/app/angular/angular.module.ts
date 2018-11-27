@@ -15,6 +15,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatStepperModule} from '@angular/material/stepper';
+
 import {
   MatSidenavModule,
   MatListModule,
@@ -41,6 +43,7 @@ import { NgxSortableModule } from 'ngx-sortable'
     MatCardModule,
     MatButtonModule,
     MatTabsModule,
+    MatStepperModule,
     MatSidenavModule,
     MatListModule,
     MatInputModule,
@@ -62,6 +65,7 @@ import { NgxSortableModule } from 'ngx-sortable'
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
+    MatStepperModule,
     MatCardModule,
     MatButtonModule,
     MatTabsModule,

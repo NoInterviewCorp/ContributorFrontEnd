@@ -1,15 +1,18 @@
 <!-- <h1 *ngIf="choice==1">Your Contributions</h1><br> -->
 <div class="contributionedit">
-    <div class="contribution-card-container">
-        <div  class="cards" *ngFor="let item of plan">
-            <app-yourcontributionscard [plan]="item" *ngIf="choice==1" (hasClickedEdit)=handleEdit($event)
-                (hasClickedView)=handleView($event)></app-yourcontributionscard>
-            <app-subscribecard [plan]="item" *ngIf="choice==3"></app-subscribecard>
+    <div class="pom-card">
+        <div class="contribution-card-container">
+            <div class="cards" *ngFor="let item of plan">
+                <app-yourcontributionscard [plan]="item" *ngIf="choice==1" (hasClickedEdit)=handleEdit($event)
+                    (hasClickedView)=handleView($event)></app-yourcontributionscard>
+                <app-subscribecard [plan]="item" *ngIf="choice==3"></app-subscribecard>
+                <app-yoursubscriptionscard [plan]="item" *ngIf="choice==2"></app-yoursubscriptionscard>
+            </div>
         </div>
     </div>
     <div class="editview">
-        <app-editlearningplan *ngIf="hasClickedEditLP && !hasClickedSaveChangesInEdit && !hasClickedClearEdit " 
-        (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
-        <app-learningplanview *ngIf="hasClickedViewLP"></app-learningplanview>
+        <app-editlearningplan *ngIf="hasClickedEditLP && !hasClickedSaveChangesInEdit && !hasClickedClearEdit "
+            (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
+        <app-learningplanview *ngIf="hasClickedViewLP && !hasClickedClearView" (hasClickedClearInView)=handleClearView($event)></app-learningplanview>
     </div>
 </div>

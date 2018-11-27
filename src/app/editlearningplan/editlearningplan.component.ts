@@ -26,7 +26,6 @@ export class EditlearningplanComponent implements OnInit {
   }
   clickedClearInEdit() {
     this.hasClickedClearInEdit.emit(true);
-
   }
 
 }

@@ -1,12 +1,13 @@
 .example-sidenav-content {
   display: flex;
   flex-wrap: wrap;
+  padding-top: 50px;
 }
 
 .example-sidenav {
     position: fixed;
     height: 100%;
-  padding: 0;
+    padding-top: 50px;
 }
 
 button{

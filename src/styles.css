@@ -16,3 +16,10 @@ body {
 * {
   font-family: 'Product Sans';
 }
+
+.mat-radio-label-content {
+  white-space: normal;
+  /* fix it later */
+ }
+
+ 
