@@ -22,7 +22,7 @@
             </div>
         </form>
         <div class="pom-c-resourcecard" *ngFor="let res of resources;let i = index">
-            <mat-card class="pom-c-card">{{res?.ResourceName}}</mat-card>
+            <a><mat-card class="pom-c-card">{{res?.ResourceName}}</mat-card></a>
             <button mat-raised-button class="pom-c-button" (click)="clickedAddQuestions(i)">Add Questions</button>
         </div>
     </div>

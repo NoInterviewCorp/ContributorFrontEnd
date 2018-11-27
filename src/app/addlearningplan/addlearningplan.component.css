@@ -43,6 +43,7 @@ button {
 .pom-c-card{
   background-color: #080357;
   color: white;
+  word-wrap: break-word;
   flex: 7;
   margin-right: 20px;
 }
