@@ -11,9 +11,9 @@ import { Technology } from '../technology.model';
 export class TestComponent implements OnInit {
 
   //toggle = true;
-  toggle:any;
+  toggle: any;
   // toggle='green';
-  status = 'Enable'; 
+  status = 'Enable';
   selectedTech: any;
   questions: any;
   duration = 1000; //timer duration
@@ -32,47 +32,84 @@ export class TestComponent implements OnInit {
   callResult = false;
   value = 0;
   valueInc = 0;
-  concepts:any;
-  conceptarray:any;
+  concepts: any[];
+  selectedConceptArray: any[];
   techName: string; subTopicName: string;
-  toggles=[true, true, true, true];
-  
+  // toggles=[true, true, true, true];
+  toggles: boolean[];
+  isSelected: boolean[];
+  maxSelectableConcepts = 0;
+  hasSelectedMaxConcepts = false;
 
   constructor(private testService: TestService) { }
 
   ngOnInit() {
-
     this.getConceptsFunction();
-
-  }
-  enableDisableRule(job) {
-    this.toggle = !this.toggle;
-      // this.getConceptsFunction();
   }
 
-  selectConcept(j) {
-  // console.log(j);
-  // console.log(this.toggles[j]);
-  // this.toggles[j] = !this.toggles[j];
-  if(this.toggles[j]==true) {
-    // console.log("yay false .. duh");
-    this.toggles[j]=false;
-  }
-  else if (this.toggles[j]==false) {
-    // console.log("from false to true");
-    this.toggles[j]=true;
-  }
-  // console.log(this.toggles[j]);
-  // console.log("concept selected is::::"+this.concepts[j]);
+  toggleColor(j) {
+    if (this.toggles[j] == true) {
+      this.toggles[j] = false;
+    }
+    else if (this.toggles[j] == false) {
+      this.toggles[j] = true;
+    }
   }
 
-  getConceptsFunction(){
+  selectConcept(k) {
+    if (this.isSelected[k] == false) {
+      this.maxSelectableConcepts++;
+      this.isSelected[k] = true;
+      if (this.maxSelectableConcepts >= 4) {
+        console.log("dont select more");
+        this.hasSelectedMaxConcepts = true;
+        this.disableButtons();
+      }
+
+      // console.log("count after selection:"+this.maxSelectableConcepts+this.isSelected);
+    }
+    else if (this.isSelected[k] == true) {
+      this.isSelected[k] = false;
+      this.maxSelectableConcepts--;
+      if (this.hasSelectedMaxConcepts && this.maxSelectableConcepts < 4) {
+        this.enableButtons();
+      }
+      // console.log("count after deselection:"+this.maxSelectableConcepts+this.isSelected);
+    }
+  }
+
+  disableButtons() {
+    this.isSelected.forEach((isSelectedItem, itemIndex) => {
+      if (!isSelectedItem) {
+        let element = document.getElementById("Concept_" + itemIndex);
+        let attr = document.createAttribute("disabled");
+        element.attributes.setNamedItem(attr);
+      }
+    });
+  }
+
+  enableButtons() {
+    console.log("called enableButtons");
+    this.isSelected.forEach((isSelectedItem, itemIndex) => {
+      if (!isSelectedItem) {
+        let element = document.getElementById("Concept_" + itemIndex).removeAttribute("disabled");
+
+        // let attr = document.createAttribute("disabled");
+        // element.attributes.setNamedItem(attr);
+      }
+    });
+  }
+
+  getConceptsFunction() {
     this.testService.getConcepts()
-    .subscribe((res: any) => {
-      this.concepts = res;
-      console.log(this.concepts);
-      console.log(this.concepts[0].Name);
-  });
+      .subscribe((res: any) => {
+        this.concepts = res;
+        console.log(this.concepts);
+        console.log(this.concepts.length);
+        this.toggles = new Array(this.concepts.length).fill(true); //initialize all with true
+        this.isSelected = new Array(this.concepts.length).fill(false); //initialize all with false since nothing is selected at firssst
+        // console.log(this.concepts[0].Name);
+      });
 
   }
   display() {
@@ -133,6 +170,8 @@ export class TestComponent implements OnInit {
     this.quesCount++;
     this.counter = this.duration;
   }
+
+
 
 }
 

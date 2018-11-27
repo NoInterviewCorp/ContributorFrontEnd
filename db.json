@@ -613,6 +613,12 @@
         },
         {
             "Name": "Loops"
+        },
+        {
+            "Name": "Algorithms"
+        },{
+            "Name": "Data Structures"
         }
+
     ]
 }

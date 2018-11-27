@@ -12,7 +12,7 @@
           <li>The total score for the quiz is based on your responses to all questions.</li>
       </ul>
     </div>
-    <div class="concepts">
+    <div class="conceptsSelect">
       <p>
         Concepts:
       </p>
@@ -20,10 +20,11 @@
       <mat-card (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}">Concept 2</mat-card> 
       <mat-card (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}">Concept 3</mat-card> 
       <mat-card (click)="enableDisableRule()" [ngClass]="{'green' : toggle, 'red': !toggle}">Concept 4</mat-card>  -->
-      <div *ngFor="let c of concepts; index as i" >
-        <button mat-raised-button (click)="selectConcept(i)" [ngClass]="{'green' : toggles[i], 'red': !toggles[i]}"> {{c?.Name}}</button>
+      <div class ="concepts" *ngFor="let c of concepts; index as i" >
+        <button [attr.id]="'Concept_' + i" mat-raised-button (click)="toggleColor(i);selectConcept(i)"  [ngClass]="{'green' : toggles[i], 'red': !toggles[i] }"> {{c?.Name}}</button>
       </div>
     </div>
+
     <div class = "Btn">
       <button mat-raised-button *ngIf="showQuesButton" (click)="display()">Start Test</button>
     </div>
