@@ -4,10 +4,8 @@
 
     <ng-template matStepLabel>Details of Plan</ng-template>
     <h4>{{plan.LearningPlanName}}</h4>
-    <h5>Technology:</h5>
-    <p>{{plan.Technology}}</p>
-    <h5>Summary</h5>
-    <p>{{plan.Summary}}</p>
+    <label><b>Technology:</b></label>{{plan.Technology}}<br><br>
+    <label><b>Summary:</b></label>{{plan.Summary}}
     <div>
       <button mat-button matStepperNext>Next</button>
     </div>
@@ -24,13 +22,27 @@
           <mat-panel-description>
           </mat-panel-description>
         </mat-expansion-panel-header>
-        <p>Resource Link:</p>
-        <a href="" target="_blank">{{item.ResourceLink}}</a>
-        <p>Description:</p>
-        <p>{{item.Description}}</p>
-        <!--yet to add concepts-->
-        <p>Blooms Level: </p>
-        <p>{{item.BloomsTaxonomy}}</p>
+        <label><b>Resource Name:</b></label>{{item.ResourceName}}<br><br>
+        <label><b>Resource Link:</b></label>
+        <a href="" target="_blank">{{item.ResourceLink}}</a><br><br>
+        <label><b>Description:</b></label>{{item.Description}}<br><br>
+
+        <!--YET TO ADD CONCEPTS-->
+
+        <mat-form-field>
+            <mat-select  value="{{item.BloomsTaxonomy}}">
+              <mat-option value="1">Knowledge</mat-option>
+              <mat-option value="2">Comprehension</mat-option>
+              <mat-option value="3">Application</mat-option>
+              <mat-option value="4">Analysis</mat-option>
+              <mat-option value="5">Synthesis</mat-option>
+              <mat-option value="6">Evaluation</mat-option>
+              </mat-select>
+          </mat-form-field>
+          <a matTooltip="know about Bloom's Taxonomy" aria-label="Button that displays a tooltip when focused or hovered over"
+          href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
+          <mat-icon class="help">help</mat-icon>
+        </a>
       </mat-expansion-panel>
     </mat-accordion>
     <div>

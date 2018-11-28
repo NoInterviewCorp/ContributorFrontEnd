@@ -22,14 +22,20 @@
             </div>
         </form>
         <div class="pom-c-resourcecard" *ngFor="let res of resources;let i = index">
-            <a><mat-card class="pom-c-card">{{res?.ResourceName}}</mat-card></a>
+            <button mat-button class="pom-c-card" (click)="clickedResourceToEdit(i)">
+                <mat-card> {{res?.ResourceName}}</mat-card>
+            </button>
             <button mat-raised-button class="pom-c-button" (click)="clickedAddQuestions(i)">Add Questions</button>
         </div>
     </div>
     <div class="resource">
         <app-addresource *ngIf="hasClickedAddResource && !hasClickedSaveResource" (hasClickedSave)="handleSave($event)"></app-addresource>
-        <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion && !hasClickedClearQuestions" 
-        (hasClickedSubmit)="handleSubmit($event)" (hasClickedClearInQuestions)="handleClearInQuestions($event)"></app-questions>
+
+        <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion && !hasClickedClearQuestions"
+            (hasClickedSubmit)="handleSubmit($event)" (hasClickedClearInQuestions)="handleClearInQuestions($event)"></app-questions>
+
+        <app-resourceedit [resource]="resource" *ngIf="hasClickedResourceToEdit && !hasClickedClearInResourceEdit"
+            (hasClickedClearInResourceEdit)="handleClearInResourceEdit($event)"></app-resourceedit>
     </div>
 </div>
 

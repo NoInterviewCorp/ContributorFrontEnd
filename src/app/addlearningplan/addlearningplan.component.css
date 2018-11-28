@@ -24,9 +24,7 @@ mat-form-field{
   font-size: 17px;
   margin-top: 20px;
 }
-button {
-  margin-top: 20px;
-}
+
 .example-form {
   display: flex;
   flex-direction: column;
@@ -41,12 +39,12 @@ button {
   flex-direction: row; 
 }
 .pom-c-card{
-  background-color: #080357;
-  color: white;
   word-wrap: break-word;
   flex: 7;
   margin-right: 20px;
 }
-.pom.c.button{
+.pom-c-button{
+  background-color: #080357;
+  color: white;
   flex: 3;
 }

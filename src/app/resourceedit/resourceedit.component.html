@@ -1,0 +1,32 @@
+<button mat-button (click)="clickedClearInResourceEdit()"><mat-icon>clear</mat-icon></button>
+<form class="example-form">
+ <h4>{{resource.ResourceName}}</h4> 
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Resource Name"  [(ngModel)]="resource.ResourceName" 
+    value="{{resource.ResourceName}}" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Technology" value="{{resource.Technology}}">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Resource Link" value="{{resource.ResourceLink}}">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Description" value="{{resource.Description}}"></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Bloom's Level" value="{{resource.BloomsTaxonomy}}">
+      <mat-option value="1">Knowledge</mat-option>
+      <mat-option value="2">Comprehension</mat-option>
+      <mat-option value="3">Application</mat-option>
+      <mat-option value="4">Analysis</mat-option>
+      <mat-option value="5">Synthesis</mat-option>
+      <mat-option value="6">Evaluation</mat-option>
+      </mat-select>
+  </mat-form-field>
+  <a matTooltip="know about Bloom's Taxonomy" aria-label="Button that displays a tooltip when focused or hovered over"
+  href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
+  <mat-icon class="help">help</mat-icon>
+</a>
+</form>
+<button mat-button>Save</button>

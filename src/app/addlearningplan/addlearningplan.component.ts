@@ -17,7 +17,9 @@ export class AddlearningplanComponent implements OnInit {
   resource: Resource;
   resources: Resource[] = [];
   hasClickedAddQuestions: boolean;
-  hasClickedClearQuestions:boolean;
+  hasClickedClearQuestions: boolean;
+  hasClickedResourceToEdit: boolean;
+  hasClickedClearInResourceEdit: boolean;
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -35,8 +37,8 @@ export class AddlearningplanComponent implements OnInit {
     this.resources[index].Questions = this.com.getQuestionOfResource(index);
     console.log(this.resources);
   }
-  handleClearInQuestions(clear){
-this.hasClickedClearQuestions=clear;
+  handleClearInQuestions(clear) {
+    this.hasClickedClearQuestions = clear;
   }
   // addResource() {
   //   this.hasClickedAdd = true;
@@ -49,7 +51,7 @@ this.hasClickedClearQuestions=clear;
     this.hasClickedSaveResource = false;
   }
   clickedAddQuestions(index) {
-    this.hasClickedClearQuestions=false;
+    this.hasClickedClearQuestions = false;
     this.hasClickedAddQuestions = true;
     this.hasClickedSubmitQuestion = false;
     this.resIndexForAddingQuestions = index;
@@ -57,5 +59,12 @@ this.hasClickedClearQuestions=clear;
     console.log(this.resIndexForAddingQuestions);
 
   }
-
+  clickedResourceToEdit(index) {
+    this.resource = this.resources[index];
+    this.hasClickedResourceToEdit = true;
+    this.hasClickedClearInResourceEdit = false;
+  }
+  handleClearInResourceEdit(clear) {
+    this.hasClickedClearInResourceEdit = clear;
+  }
 }

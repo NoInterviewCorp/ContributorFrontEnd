@@ -10,6 +10,19 @@ import { Resource } from 'src/models/resource.model';
 })
 export class EditlearningplanComponent implements OnInit {
   plan: LearningPlan;
+  resource: Resource = {
+    ResourceId: "",
+    ResourceName: "",
+    ResourceLink: "",
+    Description: "",
+    BloomsTaxonomy: 1,
+    Technology: {
+      technologyId: 1,
+      Name: "",
+      Questions: [] //remove it laterr !!!!!!
+    },
+    Questions: [],
+  };
   @Output() hasClickedSaveInEdit = new EventEmitter;
   @Output() hasClickedClearInEdit = new EventEmitter;
   disableButton: boolean;
@@ -27,5 +40,7 @@ export class EditlearningplanComponent implements OnInit {
   clickedClearInEdit() {
     this.hasClickedClearInEdit.emit(true);
   }
-
+  clickedAddResourceInEdit(){
+    this.plan.Resources.push(this.resource);
+  }
 }

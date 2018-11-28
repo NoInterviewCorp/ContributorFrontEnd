@@ -39,6 +39,7 @@ import { LearnComponent } from './learn/learn.component';
 import { LearnerComponent } from './learner/learner.component';
 import { SearchComponent } from './learner/search/search.component';
 import { YoursubscriptionscardComponent } from './scrolling-container/yoursubscriptionscard/yoursubscriptionscard.component';
+import { ResourceeditComponent } from './resourceedit/resourceedit.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -92,6 +93,8 @@ export function getAuthServiceConfigs() {
 
     // Commons
     ScrollingContainerComponent,
+
+    ResourceeditComponent,
 
   ],
   imports: [

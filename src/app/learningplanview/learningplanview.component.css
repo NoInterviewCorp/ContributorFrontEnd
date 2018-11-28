@@ -1,12 +1,15 @@
-p {
-  font-size: 15px;
-  margin-top: 0;
+*{
+font-size: 16px;
 }
 a{
   background-color: white;
   color: black;
 }
-.pom-b-clear{
+ .pom-b-clear{
   margin:10px;
   float: right;
 }
+label{
+  font-size: 16px;
+  padding-right: 10px;
+} 

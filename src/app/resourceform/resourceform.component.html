@@ -1,41 +1,36 @@
 <form class="example-form">
     <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="resource.ResourceName" [ngModelOptions]="{standalone: true}" 
-        placeholder="Resource Name">
+        <input matInput [(ngModel)]="resource.ResourceName" [ngModelOptions]="{standalone: true}" placeholder="Resource Name">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Resource Link" [formControl]="resourcelink" 
-        [(ngModel)]="resource.ResourceLink" required>
+        <input matInput placeholder="Resource Link" [formControl]="resourcelink" [(ngModel)]="resource.ResourceLink"
+            required>
         <mat-error *ngIf="resourcelink.invalid">{{getErrorMessage()}}</mat-error>
         <mat-error *ngIf="resourcelink.valid">{{getValidMessage(0)}}</mat-error>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Description" [(ngModel)]="resource.Description" 
-        [ngModelOptions]="{standalone: true}"></textarea>
+        <textarea matInput placeholder="Description" [(ngModel)]="resource.Description" [ngModelOptions]="{standalone: true}"></textarea>
     </mat-form-field>
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Technology" [(ngModel)]="resource.Technology.Name" 
-        [ngModelOptions]="{standalone: true}">
+        <input matInput placeholder="Technology" [(ngModel)]="resource.Technology.Name" [ngModelOptions]="{standalone: true}">
     </mat-form-field>
     <mat-form-field class="example-chip-list">
         <mat-chip-list #chipList>
-            <mat-chip *ngFor="let concept of concepts" [selectable]="selectable" [removable]="removable" 
-            (removed)="remove(concept)">
+            <mat-chip *ngFor="let concept of concepts" [selectable]="selectable" [removable]="removable" (removed)="remove(concept)">
                 {{concept.name}}
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
             </mat-chip>
             <input placeholder="Concepts Covered" [matChipInputFor]="chipList" 
             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" 
-                [formControl]="concept"
-                required autofocus>
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)"
+                 [formControl]="concept" required autofocus>
             <mat-error *ngIf="concept.invalid">{{getErrorMessage1()}}</mat-error>
             <mat-error *ngIf="concept.valid">{{getValidMessage(1)}}</mat-error>
         </mat-chip-list>
     </mat-form-field>
     <mat-form-field>
-        <mat-select [(value)]="selected" placeholder="Give Bloom's Taxanomy Level" 
-        [(ngModel)]="resource.BloomsTaxonomy" [formControl]="bloomlevel" required>
+        <mat-select [(value)]="selected" placeholder="Give Bloom's Taxanomy Level" [(ngModel)]="resource.BloomsTaxonomy"
+            [formControl]="bloomlevel" required>
             <mat-error *ngIf="bloomlevel.invalid">{{getErrorMessage2()}}</mat-error>
             <mat-error *ngIf="bloomlevel.valid">{{getValidMessage(2)}}</mat-error>
             <mat-option value="1">Knowledge</mat-option>

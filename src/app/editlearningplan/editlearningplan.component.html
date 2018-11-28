@@ -24,7 +24,7 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Resource Name" value="{{item.ResourceName}}">
+      <input matInput placeholder="Resource Name" value="{{item.ResourceName}}" [(ngModel)]="item.ResourceName">
     </mat-form-field>
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Description" value="{{item.Description}}">
@@ -59,6 +59,9 @@
         </mat-accordion>
       </mat-expansion-panel>
     </mat-accordion>
+    <div>
+      <button mat-raised-button color="black" (click)="clickedAddResourceInEdit()">Add Resource</button>
+    </div>
     <div>
       <button mat-raised-button color="black" (click)="clickedSaveInEdit()" [disabled]="disableButton">Save</button>
     </div>
