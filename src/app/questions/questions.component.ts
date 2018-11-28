@@ -33,14 +33,11 @@ export class QuestionsComponent implements OnInit {
   handleSave(index) {
     this.hasClickedSaveQuestion = true;
     this.index = index;
-  }
-
-  onClickOfSubmit() {
     let result: boolean;
     console.log("error is " + this.noerror);
     if (this.noerror.length > 1) {
-      for (let i = 0; i < this.noerror.length - 1; i++) {
-        result = (this.noerror[i]) && (this.noerror[i + 1]);
+      for (let k = 0; k < this.noerror.length - 1; k++) {
+        result = (this.noerror[k]) && (this.noerror[k + 1]);
       }
     } else {
       result = this.noerror[0];
@@ -56,6 +53,29 @@ export class QuestionsComponent implements OnInit {
       this.haserror = true;
       this.hasnoerror = false;
     }
+  }
+
+  onClickOfSubmit() {
+    // let result: boolean;
+    // console.log("error is " + this.noerror);
+    // if (this.noerror.length > 1) {
+    //   for (let i = 0; i < this.noerror.length - 1; i++) {
+    //     result = (this.noerror[i]) && (this.noerror[i + 1]);
+    //   }
+    // } else {
+    //   result = this.noerror[0];
+    // }
+    // console.log("result is " + result);
+    // if (result) {
+    //   this.haserror = false;
+    //   this.hasnoerror = true;
+    //   console.log("no error");
+    //   this.postQuestions();
+    // }
+    // else {
+    //   this.haserror = true;
+    //   this.hasnoerror = false;
+    // }
     this.hasClickedSubmit.emit(this.index);
     this.disableButton = true;
   }

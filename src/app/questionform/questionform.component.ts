@@ -15,14 +15,14 @@ export class QuestionformComponent implements OnInit {
   id: number;
   @Output() noError = new EventEmitter();
   @Output() hasClickedSave = new EventEmitter();
-  disableButton:boolean;
+  disableButton: boolean;
   // options:Options[] = ?
   questions: Questions = {
     QuestionId: 0,
     ProblemStatement: "",
     Options: [],
     BloomLevel: 1,
-    
+
   }
   question = new FormControl('', [Validators.required]);
   options: OptionForm[] = [];

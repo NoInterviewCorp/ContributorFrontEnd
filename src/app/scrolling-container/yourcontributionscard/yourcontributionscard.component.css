@@ -1,4 +1,4 @@
-
+/* 
 .pom-c-card__content {
     height: 0px;
   }
@@ -21,4 +21,29 @@ mat-card-subtitle{
   }
 .pom-c-cardtitle{
     word-wrap: break-word;
-   }
+   } */
+   .pom-l-flex_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+.pom-c-card__content {
+    height: 25px;
+  }
+  
+.pom-c-card {
+    margin: 7px;
+    width: 250px;
+    padding: 10px;
+    color: whitesmoke;
+    background: #080357;
+  }
+  
+.pom-l-action_buttons {
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+  }
+  

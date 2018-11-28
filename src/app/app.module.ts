@@ -30,7 +30,6 @@ import { ResourceformComponent } from './resourceform/resourceform.component';
 import { QuestionformComponent } from './questionform/questionform.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddtopicComponent } from './addtopic/addtopic.component';
 import { SubscribecardComponent } from './scrolling-container/subscribecard/subscribecard.component';
 import { YourcontributionscardComponent } from './scrolling-container/yourcontributionscard/yourcontributionscard.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
@@ -77,7 +76,6 @@ export function getAuthServiceConfigs() {
     ResourceformComponent,
     QuestionformComponent,
     QuestionsComponent,
-    AddtopicComponent,
     YourcontributionscardComponent,
     EditlearningplanComponent,
     LearningplanviewComponent,
