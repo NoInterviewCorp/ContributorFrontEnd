@@ -61,7 +61,9 @@ export class ScrollingContainerComponent implements OnInit {
     this.hasClickedClearView = false;
   }
   handleSaveEdit(savechanges) {
-    this.hasClickedSaveChangesInEdit = savechanges
+    this.hasClickedSaveChangesInEdit = savechanges;
+    this.hasClickedViewLP = false;
+    this.hasClickedEditLP = false;
   }
   handleClearEdit(clear) {
     this.hasClickedClearEdit = clear;

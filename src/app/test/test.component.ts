@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from '../services/test.service';
-import { Technology } from '../technology.model';
+// import { Technology } from '../../models/technology.model';
 
 
 @Component({
@@ -40,6 +40,7 @@ export class TestComponent implements OnInit {
   maxSelectableConcepts = 0;
   hasSelectedMaxConcepts = false;
   deselectedConcept: string;
+  hasSelected4= false;
 
   constructor(private testService: TestService) { }
 
@@ -66,6 +67,7 @@ export class TestComponent implements OnInit {
         console.log("dont select more");
         this.hasSelectedMaxConcepts = true;
         this.disableButtons();
+        this.hasSelected4=true;
       }
     }
     else if (this.isSelected[k] == true) {
@@ -76,6 +78,7 @@ export class TestComponent implements OnInit {
       console.log("selected concepts are now:"+this.selectedConceptArray);
       if (this.hasSelectedMaxConcepts && this.maxSelectableConcepts < 4) {
         this.enableButtons();
+        this.hasSelected4=false;
       }
     }
   }
@@ -86,12 +89,12 @@ export class TestComponent implements OnInit {
         let element = document.getElementById("Concept_" + itemIndex);
         let attr = document.createAttribute("disabled");
         element.attributes.setNamedItem(attr);
+
       }
     });
   }
 
   enableButtons() {
-    console.log("called enableButtons");
     this.isSelected.forEach((isSelectedItem, itemIndex) => {
       if (!isSelectedItem) {
         let element = document.getElementById("Concept_" + itemIndex).removeAttribute("disabled");
@@ -103,8 +106,6 @@ export class TestComponent implements OnInit {
     this.testService.getConcepts()
       .subscribe((res: any) => {
         this.concepts = res;
-        console.log(this.concepts);
-        console.log(this.concepts.length);
         this.toggles = new Array(this.concepts.length).fill(true); //initialize all with true
         this.isSelected = new Array(this.concepts.length).fill(false); //initialize all with false since nothing is selected at firssst
       });
@@ -140,7 +141,6 @@ export class TestComponent implements OnInit {
 
   nextQuestion() {
     this.resetTimer();
-    console.log(this.selectedOption);
     this.selectedOption = "";
     this.questionCounter++;
     this.currentQuestion = this.questions[this.questionCounter];
@@ -161,3 +161,4 @@ export class TestComponent implements OnInit {
 
 
 }
+
