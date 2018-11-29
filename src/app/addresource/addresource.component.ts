@@ -20,7 +20,7 @@ export class AddresourceComponent implements OnInit {
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
   resource: Resource;
-  disableButton:boolean;
+  disableButton: boolean;
   @Output() hasClickedSave = new EventEmitter();
   index: number = -1;
   hasClickedDone: boolean;

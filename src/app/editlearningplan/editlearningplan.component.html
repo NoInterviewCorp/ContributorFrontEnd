@@ -1,4 +1,4 @@
-<button mat-button (click)="clickedClearInEdit()"><mat-icon>clear</mat-icon></button>
+<button mat-button (click)="clickedClearInEdit()"><mat-icon>clear</mat-icon></button><br><br>
 <form class="example-form">
   <mat-form-field appearance="outline" class="field">
     <mat-label>Learning Plan Name</mat-label>
@@ -15,7 +15,7 @@
 </form>
 <h3>Your Plan starts here....</h3>
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let item of plan.Resources">
+  <mat-expansion-panel *ngFor="let item of plan.Resources" class="pom-expansionpanel">
     <mat-expansion-panel-header>
       <mat-panel-title>
         {{item.ResourceName}}

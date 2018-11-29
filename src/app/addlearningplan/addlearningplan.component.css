@@ -1,6 +1,3 @@
-body {
-  font-size: 10px;
-}
 .LPresource{
   display: flex;
   flex-direction: row;
@@ -11,11 +8,10 @@ body {
 .learningplan{
   flex: 5;
   height: 100%;
-
 }
 .resource{
   flex: 5;
-  padding-left: 25px;
+  padding-left: 20px;
   height: 100%;
   background-color: rgb(230, 230, 230);
 }
@@ -25,6 +21,13 @@ mat-form-field{
   margin-top: 20px;
 }
 
+@media (max-width: 425px){
+  mat-form-field{
+    width: 300px;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+}
 .example-form {
   display: flex;
   flex-direction: column;
