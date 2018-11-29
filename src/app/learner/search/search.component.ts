@@ -42,7 +42,7 @@ export class SearchComponent implements OnInit {
   //   this.showSearch = false;
   // }
 
-  noToggle(t: Technology) {
+  learn(t: Technology) {
     this.setTech(t);
     this.popularPlans = this.prefixPopularPlans + this.selectedTech;
     console.log("selected tech for learning:" + this.selectedTech);

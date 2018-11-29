@@ -40,10 +40,6 @@ export class AddlearningplanComponent implements OnInit {
   handleClearInQuestions(clear) {
     this.hasClickedClearQuestions = clear;
   }
-  // addResource() {
-  //   this.hasClickedAdd = true;
-  //   this.topics.push(++this.lastNumber);
-  // }
   postLearningPlan() {
   }
   clickedAddResource() {
@@ -57,7 +53,6 @@ export class AddlearningplanComponent implements OnInit {
     this.resIndexForAddingQuestions = index;
     this.com.setLastResourceIndex(this.resIndexForAddingQuestions);
     console.log(this.resIndexForAddingQuestions);
-
   }
   clickedResourceToEdit(index) {
     this.resource = this.resources[index];

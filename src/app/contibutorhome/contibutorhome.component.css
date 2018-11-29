@@ -6,12 +6,19 @@
   height: 100%;
 }
 
-.example-sidenav-content {
+.pom-c-button {
+  position: fixed;
   padding-left: 10px;
-  margin-top: 100px;
+  margin-top: 70px;
   flex-wrap: wrap;
 }
 mat-list{
   margin-top: 70px;
+}
+
+.example-sidenav-content{
+  margin-top: 120px;
+  margin-left: 8px;
+  flex-wrap: wrap;
 }
 

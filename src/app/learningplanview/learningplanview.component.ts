@@ -20,5 +20,4 @@ export class LearningplanviewComponent implements OnInit {
   clickedClearInView() {
     this.hasClickedClearInView.emit(true);
   }
-
 }

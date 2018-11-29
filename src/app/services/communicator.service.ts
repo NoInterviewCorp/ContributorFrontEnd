@@ -14,7 +14,7 @@ export class CommunicatorService {
   editSelectedPlan: LearningPlan;
   selectedLearningPlan: LearningPlan;
   private resourceArray: Resource[] = [];
-  private lastResourceIndex:number;
+  private lastResourceIndex: number;
   addQuestion: Questions;
 
   constructor(private http: HttpClient) { }
@@ -30,13 +30,13 @@ export class CommunicatorService {
   addQuestionToResourceOfIndex(index: number, question: Questions) {
     this.resourceArray[index].Questions.push(question);
   }
-  getQuestionOfResource(index:number){
+  getQuestionOfResource(index: number) {
     return this.resourceArray[index].Questions;
   }
-  setLastResourceIndex(index){
+  setLastResourceIndex(index) {
     this.lastResourceIndex = index;
   }
-  getLastResourceIndex(){
+  getLastResourceIndex() {
     return this.lastResourceIndex;
   }
   getconcepts() {

@@ -12,7 +12,7 @@
       <div class="options" *ngFor="let control of form.controls.items.controls; let i = index;" [formGroup]="control">
         <div class="inputs">
           <input type="checkbox" formControlName="checkbox" id="{{ control.controls.id.value }}">
-          <input matInput placeholder="options"  [(ngModel)]="questions.Options[i].Content" [formControl]="options[i].formControl"
+          <input matInput placeholder="options" [(ngModel)]="questions.Options[i].Content" [formControl]="options[i].formControl"
             required>
         </div>
         <mat-error *ngIf="options[i].formControl.invalid">{{getErrorMessage1(i)}}</mat-error>

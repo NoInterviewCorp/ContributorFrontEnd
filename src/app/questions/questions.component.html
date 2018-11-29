@@ -1,6 +1,7 @@
-<button mat-button (click)="clickedClearInQuestions()"><mat-icon>clear</mat-icon></button>
-  <app-questionform (noError)="handleEventEmitter($event)" 
-  (hasClickedSave)="handleSave($event)"></app-questionform><br><br>
+<button mat-button (click)="clickedClearInQuestions()">
+  <mat-icon>clear</mat-icon>
+</button>
+<app-questionform (noError)="handleEventEmitter($event)" (hasClickedSave)="handleSave($event)"></app-questionform><br><br>
 
 <!-- <div class="buttons">
   <div class="button-row">
@@ -10,7 +11,7 @@
 </div><br><br> -->
 <div class="button-row">
   <button mat-flat-button (click)="onClickOfSubmit()" id="submit" *ngIf="hasClickedSaveQuestion && hasnoerror"
-   [disabled]="disableButton">Submit</button>
+    [disabled]="disableButton">Submit</button>
 </div>
 <p *ngIf="haserror">you have to give all the required fields</p>
 <p *ngIf="hasnoerror"> your questions have been posted successfully</p>

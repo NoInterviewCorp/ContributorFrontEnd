@@ -38,7 +38,7 @@ export class ResourceformComponent implements OnInit {
   };
   //  hasClickedAddQuestions:boolean;
   results: any = [];
-  disableButton:boolean;
+  disableButton: boolean;
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -103,7 +103,7 @@ export class ResourceformComponent implements OnInit {
   }
   clickedDone() {
     let index = this.com.addResource(this.resource);
-    console.log("index is "+index);
+    console.log("index is " + index);
     this.hasClickedDone.emit(index);
     this.disableButton = true;
 

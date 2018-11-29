@@ -23,7 +23,7 @@ export class QuestionsComponent implements OnInit {
   hasnoerror: boolean = false;
   hasClickedAdd: boolean = false;
   hasAdded3Qs: boolean = false;
-  disableButton:boolean;
+  disableButton: boolean;
   constructor() {
   }
   //private bottomSheetRef: MatBottomSheetRef<QuestionsComponent>

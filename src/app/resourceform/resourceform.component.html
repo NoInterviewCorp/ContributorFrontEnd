@@ -20,10 +20,9 @@
                 {{concept.name}}
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
             </mat-chip>
-            <input placeholder="Concepts Covered" [matChipInputFor]="chipList" 
-            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)"
-                 [formControl]="concept" required autofocus>
+            <input placeholder="Concepts Covered" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" [formControl]="concept"
+                required autofocus>
             <mat-error *ngIf="concept.invalid">{{getErrorMessage1()}}</mat-error>
             <mat-error *ngIf="concept.valid">{{getValidMessage(1)}}</mat-error>
         </mat-chip-list>

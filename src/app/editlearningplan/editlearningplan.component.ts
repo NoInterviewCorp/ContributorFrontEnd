@@ -28,7 +28,7 @@ export class EditlearningplanComponent implements OnInit {
   clickedClearInEdit() {
     this.hasClickedClearInEdit.emit(true);
   }
-  clickedAddResourceInEdit(){
+  clickedAddResourceInEdit() {
     this.plan.Resources.push(new Resource);
   }
 }

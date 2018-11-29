@@ -24,8 +24,8 @@ export class TestService {
     console.log((TestService.tech == null ? "NACHO NULL HUA" : TestService.tech.Questions));
     return TestService.tech.Questions;
   }
-  
-  getConcepts(){
+
+  getConcepts() {
     return this.http.get('http://localhost:3000/Concept');
   }
 

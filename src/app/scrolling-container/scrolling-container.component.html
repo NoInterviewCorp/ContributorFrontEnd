@@ -16,8 +16,8 @@
         </div>
     </div>
     <div class="editview" *ngIf="hasClickedEditLP || hasClickedViewLP">
-        <app-editlearningplan *ngIf="hasClickedEditLP && !hasClickedSaveChangesInEdit && !hasClickedClearEdit "
-            (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
-        <app-learningplanview *ngIf="hasClickedViewLP && !hasClickedClearView" (hasClickedClearInView)=handleClearView($event)></app-learningplanview>
+        <app-editlearningplan *ngIf="hasClickedEditLP && !hasClickedSaveChangesInEdit 
+        && !hasClickedClearEdit && !hasClickedViewLP" (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
+        <app-learningplanview *ngIf="hasClickedViewLP && !hasClickedClearView && !hasClickedEditLP" (hasClickedClearInView)=handleClearView($event)></app-learningplanview>
     </div>
 </div>

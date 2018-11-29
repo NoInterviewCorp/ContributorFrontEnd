@@ -1,4 +1,6 @@
-<button mat-button (click)="clickedClearInEdit()"><mat-icon>clear</mat-icon></button><br><br>
+<button mat-button (click)="clickedClearInEdit()">
+  <mat-icon>clear</mat-icon>
+</button><br><br>
 <form class="example-form">
   <mat-form-field appearance="outline" class="field">
     <mat-label>Learning Plan Name</mat-label>
@@ -35,7 +37,7 @@
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Blooms Taxonomy" value="{{item.BloomsTaxonomy}}">
     </mat-form-field>
-    
+
     <mat-accordion>
       <mat-expansion-panel *ngFor="let question of item.Questions">
         <mat-expansion-panel-header>
@@ -55,13 +57,13 @@
             <input matInput placeholder="BloomsTaxonomy" value="{{question.BloomLevel}}">
           </mat-form-field>
         </mat-expansion-panel-header>
-        </mat-expansion-panel>
-        </mat-accordion>
       </mat-expansion-panel>
     </mat-accordion>
-    <div>
-      <button mat-raised-button color="black" (click)="clickedAddResourceInEdit()">Add Resource</button>
-    </div>
-    <div>
-      <button mat-raised-button color="black" (click)="clickedSaveInEdit()" [disabled]="disableButton">Save</button>
-    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+<div>
+  <button mat-raised-button color="black" (click)="clickedAddResourceInEdit()">Add Resource</button>
+</div>
+<div>
+  <button mat-raised-button color="black" (click)="clickedSaveInEdit()" [disabled]="disableButton">Save</button>
+</div>

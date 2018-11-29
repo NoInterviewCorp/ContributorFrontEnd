@@ -1,9 +1,11 @@
-<button mat-button (click)="clickedClearInResourceEdit()"><mat-icon>clear</mat-icon></button>
+<button mat-button (click)="clickedClearInResourceEdit()">
+  <mat-icon>clear</mat-icon>
+</button>
 <form class="example-form">
- <h4>{{resource.ResourceName}}</h4> 
+  <h4>{{resource.ResourceName}}</h4>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Resource Name"  [(ngModel)]="resource.ResourceName" 
-    value="{{resource.ResourceName}}" [ngModelOptions]="{standalone: true}">
+    <input matInput placeholder="Resource Name" [(ngModel)]="resource.ResourceName" value="{{resource.ResourceName}}"
+      [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Technology" value="{{resource.Technology}}">
@@ -22,11 +24,11 @@
       <mat-option value="4">Analysis</mat-option>
       <mat-option value="5">Synthesis</mat-option>
       <mat-option value="6">Evaluation</mat-option>
-      </mat-select>
+    </mat-select>
   </mat-form-field>
   <a matTooltip="know about Bloom's Taxonomy" aria-label="Button that displays a tooltip when focused or hovered over"
-  href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
-  <mat-icon class="help">help</mat-icon>
-</a>
+    href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
+    <mat-icon class="help">help</mat-icon>
+  </a>
 </form>
 <button mat-button>Save</button>
