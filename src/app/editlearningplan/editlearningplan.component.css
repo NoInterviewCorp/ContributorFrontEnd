@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .pom-expansionpanel{
     width: 100%;
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 button{
@@ -26,7 +26,7 @@ mat-form-field{
     } 
     .pom-expansionpanel{
         width: 300px;
-        padding-top: 20px;
+        padding-top: 10px;
     } 
     button{
         float: right;

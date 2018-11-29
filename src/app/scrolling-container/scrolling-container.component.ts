@@ -11,11 +11,11 @@ import { HttpClient } from '@angular/common/http';
 export class ScrollingContainerComponent implements OnInit {
   plan: LearningPlan[];
   contributions: LearningPlan[];
-  hasClickedEditLP:boolean;
-  hasClickedViewLP:boolean;
-  hasClickedSaveChangesInEdit:boolean;
-  hasClickedClearEdit:boolean;
-  hasClickedClearView:boolean;
+  hasClickedEditLP: boolean;
+  hasClickedViewLP: boolean;
+  hasClickedSaveChangesInEdit: boolean;
+  hasClickedClearEdit: boolean;
+  hasClickedClearView: boolean;
   @Input() choice: number;
   constructor(private com: CommunicatorService, private http: HttpClient) { }
 
@@ -51,22 +51,26 @@ export class ScrollingContainerComponent implements OnInit {
     }
 
   }
-  handleEdit(edit){
-    this.hasClickedEditLP=edit;
-    this.hasClickedSaveChangesInEdit=false;
-    this.hasClickedClearEdit=false;
+  handleEdit(edit) {
+    this.hasClickedEditLP = edit;
+    this.hasClickedSaveChangesInEdit = false;
+    this.hasClickedClearEdit = false;
   }
-  handleView(view){
-    this.hasClickedViewLP=view;
-    this.hasClickedClearView=false;
+  handleView(view) {
+    this.hasClickedViewLP = view;
+    this.hasClickedClearView = false;
   }
-  handleSaveEdit(savechanges){
-    this.hasClickedSaveChangesInEdit=savechanges
+  handleSaveEdit(savechanges) {
+    this.hasClickedSaveChangesInEdit = savechanges
   }
-  handleClearEdit(clear){
-    this.hasClickedClearEdit=clear;
+  handleClearEdit(clear) {
+    this.hasClickedClearEdit = clear;
+    this.hasClickedEditLP = false;
+    this.hasClickedViewLP = false;
   }
-  handleClearView(clear){
-    this.hasClickedClearView=clear;
+  handleClearView(clear) {
+    this.hasClickedClearView = clear;
+    this.hasClickedViewLP = false;
+    this.hasClickedEditLP = false;
   }
 }
