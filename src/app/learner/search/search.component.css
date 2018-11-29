@@ -24,6 +24,16 @@
     color: whitesmoke;
     background: #080357;
  }
+
+ @media (max-width: 425px){
+  .pom-c-card {
+  margin-bottom :10px;
+  width: 270px;
+  color: whitesmoke;
+  background: #080357;
+  justify-content: center;
+  }
+}
  
  .pom-l-action_buttons {
   display: flex;
