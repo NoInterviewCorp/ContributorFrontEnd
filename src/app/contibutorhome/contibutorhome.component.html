@@ -1,19 +1,19 @@
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <mat-list>
-      <mat-list-item><button mat-button (click)="clickedContributions()">Your Contributions</button></mat-list-item>
-      <mat-list-item><button mat-button (click)="clickedAddLP()">Add Learning Plan</button></mat-list-item>
-      <mat-list-item><button mat-button (click)="clickedAddResource()">Add Resource</button></mat-list-item>
+      <mat-list-item><button mat-button (click)="drawer.toggle();clickedContributions()">Your Contributions</button></mat-list-item>
+      <mat-list-item><button mat-button (click)="drawer.toggle();clickedAddLP()">Add Learning Plan</button></mat-list-item>
+      <mat-list-item><button mat-button (click)="drawer.toggle();clickedAddResource()">Add Resource</button></mat-list-item>
     </mat-list>
   </mat-drawer>
 
   <div class="example-sidenav-content">
-    <button type="button" mat-button (click)="drawer.toggle(); clickedRight();" *ngIf="hasClickedLeft">
+    <button type="button" mat-button (click)="drawer.toggle(); clickedRight();" >
       <mat-icon class="add">menu</mat-icon>
     </button>
-    <button type="button" mat-button (click)="drawer.toggle();clickedLeft()" *ngIf="hasClickedRight">
+    <!-- <button type="button" mat-button (click)="drawer.toggle();clickedLeft()" *ngIf="hasClickedRight">
       <mat-icon class="clear">clear</mat-icon>
-    </button>
+    </button> -->
     <app-contribute *ngIf="hasClickedContributions && !hasClickedAddLP && !hasClickedAddResource"></app-contribute><br><br><br>
     <app-addlearningplan *ngIf="hasClickedAddLP"></app-addlearningplan>
     <app-addresource *ngIf="hasClickedAddResource"></app-addresource>
