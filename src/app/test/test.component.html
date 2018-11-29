@@ -1,72 +1,77 @@
 <div class="test">
 
-    <div class="startTest" *ngIf="showQuesButton">
-      <div class="heading"><h2>
+  <div class="startTest" *ngIf="showQuesButton">
+    <div class="heading">
+      <h2>
         Test Instructions
       </h2>
-      </div>
-      <div class = "instructions">
-        <ul>
-            <li>The quizzes consists of questions carefully designed to help you self-assess your comprehension of the information presented on the topics covered in the module.</li>
-            <li>Each question in the quiz is of multiple-choice or "true or false" format. Read each question carefully, and click on the button next to your response that is based on the information covered on the topic in the module. </li>
-            <li>The total score for the quiz is based on your responses to all questions.</li>
-        </ul>
-      </div>
-      <div class="conceptsSelect">
-        <p>
-          Concepts: (Select any 4 and Proceed)
-        </p>
-        <div class ="concepts" *ngFor="let c of concepts; index as i" >
-          <button [attr.id]="'Concept_' + i" mat-raised-button (click)="toggleColor(i);selectConcept(i)"  [ngClass]="{'green' : toggles[i], 'red': !toggles[i] }"> {{c?.Name}}</button>
-        </div>
-      </div>
-  
-      <div class = "Btn" *ngIf="hasSelected4">
-        <button mat-raised-button *ngIf="showQuesButton" (click)="display()">Start Test</button>
+    </div>
+    <div class="instructions">
+      <ul>
+        <li>The quizzes consists of questions carefully designed to help you self-assess your comprehension of the
+          information presented on the topics covered in the module.</li>
+        <li>Each question in the quiz is of multiple-choice or "true or false" format. Read each question carefully,
+          and click on the button next to your response that is based on the information covered on the topic in the
+          module. </li>
+        <li>The total score for the quiz is based on your responses to all questions.</li>
+      </ul>
+    </div>
+    <div class="conceptsSelect">
+      <p>
+        Concepts: (Select any 4 and Proceed)
+      </p>
+      <div class="concepts" *ngFor="let c of concepts; index as i">
+        <button [attr.id]="'Concept_' + i" mat-raised-button (click)="toggleColor(i);selectConcept(i)" [ngClass]="{'green' : toggles[i], 'red': !toggles[i] }">
+          {{c?.Name}}</button>
       </div>
     </div>
-  
+
+    <div class="Btn" *ngIf="hasSelected4">
+      <button mat-raised-button *ngIf="showQuesButton" (click)="display()">Start Test</button>
+    </div>
+  </div>
+
   <div class="test-box" *ngIf="!callResult &&!showQuesButton">
-  <div class="timer-container">
-  <div class="timr" *ngIf="showTimer">Time Remaining: {{counter}}</div>
+    <div class="selectedTech">
+      Selected Tech is : {{selectedTech}}
+    </div>
+    <div class="timer-container">
+      <div class="timr" *ngIf="showTimer">Time Remaining: {{counter}}</div>
+    </div>
+
+    <div *ngIf="showProgressBar">
+      <section class="progressbar-section">
+        <mat-progress-bar mode="determinate" class="progressbar-margin" [value]="value">
+        </mat-progress-bar>
+      </section>
+    </div>
+
+    <div *ngIf="counter>=1" class="question">
+      <div class="ques-box">
+        <div class="ques-title">
+          <h3>
+            Q{{currentQuestion?.QuestionId}} {{currentQuestion?.ProblemStatement}}
+          </h3>
+        </div>
+      </div>
+      <div class="options">
+        <mat-radio-group class="radio-group" [(ngModel)]="selectedOption">
+
+          <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.Options" [value]="o">
+            {{o?.Content}}
+          </mat-radio-button>
+
+        </mat-radio-group>
+        <p>{{selectedOption?.Content}}</p>
+      </div>
+    </div>
+
   </div>
-  
-  <div *ngIf="showProgressBar">
-  <section class="progressbar-section">
-  <mat-progress-bar mode="determinate"
-      class="progressbar-margin"
-      [value]="value">
-  </mat-progress-bar>
-  </section> 
-  </div>
-  
-  <div *ngIf="counter>=1" class="question">
-  <div class = "ques-box">
-  <div class="ques-title">
-    <h3>
-     Q{{currentQuestion?.QuestionId}} {{currentQuestion?.ProblemStatement}}
-    </h3>
-  </div>
-  </div>
-  <div class="options">
-  <mat-radio-group class="radio-group" [(ngModel)]="selectedOption">
-   
-    <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.Options" [value]="o">
-      {{o?.Content}}
-    </mat-radio-button>
-    
-  </mat-radio-group>
-  <p>{{selectedOption?.Content}}</p>
-  </div>
-  </div>
-  
-  </div>
-  
+
   <div class="button-flex">
-  <button mat-raised-button class="Btn" *ngIf="showNextButton" (click)="nextQuestion()">Next</button>
-  <a routerLink="/result" routerLinkActive="active" class="Btn" button mat-raised-button color="primary"  *ngIf="callResult" > Show Results</a>
+    <button mat-raised-button class="Btn" *ngIf="showNextButton" (click)="nextQuestion()">Next</button>
+    <a routerLink="/result" routerLinkActive="active" class="Btn" button mat-raised-button color="primary" *ngIf="callResult">
+      Show Results</a>
   </div>
-  
-  </div>
-  
-  
+
+</div>

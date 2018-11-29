@@ -10,7 +10,7 @@ import { TestService } from '../services/test.service';
 })
 export class TestComponent implements OnInit {
 
-  
+
   toggle: any;
   status = 'Enable';
   selectedTech: any;
@@ -32,7 +32,7 @@ export class TestComponent implements OnInit {
   value = 0;
   valueInc = 0;
   concepts: any[];
-  selectedConceptArray:any[]=[];
+  selectedConceptArray: any[] = [];
   techName: string;
   subTopicName: string;
   toggles: boolean[];
@@ -40,7 +40,7 @@ export class TestComponent implements OnInit {
   maxSelectableConcepts = 0;
   hasSelectedMaxConcepts = false;
   deselectedConcept: string;
-  hasSelected4= false;
+  hasSelected4 = false;
 
   constructor(private testService: TestService) { }
 
@@ -62,23 +62,23 @@ export class TestComponent implements OnInit {
       this.maxSelectableConcepts++;
       this.isSelected[k] = true;
       this.selectedConceptArray.push(this.concepts[k].Name);
-      console.log("selected concepts are:"+this.selectedConceptArray);
+      console.log("selected concepts are:" + this.selectedConceptArray);
       if (this.maxSelectableConcepts >= 4) {
         console.log("dont select more");
         this.hasSelectedMaxConcepts = true;
         this.disableButtons();
-        this.hasSelected4=true;
+        this.hasSelected4 = true;
       }
     }
     else if (this.isSelected[k] == true) {
       this.isSelected[k] = false;
       this.maxSelectableConcepts--;
-      this.deselectedConcept=this.concepts[k].Name;
-      this.selectedConceptArray.splice(this.selectedConceptArray.indexOf(this.deselectedConcept),1);
-      console.log("selected concepts are now:"+this.selectedConceptArray);
+      this.deselectedConcept = this.concepts[k].Name;
+      this.selectedConceptArray.splice(this.selectedConceptArray.indexOf(this.deselectedConcept), 1);
+      console.log("selected concepts are now:" + this.selectedConceptArray);
       if (this.hasSelectedMaxConcepts && this.maxSelectableConcepts < 4) {
         this.enableButtons();
-        this.hasSelected4=false;
+        this.hasSelected4 = false;
       }
     }
   }
@@ -115,6 +115,7 @@ export class TestComponent implements OnInit {
     this.showTimer = true;
     this.showProgressBar = true;
     this.questions = this.testService.getQuestions();
+    this.selectedTech = this.testService.getTechName().Name;
     this.showNextButton = true;
     this.showQuesButton = false;
     this.questionCounter = 0;
