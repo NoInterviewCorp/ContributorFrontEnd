@@ -12,6 +12,7 @@ export class CommunicatorService {
   private title: string;
   // hasClickedAddResources: boolean;
   editSelectedPlan: LearningPlan;
+  selectedLearningPlan: LearningPlan;
   private resourceArray: Resource[] = [];
   private lastResourceIndex:number;
   addQuestion: Questions;

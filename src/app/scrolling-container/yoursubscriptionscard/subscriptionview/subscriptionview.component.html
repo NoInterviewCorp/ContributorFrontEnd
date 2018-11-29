@@ -1,0 +1,39 @@
+<div class="full-width">
+  <div class="container">
+    <div class="col-xxs-8 left-col">
+      <div class="title">
+        {{plan?.Technology}}
+        <div class="summary">
+          {{plan?.Summary}}
+        </div>
+        <div class="author">
+          by {{plan?.Owner}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row row--component-margin">
+    <div class="resourcesHeading">
+      <h4>Resources:</h4>
+    </div>
+    <mat-accordion *ngFor="let r of plan?.Resources">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{r.ResourceName}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{r.Description}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        Concepts Covered:
+        <div class="conceptsCovered" *ngFor="let c of r.Concepts">
+          {{c.Name}}
+        </div>
+        <a class="button" href="{{r.ResourceLink}}" target="_blank">Go to Resource</a>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>

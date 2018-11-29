@@ -415,87 +415,52 @@
                     "Description": "C Link",
                     "BloomsTaxonomy": 2,
                     "ResourceId": 1,
-                    "ResourceLink": "link1"
+                    "ResourceLink": "https://www.google.com",
+                    "Concepts": [
+                       {
+                           "Name": "OOPS"
+                       },
+                       {
+                           "Name": "Algorithms"
+                       }
+                    ]
                 },
                 {
                     "ResourceName": "aa",
                     "Description": "C Link",
                     "BloomsTaxonomy": 2,
                     "ResourceId": 2,
-                    "ResourceLink": "link2"
+                    "ResourceLink": "https://www.w3schools.com",
+                    "Concepts": [
+                        {
+                            "Name": "API"
+                        },
+                        {
+                            "Name": "Algorithms"
+                        }
+                     ]
+ 
                 },
                 {
                     "ResourceName": "aa",
                     "Description": "C Link",
                     "BloomsTaxonomy": 2,
                     "ResourceId": 3,
-                    "ResourceLink": "link3"
+                    "ResourceLink": "link3",
+                    "Concepts": [
+                        {
+                            "Name": "OOPS"
+                        },
+                        {
+                            "Name": "File Handling"
+                        }
+                     ]
                 },
                 {
                     "ResourceName": "aa",
                     "Description": "C Link",
                     "BloomsTaxonomy": 2,
                     "ResourceId": 4,
-                    "ResourceLink": "link4"
-                }
-            ],
-            "Resources": [
-                {
-                    "ResourceName": "aa",
-                    "Description": "C Link",
-                    "BloomsTaxonomy": 2,
-                    "ResourceId": 5,
-                    "ResourceLink": "link1"
-                },
-                {
-                    "ResourceName": "aa",
-                    "Description": "C Link",
-                    "BloomsTaxonomy": 2,
-                    "ResourceId": 6,
-                    "ResourceLink": "link2"
-                },
-                {
-                    "ResourceName": "aa",
-                    "Description": "C Link",
-                    "BloomsTaxonomy": 2,
-                    "ResourceId": 7,
-                    "ResourceLink": "link3"
-                },
-                {
-                    "ResourceName": "aa",
-                    "Description": "C Link",
-                    "BloomsTaxonomy": 2,
-                    "ResourceId": 8,
-                    "ResourceLink": "link4"
-                }
-            ],
-            "Resources": [
-                {
-                    "ResourceName": "aa",
-                    "Description": "C Link",
-                    "BloomsTaxonomy": 2,
-                    "ResourceId": 9,
-                    "ResourceLink": "link1"
-                },
-                {
-                    "ResourceName": "aa",
-                    "Description": "C Link",
-                    "BloomsTaxonomy": 2,
-                    "ResourceId": 10,
-                    "ResourceLink": "link2"
-                },
-                {
-                    "ResourceName": "aa",
-                    "Description": "C Link",
-                    "BloomsTaxonomy": 2,
-                    "ResourceId": 11,
-                    "ResourceLink": "link3"
-                },
-                {
-                    "ResourceName": "aa",
-                    "Description": "C Link",
-                    "BloomsTaxonomy": 2,
-                    "ResourceId": 12,
                     "ResourceLink": "link4"
                 }
             ]

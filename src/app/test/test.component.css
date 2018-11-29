@@ -1,151 +1,75 @@
-/* 
-
-li{
-  margin: 20px 0;
-} 
-
-.Btn {
-  text-align: center;
-}
-
-.heading {
-  text-align : center;
-}
-
-.test-box {
-  display : flex;
-  flex-wrap: wrap;
-}
-
-.timer-container {
-  display: flex;
-  padding: 10px;
-}
-
-.timr {
-  display: flex;
- 
-  width: 50px;
-  height: 50px;
-}
-
-
-.progressbar-section {
-  width: 100%;
-  margin: 10px;
-  margin-top: 35px;
-  height: 3em;
-} */
 .green {
   background-color: green;
-}
-
-.red {
+ }
+ .red {
   background-color: red;
-}
-
-.concepts {
+ }
+ .concepts {
   background-color: azure;
-}
-
-.radio-group { 
-  
+  display: inline-block;
+  margin: 10px;
+  margin-bottom: 50px;
+ }
+ .radio-group {
   display: inline-flex;
   flex-direction: column;
   overflow-wrap: break-word;
   background-color: white;
   width: 100%;
- 
-}
-
-.radio-button {
-  
+ }
+ .radio-button {
   overflow-wrap: break-word;
   white-space: normal;
   margin:5px;
-  
-
-} 
-
-.startTest {
+ }
+ .startTest {
   width: 75%;
   margin: auto;
   background-color: rgb(247, 250, 253);
-}
-
+ }
  .question {
   margin: auto;
   width: 80%;
   background: #ddd;
-} 
-.ques-title {
+ }
+ .ques-title {
   margin-left: 20px;
   margin-top: 10px;
-}
-
-.progressbar-section {
+ }
+ .progressbar-section {
   width: 80%;
   margin: auto;
   margin-bottom: 0%;
   height: 3em;
-}
-
+ }
  .button-flex {
   display: flex;
   justify-content: center;
   padding-top: 50px;
-}
-
-
-/* .timr {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  background-color: black;
-} */
-
-.timer-container {
+ }
+ .timer-container {
   display: flex;
   padding: 10px;
-}
-
-
-.ques-box {
+ }
+ .ques-box {
     margin: 0 auto;
-    /* width: 93%; */
-}
-
-.ques-title {
+ }
+ .ques-title {
   margin-bottom: 0;
-}
-
-.Btn {
+ }
+ .Btn {
   text-align: center;
-}
-
-button {
+ }
+ button {
   background-color: #080357;
   color: white;
-}
-
-li{
+ }
+ li{
   margin: 25px 0;
-}
-
-/* .optn-div {
-  
-} */
-
-
-/* .Btn {
-  text-align: center;
-} */
-
-.heading {
+ }
+ .heading {
   text-align: center;
   background-color: #080357;
   color:white;
-}
+ }
+ 

@@ -39,6 +39,7 @@ import { LearnerComponent } from './learner/learner.component';
 import { SearchComponent } from './learner/search/search.component';
 import { YoursubscriptionscardComponent } from './scrolling-container/yoursubscriptionscard/yoursubscriptionscard.component';
 import { ResourceeditComponent } from './resourceedit/resourceedit.component';
+import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -93,6 +94,8 @@ export function getAuthServiceConfigs() {
     ScrollingContainerComponent,
 
     ResourceeditComponent,
+
+    SubscriptionviewComponent,
 
   ],
   imports: [

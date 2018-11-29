@@ -14,6 +14,7 @@ import { AppComponent } from './app.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
 import { LearningplanviewComponent } from './learningplanview/learningplanview.component';
 import { LearnerComponent } from './learner/learner.component';
+import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
 
 const routes: Routes = [
   //{path: 'home',component: HomeComponent},
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'test', component: TestComponent },
   { path: 'learner', component: LearnerComponent },
   { path: 'login', component: SignInComponent },
+  { path: 'subscriptionview', component: SubscriptionviewComponent }
 ];
 
 @NgModule({
