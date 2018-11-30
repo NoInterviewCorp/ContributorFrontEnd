@@ -41,14 +41,22 @@ mat-form-field{
   }
 }
 
+.pom-c-resbutton{
+  margin-top: 20px;
+  float: right;
+}
+
 .pom-c-resourcecard{
   margin-top: 20px;
    display: flex;
   flex-direction: row; 
 }
+
 @media (max-width: 425px){
   .pom-c-resourcecard{
-    margin-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -62,8 +70,6 @@ mat-form-field{
   .pom-c-card{
     word-wrap: break-word;
     width: 300px;
-    /* flex: 7; */
-    /* margin-right: 20px; */
   }
 }
 
@@ -71,6 +77,17 @@ mat-form-field{
   background-color: #080357;
   color: white;
   flex: 3;
+  float: right;
+}
+
+@media (max-width: 425px){
+  .pom-c-button{
+    background-color: #080357;
+    color: white;
+    width: 50%;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
 }
 
 h3{

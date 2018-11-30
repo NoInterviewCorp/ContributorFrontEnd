@@ -10,14 +10,16 @@
             </div>
         </div>
     </div>
-    <div class="contribution-card-container">
-        <div class="cards" *ngFor="let item of plan">
-            <app-yoursubscriptionscard [plan]="item" *ngIf="choice==2"></app-yoursubscriptionscard>
-        </div>
-    </div>
     <div class="editview" *ngIf="hasClickedEditLP || hasClickedViewLP">
         <app-editlearningplan *ngIf="hasClickedEditLP && !hasClickedSaveChangesInEdit 
-        && !hasClickedClearEdit && !hasClickedViewLP" (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
-        <app-learningplanview *ngIf="hasClickedViewLP && !hasClickedClearView && !hasClickedEditLP" (hasClickedClearInView)=handleClearView($event)></app-learningplanview>
+        && !hasClickedClearEdit && !hasClickedViewLP"
+            (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
+        <app-learningplanview *ngIf="hasClickedViewLP && !hasClickedClearView && !hasClickedEditLP"
+            (hasClickedClearInView)=handleClearView($event)></app-learningplanview>
+    </div>
+</div>
+<div class="subscription-card-container">
+    <div class="cards" *ngFor="let item of plan">
+        <app-yoursubscriptionscard [plan]="item" *ngIf="choice==2"></app-yoursubscriptionscard>
     </div>
 </div>
