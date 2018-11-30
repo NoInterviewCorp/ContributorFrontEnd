@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Resource } from 'src/models/resource.model';
 import { CommunicatorService } from '../services/communicator.service';
 import { Questions } from '../question.model';
+import { Technology } from '../technology.model';
 
 
 @Component({
@@ -16,11 +17,13 @@ export class AddlearningplanComponent implements OnInit {
   hasClickedSubmitQuestion: boolean
   resource: Resource;
   resources: Resource[] = [];
+  technologyName:string="";
   hasClickedAddQuestions: boolean;
   hasClickedClearQuestions: boolean;
   hasClickedResourceToEdit: boolean;
   hasClickedClearInResourceEdit: boolean;
   hasClickedClearInAddResourceInLP:boolean;
+  
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -56,6 +59,7 @@ export class AddlearningplanComponent implements OnInit {
     this.resIndexForAddingQuestions = index;
     this.com.setLastResourceIndex(this.resIndexForAddingQuestions);
     console.log(this.resIndexForAddingQuestions);
+    this.technologyName=this.resources[index].Technology.Name;
   }
   clickedResourceToEdit(index) {
     this.resource = this.resources[index];

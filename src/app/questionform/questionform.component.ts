@@ -13,6 +13,7 @@ import { CommunicatorService } from '../services/communicator.service';
 })
 export class QuestionformComponent implements OnInit {
   id: number;
+  technologyName:string;
   @Output() noError = new EventEmitter();
   @Output() hasClickedSave = new EventEmitter();
   disableButton: boolean;
@@ -44,6 +45,7 @@ export class QuestionformComponent implements OnInit {
     }
     this.questionObj.Options = new Array(4).fill(new Options());
     this.id = this.com.getLastResourceIndex();
+    this.technologyName=this.com.getTechnologyName(this.id);
   }
 
   ngOnInit() {

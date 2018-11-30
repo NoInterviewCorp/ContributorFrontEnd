@@ -1,5 +1,8 @@
 <h4>Adding Questions for Resource Number {{id+1}}</h4>
 <div class="flex-container">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="technology Name" [(ngModel)]="technologyName">
+      </mat-form-field>
   <mat-form-field>
     <textarea matInput placeholder="Question goes here!" [(ngModel)]="questions.ProblemStatement" [formControl]="question"
       required></textarea>

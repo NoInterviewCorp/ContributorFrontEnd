@@ -24,6 +24,7 @@ export class QuestionsComponent implements OnInit {
   hasClickedAdd: boolean = false;
   hasAdded3Qs: boolean = false;
   disableButton: boolean;
+  @Input() technologyName:string="";
   constructor() {
   }
   //private bottomSheetRef: MatBottomSheetRef<QuestionsComponent>

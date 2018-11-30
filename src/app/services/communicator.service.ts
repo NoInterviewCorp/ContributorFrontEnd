@@ -39,6 +39,9 @@ export class CommunicatorService {
   getLastResourceIndex() {
     return this.lastResourceIndex;
   }
+  getTechnologyName(index:number){
+    return this.resourceArray[index].Technology.Name;
+  }
   getconcepts() {
     return this.http.get('http://localhost:3000/Concept');
   }
