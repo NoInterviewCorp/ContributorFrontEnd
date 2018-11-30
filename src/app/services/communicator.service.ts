@@ -43,19 +43,19 @@ export class CommunicatorService {
     return this.resourceArray[index].Technology.Name;
   }
   getconcepts() {
-    return this.http.get('http://localhost:3000/Concept');
+    return this.http.get('http://172.23.239.60:5002/Concept');
   }
   getContributions() {
-    return this.http.get('http://localhost:3000/LearningPlan')
+    return this.http.get('http://172.23.239.60:5002/LearningPlan')
   }
   getSubscriptions() {
-    return this.http.get('http://localhost:3000/LearningPlan')
+    return this.http.get('http://172.23.239.60:5002/LearningPlan')
   }
   getPopularPlans() {
-    return this.http.get('http://localhost:3000/LearningPlan')
+    return this.http.get('http://172.23.239.60:5002/LearningPlan')
   }
   getPlansById(LearningPlanID: string) {
-    return this.http.get('http://localhost:3000/LearningPlan' + LearningPlanID + '?text=id')
+    return this.http.get('http://172.23.239.60:5002/LearningPlan' + LearningPlanID + '?text=id')
   }
   postQuestions() {
 
@@ -67,7 +67,7 @@ export class CommunicatorService {
 
   }
   getYourSubs() {
-    return this.http.get('http://localhost:3000/LearningPlan');
+    return this.http.get('http://172.23.239.60:5002/LearningPlan');
   }
 
 

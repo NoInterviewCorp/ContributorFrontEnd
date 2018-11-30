@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
 
-    this.http.get('http://localhost:3000/Technology').subscribe((res: any) => {
+    this.http.get('http://172.23.239.60:5002/Technology').subscribe((res: any) => {
       this.technology = res;
       console.log(this.technology);
     });

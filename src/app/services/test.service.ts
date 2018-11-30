@@ -26,7 +26,7 @@ export class TestService {
   }
 
   getConcepts() {
-    return this.http.get('http://localhost:3000/Concept');
+    return this.http.get('http://172.23.239.60:5002/Concept');
   }
 
 

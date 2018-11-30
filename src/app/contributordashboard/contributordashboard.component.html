@@ -1,16 +1,17 @@
-<mat-drawer-container class="example-container" autosize>
+<mat-drawer-container class="example-container">
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <mat-list>
       <mat-list-item><button mat-button (click)="drawer.toggle();clickedContributions()">Your Contributions</button></mat-list-item>
       <mat-list-item><button mat-button (click)="drawer.toggle();clickedAddLP()">Add Learning Plan</button></mat-list-item>
-      <mat-list-item><button mat-button (click)="drawer.toggle();clickedaddresource()">Add Resource</button></mat-list-item>
+      <mat-list-item><button mat-button (click)="drawer.toggle();clickedresourcecreator()">Add Resource</button></mat-list-item>
     </mat-list>
   </mat-drawer>
-  <button type="button" mat-button class="pom-c-button" (click)="drawer.toggle(); clickedRight();">
-    <mat-icon class="add">more_horiz</mat-icon></button>
+  <button type="button" mat-button class="pom-c-button" (click)="drawer.toggle()">
+    Menu
+  </button>
   <div class="example-sidenav-content">
-    <app-contribute *ngIf="hasClickedContributions && !hasClickedAddLP && !hasClickedaddresource"></app-contribute><br><br><br>
+    <app-contribute *ngIf="hasClickedContributions && !hasClickedAddLP && !hasClickedresourcecreator"></app-contribute><br><br><br>
     <app-learningplancreator *ngIf="hasClickedAddLP"></app-learningplancreator>
-    <app-resourcecreator *ngIf="hasClickedaddresource"></app-resourcecreator>
+    <app-resourcecreator *ngIf="hasClickedresourcecreator"></app-resourcecreator>
   </div>
 </mat-drawer-container>
