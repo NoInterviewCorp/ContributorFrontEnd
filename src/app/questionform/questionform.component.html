@@ -1,16 +1,20 @@
 <h4>Adding Questions for Resource Number {{id+1}}</h4>
 <div class="flex-container">
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="technology Name" [(ngModel)]="technologyName">
-      </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="technology Name" [(ngModel)]="technologyName" [formControl]="technology" required>
+    <mat-error *ngIf="question.invalid">{{getErrorMessage(6)}}</mat-error>
+    <mat-error *ngIf="question.valid">{{getValidMessage(6)}}</mat-error>
+  </mat-form-field>
   <mat-form-field>
     <textarea matInput placeholder="Question goes here!" [(ngModel)]="questions.ProblemStatement" [formControl]="question"
       required></textarea>
     <mat-error *ngIf="question.invalid">{{getErrorMessage()}}</mat-error>
     <mat-error *ngIf="question.valid">{{getValidMessage(0)}}</mat-error>
   </mat-form-field>
-  <p><b>NOTE:</b>You have to check the correct option</p>
   <form [formGroup]="form">
+    <div class="pom-c-p">
+      <p><b>NOTE:</b>You have to check the correct option</p>
+    </div>
     <div [formArrayName]="'items'" [class.invalid]="!form.controls.selectedItems.valid">
       <div class="options" *ngFor="let control of form.controls.items.controls; let i = index;" [formGroup]="control">
         <div class="inputs">
@@ -44,7 +48,7 @@
       <mat-option value="6">Evaluation</mat-option>
     </mat-select>
   </mat-form-field>
-  <div class="button-row">
-    <button mat-flat-button (click)="clickedSave()" [disabled]="disableButton">Save</button>
-  </div>
+</div>
+<div class="pom-c-button">
+  <button mat-flat-button (click)="clickedSave()" [disabled]="disableButton">Save</button>
 </div>

@@ -30,7 +30,8 @@ export class QuestionformComponent implements OnInit {
   questionObj: Questions = new Questions();
   resourcelink = new FormControl('', [Validators.required]);
   bloomlevel = new FormControl('', [Validators.required]);
-  isValidArray: boolean[] = new Array(6).fill(false);
+  technology = new FormControl('', [Validators.required]);
+  isValidArray: boolean[] = new Array(7).fill(false);
   form: FormGroup;
   items = [
     { key: 'item1' },
@@ -112,10 +113,9 @@ export class QuestionformComponent implements OnInit {
         this.options[index - 1].option.IsCorrect = this.form.controls.items.value[index - 1].checkbox;
         break;
       case 5:
-        // this.questionObj.ResourceLink = this.resourcelink.value;
-        break;
+      this.questionObj.BloomLevel = this.bloomlevel.value as BloomTaxonomy;
+      break;
       case 6:
-        this.questionObj.BloomLevel = this.bloomlevel.value as BloomTaxonomy;
         break;
       default:
         console.log("Invalid value");
@@ -147,6 +147,11 @@ export class QuestionformComponent implements OnInit {
     this.noError.emit({ MemberId: this.id, HasError: false });
     this.isValidArray[5] = false;
     return this.bloomlevel.hasError('required') ? 'You must enter a value' : '';
+  }
+  getErrorMessage6() {
+    this.noError.emit({ MemberId: this.id, HasError: false });
+    this.isValidArray[6] = false;
+    return this.technology.hasError('required') ? 'You must enter a value' : '';
   }
 
 

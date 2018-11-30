@@ -2,17 +2,43 @@
     display: inline-flex;
     flex-direction: row;
 }
-/*
+
 .options{
-    width: 50%;
-} */
+    font-size: 15px;
+}
+
+.pom-c-p{
+    font-size: 15px;
+} 
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
 mat-form-field{
-    /* width: 90%; */
-    font-size: 17px;
-    width: 100%;
+    width: 90%;
+    font-size: 15px;
+    margin-bottom: 20px;
 }
-p{
-    font-size: 17px;
+
+@media (max-width:425px){
+    mat-form-field{
+        width: 90%;
+        font-size: 15px;
+        margin-bottom: 20px;
+        margin-left: 5px;
+    }
 }
+
+.pom-c-button{
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+
+
 
 

@@ -2,34 +2,41 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    /* justify-content: center; */
+    margin: auto;
 }
 
-.pom-expansionpanel{
-    width: 100%;
-    padding-top: 10px;
-}
-
-button{
-    margin:10px;
-    float: right;
-}
 mat-form-field{
-    font-size: 17px;
-    width: 100%;
+    width: 90%;
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
-@media (max-width: 425px){
+@media (max-width:425px){
     mat-form-field{
+        width: 95%;
         font-size: 15px;
-        width: 300px;
-    } 
-    .pom-expansionpanel{
-        width: 300px;
-        padding-top: 10px;
-    } 
-    button{
-        float: right;
+        margin-bottom: 20px;
+        margin-left: 5px;
     }
 }
 
+.pom-expansionpanel{
+    width: 97%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pom-c-button{
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+button{
+    background-color: #080357;
+    color: white;
+}
+
+.pom-c-clearbutton{
+    background-color: white;
+    color: black;
+}

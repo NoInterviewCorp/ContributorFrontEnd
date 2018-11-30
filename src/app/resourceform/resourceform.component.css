@@ -1,21 +1,39 @@
 .example-chip-list {
-    width: 80%;
+    width: 90%;
   }
 .example-form{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: center;
+    margin: auto;
+    /* align-content: center; */
 }
 
 mat-form-field{
-    width: 80%;
+    width: 90%;
     font-size: 15px;
     margin-bottom: 20px;
 }
 
+@media (max-width:425px){
+    mat-form-field{
+        width: 90%;
+        font-size: 15px;
+        margin-bottom: 20px;
+        margin-left: 5px;
+    }
+    .example-chip-list {
+        width: 90%;
+        margin-left: 5px;
+      }
+}
 .help{
     color: black;
+}
+
+.pom-c-button{
+    margin-left: 5px;
+    margin-bottom: 10px;
 }
 
 

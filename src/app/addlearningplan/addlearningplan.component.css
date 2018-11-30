@@ -21,6 +21,7 @@
 @media (max-width: 425px){
   .resource{
     margin-right: 8px;
+    padding-left: 0;
     width: 300px;
     height: 100%;
     background-color: rgb(230, 230, 230);
@@ -43,7 +44,7 @@ mat-form-field{
 
 .pom-c-resbutton{
   margin-top: 20px;
-  float: right;
+  margin-bottom: 20px;
 }
 
 .pom-c-resourcecard{
@@ -77,7 +78,6 @@ mat-form-field{
   background-color: #080357;
   color: white;
   flex: 3;
-  float: right;
 }
 
 @media (max-width: 425px){

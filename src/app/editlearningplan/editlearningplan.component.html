@@ -1,4 +1,4 @@
-<button mat-button (click)="clickedClearInEdit()">
+<button mat-button class="pom-c-clearbutton" (click)="clickedClearInEdit()">
   <mat-icon>clear</mat-icon>
 </button><br><br>
 <form class="example-form">
@@ -61,9 +61,13 @@
     </mat-accordion>
   </mat-expansion-panel>
 </mat-accordion>
-<div>
-  <button mat-raised-button color="black" (click)="clickedAddResourceInEdit()">Add Resource</button>
+<div class="pom-c-button">
+  <div>
+    <button mat-raised-button (click)="clickedAddResourceInEdit()">Add Resource</button>
+  </div>
 </div>
-<div>
-  <button mat-raised-button color="black" (click)="clickedSaveInEdit()" [disabled]="disableButton">Save</button>
+<div class="pom-c-button">
+  <div>
+    <button mat-raised-button (click)="clickedSaveInEdit()" [disabled]="disableButton">Save</button>
+  </div>
 </div>
