@@ -23,7 +23,6 @@ mat-form-field{
 .pom-expansionpanel{
     width: 97%;
     padding-top: 10px;
-    margin-bottom: 10px;
 }
 
 .pom-c-button{
@@ -32,11 +31,13 @@ mat-form-field{
 }
 
 button{
+    margin-top: 10px;
     background-color: #080357;
     color: white;
 }
 
 .pom-c-clearbutton{
-    background-color: white;
+    float: right;
+    background-color:whitesmoke;
     color: black;
 }

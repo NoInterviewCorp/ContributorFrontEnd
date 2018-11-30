@@ -20,6 +20,8 @@ export class ContibutorhomeComponent implements OnInit {
     this.hasClickedLeft = true;
     this.hasClickedRight = false;
   }
+  
+
   clickedRight() {
     this.hasClickedRight = true;
     this.hasClickedLeft = false;

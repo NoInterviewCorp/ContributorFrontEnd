@@ -7,7 +7,7 @@
 }
 
 .pom-c-button {
-  position: fixed;
+  /* position: fixed; */
   padding-left: 10px;
   margin-top: 70px;
   flex-wrap: wrap;
@@ -17,8 +17,9 @@ mat-list{
 }
 
 .example-sidenav-content{
-  margin-top: 120px;
+  /* margin-top: 120px; */
   margin-left: 8px;
   flex-wrap: wrap;
+  
 }
 
