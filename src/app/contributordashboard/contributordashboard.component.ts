@@ -2,15 +2,15 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MAT_DRAWER_DEFAULT_AUTOSIZE } from '@angular/material';
 
 @Component({
-  selector: 'app-contibutorhome',
-  templateUrl: './contibutorhome.component.html',
-  styleUrls: ['./contibutorhome.component.css']
+  selector: 'app-contributordashboard',
+  templateUrl: './contributordashboard.component.html',
+  styleUrls: ['./contributordashboard.component.css']
 })
-export class ContibutorhomeComponent implements OnInit {
+export class contributordashboardComponent implements OnInit {
   LearningPlan: Array<number> = [1, 2, 3, 4, 5];
   hasClickedContributions: boolean;
   hasClickedAddLP: boolean;
-  hasClickedAddResource: boolean;
+  hasClickedresourcecreator: boolean;
   hasClickedRight: boolean;
   hasClickedLeft: boolean;
   constructor() { }
@@ -33,16 +33,16 @@ export class ContibutorhomeComponent implements OnInit {
 
   clickedAddLP() {
     this.hasClickedAddLP = true;
-    this.hasClickedAddResource = false;
+    this.hasClickedresourcecreator = false;
     this.hasClickedContributions = false;
   }
-  clickedAddResource() {
-    this.hasClickedAddResource = true;
+  clickedresourcecreator() {
+    this.hasClickedresourcecreator = true;
     this.hasClickedAddLP = false;
     this.hasClickedContributions = false;
   }
   clickedContributions() {
-    this.hasClickedAddResource = false;
+    this.hasClickedresourcecreator = false;
     this.hasClickedAddLP = false;
     this.hasClickedContributions = true;
   }

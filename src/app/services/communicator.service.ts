@@ -10,7 +10,7 @@ import { Questions } from '../question.model';
 })
 export class CommunicatorService {
   private title: string;
-  // hasClickedAddResources: boolean;
+  // hasClickedresourcecreators: boolean;
   editSelectedPlan: LearningPlan;
   selectedLearningPlan: LearningPlan;
   private resourceArray: Resource[] = [];
@@ -18,7 +18,7 @@ export class CommunicatorService {
   addQuestion: Questions;
 
   constructor(private http: HttpClient) { }
-  addResource(resource: Resource) {
+  resourcecreator(resource: Resource) {
     // adds the resource to it's local variable
     this.resourceArray.push(resource);
     // returns the index of the most recent added resource

@@ -5,7 +5,7 @@
 .pom-c-navbar {
   position: fixed;
   z-index: 99999;
-  height: 11vh;
+  height: 11vh; 
 }
 
 .pom-l-spacer {

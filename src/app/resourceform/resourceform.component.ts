@@ -102,7 +102,7 @@ export class ResourceformComponent implements OnInit {
     this.addQuestions.emit(true);
   }
   clickedDone() {
-    let index = this.com.addResource(this.resource);
+    let index = this.com.resourcecreator(this.resource);
     console.log("index is " + index);
     this.hasClickedDone.emit(index);
     this.disableButton = true;

@@ -6,13 +6,13 @@ import { Technology } from '../technology.model';
 
 
 @Component({
-  selector: 'app-addlearningplan',
-  templateUrl: './addlearningplan.component.html',
-  styleUrls: ['./addlearningplan.component.css']
+  selector: 'app-learningplancreator',
+  templateUrl: './learningplancreator.component.html',
+  styleUrls: ['./learningplancreator.component.css']
 })
-export class AddlearningplanComponent implements OnInit {
+export class learningplancreatorComponent implements OnInit {
   resIndexForAddingQuestions: number;
-  hasClickedAddResource: boolean;
+  hasClickedresourcecreator: boolean;
   hasClickedSaveResource: boolean;
   hasClickedSubmitQuestion: boolean
   resource: Resource;
@@ -22,8 +22,8 @@ export class AddlearningplanComponent implements OnInit {
   hasClickedClearQuestions: boolean;
   hasClickedResourceToEdit: boolean;
   hasClickedClearInResourceEdit: boolean;
-  hasClickedClearInAddResourceInLP:boolean;
-  
+  hasClickedClearInresourcecreatorInLP:boolean;
+
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -34,7 +34,7 @@ export class AddlearningplanComponent implements OnInit {
     this.hasClickedSaveResource = (index >= 0);
     this.resources.push(this.com.getResource(index))
     console.log(this.resources[index]);
-    this.hasClickedClearInAddResourceInLP=true;
+    this.hasClickedClearInresourcecreatorInLP=true;
   }
 
   handleSubmit(index) {
@@ -47,10 +47,10 @@ export class AddlearningplanComponent implements OnInit {
   }
   postLearningPlan() {
   }
-  clickedAddResource() {
-    this.hasClickedAddResource = true;
+  clickedresourcecreator() {
+    this.hasClickedresourcecreator = true;
     this.hasClickedSaveResource = false;
-    this.hasClickedClearInAddResourceInLP=false;
+    this.hasClickedClearInresourcecreatorInLP=false;
   }
   clickedAddQuestions(index) {
     this.hasClickedClearQuestions = false;
@@ -69,7 +69,7 @@ export class AddlearningplanComponent implements OnInit {
   handleClearInResourceEdit(clear) {
     this.hasClickedClearInResourceEdit = clear;
   }
-  clickedClearInAddResourceInLP(){
-    this.hasClickedClearInAddResourceInLP=true;
+  clickedClearInresourcecreatorInLP(){
+    this.hasClickedClearInresourcecreatorInLP=true;
   }
 }

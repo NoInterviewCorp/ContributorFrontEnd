@@ -4,11 +4,11 @@ import { CommunicatorService } from '../services/communicator.service';
 
 
 @Component({
-  selector: 'app-learningplanview',
-  templateUrl: './learningplanview.component.html',
-  styleUrls: ['./learningplanview.component.css']
+  selector: 'app-learningplanviewer',
+  templateUrl: './learningplanviewer.component.html',
+  styleUrls: ['./learningplanviewer.component.css']
 })
-export class LearningplanviewComponent implements OnInit {
+export class learningplanviewerComponent implements OnInit {
   plan: LearningPlan;
   @Output() hasClickedClearInView = new EventEmitter();
   constructor(private com: CommunicatorService) { }

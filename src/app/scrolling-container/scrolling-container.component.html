@@ -14,8 +14,8 @@
         <app-editlearningplan *ngIf="hasClickedEditLP && !hasClickedSaveChangesInEdit 
         && !hasClickedClearEdit && !hasClickedViewLP"
             (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
-        <app-learningplanview *ngIf="hasClickedViewLP && !hasClickedClearView && !hasClickedEditLP"
-            (hasClickedClearInView)=handleClearView($event)></app-learningplanview>
+        <app-learningplanviewer *ngIf="hasClickedViewLP && !hasClickedClearView && !hasClickedEditLP"
+            (hasClickedClearInView)=handleClearView($event)></app-learningplanviewer>
     </div>
 </div>
 <div class="subscription-card-container">

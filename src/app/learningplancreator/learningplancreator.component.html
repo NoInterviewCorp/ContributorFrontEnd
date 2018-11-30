@@ -18,7 +18,7 @@
                 <mat-hint>Describe your plan</mat-hint>
             </mat-form-field>
             <div class="pom-c-resbutton">
-                <button mat-raised-button color="black" (click)="clickedAddResource()">Add Resource</button>
+                <button mat-raised-button color="black" (click)="clickedresourcecreator()">Add Resource</button>
             </div>
         </form>
         <div class="pom-c-resourcecard" *ngFor="let res of resources;let i = index">
@@ -29,11 +29,11 @@
         </div>
     </div>
     <div class="resource">
-        <button mat-button *ngIf="hasClickedAddResource && !hasClickedClearInAddResourceInLP" (click)="clickedClearInAddResourceInLP()">
+        <button mat-button *ngIf="hasClickedresourcecreator && !hasClickedClearInresourcecreatorInLP" (click)="clickedClearInresourcecreatorInLP()">
             <mat-icon>clear</mat-icon>
         </button>
-        <app-addresource *ngIf="hasClickedAddResource && !hasClickedSaveResource && 
-        !hasClickedClearInAddResourceInLP" (hasClickedSave)="handleSave($event)"></app-addresource>
+        <app-resourcecreator *ngIf="hasClickedresourcecreator && !hasClickedSaveResource && 
+        !hasClickedClearInresourcecreatorInLP" (hasClickedSave)="handleSave($event)"></app-resourcecreator>
 
         <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion && !hasClickedClearQuestions"
             (hasClickedSubmit)="handleSubmit($event)" (hasClickedClearInQuestions)="handleClearInQuestions($event)" [technologyName]="technologyName"></app-questions>
@@ -55,7 +55,7 @@
             <button mat-raised-button color="black" routerLink="/profile" routerLinkActive="active" (click)="postLearningPlan()">Submit</button>
         </div>
         <div>
-            <button mat-raised-button color="black" (click)="addResource()">Add</button>
+            <button mat-raised-button color="black" (click)="resourcecreator()">Add</button>
         </div>
     </div>
 </div><br> -->

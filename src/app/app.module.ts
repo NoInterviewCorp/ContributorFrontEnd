@@ -23,9 +23,9 @@ import { ScrollingContainerComponent } from './scrolling-container/scrolling-con
 import { ContributeComponent } from './contribute/contribute.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
-import { ContibutorhomeComponent } from './contibutorhome/contibutorhome.component';
-import { AddlearningplanComponent } from './addlearningplan/addlearningplan.component';
-import { AddresourceComponent } from './addresource/addresource.component';
+import { contributordashboardComponent } from './contributordashboard/contributordashboard.component';
+import { learningplancreatorComponent } from './learningplancreator/learningplancreator.component';
+import { resourcecreatorComponent } from './resourcecreator/resourcecreator.component';
 import { ResourceformComponent } from './resourceform/resourceform.component';
 import { QuestionformComponent } from './questionform/questionform.component';
 import { QuestionsComponent } from './questions/questions.component';
@@ -33,7 +33,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SubscribecardComponent } from './scrolling-container/subscribecard/subscribecard.component';
 import { YourcontributionscardComponent } from './scrolling-container/yourcontributionscard/yourcontributionscard.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
-import { LearningplanviewComponent } from './learningplanview/learningplanview.component';
+import { learningplanviewerComponent } from './learningplanviewer/learningplanviewer.component';
 import { LearnComponent } from './learn/learn.component';
 import { LearnerComponent } from './learner/learner.component';
 import { SearchComponent } from './learner/search/search.component';
@@ -71,15 +71,15 @@ export function getAuthServiceConfigs() {
 
     // Contributor Page Components
     ContributeComponent,
-    ContibutorhomeComponent,
-    AddlearningplanComponent,
-    AddresourceComponent,
+    contributordashboardComponent,
+    learningplancreatorComponent,
+    resourcecreatorComponent,
     ResourceformComponent,
     QuestionformComponent,
     QuestionsComponent,
     YourcontributionscardComponent,
     EditlearningplanComponent,
-    LearningplanviewComponent,
+    learningplanviewerComponent,
 
     // Learner Page Components
     LearnComponent,

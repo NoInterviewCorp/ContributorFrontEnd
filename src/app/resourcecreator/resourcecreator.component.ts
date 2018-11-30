@@ -6,11 +6,11 @@ import { Questions } from '../question.model';
 // import { EventEmitter } from 'events';
 
 @Component({
-  selector: 'app-addresource',
-  templateUrl: './addresource.component.html',
-  styleUrls: ['./addresource.component.css']
+  selector: 'app-resourcecreator',
+  templateUrl: './resourcecreator.component.html',
+  styleUrls: ['./resourcecreator.component.css']
 })
-export class AddresourceComponent implements OnInit {
+export class resourcecreatorComponent implements OnInit {
   hasClickedAdd: boolean;
   resources: Array<number> = [1];
   lastNumber = this.resources.length;
@@ -32,18 +32,18 @@ export class AddresourceComponent implements OnInit {
 
   }
   clickedSave() {
-    console.log("addresource index is " + this.index)
+    console.log("resourcecreator index is " + this.index)
     this.hasClickedSave.emit(this.index);
     this.disableButton = true;
 
-    // this.resource=this.com.addResource;
+    // this.resource=this.com.resourcecreator;
     // console.log(this.resource);
   }
   handleDone(index) {
     this.hasClickedDone = true;
     this.index = index;
   }
-  // addResource() {
+  // resourcecreator() {
   //   //console.log("clicked");
   //   this.hasClickedAdd = true;
   //   this.resources.push(++this.lastNumber);

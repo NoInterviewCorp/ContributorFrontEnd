@@ -31,6 +31,16 @@ mat-form-field{
         margin-bottom: 20px;
         margin-left: 5px;
     }
+    h5{
+        margin-left: 5px;
+    }
+    .options{
+        margin-left: 5px;
+    }
+    p{
+        font-size: 15px;
+        margin-left: 5px;
+    }
 }
 
 .pom-c-button{
