@@ -5,16 +5,28 @@
   height: 100%;
   margin-bottom: 20px;
 }
+
 .learningplan{
   flex: 5;
   height: 100%;
 }
+
 .resource{
   flex: 5;
   padding-left: 20px;
   height: 100%;
   background-color: rgb(230, 230, 230);
 }
+
+@media (max-width: 425px){
+  .resource{
+    margin-right: 8px;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(230, 230, 230);
+  }
+}
+
 mat-form-field{
   width: 100%;
   font-size: 17px;
@@ -28,26 +40,39 @@ mat-form-field{
     margin-top: 20px;
   }
 }
-.example-form {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-}
+
 .pom-c-resourcecard{
   margin-top: 20px;
    display: flex;
   flex-direction: row; 
 }
+@media (max-width: 425px){
+  .pom-c-resourcecard{
+    margin-top: 20px;
+  }
+}
+
 .pom-c-card{
   word-wrap: break-word;
   flex: 7;
   margin-right: 20px;
 }
+
+@media (max-width: 425px){
+  .pom-c-card{
+    word-wrap: break-word;
+    width: 300px;
+    /* flex: 7; */
+    /* margin-right: 20px; */
+  }
+}
+
 .pom-c-button{
   background-color: #080357;
   color: white;
   flex: 3;
+}
+
+h3{
+  margin: 0;
 }

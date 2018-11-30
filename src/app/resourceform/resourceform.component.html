@@ -22,7 +22,7 @@
             </mat-chip>
             <input placeholder="Concepts Covered" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                 [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" [formControl]="concept"
-                required autofocus>
+                required >
             <mat-error *ngIf="concept.invalid">{{getErrorMessage1()}}</mat-error>
             <mat-error *ngIf="concept.valid">{{getValidMessage(1)}}</mat-error>
         </mat-chip-list>

@@ -45,8 +45,8 @@ export class ResourceformComponent implements OnInit {
     // this.concept.valueChanges.subscribe(concept=>this.conceptSearch());
   }
   resourcelink = new FormControl('', [Validators.required]);
-  bloomlevel = new FormControl('', [Validators.required]);
   concept = new FormControl('', [Validators.required]);
+  bloomlevel = new FormControl('', [Validators.required]);
   isValidArray: boolean[] = new Array(3).fill(false);
   visible = true;
   selectable = true;

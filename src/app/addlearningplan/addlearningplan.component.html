@@ -29,7 +29,11 @@
         </div>
     </div>
     <div class="resource">
-        <app-addresource *ngIf="hasClickedAddResource && !hasClickedSaveResource" (hasClickedSave)="handleSave($event)"></app-addresource>
+        <button mat-button *ngIf="hasClickedAddResource && !hasClickedClearInAddResourceInLP" (click)="clickedClearInAddResourceInLP()">
+            <mat-icon>clear</mat-icon>
+        </button>
+        <app-addresource *ngIf="hasClickedAddResource && !hasClickedSaveResource && 
+        !hasClickedClearInAddResourceInLP" (hasClickedSave)="handleSave($event)"></app-addresource>
 
         <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion && !hasClickedClearQuestions"
             (hasClickedSubmit)="handleSubmit($event)" (hasClickedClearInQuestions)="handleClearInQuestions($event)"></app-questions>
