@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   height: 100%;
   margin-bottom: 20px;
+  margin-left: 8px;
 }
 
 .learningplan{
@@ -48,6 +49,7 @@ mat-form-field{
 }
 
 .pom-c-resourcecard{
+  /* word-wrap: break-word; */
   margin-top: 20px;
    display: flex;
   flex-direction: row; 
@@ -55,6 +57,7 @@ mat-form-field{
 
 @media (max-width: 425px){
   .pom-c-resourcecard{
+    /* word-wrap: break-word; */
     margin-top: 30px;
     display: flex;
     flex-direction: column;

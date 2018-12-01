@@ -13,14 +13,16 @@
     /* margin-right: auto;
     margin-left: auto; */
     /* margin-top:115px; */
-    padding-left: 115px;
+    /* padding-left: 115px; */
     /* padding-right: 15px;
     min-width: 320px;
     justify-content: center; */
     /* width: 75%;
     margin:auto; */
+    margin-top: 65px;
     background-color: #080357;
     color: #fff;
+
 }
 
 .conceptsCovered {

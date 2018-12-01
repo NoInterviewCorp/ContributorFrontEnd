@@ -1,0 +1,8 @@
+version: "3"
+services:
+  ContributorLearnerFrontEnd:
+    build: .
+    ports:
+      - "8081:4200"
+    labels:
+      SERVICE_4200_NAME: potentiometer-contributor-learner-frontend
