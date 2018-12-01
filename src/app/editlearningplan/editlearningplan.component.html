@@ -1,45 +1,50 @@
+<!-- name:string;
+    description:string;
+    technology:Technology;
+    resources:Resource[];
+    hasPublished:boolean; -->
 <button mat-button class="pom-c-clearbutton" (click)="clickedClearInEdit()">
   <mat-icon>clear</mat-icon>
 </button><br><br>
 <form class="example-form">
   <mat-form-field appearance="outline" class="field">
     <mat-label>Learning Plan Name</mat-label>
-    <input matInput value={{plan.LearningPlanName}}>
+    <input matInput value={{plan.name}}>
   </mat-form-field>
   <mat-form-field appearance="outline" class="field">
     <mat-label>Technology Name</mat-label>
-    <input matInput value="{{plan.Technology}}">
+    <input matInput value="{{plan.technology.name}}">
   </mat-form-field>
   <mat-form-field appearance="outline" class="textarea">
     <mat-label>Description</mat-label>
-    <textarea matInput value="{{plan.Summary}}"></textarea>
+    <textarea matInput value="{{plan.description}}"></textarea>
   </mat-form-field>
 </form>
 <h5>Your Plan starts here....</h5>
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let item of plan.Resources" class="pom-expansionpanel">
+  <mat-expansion-panel *ngFor="let item of plan.resources" class="pom-expansionpanel">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{item.ResourceName}}
+        {{item.name}}
       </mat-panel-title>
       <mat-panel-description>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Resource Name" value="{{item.ResourceName}}" [(ngModel)]="item.ResourceName">
+      <input matInput placeholder="Resource Name" value="{{item.name}}" [(ngModel)]="item.name">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Description" value="{{item.Description}}">
+      <input matInput placeholder="Description" value="{{item.description}}">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Resource Link" value="{{item.ResourceLink}}">
+      <input matInput placeholder="Resource Link" value="{{item.resourceLink}}">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Blooms Taxonomy" value="{{item.BloomsTaxonomy}}">
+      <input matInput placeholder="Blooms Taxonomy" value="{{item.bloomLevel}}">
     </mat-form-field>
 
     <mat-accordion>
-      <mat-expansion-panel *ngFor="let question of item.Questions">
+      <mat-expansion-panel *ngFor="let question of item.questions">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Question
@@ -47,14 +52,14 @@
           <mat-panel-description>
           </mat-panel-description>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="ProblemStatement" value="{{question.ProblemStatement}}">
+            <input matInput placeholder="ProblemStatement" value="{{question.problemStatement}}">
           </mat-form-field>
-          <mat-form-field class="example-full-width" *ngFor="let option of question.Options">
-            <input matInput placeholder="Option" value="{{option.Content}}">
-            <mat-checkbox>{{option.IsCorrect}}</mat-checkbox>
+          <mat-form-field class="example-full-width" *ngFor="let option of question.options">
+            <input matInput placeholder="Option" value="{{option.content}}">
+            <mat-checkbox>{{option.isCorrect}}</mat-checkbox>
           </mat-form-field>
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="BloomsTaxonomy" value="{{question.BloomLevel}}">
+            <input matInput placeholder="BloomsTaxonomy" value="{{question.bloomLevel}}">
           </mat-form-field>
         </mat-expansion-panel-header>
       </mat-expansion-panel>

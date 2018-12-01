@@ -16,7 +16,7 @@ export class YourcontributionscardComponent implements OnInit {
   constructor(private com:CommunicatorService,private http:HttpClient) {
   }
   ngOnInit() {
-    console.log(this.plan.LearningPlanID);
+    console.log(this.plan.learningPlanId);
   }
   getPlanOfId(){
       this.com.editSelectedPlan=this.plan;

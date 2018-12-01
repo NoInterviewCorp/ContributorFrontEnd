@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
 
-    this.http.get('http://172.23.239.60:5002/Technology').subscribe((res: any) => {
+    this.http.get('http://172.23.238.173:5002/Technology').subscribe((res: any) => {
       this.technology = res;
       console.log(this.technology);
     });
@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit {
     let x = this.testService.getTechName();
     // console.log("techname:"+x.Name);
     // console.log(x.Questions);
-    this.selectedTech = t.Name;
+    this.selectedTech = t.name;
     this.ask = true;
     this.showPopular = false;
   }

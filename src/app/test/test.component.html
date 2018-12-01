@@ -22,7 +22,7 @@
       </p>
       <div class="concepts" *ngFor="let c of concepts; index as i">
         <button [attr.id]="'Concept_' + i" mat-raised-button (click)="toggleColor(i);selectConcept(i)" [ngClass]="{'green' : toggles[i], 'red': !toggles[i] }">
-          {{c?.Name}}</button>
+          {{c?.name}}</button>
       </div>
     </div>
 
@@ -50,7 +50,7 @@
       <div class="ques-box">
         <div class="ques-title">
           <h3>
-            Q{{currentQuestion?.QuestionId}} {{currentQuestion?.ProblemStatement}}
+            Q{{currentQuestion?.questionId}} {{currentQuestion?.problemStatement}}
           </h3>
         </div>
       </div>
@@ -58,11 +58,11 @@
         <mat-radio-group class="radio-group" [(ngModel)]="selectedOption">
 
           <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.Options" [value]="o">
-            {{o?.Content}}
+            {{o?.content}}
           </mat-radio-button>
 
         </mat-radio-group>
-        <p>{{selectedOption?.Content}}</p>
+        <p>{{selectedOption?.content}}</p>
       </div>
     </div>
 

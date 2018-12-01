@@ -1,8 +1,8 @@
-import { Questions } from "../question.model";
+import { Question } from "../question.model";
 
 export class ErrorStatus {
     MemberId: number;
     HasError: boolean;
-    QuestionObj: Questions;
+    QuestionObj: Question;
 }
 

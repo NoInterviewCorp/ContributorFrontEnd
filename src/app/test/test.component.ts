@@ -115,7 +115,7 @@ export class TestComponent implements OnInit {
     this.showTimer = true;
     this.showProgressBar = true;
     this.questions = this.testService.getQuestions();
-    this.selectedTech = this.testService.getTechName().Name;
+    this.selectedTech = this.testService.getTechName().name;
     this.showNextButton = true;
     this.showQuesButton = false;
     this.questionCounter = 0;

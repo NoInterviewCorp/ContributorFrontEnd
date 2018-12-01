@@ -29,7 +29,7 @@ import { resourcecreatorComponent } from './resourcecreator/resourcecreator.comp
 import { ResourceformComponent } from './resourceform/resourceform.component';
 import { QuestionformComponent } from './questionform/questionform.component';
 import { QuestionsComponent } from './questions/questions.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SubscribecardComponent } from './scrolling-container/subscribecard/subscribecard.component';
 import { YourcontributionscardComponent } from './scrolling-container/yourcontributionscard/yourcontributionscard.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
@@ -40,6 +40,7 @@ import { SearchComponent } from './learner/search/search.component';
 import { YoursubscriptionscardComponent } from './scrolling-container/yoursubscriptionscard/yoursubscriptionscard.component';
 import { ResourceeditComponent } from './resourceedit/resourceedit.component';
 import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
+import { TokenInterceptor } from './token-interceptor';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -118,6 +119,11 @@ export function getAuthServiceConfigs() {
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]
