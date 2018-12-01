@@ -11,8 +11,8 @@
 
 @media (min-width: 425px){
 .pom-c-card {
-  margin: 10px; 
-  width: 250px;
+  margin: 7px; 
+  width: 270px;
   padding: 10px; 
   color: whitesmoke;
   background: #080357;
@@ -22,7 +22,7 @@
 
 @media (max-width: 425px){
 .pom-c-card {
-  margin-bottom :10px;
+  margin-bottom :7px; 
   width: 270px;
   color: whitesmoke;
   background: #080357;

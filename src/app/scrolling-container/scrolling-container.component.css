@@ -2,23 +2,39 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.contributionedit{
+ }
+ 
+ .subscription-card-container{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-}
-
-.pom-card{
+ }
+ 
+ .contributionedit{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ }
+ 
+ .pom-card{
   flex: 5;
-}
-
-.editview{
+ }
+ 
+ .editview{
   flex: 5;
-}
-
-h3{
+ }
+ 
+ h3{
   padding-left: 30px;
-}
+ }
 
+ @media (max-width: 425px){
+  .subscription-card-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:  center;
+   }
+   
+  }
+  

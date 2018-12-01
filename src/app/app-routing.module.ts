@@ -11,24 +11,25 @@ import { QuestionsComponent } from './questions/questions.component';
 import { AddresourceComponent } from './addresource/addresource.component';
 import { AddlearningplanComponent } from './addlearningplan/addlearningplan.component';
 import { AppComponent } from './app.component';
+import { SearchComponent } from './learner/search/search.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
 import { LearningplanviewComponent } from './learningplanview/learningplanview.component';
 import { LearnerComponent } from './learner/learner.component';
 import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
 
 const routes: Routes = [
-  //{path: 'home',component: HomeComponent},
   { path: '', component: HomeComponent },
   { path: 'profile', component: LandingComponent },
+  { path: 'profile/:id', component: SearchComponent },
   { path: 'contribute', component: ContibutorhomeComponent },
   { path: 'questions', component: QuestionsComponent },
   { path: 'addresource', component: AddresourceComponent },
   { path: 'addlearningplan', component: AddlearningplanComponent },
   { path: 'test', component: TestComponent },
   { path: 'home' , component: AppComponent},
-  {path: 'profilepage',component: ProfileComponent},
-  {path: 'editlearningplan', component: EditlearningplanComponent},
-  {path: 'learningplanview', component: LearningplanviewComponent},
+  { path: 'profilepage',component: ProfileComponent},
+  { path: 'editlearningplan', component: EditlearningplanComponent},
+  { path: 'learningplanview', component: LearningplanviewComponent},
   { path: 'profilepage',component: ProfileComponent},
   { path: 'editlearningplan', component: EditlearningplanComponent},
   { path: 'test', component: TestComponent },

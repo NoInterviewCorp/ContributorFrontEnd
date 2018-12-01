@@ -1,23 +1,25 @@
 <h3 *ngIf="choice==1">Your Contributions</h3>
 <h3 *ngIf="choice==2">Your Subscriptions</h3>
 <div class="contributionedit">
-    <div class="pom-card">
-        <div class="contribution-card-container">
-            <div class="cards" *ngFor="let item of plan">
-                <app-yourcontributionscard [plan]="item" *ngIf="choice==1" (hasClickedEdit)=handleEdit($event)
-                    (hasClickedView)=handleView($event)></app-yourcontributionscard>
-                <app-subscribecard [plan]="item" *ngIf="choice==3"></app-subscribecard>
-            </div>
-        </div>
-    </div>
-    <div class="contribution-card-container">
-        <div class="cards" *ngFor="let item of plan">
-            <app-yoursubscriptionscard [plan]="item" *ngIf="choice==2"></app-yoursubscriptionscard>
-        </div>
-    </div>
-    <div class="editview" *ngIf="hasClickedEditLP || hasClickedViewLP">
-        <app-editlearningplan *ngIf="hasClickedEditLP && !hasClickedSaveChangesInEdit 
-        && !hasClickedClearEdit && !hasClickedViewLP" (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
-        <app-learningplanview *ngIf="hasClickedViewLP && !hasClickedClearView && !hasClickedEditLP" (hasClickedClearInView)=handleClearView($event)></app-learningplanview>
-    </div>
+   <div class="pom-card">
+       <div class="contribution-card-container">
+           <div class="cards" *ngFor="let item of plan">
+               <app-yourcontributionscard [plan]="item" *ngIf="choice==1" (hasClickedEdit)=handleEdit($event)
+                   (hasClickedView)=handleView($event)></app-yourcontributionscard>
+               <app-subscribecard [plan]="item" *ngIf="choice==3"></app-subscribecard>
+           </div>
+       </div>
+   </div>
+   <div class="editview" *ngIf="hasClickedEditLP || hasClickedViewLP">
+       <app-editlearningplan *ngIf="hasClickedEditLP && !hasClickedSaveChangesInEdit
+       && !hasClickedClearEdit && !hasClickedViewLP"
+           (hasClickedSaveInEdit)=handleSaveEdit($event) (hasClickedClearInEdit)=handleClearEdit($event)></app-editlearningplan>
+       <app-learningplanview *ngIf="hasClickedViewLP && !hasClickedClearView && !hasClickedEditLP"
+           (hasClickedClearInView)=handleClearView($event)></app-learningplanview>
+   </div>
+</div>
+<div class="subscription-card-container">
+   <div class="cards" *ngFor="let item of plan">
+       <app-yoursubscriptionscard [plan]="item" *ngIf="choice==2"></app-yoursubscriptionscard>
+   </div>
 </div>

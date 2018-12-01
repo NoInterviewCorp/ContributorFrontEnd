@@ -4,9 +4,14 @@
 }
 
 .pom-c-navbar {
-  position: fixed;
+  /* position: fixed;
   z-index: 99999;
-  height: 11vh;
+  height: 11vh; */
+  overflow: hidden;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 .pom-l-spacer {

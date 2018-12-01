@@ -40,6 +40,7 @@ import { SearchComponent } from './learner/search/search.component';
 import { YoursubscriptionscardComponent } from './scrolling-container/yoursubscriptionscard/yoursubscriptionscard.component';
 import { ResourceeditComponent } from './resourceedit/resourceedit.component';
 import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
+import { RatingComponent } from './rating/rating.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -96,6 +97,8 @@ export function getAuthServiceConfigs() {
     ResourceeditComponent,
 
     SubscriptionviewComponent,
+
+    RatingComponent,
 
   ],
   imports: [
