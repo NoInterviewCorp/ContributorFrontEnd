@@ -8,10 +8,15 @@
         </div>
         <div class="author">
           by {{plan?.Owner}}
+          <!-- <div class="pos"> -->
+          <app-rating (onRating)="onLearningPlanRating($event)"></app-rating>
+          <!-- </div> -->
         </div>
       </div>
     </div>
+    
   </div>
+  
 
   <div class="row row--component-margin">
     <div class="resourcesHeading">
