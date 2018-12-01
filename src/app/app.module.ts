@@ -41,6 +41,7 @@ import { YoursubscriptionscardComponent } from './scrolling-container/yoursubscr
 import { ResourceeditComponent } from './resourceedit/resourceedit.component';
 import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
 import { TokenInterceptor } from './token-interceptor';
+import { RatingComponent } from './rating/rating.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -97,6 +98,8 @@ export function getAuthServiceConfigs() {
     ResourceeditComponent,
 
     SubscriptionviewComponent,
+
+    RatingComponent,
 
   ],
   imports: [

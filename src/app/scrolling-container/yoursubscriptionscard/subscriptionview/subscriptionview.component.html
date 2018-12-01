@@ -7,7 +7,8 @@
           {{plan?.description}}
         </div>
         <div class="author">
-          by {{plan?.Owner}}
+          by {{plan?.owner}}
+          <app-rating (onRating)="onLearningPlanRating($event)"></app-rating>
         </div>
       </div>
     </div>
