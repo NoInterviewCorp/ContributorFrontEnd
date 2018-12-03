@@ -18,7 +18,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { AngularModule } from './angular/angular.module';
 import { ProfileComponent } from './profile/profile.component';
 import { LandingComponent } from './landing/landing.component';
-import { TabsComponent } from './landing/tabs/tabs.component';
+
 import { ScrollingContainerComponent } from './scrolling-container/scrolling-container.component';
 import { ContributeComponent } from './contribute/contribute.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -63,7 +63,6 @@ export function getAuthServiceConfigs() {
 
     // Landing Page Components
     LandingComponent,
-    TabsComponent,
     ProfileComponent,
     SignInComponent,
     SignUpComponent,
@@ -117,6 +116,7 @@ export function getAuthServiceConfigs() {
   entryComponents: [
     SignInComponent
   ],
+  
   providers: [
     {
       provide: AuthServiceConfig,

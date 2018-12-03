@@ -21,6 +21,7 @@ export class SubscriptionviewComponent implements OnInit {
     console.log("Rated the learning plan");
     console.log($event);
     // Call Service Methods to update the service in the backend - POST call
+    
   }
 
 }

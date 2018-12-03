@@ -28,8 +28,8 @@ export class SearchComponent implements OnInit {
   constructor(private testService: TestService, private http: HttpClient) { }
 
   ngOnInit() {
-
-    this.http.get('http://localhost:3000/Technology').subscribe((res: any) => {
+      //get the available technologies 
+      this.testService.getTechnologies().subscribe((res: any) => {
       this.technology = res;
       console.log(this.technology);
     });
@@ -57,19 +57,11 @@ export class SearchComponent implements OnInit {
 
   setTech(t: Technology) {
     this.testService.setTechName(t);
-    let x = this.testService.getTechName();
+    // let x = this.testService.getTechName();
     // console.log("techname:"+x.Name);
     // console.log(x.Questions);
     this.selectedTech = t.Name;
     this.ask = true;
     this.showPopular = false;
   }
-
-  //   showTechs() {
-  //     this.http.get('http://localhost:3000/Technology').subscribe((res: any) => {
-  //       this.technology = res;
-  //       console.log(this.technology);
-  //   });
-  //   this.showBtn=false;
-  // }
 }

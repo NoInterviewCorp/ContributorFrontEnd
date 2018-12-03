@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from '../services/test.service';
+
 // import { Technology } from '../../models/technology.model';
 
 
@@ -41,11 +42,12 @@ export class TestComponent implements OnInit {
   hasSelectedMaxConcepts = false;
   deselectedConcept: string;
   hasSelected4 = false;
-
+  username: string;
   constructor(private testService: TestService) { }
 
   ngOnInit() {
     this.getConceptsFunction();
+    this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
   }
 
   toggleColor(j) {
@@ -103,19 +105,25 @@ export class TestComponent implements OnInit {
   }
 
   getConceptsFunction() {
-    this.testService.getConcepts()
-      .subscribe((res: any) => {
-        this.concepts = res;
-        this.toggles = new Array(this.concepts.length).fill(true); //initialize all with true
-        this.isSelected = new Array(this.concepts.length).fill(false); //initialize all with false since nothing is selected at firssst
-      });
+    this.testService.getConcepts(this.username,this.selectedTech);
+    this.testService.connection.on('messageReceived', (res:any) => {
+    this.concepts = res;
+    this.toggles = new Array(this.concepts.length).fill(true);
+    this.isSelected = new Array(this.concepts.length).fill(false);
+    });
 
   }
+
   display() {
     this.showTimer = true;
     this.showProgressBar = true;
-    this.questions = this.testService.getQuestions();
     this.selectedTech = this.testService.getTechName().Name;
+    // this.questions = this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
+    this.testService.connection.on('gotQuestions', (ques:any) =>
+    {
+      this.questions=ques;
+
+    });
     this.showNextButton = true;
     this.showQuesButton = false;
     this.questionCounter = 0;
@@ -129,9 +137,9 @@ export class TestComponent implements OnInit {
   gameClock() {
     const intervalMain = setInterval(() => {
       this.counter--;
-      if (this.counter <= 0) {
-        this.nextQuestion();
-      }
+      // if (this.counter <= 0) {
+      //   this.nextQuestion();
+      // }
       if (this.quesCount == this.totalQues) {
         clearInterval(intervalMain);
       }
@@ -141,7 +149,7 @@ export class TestComponent implements OnInit {
   }
 
   nextQuestion() {
-    this.resetTimer();
+    // this.resetTimer();
     this.selectedOption = "";
     this.questionCounter++;
     this.currentQuestion = this.questions[this.questionCounter];
@@ -154,10 +162,10 @@ export class TestComponent implements OnInit {
     }
   }
 
-  resetTimer() {
-    this.quesCount++;
-    this.counter = this.duration;
-  }
+  // resetTimer() {
+  //   this.quesCount++;
+  //   this.counter = this.duration;
+  // }
 
 
 
