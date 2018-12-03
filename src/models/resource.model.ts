@@ -10,20 +10,24 @@ export class Resource {
     resourceLink: string;
     questions: Question[];
     bloomLevel: BloomTaxonomy;
-    hasPublished:boolean;
+    hasPublished: boolean;
     concepts: Concept[];
     technologies: Technology[];
     constructor() {
         this.resourceId = "",
-        this.name = "",
-        this.description = "",
-        this.resourceLink = "",
-        this.questions = [],
-        this.bloomLevel = 1,
-        this.hasPublished=false,
-        this.concepts = [],
-        this.technologies = [{
-            name: ""
-        }]
+            this.name = "",
+            this.description = "",
+            this.resourceLink = "",
+            this.questions=[],    
+            this.bloomLevel = 1,
+            this.hasPublished = false,
+            this.concepts = [
+                {
+                    name: ""
+                }
+            ],
+            this.technologies = [{
+                name: ""
+            }]
     }
 }

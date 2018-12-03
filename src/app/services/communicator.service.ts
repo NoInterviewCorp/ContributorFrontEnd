@@ -57,17 +57,21 @@ export class CommunicatorService {
   getPlansById(LearningPlanID: string) {
     return this.http.get('http://172.23.238.173:5002/LearningPlan' + LearningPlanID + '?text=id')
   }
-  postQuestions() {
-
-  }
-  postResources() {
-
+  
+  postResources(resource:Resource) {
+    return this.http.post('http://172.23.238.173:5002/Resource',resource);
   }
   postLearningPlan(learningplan:LearningPlan) {
     return this.http.post('http://172.23.238.173:5002/LearningPlan',learningplan);
   }
+  putLearningPlan(learningplan:LearningPlan){
+    return this.http.put('http://172.23.238.173:5002/LearningPlan/'+ learningplan.learningPlanId ,learningplan);
+  }
   getYourSubs() {
     return this.http.get('http://172.23.238.173:5002/LearningPlan');
+  }
+  putResource(resource:Resource){
+    return this.http.put('http://172.23.238.173:5002/Resource/' +resource.resourceId,resource);
   }
 
 

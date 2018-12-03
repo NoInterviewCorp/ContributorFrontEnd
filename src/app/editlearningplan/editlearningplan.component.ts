@@ -14,8 +14,10 @@ export class EditlearningplanComponent implements OnInit {
   @Output() hasClickedSaveInEdit = new EventEmitter;
   @Output() hasClickedClearInEdit = new EventEmitter;
   disableButton: boolean;
+  hasClickedAddResource:boolean;
   // resources[]=LearningPlan.Resources[];
-  constructor(private com: CommunicatorService) { }
+  constructor(private com: CommunicatorService) { 
+  }
 
   ngOnInit() {
     this.plan = this.com.editSelectedPlan;
@@ -24,11 +26,16 @@ export class EditlearningplanComponent implements OnInit {
   clickedSaveInEdit() {
     this.hasClickedSaveInEdit.emit(true);
     this.disableButton = true;
+    this.com.putLearningPlan(this.plan).subscribe(res => {
+      console.log("result is  " + res);
+    });
   }
   clickedClearInEdit() {
     this.hasClickedClearInEdit.emit(true);
   }
   clickedresourcecreatorInEdit() {
     this.plan.resources.push(new Resource);
+    this.hasClickedAddResource=true;
   }
+   
 }

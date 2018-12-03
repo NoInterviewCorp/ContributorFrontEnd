@@ -4,7 +4,7 @@
         <form class="example-form">
             <mat-form-field appearance="outline">
                 <mat-label>Learning Plan Name</mat-label>
-                <input matInput placeholder="Learning Plan Name" [(ngModel)]="plan.name"
+                <input matInput placeholder="Learning Plan Name" value={{plan.name}} [(ngModel)]="plan.name"
                 [ngModelOptions]="{standalone: true}">
                 <mat-hint>Name your Learning Plan</mat-hint>
             </mat-form-field>

@@ -5,12 +5,23 @@ import { Technology } from "./technology.model";
 import { Concept } from "./resourceform/resourceform.component";
 
 export class Question {
-    questionId:string;
+    questionId: string;
     problemStatement: string;
     options: Option[];
-    correctOptionId:string;
+    correctOptionId: string;
     bloomLevel: BloomTaxonomy;
-    hasPublished:boolean;
-    technology:Technology;
-    concepts:Concept[];
+    hasPublished: boolean;
+    technology: Technology;
+    concepts: Concept[];
+
+    constructor() {
+        this.questionId = "",
+        this.problemStatement = "",
+        this.options = [];
+        this.correctOptionId = "",
+        this.bloomLevel = 1,
+        this.hasPublished = false;
+        this.technology = Technology;
+        this.concepts = [];
+    }
 }

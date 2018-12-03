@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Resource } from 'src/models/resource.model';
+import { CommunicatorService } from '../services/communicator.service';
 
 @Component({
   selector: 'app-resourceedit',
@@ -9,11 +10,16 @@ import { Resource } from 'src/models/resource.model';
 export class ResourceeditComponent implements OnInit {
   @Input() resource: Resource;
   @Output() hasClickedClearInResourceEdit = new EventEmitter();
-  constructor() { }
+  constructor(private com:CommunicatorService) { }
 
   ngOnInit() {
   }
   clickedClearInResourceEdit() {
     this.hasClickedClearInResourceEdit.emit(true);
+  }
+  clickedSave(){
+    this.com.putResource(this.resource).subscribe(res => {
+      console.log("result is  " + res);
+    });
   }
 }

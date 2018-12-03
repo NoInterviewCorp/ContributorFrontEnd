@@ -1,5 +1,5 @@
 .example-chip-list {
-    width: 90%;
+    width: 60%;
   }
 .example-form{
     display: flex;
@@ -10,7 +10,7 @@
 }
 
 mat-form-field{
-    width: 90%;
+    width: 60%;
     font-size: 15px;
     margin-bottom: 20px;
 }

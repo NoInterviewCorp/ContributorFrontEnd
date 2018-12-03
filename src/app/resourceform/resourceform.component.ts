@@ -46,7 +46,7 @@ export class ResourceformComponent implements OnInit {
     const input = event.input;
     const value = event.value;
     if ((value || '').trim()) {
-      this.concepts.push({ name: value.trim() });
+      this.resource.concepts.push({ name: value.trim() });
     }
     if (input) {
       input.value = '';
@@ -92,6 +92,7 @@ export class ResourceformComponent implements OnInit {
   clickedDone() {
     let index = this.com.resourcecreator(this.resource);
     console.log("index is " + index);
+    console.log(this.com.getResource(index));
     this.hasClickedDone.emit(index);
     this.disableButton = true;
 

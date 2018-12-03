@@ -1,8 +1,3 @@
-<!-- name:string;
-    description:string;
-    technology:Technology;
-    resources:Resource[];
-    hasPublished:boolean; -->
 <button mat-button class="pom-c-clearbutton" (click)="clickedClearInEdit()">
   <mat-icon>clear</mat-icon>
 </button><br><br>
@@ -34,34 +29,53 @@
       <input matInput placeholder="Resource Name" value="{{item.name}}" [(ngModel)]="item.name">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Description" value="{{item.description}}">
+      <input matInput placeholder="Description" value="{{item.description}}" [(ngModel)]="item.description">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Resource Link" value="{{item.resourceLink}}">
+      <input matInput placeholder="Technology" value="{{item.technologies[0].name}}" [(ngModel)]="item.technologies[0].name">
     </mat-form-field>
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Blooms Taxonomy" value="{{item.bloomLevel}}">
+      <input matInput placeholder="Resource Link" value="{{item.resourceLink}}" [(ngModel)]="item.resourceLink">
     </mat-form-field>
-
+    <mat-form-field class="example-full-width" *ngFor="let concept of item.concepts;let i=index ">
+      <input matInput placeholder="Concept" value="{{item.concepts[i].name}}" [(ngModel)]="item.concepts[i].name">
+    </mat-form-field>
+    <!-- <mat-form-field class="example-full-width">
+      <input matInput placeholder="Blooms Taxonomy" value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel">
+    </mat-form-field> -->
+    <mat-form-field>
+        <mat-select value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel">
+            <mat-option value="1">Knowledge</mat-option>
+            <mat-option value="2">Comprehension</mat-option>
+            <mat-option value="3">Application</mat-option>
+            <mat-option value="4">Analysis</mat-option>
+            <mat-option value="5">Synthesis</mat-option>
+            <mat-option value="6">Evaluation</mat-option>
+          </mat-select>
+    </mat-form-field>
+    <!-- <div>
+        <button mat-raised-button *ngIf="hasClickedAddResource" (click)="clickedSubmitAddedResource()">Submit</button>
+      </div> -->
     <mat-accordion>
-      <mat-expansion-panel *ngFor="let question of item.questions">
+      <mat-expansion-panel *ngFor="let question of item.questions" class="pom-expansionpanelquestion">
         <mat-expansion-panel-header>
           <mat-panel-title>
             Question
           </mat-panel-title>
           <mat-panel-description>
           </mat-panel-description>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="ProblemStatement" value="{{question.problemStatement}}">
-          </mat-form-field>
-          <mat-form-field class="example-full-width" *ngFor="let option of question.options">
-            <input matInput placeholder="Option" value="{{option.content}}">
-            <mat-checkbox>{{option.isCorrect}}</mat-checkbox>
-          </mat-form-field>
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="BloomsTaxonomy" value="{{question.bloomLevel}}">
-          </mat-form-field>
         </mat-expansion-panel-header>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="ProblemStatement" value="{{question.problemStatement}}" [(ngModel)]="question.problemStatement">
+        </mat-form-field>
+        <mat-form-field class="example-full-width" *ngFor="let option of question.options">
+          <input matInput placeholder="Option" value="{{option.content}}" [(ngModel)]="option.content">
+          <mat-checkbox>{{option.isCorrect}}</mat-checkbox>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="BloomsTaxonomy" value="{{question.bloomLevel}}" [(ngModel)]="question.bloomLevel">
+        </mat-form-field>
+
       </mat-expansion-panel>
     </mat-accordion>
   </mat-expansion-panel>

@@ -1,7 +1,7 @@
 <h5>Resource {{id+1}} Questions</h5>
 <div class="flex-container">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="technology Name" [(ngModel)]="name" [formControl]="technologyname" required>
+    <input matInput placeholder="technology Name" [(ngModel)]="questions.technology.name" [formControl]="technologyname" required>
     <mat-error *ngIf="question.invalid">{{getErrorMessage(6)}}</mat-error>
     <mat-error *ngIf="question.valid">{{getValidMessage(6)}}</mat-error>
   </mat-form-field>

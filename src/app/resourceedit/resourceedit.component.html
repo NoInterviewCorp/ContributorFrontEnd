@@ -8,16 +8,20 @@
       [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Technology" value="{{resource.technology.name}}">
+    <input matInput placeholder="Technology" value="{{resource.technologies[0].name}}"
+    [(ngModel)]="resource.technologies[0].name" [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Resource Link" value="{{resource.resourceLink}}">
+    <input matInput placeholder="Resource Link" value="{{resource.resourceLink}}"
+    [(ngModel)]="resource.resourceLink" [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Description" value="{{resource.description}}"></textarea>
+    <textarea matInput placeholder="Description" value="{{resource.description}}"
+    [(ngModel)]="resource.description" [ngModelOptions]="{standalone: true}"></textarea>
   </mat-form-field>
+
   <mat-form-field>
-    <mat-select placeholder="Bloom's Level" value="{{resource.bloomsLevel}}">
+    <mat-select placeholder="Bloom's Level" value="{{resource.bloomsLevel}}" [(ngModel)]="resource.bloomsLevel">
       <mat-option value="1">Knowledge</mat-option>
       <mat-option value="2">Comprehension</mat-option>
       <mat-option value="3">Application</mat-option>
@@ -31,4 +35,4 @@
     <mat-icon class="help">help</mat-icon>
   </a>
 </form>
-<button mat-button>Save</button>
+<button mat-button (click)="clickedSave()">Save</button>

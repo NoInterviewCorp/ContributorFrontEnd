@@ -19,7 +19,7 @@ export class resourcecreatorComponent implements OnInit {
   hasnoerror: boolean = false;
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
-  resource: Resource;
+   resource= new Resource();
   disableButton: boolean;
   @Output() hasClickedSave = new EventEmitter();
   index: number = -1;
@@ -74,7 +74,7 @@ export class resourcecreatorComponent implements OnInit {
     }
   }
   postResources() {
-
+    
   }
   clickedClose() {
     this.hasClickedClose = true;

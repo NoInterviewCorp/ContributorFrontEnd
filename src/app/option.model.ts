@@ -3,7 +3,7 @@ export class Option {
     content: string;
     isCorrect: boolean;
 
-    public Option(){
+    constructor(){
         this.optionId = "";
         this.content = "";
         this.isCorrect = false;
