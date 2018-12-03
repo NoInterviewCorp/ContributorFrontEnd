@@ -60,7 +60,7 @@ export class SearchComponent implements OnInit {
     // let x = this.testService.getTechName();
     // console.log("techname:"+x.Name);
     // console.log(x.Questions);
-    this.selectedTech = t.Name;
+    this.selectedTech = t.name;
     this.ask = true;
     this.showPopular = false;
   }

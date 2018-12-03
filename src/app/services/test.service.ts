@@ -28,17 +28,20 @@ export class TestService {
 
   connectionBuilder() {
     this.connection = new signalR.HubConnectionBuilder()
-    .withUrl('http://localhost:5000/test') 
+    .withUrl('http://172.23.238.173:5010/test') 
     .build();
-    this.connection.start().then(() => console.log('connection established')).catch((err) => console.log('Error::: ', err));
+  
+    return this.connection.start()
+      .then(() => console.log('connection established'))
+      .catch((err) => console.log('Error::: ', err));
   }
 
-  getConcepts(username:string,techname:string) {
-    this.connection.send('newMessage', username, techname);
+  getConcepts(username:string, techname:string) {
+    this.connection.send('RequestConcepts', 'username', techname);
   }
 
   getTechnologies() {
-    return this.http.get('http://localhost:3000/Technology');
+    return this.http.get('http://172.23.238.173:5002/Technology');
   }
 
   }

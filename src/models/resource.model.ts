@@ -18,7 +18,7 @@ export class Resource {
         this.BloomsTaxonomy = 1,
         this.Technology = {
             technologyId: 1,
-            Name: "",
+            name: "",
             Questions: [] //remove it laterr !!!!!!
         },
         this.Questions = []

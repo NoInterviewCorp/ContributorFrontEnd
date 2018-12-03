@@ -10,8 +10,6 @@ import { TestService } from '../services/test.service';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
-
-
   toggle: any;
   status = 'Enable';
   selectedTech: any;
@@ -46,8 +44,11 @@ export class TestComponent implements OnInit {
   constructor(private testService: TestService) { }
 
   ngOnInit() {
-    this.getConceptsFunction();
-    this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
+    this.testService.connectionBuilder().then(() => {
+      this.selectedTech = this.testService.getTechName().name;
+      this.getConceptsFunction();
+      this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
+    });
   }
 
   toggleColor(j) {
@@ -117,7 +118,7 @@ export class TestComponent implements OnInit {
   display() {
     this.showTimer = true;
     this.showProgressBar = true;
-    this.selectedTech = this.testService.getTechName().Name;
+    this.selectedTech = this.testService.getTechName().name;
     // this.questions = this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
     this.testService.connection.on('gotQuestions', (ques:any) =>
     {

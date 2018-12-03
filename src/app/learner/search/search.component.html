@@ -4,13 +4,13 @@
     <div *ngFor="let tech of technology">
       <mat-card class="pom-c-card">
         <mat-card-title>
-          {{tech.Name}}
+          {{tech.name}}
         </mat-card-title>
         <mat-card-content class="pom-c-card__content">
         </mat-card-content>
         <mat-card-actions class="pom-l-action_buttons">
           <button mat-button (click)="setTech(tech)" routerLink="/test" routerLinkActive="active">Take Test</button>
-          <button mat-button (click)="learn(tech)" routerLink="/profile/{{tech.Name}}">Learn</button>
+          <button mat-button (click)="learn(tech)" routerLink="/profile/{{tech.name}}">Learn</button>
         </mat-card-actions>
       </mat-card>
     </div>
