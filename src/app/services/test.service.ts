@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Technology } from 'src/app/technology.model';
 import * as signalR from '@aspnet/signalr';
+import { LearningPlan } from 'src/models/learningplan.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -26,9 +27,9 @@ export class TestService {
     this.connection.send('getQuestionsBatch', username, techname,concepts);
   }
 
-  connectionBuilder() {
+  connectionBuilder(username:string) {
     this.connection = new signalR.HubConnectionBuilder()
-    .withUrl('http://172.23.238.173:5010/test') 
+    .withUrl('http://172.23.238.173:5001/test?=username='+username) 
     .build();
   
     return this.connection.start()
@@ -43,5 +44,7 @@ export class TestService {
   getTechnologies() {
     return this.http.get('http://172.23.238.173:5002/Technology');
   }
+
+  
 
   }

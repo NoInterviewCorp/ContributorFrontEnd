@@ -40,12 +40,13 @@ export class TestComponent implements OnInit {
   hasSelectedMaxConcepts = false;
   deselectedConcept: string;
   hasSelected4 = false;
-  username: string;
+  username="xyz";
   constructor(private testService: TestService) { }
 
   ngOnInit() {
-    this.testService.connectionBuilder().then(() => {
+      this.testService.connectionBuilder(this.username).then(() => {
       this.selectedTech = this.testService.getTechName().name;
+      console.log(this.selectedTech);
       this.getConceptsFunction();
       this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
     });

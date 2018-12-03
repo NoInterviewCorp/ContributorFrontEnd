@@ -12,3 +12,10 @@ export class LearningPlan{
     Avatar:string;
     Resources:Resource[];
 }
+export class LearningPlanFeedBack{
+    LearningPlanFeedBackId:number;
+    LearningPlanID:string;
+    UserId:string;
+
+
+}

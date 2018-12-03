@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Output, EventEmitter } from '@angular/core';
+import { CommunicatorService } from '../services/communicator.service';
 
 @Component({
   selector: 'app-rating',
@@ -10,13 +11,14 @@ export class RatingComponent implements OnInit {
 
   @Input() rating;
   @Output() onRating = new EventEmitter();
-  constructor() { }
+  constructor(private com:CommunicatorService) { }
 
   ngOnInit() {
   }
 
   onClick(rating: number) {
     this.rating = rating;
+    this.com.setRating(this.rating);
     this.onRating.emit({ rating });
   }    
 
