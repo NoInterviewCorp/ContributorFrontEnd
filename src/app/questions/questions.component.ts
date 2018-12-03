@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 //import { SMEService } from '../../services/sme.service';
-import { Questions } from '../question.model';
+import { Question } from '../question.model';
 import { ErrorStatus } from './errorstatus.model';
 import { CommunicatorService } from '../services/communicator.service';
 //import { CommunicatorService } from '../../services/communicator.service'
@@ -16,7 +16,7 @@ export class QuestionsComponent implements OnInit {
   @Output() hasClickedClearInQuestions = new EventEmitter();
   index: number;
   questions: Array<number> = [this.index];
-  questionObjs: Questions[] = [new Questions()];
+  questionObjs: Question[] = [new Question()];
   lastNumber = this.questions.length;
   noerror: Array<boolean> = [false];
   haserror: boolean = false;
@@ -99,7 +99,7 @@ export class QuestionsComponent implements OnInit {
     this.hasClickedAdd = true;
     this.questions.push(++this.lastNumber);
     this.noerror.push(false);
-    this.questionObjs.push(new Questions);
+    this.questionObjs.push(new Question);
     // if (this.questions.length >= 3) {
     //   this.hasAdded3Qs = true;
     // }

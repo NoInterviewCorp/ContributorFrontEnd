@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Resource } from 'src/models/resource.model';
 import { CommunicatorService } from '../services/communicator.service';
-import { Questions } from '../question.model';
+import { Question } from '../question.model';
 import { Technology } from '../technology.model';
 
 
@@ -17,12 +17,12 @@ export class learningplancreatorComponent implements OnInit {
   hasClickedSubmitQuestion: boolean
   resource: Resource;
   resources: Resource[] = [];
-  technologyName:string="";
+  technologyName: string = "";
   hasClickedAddQuestions: boolean;
   hasClickedClearQuestions: boolean;
   hasClickedResourceToEdit: boolean;
   hasClickedClearInResourceEdit: boolean;
-  hasClickedClearInresourcecreatorInLP:boolean;
+  hasClickedClearInresourcecreatorInLP: boolean;
 
   constructor(private com: CommunicatorService) { }
 
@@ -34,12 +34,12 @@ export class learningplancreatorComponent implements OnInit {
     this.hasClickedSaveResource = (index >= 0);
     this.resources.push(this.com.getResource(index))
     console.log(this.resources[index]);
-    this.hasClickedClearInresourcecreatorInLP=true;
+    this.hasClickedClearInresourcecreatorInLP = true;
   }
 
   handleSubmit(index) {
     this.hasClickedSubmitQuestion = true;
-    this.resources[index].Questions = this.com.getQuestionOfResource(index);
+    this.resources[index].questions = this.com.getQuestionOfResource(index);
     console.log(this.resources);
   }
   handleClearInQuestions(clear) {
@@ -50,7 +50,7 @@ export class learningplancreatorComponent implements OnInit {
   clickedresourcecreator() {
     this.hasClickedresourcecreator = true;
     this.hasClickedSaveResource = false;
-    this.hasClickedClearInresourcecreatorInLP=false;
+    this.hasClickedClearInresourcecreatorInLP = false;
   }
   clickedAddQuestions(index) {
     this.hasClickedClearQuestions = false;
@@ -59,7 +59,7 @@ export class learningplancreatorComponent implements OnInit {
     this.resIndexForAddingQuestions = index;
     this.com.setLastResourceIndex(this.resIndexForAddingQuestions);
     console.log(this.resIndexForAddingQuestions);
-    this.technologyName=this.resources[index].Technology.Name;
+    this.technologyName = this.resources[index].technologies[0].name;
   }
   clickedResourceToEdit(index) {
     this.resource = this.resources[index];
@@ -69,7 +69,7 @@ export class learningplancreatorComponent implements OnInit {
   handleClearInResourceEdit(clear) {
     this.hasClickedClearInResourceEdit = clear;
   }
-  clickedClearInresourcecreatorInLP(){
-    this.hasClickedClearInresourcecreatorInLP=true;
+  clickedClearInresourcecreatorInLP() {
+    this.hasClickedClearInresourcecreatorInLP = true;
   }
 }

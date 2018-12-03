@@ -1,13 +1,11 @@
-export class Options {
-    OptionId: number;
-    Content: string;
-    IsCorrect: boolean;
-    QuestionId: number;
+export class Option {
+    optionId: string;
+    content: string;
+    isCorrect: boolean;
 
-    public Options(){
-        this.OptionId = 0;
-        this.Content = "";
-        this.IsCorrect = false;
-        this.QuestionId = 0;
+    public Option(){
+        this.optionId = "";
+        this.content = "";
+        this.isCorrect = false;
     }
 }

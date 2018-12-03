@@ -1,26 +1,29 @@
 import { BloomTaxonomy } from "src/app/bloomTaxonomy.model";
 import { Technology } from "src/app/technology.model";
-import { Questions } from "src/app/question.model";
+import { Question } from "src/app/question.model";
+import { Concept } from "src/app/resourceform/resourceform.component";
 
 export class Resource {
-    ResourceId: string;
-    ResourceName: string;
-    ResourceLink: string;
-    Description: string;
-    BloomsTaxonomy: BloomTaxonomy;
-    Technology: Technology;
-    Questions: Questions[];
+    resourceId: string;
+    name: string;
+    description: string;
+    resourceLink: string;
+    questions: Question[];
+    bloomLevel: BloomTaxonomy;
+    hasPublished:boolean;
+    concepts: Concept[];
+    technologies: Technology[];
     constructor() {
-        this.ResourceId = "",
-        this.ResourceName = "",
-        this.ResourceLink = "",
-        this.Description = "",
-        this.BloomsTaxonomy = 1,
-        this.Technology = {
-            technologyId: 1,
-            Name: "",
-            Questions: [] //remove it laterr !!!!!!
-        },
-        this.Questions = []
+        this.resourceId = "",
+        this.name = "",
+        this.description = "",
+        this.resourceLink = "",
+        this.questions = [],
+        this.bloomLevel = 1,
+        this.hasPublished=false,
+        this.concepts = [],
+        this.technologies = [{
+            name: ""
+        }]
     }
 }

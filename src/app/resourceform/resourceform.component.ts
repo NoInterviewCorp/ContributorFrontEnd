@@ -5,10 +5,10 @@ import { QuestionsComponent } from '../questions/questions.component';
 import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CommunicatorService } from '../services/communicator.service';
 import { Resource } from 'src/models/resource.model';
-import { Questions } from '../question.model';
+import { Question } from '../question.model';
 
 
-export interface Concept {
+export class Concept {
   name: string;
 }
 
@@ -23,19 +23,7 @@ export class ResourceformComponent implements OnInit {
   @Output() noError = new EventEmitter();
   @Output() addQuestions = new EventEmitter();
   @Output() hasClickedDone = new EventEmitter();
-  resource: Resource = {
-    ResourceId: "",
-    ResourceName: "",
-    ResourceLink: "",
-    Description: "",
-    BloomsTaxonomy: 1,
-    Technology: {
-      technologyId: 1,
-      Name: "",
-      Questions: [] //remove it laterr !!!!!!
-    },
-    Questions: [],
-  };
+  resource: Resource = new Resource();
   //  hasClickedAddQuestions:boolean;
   results: any = [];
   disableButton: boolean;

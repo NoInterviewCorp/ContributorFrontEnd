@@ -1,10 +1,12 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { OptionForm } from './optionform.model';
-import { Questions } from '../question.model';
-import { Options } from '../option.model';
+import { Question } from '../question.model';
+import { Option } from '../option.model';
 import { BloomTaxonomy } from '../bloomTaxonomy.model';
 import { CommunicatorService } from '../services/communicator.service';
+import { Resource } from 'src/models/resource.model';
+import { Technology } from '../technology.model';
 
 @Component({
   selector: 'app-questionform',
@@ -13,24 +15,29 @@ import { CommunicatorService } from '../services/communicator.service';
 })
 export class QuestionformComponent implements OnInit {
   id: number;
-  technologyName:string;
+  technologyName: string;
   @Output() noError = new EventEmitter();
   @Output() hasClickedSave = new EventEmitter();
   disableButton: boolean;
   // options:Options[] = ?
-  questions: Questions = {
-    QuestionId: 0,
-    ProblemStatement: "",
-    Options: [],
-    BloomLevel: 1,
-
+  questions: Question = {
+    questionId:"",
+    problemStatement: "",
+    options: [],
+    correctOptionId:"",
+    bloomLevel: 1,
+    hasPublished:false,
+    technology:{
+      name:""
+    },
+    concepts:[]
   }
   question = new FormControl('', [Validators.required]);
   options: OptionForm[] = [];
-  questionObj: Questions = new Questions();
+  questionObj: Question = new Question();
   resourcelink = new FormControl('', [Validators.required]);
   bloomlevel = new FormControl('', [Validators.required]);
-  technology = new FormControl('', [Validators.required]);
+  technologyname = new FormControl('', [Validators.required]);
   isValidArray: boolean[] = new Array(7).fill(false);
   form: FormGroup;
   items = [
@@ -42,11 +49,11 @@ export class QuestionformComponent implements OnInit {
   constructor(private fb: FormBuilder, private com: CommunicatorService) {
     for (let i = 0; i < 4; i++) {
       this.options.push(new OptionForm());
-      this.questions.Options.push(new Options());
+      this.questions.options.push(new Option());
     }
-    this.questionObj.Options = new Array(4).fill(new Options());
+    this.questionObj.options = new Array(4).fill(new Option());
     this.id = this.com.getLastResourceIndex();
-    this.technologyName=this.com.getTechnologyName(this.id);
+    this.technologyName = this.com.getTechnologyName(this.id);
   }
 
   ngOnInit() {
@@ -105,16 +112,16 @@ export class QuestionformComponent implements OnInit {
   createQuestionObject(index) {
     switch (index) {
       case 0:
-        this.questionObj.ProblemStatement = this.question.value;
+        this.questionObj.problemStatement = this.question.value;
         break;
       case 1: case 2: case 3: case 4:
-        this.options[index - 1].option.Content = this.options[index - 1].formControl.value;
+        this.options[index - 1].option.content = this.options[index - 1].formControl.value;
         // console.log(this.options[index - 1].formControl.value)
-        this.options[index - 1].option.IsCorrect = this.form.controls.items.value[index - 1].checkbox;
+        this.options[index - 1].option.isCorrect = this.form.controls.items.value[index - 1].checkbox;
         break;
       case 5:
-      this.questionObj.BloomLevel = this.bloomlevel.value as BloomTaxonomy;
-      break;
+        this.questionObj.bloomLevel = this.bloomlevel.value as BloomTaxonomy;
+        break;
       case 6:
         break;
       default:
@@ -122,7 +129,7 @@ export class QuestionformComponent implements OnInit {
         break;
     }
     if (index < 5 && index > 0) {
-      this.questionObj.Options[index - 1] = this.options[index - 1].option;
+      this.questionObj.options[index - 1] = this.options[index - 1].option;
       // console.log( this.options[index-1].option);
     }
   }
@@ -151,7 +158,7 @@ export class QuestionformComponent implements OnInit {
   getErrorMessage6() {
     this.noError.emit({ MemberId: this.id, HasError: false });
     this.isValidArray[6] = false;
-    return this.technology.hasError('required') ? 'You must enter a value' : '';
+    return this.technologyname.hasError('required') ? 'You must enter a value' : '';
   }
 
 

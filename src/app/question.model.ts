@@ -1,9 +1,16 @@
 import { BloomTaxonomy } from "./bloomTaxonomy.model";
-import { Options } from "./option.model";
+import { Option } from "./option.model";
+import { Resource } from "src/models/resource.model";
+import { Technology } from "./technology.model";
+import { Concept } from "./resourceform/resourceform.component";
 
-export class Questions {
-    QuestionId: number
-    ProblemStatement: string;
-    Options: Options[];
-    BloomLevel: BloomTaxonomy;
+export class Question {
+    questionId:string;
+    problemStatement: string;
+    options: Option[];
+    correctOptionId:string;
+    bloomLevel: BloomTaxonomy;
+    hasPublished:boolean;
+    technology:Technology;
+    concepts:Concept[];
 }

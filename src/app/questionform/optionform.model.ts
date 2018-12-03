@@ -1,11 +1,11 @@
 import { FormControl, Validators } from "@angular/forms";
-import { Options } from "../option.model";
+import { Option } from "../option.model";
 
 export class OptionForm {
     formControl: FormControl;
-    option: Options;
+    option: Option;
     constructor() {
         this.formControl = new FormControl('', [Validators.required]);
-        this.option = new Options();
+        this.option = new Option();
     }
 }

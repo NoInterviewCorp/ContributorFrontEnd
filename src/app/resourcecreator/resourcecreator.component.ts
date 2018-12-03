@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { ErrorStatus } from '../questions/errorstatus.model';
 import { Resource } from 'src/models/resource.model';
 import { CommunicatorService } from '../services/communicator.service';
-import { Questions } from '../question.model';
+import { Question } from '../question.model';
 // import { EventEmitter } from 'events';
 
 @Component({
@@ -24,7 +24,7 @@ export class resourcecreatorComponent implements OnInit {
   @Output() hasClickedSave = new EventEmitter();
   index: number = -1;
   hasClickedDone: boolean;
-  questions: Questions[]
+  questions: Question[]
   @Input() hasClickedSubmit: boolean
   constructor(private com: CommunicatorService) { }
 

@@ -1,12 +1,12 @@
 <h5>Resource {{id+1}} Questions</h5>
 <div class="flex-container">
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="technology Name" [(ngModel)]="technologyName" [formControl]="technology" required>
+    <input matInput placeholder="technology Name" [(ngModel)]="name" [formControl]="technologyname" required>
     <mat-error *ngIf="question.invalid">{{getErrorMessage(6)}}</mat-error>
     <mat-error *ngIf="question.valid">{{getValidMessage(6)}}</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <textarea matInput placeholder="Question goes here!" [(ngModel)]="questions.ProblemStatement" [formControl]="question"
+    <textarea matInput placeholder="Question goes here!" [(ngModel)]="questions.problemStatement" [formControl]="question"
       required></textarea>
     <mat-error *ngIf="question.invalid">{{getErrorMessage()}}</mat-error>
     <mat-error *ngIf="question.valid">{{getValidMessage(0)}}</mat-error>
@@ -19,7 +19,7 @@
       <div class="options" *ngFor="let control of form.controls.items.controls; let i = index;" [formGroup]="control">
         <div class="inputs">
           <input type="checkbox" formControlName="checkbox" id="{{ control.controls.id.value }}">
-          <input matInput placeholder="options" [(ngModel)]="questions.Options[i].Content" [formControl]="options[i].formControl"
+          <input matInput placeholder="options" [(ngModel)]="questions.options[i].content" [formControl]="options[i].formControl"
             required>
         </div>
         <mat-error *ngIf="options[i].formControl.invalid">{{getErrorMessage1(i)}}</mat-error>
@@ -36,7 +36,7 @@
       <mat-error *ngIf="resourcelink.valid">{{getValidMessage(5)}}</mat-error>
     </mat-form-field><br><br><br> -->
   <mat-form-field>
-    <mat-select [(value)]="selected" placeholder="Give Bloom's Taxanomy Level" [formControl]="bloomlevel" [(ngModel)]="questions.BloomLevel"
+    <mat-select [(value)]="selected" placeholder="Give Bloom's Taxanomy Level" [formControl]="bloomlevel" [(ngModel)]="questions.bloomLevel"
       required>
       <mat-error *ngIf="bloomlevel.invalid">{{getErrorMessage5()}}</mat-error>
       <mat-error *ngIf="bloomlevel.valid">{{getValidMessage(5)}}</mat-error>

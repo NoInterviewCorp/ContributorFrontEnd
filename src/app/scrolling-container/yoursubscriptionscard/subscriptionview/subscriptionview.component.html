@@ -2,12 +2,13 @@
   <div class="container">
     <div class="col-xxs-8 left-col">
       <div class="title">
-        {{plan?.Technology}}
+        {{plan?.technology.name}}
         <div class="summary">
-          {{plan?.Summary}}
+          {{plan?.description}}
         </div>
         <div class="author">
-          by {{plan?.Owner}}
+          by {{plan?.owner}}
+          <app-rating (onRating)="onLearningPlanRating($event)"></app-rating>
         </div>
       </div>
     </div>
@@ -17,21 +18,21 @@
     <div class="resourcesHeading">
       <h4>Resources:</h4>
     </div>
-    <mat-accordion *ngFor="let r of plan?.Resources">
+    <mat-accordion *ngFor="let r of plan?.resources">
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
-            {{r.ResourceName}}
+            {{r.name}}
           </mat-panel-title>
           <mat-panel-description>
-            {{r.Description}}
+            {{r.description}}
           </mat-panel-description>
         </mat-expansion-panel-header>
         Concepts Covered:
-        <div class="conceptsCovered" *ngFor="let c of r.Concepts">
-          {{c.Name}}
+        <div class="conceptsCovered" *ngFor="let c of r.concepts">
+          {{c.name}}
         </div>
-        <a class="button" href="{{r.ResourceLink}}" target="_blank">Go to Resource</a>
+        <a class="button" href="{{r.resourceLink}}" target="_blank">Go to Resource</a>
 
       </mat-expansion-panel>
     </mat-accordion>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LearningPlan } from 'src/models/learningplan.model';
 import { Resource } from 'src/models/resource.model';
-import { Questions } from '../question.model';
+import { Question } from '../question.model';
 
 
 @Injectable({
@@ -15,7 +15,7 @@ export class CommunicatorService {
   selectedLearningPlan: LearningPlan;
   private resourceArray: Resource[] = [];
   private lastResourceIndex: number;
-  addQuestion: Questions;
+  addQuestion: Question;
 
   constructor(private http: HttpClient) { }
   resourcecreator(resource: Resource) {
@@ -27,11 +27,11 @@ export class CommunicatorService {
   getResource(index) {
     return this.resourceArray[index];
   }
-  addQuestionToResourceOfIndex(index: number, question: Questions) {
-    this.resourceArray[index].Questions.push(question);
+  addQuestionToResourceOfIndex(index: number, question: Question) {
+    this.resourceArray[index].questions.push(question);
   }
   getQuestionOfResource(index: number) {
-    return this.resourceArray[index].Questions;
+    return this.resourceArray[index].questions;
   }
   setLastResourceIndex(index) {
     this.lastResourceIndex = index;
@@ -40,22 +40,22 @@ export class CommunicatorService {
     return this.lastResourceIndex;
   }
   getTechnologyName(index:number){
-    return this.resourceArray[index].Technology.Name;
+    return this.resourceArray[index].technologies[0].name;
   }
   getconcepts() {
-    return this.http.get('http://172.23.239.60:5002/Concept');
+    return this.http.get('http://172.23.238.173:5002/Concept');
   }
   getContributions() {
-    return this.http.get('http://172.23.239.60:5002/LearningPlan')
+    return this.http.get('http://172.23.238.173:5002/LearningPlan')
   }
   getSubscriptions() {
-    return this.http.get('http://172.23.239.60:5002/LearningPlan')
+    return this.http.get('http://172.23.238.173:5002/LearningPlan')
   }
   getPopularPlans() {
-    return this.http.get('http://172.23.239.60:5002/LearningPlan')
+    return this.http.get('http://172.23.238.173:5002/LearningPlan')
   }
   getPlansById(LearningPlanID: string) {
-    return this.http.get('http://172.23.239.60:5002/LearningPlan' + LearningPlanID + '?text=id')
+    return this.http.get('http://172.23.238.173:5002/LearningPlan' + LearningPlanID + '?text=id')
   }
   postQuestions() {
 
@@ -67,7 +67,7 @@ export class CommunicatorService {
 
   }
   getYourSubs() {
-    return this.http.get('http://172.23.239.60:5002/LearningPlan');
+    return this.http.get('http://172.23.238.173:5002/LearningPlan');
   }
 
 
