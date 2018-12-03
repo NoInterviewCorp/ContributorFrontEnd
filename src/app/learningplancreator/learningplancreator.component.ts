@@ -3,6 +3,7 @@ import { Resource } from 'src/models/resource.model';
 import { CommunicatorService } from '../services/communicator.service';
 import { Question } from '../question.model';
 import { Technology } from '../technology.model';
+import { LearningPlan } from 'src/models/learningplan.model';
 
 
 @Component({
@@ -11,6 +12,17 @@ import { Technology } from '../technology.model';
   styleUrls: ['./learningplancreator.component.css']
 })
 export class learningplancreatorComponent implements OnInit {
+  plan: LearningPlan = {
+    learningPlanId: "",
+    authorId: "4321",
+    name: "",
+    description: "",
+    technology: {
+      name: ""
+    },
+    resources: [],
+    hasPublished: false
+  };
   resIndexForAddingQuestions: number;
   hasClickedresourcecreator: boolean;
   hasClickedSaveResource: boolean;
@@ -46,6 +58,11 @@ export class learningplancreatorComponent implements OnInit {
     this.hasClickedClearQuestions = clear;
   }
   postLearningPlan() {
+    this.plan.resources = this.resources;
+    this.com.postLearningPlan(this.plan).subscribe(resp => {
+
+      console.log("response is  " + resp);
+    });
   }
   clickedresourcecreator() {
     this.hasClickedresourcecreator = true;

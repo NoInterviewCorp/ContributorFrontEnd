@@ -4,22 +4,28 @@
         <form class="example-form">
             <mat-form-field appearance="outline">
                 <mat-label>Learning Plan Name</mat-label>
-                <input matInput placeholder="Learning Plan Name">
+                <input matInput placeholder="Learning Plan Name" [(ngModel)]="plan.name"
+                [ngModelOptions]="{standalone: true}">
                 <mat-hint>Name your Learning Plan</mat-hint>
             </mat-form-field>
             <mat-form-field appearance="outline">
                 <mat-label>Technology Name</mat-label>
-                <input matInput placeholder="Technology">
+                <input matInput placeholder="Technology" [(ngModel)]="plan.technology.name"
+                [ngModelOptions]="{standalone: true}">
                 <mat-hint>Give technology for better recommendations</mat-hint>
             </mat-form-field>
             <mat-form-field appearance="outline" class="textarea">
                 <mat-label>Description</mat-label>
-                <textarea matInput placeholder="Description"></textarea>
+                <textarea matInput placeholder="Description" [(ngModel)]="plan.description"
+                [ngModelOptions]="{standalone: true}"></textarea>
                 <mat-hint>Describe your plan</mat-hint>
             </mat-form-field>
             <div class="pom-c-resbutton">
                 <button mat-raised-button color="black" (click)="clickedresourcecreator()">Add Resource</button>
+                <button mat-raised-button color="black" (click)="postLearningPlan()">Submit</button>
+
             </div>
+            
         </form>
         <div class="pom-c-resourcecard" *ngFor="let res of resources;let i = index">
             <button mat-button class="pom-c-card" (click)="clickedResourceToEdit(i)">
@@ -48,14 +54,3 @@
 
 
 
-<!-- <h3>Your Plan starts here....</h3>
-<div class="accordianandbuttons">
-    <div class="buttons">
-        <div>
-            <button mat-raised-button color="black" routerLink="/profile" routerLinkActive="active" (click)="postLearningPlan()">Submit</button>
-        </div>
-        <div>
-            <button mat-raised-button color="black" (click)="resourcecreator()">Add</button>
-        </div>
-    </div>
-</div><br> -->

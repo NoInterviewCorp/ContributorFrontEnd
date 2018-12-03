@@ -63,8 +63,8 @@ export class CommunicatorService {
   postResources() {
 
   }
-  postLearningPlan() {
-
+  postLearningPlan(learningplan:LearningPlan) {
+    return this.http.post('http://172.23.238.173:5002/LearningPlan',learningplan);
   }
   getYourSubs() {
     return this.http.get('http://172.23.238.173:5002/LearningPlan');

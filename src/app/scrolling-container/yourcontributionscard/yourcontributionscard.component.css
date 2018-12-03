@@ -23,6 +23,7 @@
 @media (max-width: 425px){
   .pom-c-card {
     margin-bottom :10px;
+    margin-left: 8px;
     width: 270px;
     color: whitesmoke;
     background: #080357;

@@ -10,7 +10,7 @@
  
 </div><br><br> -->
 <div class="button-row">
-  <button mat-flat-button (click)="onClickOfSubmit()" id="submit" *ngIf="hasClickedSaveQuestion && hasnoerror"
+  <button mat-flat-button (click)="onClickOfSubmit()" id="submit" *ngIf="hasClickedSaveQuestion"
     [disabled]="disableButton">Submit</button>
 </div>
 <p *ngIf="haserror">you have to give all the required fields</p>
