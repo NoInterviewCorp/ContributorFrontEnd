@@ -1,6 +1,6 @@
 version: "3"
 services:
-  ContributorLearnerFrontEnd:
+  contributor-learner-frontend:
     build: .
     ports:
       - "8081:4200"
