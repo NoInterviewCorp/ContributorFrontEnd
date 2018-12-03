@@ -15,10 +15,12 @@ import { EditlearningplanComponent } from './editlearningplan/editlearningplan.c
 import { learningplanviewerComponent } from './learningplanviewer/learningplanviewer.component';
 import { LearnerComponent } from './learner/learner.component';
 import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
+import { EdituserprofileComponent } from './edituserprofile/edituserprofile.component';
 
 const routes: Routes = [
   //{path: 'home',component: HomeComponent},
   { path: '', component: HomeComponent },
+  {path:'edituserprofile', component:EdituserprofileComponent},
   { path: 'profile', component: LandingComponent },
   { path: 'contribute', component: contributordashboardComponent },
   { path: 'questions', component: QuestionsComponent },
@@ -29,7 +31,7 @@ const routes: Routes = [
   {path: 'profilepage',component: ProfileComponent},
   {path: 'editlearningplan', component: EditlearningplanComponent},
   {path: 'learningplanviewer', component: learningplanviewerComponent},
-  { path: 'profilepage',component: ProfileComponent},
+  { path: 'userprofile',component: ProfileComponent},
   { path: 'editlearningplan', component: EditlearningplanComponent},
   { path: 'test', component: TestComponent },
   { path: 'learner', component: LearnerComponent },

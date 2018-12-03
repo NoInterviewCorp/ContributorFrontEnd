@@ -42,6 +42,7 @@ import { ResourceeditComponent } from './resourceedit/resourceedit.component';
 import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
 import { TokenInterceptor } from './token-interceptor';
 import { RatingComponent } from './rating/rating.component';
+import { EdituserprofileComponent } from './edituserprofile/edituserprofile.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -100,6 +101,8 @@ export function getAuthServiceConfigs() {
     SubscriptionviewComponent,
 
     RatingComponent,
+
+    EdituserprofileComponent,
 
   ],
   imports: [

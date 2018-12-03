@@ -21,20 +21,10 @@
         <label><b>Resource Link:</b></label>
         <a href="" target="_blank">{{item.resourceLink}}</a><br><br>
         <label><b>Description:</b></label>{{item.description}}<br><br>
-
-        <!--YET TO ADD CONCEPTS-->
-
-        <!-- <mat-form-field> -->
-        <!-- <mat-select value="{{item.bloomLevel}}">
-            <mat-option value="1">Knowledge</mat-option>
-            <mat-option value="2">Comprehension</mat-option>
-            <mat-option value="3">Application</mat-option>
-            <mat-option value="4">Analysis</mat-option>
-            <mat-option value="5">Synthesis</mat-option>
-            <mat-option value="6">Evaluation</mat-option>
-          </mat-select> -->
+        <div *ngFor="let concept of item.concepts;let i=index">
+        <label><b>Concepts:</b></label>{{concept.name}}<br><br>
+      </div>
         <h2>BloomLevel : {{displayBloom(item.bloomLevel)}}</h2>
-        <!-- </mat-form-field> -->
         <a matTooltip="know about Bloom's Taxonomy" aria-label="Button that displays a tooltip when focused or hovered over"
           href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
           <mat-icon class="help">help</mat-icon>

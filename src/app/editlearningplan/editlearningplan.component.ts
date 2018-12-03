@@ -14,9 +14,9 @@ export class EditlearningplanComponent implements OnInit {
   @Output() hasClickedSaveInEdit = new EventEmitter;
   @Output() hasClickedClearInEdit = new EventEmitter;
   disableButton: boolean;
-  hasClickedAddResource:boolean;
+  hasClickedAddResource: boolean;
   // resources[]=LearningPlan.Resources[];
-  constructor(private com: CommunicatorService) { 
+  constructor(private com: CommunicatorService) {
   }
 
   ngOnInit() {
@@ -35,7 +35,7 @@ export class EditlearningplanComponent implements OnInit {
   }
   clickedresourcecreatorInEdit() {
     this.plan.resources.push(new Resource);
-    this.hasClickedAddResource=true;
+    this.hasClickedAddResource = true;
   }
-   
+
 }

@@ -19,17 +19,16 @@
     <a mat-button href="#blooms">Bloom's Taxonomy</a>
     <!-- <a mat-button routerLink="/learner">Learn</a> -->
     <a mat-button routerLink="/contribute">Contribute</a>
-    <button mat-button *ngIf="hasSignedIn" [matMenuTriggerFor]="menu">
+    <button mat-button  [matMenuTriggerFor]="menu">
       <img class="header-image" src="../../assets/placeholder-team.jpg" style="height: 50px; width: 50px;" />
     </button>
     <mat-menu #menu>
-      <button mat-menu-item routerLink="/profilepage" style="font-size: 15px;color: black"><b>View my Profile</b></button>
+      <button mat-menu-item  routerLink="/userprofile"style="font-size: 15px;color: black"><b>View my Profile</b></button>
+      <button mat-menu-item routerLink="/edituserprofile" style="font-size: 15px;color: black"><b>
+        Edit profile</b></button>
       <button mat-menu-item style="font-size: 15px;color: black"><b>My Reports</b></button>
-      <button mat-menu-item style="font-size: 15px;color: black"><b>Settings</b></button>
       <button mat-menu-item style="font-size: 15px;color: black"><b>Signout</b></button>
-
     </mat-menu>
-    <!-- <button mat-button *ngIf="!hasSignedIn" (click)="openDialog(true)">LogIn</button> -->
     <button mat-button *ngIf="!hasSignedIn" routerLink="/login">Login</button>
     <button mat-button *ngIf="!hasSignedIn" (click)="openDialog(false)">Signup</button>
   </div>

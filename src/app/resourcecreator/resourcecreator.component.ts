@@ -35,7 +35,7 @@ export class resourcecreatorComponent implements OnInit {
     console.log("resourcecreator index is " + this.index)
     this.hasClickedSave.emit(this.index);
     this.disableButton = true;
-
+   
     // this.resource=this.com.resourcecreator;
     // console.log(this.resource);
   }
@@ -73,9 +73,7 @@ export class resourcecreatorComponent implements OnInit {
       this.hasnoerror = false;
     }
   }
-  postResources() {
-    
-  }
+ 
   clickedClose() {
     this.hasClickedClose = true;
   }

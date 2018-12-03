@@ -44,14 +44,14 @@
       <input matInput placeholder="Blooms Taxonomy" value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel">
     </mat-form-field> -->
     <mat-form-field>
-        <mat-select value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel">
-            <mat-option value="1">Knowledge</mat-option>
-            <mat-option value="2">Comprehension</mat-option>
-            <mat-option value="3">Application</mat-option>
-            <mat-option value="4">Analysis</mat-option>
-            <mat-option value="5">Synthesis</mat-option>
-            <mat-option value="6">Evaluation</mat-option>
-          </mat-select>
+      <mat-select value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel">
+        <mat-option value="1">Knowledge</mat-option>
+        <mat-option value="2">Comprehension</mat-option>
+        <mat-option value="3">Application</mat-option>
+        <mat-option value="4">Analysis</mat-option>
+        <mat-option value="5">Synthesis</mat-option>
+        <mat-option value="6">Evaluation</mat-option>
+      </mat-select>
     </mat-form-field>
     <!-- <div>
         <button mat-raised-button *ngIf="hasClickedAddResource" (click)="clickedSubmitAddedResource()">Submit</button>

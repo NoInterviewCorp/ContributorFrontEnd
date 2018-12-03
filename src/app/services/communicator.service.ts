@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { LearningPlan } from 'src/models/learningplan.model';
 import { Resource } from 'src/models/resource.model';
 import { Question } from '../question.model';
+import { UserProfile } from 'src/models/userprofile.model';
 
 
 @Injectable({
@@ -58,7 +59,7 @@ export class CommunicatorService {
     return this.http.get('http://172.23.238.173:5002/LearningPlan' + LearningPlanID + '?text=id')
   }
   
-  postResources(resource:Resource) {
+  postResource(resource:Resource) {
     return this.http.post('http://172.23.238.173:5002/Resource',resource);
   }
   postLearningPlan(learningplan:LearningPlan) {
@@ -73,6 +74,13 @@ export class CommunicatorService {
   putResource(resource:Resource){
     return this.http.put('http://172.23.238.173:5002/Resource/' +resource.resourceId,resource);
   }
+  putUser(user:UserProfile){
+    return this.http.put('http://172.23.238.173:5004/api/values/'+ user.UserId,user);
+  }
+  // postUser(user:UserProfile){
+  //   return this.http.post('http://172.23.238.173:5004/LearningPlan',user);
+
+  // }
 
 
 }
