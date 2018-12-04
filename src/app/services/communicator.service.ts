@@ -71,12 +71,12 @@ export class CommunicatorService {
 
 
   //soumya added all these :P
-  unsubscribe(unsubPlan:LearningPlanFeedBack) {
-    return this.http.post('http://172.23.238.173:5004/UnSubscriberLearningPlan',unsubPlan);
+  unsubscribeToPlan(unsubPlan:LearningPlanFeedBack) {
+    return this.http.post('http://172.23.238.173:5004/values/UnSubscriberLearningPlan',unsubPlan);
   }
 
   subscribeToPlan(subPlan:LearningPlanFeedBack) {
-    return this.http.post('http://172.23.238.173:5004/SubscriberLearningPlan',subPlan);
+    return this.http.post('http://172.23.238.173:5004/values/SubscriberLearningPlan',subPlan);
   }
 
   setRating(r:number) {
@@ -88,7 +88,7 @@ export class CommunicatorService {
   }
 
   sendRating(r:LearningPlanFeedBack) {
-    return this.http.post('http://172.23.238.173:5004/RatingLearningPlan',r);
+    return this.http.post('http://172.23.238.173:5004/values/RatingLearningPlan',r);
   }
 
 }

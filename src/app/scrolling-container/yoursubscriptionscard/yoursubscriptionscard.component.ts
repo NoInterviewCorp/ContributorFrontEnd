@@ -40,8 +40,8 @@ export class YoursubscriptionscardComponent implements OnInit {
    this.unsubPlan.UserId="user123";
    console.log(this.unsubPlan);
    // console.log(this.plan);
-   this.com.unsubscribe(this.unsubPlan).subscribe((res: any) => {
-   console.log("res is"+res);
+   this.com.unsubscribeToPlan(this.unsubPlan).subscribe((res: any) => {
+   console.log("res is:"+res);
  });
 }
 }
