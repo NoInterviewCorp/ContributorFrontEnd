@@ -20,6 +20,7 @@ export class resourcecreatorComponent implements OnInit {
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
   resource = new Resource();
+  @Input() technologyName:string;
   disableButton: boolean;
   @Output() hasClickedSave = new EventEmitter();
   index: number = -1;

@@ -16,6 +16,7 @@ export class CommunicatorService {
   selectedLearningPlan: LearningPlan;
   private resourceArray: Resource[] = [];
   private lastResourceIndex: number;
+  resourceAuthorId = "4321";
   addQuestion: Question;
   rating: number;
 
@@ -44,6 +45,7 @@ export class CommunicatorService {
   getTechnologyName(index: number) {
     return this.resourceArray[index].technologies[0].name;
   }
+  
   getconcepts() {
     return this.http.get('http://172.23.238.173:5002/Concept');
   }
@@ -84,7 +86,7 @@ export class CommunicatorService {
     return this.http.get('http://172.23.238.173:5004/UserProfile/' + UserId + '?text=id');
   }
   putUser(user: UserProfile) {
-    return this.http.put('http://172.23.238.173:5004/api/values/' + user.UserId, user);
+    return this.http.put('http://172.23.238.173:5004/values/' + user.UserId, user);
   }
   // postUser(user:UserProfile){
   //   return this.http.post('http://172.23.238.173:5004/LearningPlan',user);

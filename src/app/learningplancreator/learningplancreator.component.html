@@ -28,8 +28,7 @@
             <mat-form-field appearance="outline" *ngIf="hasClickedSearchResource && !hasClickedSearch">
                 <input matInput placeholder="search">
             </mat-form-field>
-            <button mat-button style="float: right" (click)="clickedSearch()" 
-            *ngIf="hasClickedSearchResource && !hasClickedSearch">search</button>
+            <button mat-button style="float: right" (click)="clickedSearch()" *ngIf="hasClickedSearchResource && !hasClickedSearch">search</button>
         </form>
         <div class="pom-c-resourcecard" *ngFor="let res of resources;let i = index">
             <button mat-button class="pom-c-card" (click)="clickedResourceToEdit(i)">
@@ -44,7 +43,7 @@
         </button>
         <app-resourcecreator *ngIf="hasClickedresourcecreator && !hasClickedSaveResource && 
         !hasClickedClearInresourcecreatorInLP"
-            (hasClickedSave)="handleSave($event)"></app-resourcecreator>
+            (hasClickedSave)="handleSave($event)" [technologyName]="plan.technology.name"></app-resourcecreator>
 
         <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion && !hasClickedClearQuestions"
             (hasClickedSubmit)="handleSubmit($event)" (hasClickedClearInQuestions)="handleClearInQuestions($event)"

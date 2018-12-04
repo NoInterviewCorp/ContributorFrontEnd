@@ -19,7 +19,7 @@ import { EdituserprofileComponent } from './edituserprofile/edituserprofile.comp
 
 const routes: Routes = [
   //{path: 'home',component: HomeComponent},
-  { path: '', component: HomeComponent },
+  { path: '', component: LearnerComponent },
   {path:'edituserprofile', component:EdituserprofileComponent},
   { path: 'profile', component: LandingComponent },
   { path: 'contribute', component: contributordashboardComponent },

@@ -4,6 +4,7 @@ import { Question } from "src/app/question.model";
 import { Concept } from "src/app/resourceform/resourceform.component";
 
 export class Resource {
+    authorId:string;
     resourceId: string;
     name: string;
     description: string;
@@ -14,6 +15,7 @@ export class Resource {
     concepts: Concept[];
     technologies: Technology[];
     constructor() {
+        this.authorId="",
         this.resourceId = null,
             this.name = "",
             this.description = "",

@@ -22,7 +22,7 @@ export class QuestionformComponent implements OnInit {
   disableButton: boolean;
   // options:Options[] = ?
   questions: Question = {
-    questionId: "",
+    questionId: null,
     problemStatement: "",
     options: [],
     correctOptionId: "",

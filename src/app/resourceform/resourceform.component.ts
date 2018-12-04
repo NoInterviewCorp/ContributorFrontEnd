@@ -23,13 +23,17 @@ export class ResourceformComponent implements OnInit {
   @Output() noError = new EventEmitter();
   @Output() addQuestions = new EventEmitter();
   @Output() hasClickedDone = new EventEmitter();
-  resource: Resource = new Resource();
+  @Input() technologyName:string;
+  resource: Resource;
   //  hasClickedAddQuestions:boolean;
   results: any = [];
   disableButton: boolean;
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
+    this.resource = new Resource;
+    this.resource.technologies[0].name=this.technologyName;
+    
     // this.concept.valueChanges.subscribe(concept=>this.conceptSearch());
   }
   resourcelink = new FormControl('', [Validators.required]);
@@ -90,6 +94,8 @@ export class ResourceformComponent implements OnInit {
     this.addQuestions.emit(true);
   }
   clickedDone() {
+    this.resource.authorId=this.com.resourceAuthorId;
+    console.log(this.resource + " is the author id");
     let index = this.com.resourcecreator(this.resource);
     console.log("index is " + index);
     console.log(this.com.getResource(index));

@@ -13,7 +13,7 @@ import { LearningPlan } from 'src/models/learningplan.model';
 })
 export class learningplancreatorComponent implements OnInit {
   plan: LearningPlan = {
-    learningPlanId: "",
+    learningPlanId: null,
     authorId: "4321",
     name: "",
     description: "",
@@ -60,6 +60,7 @@ export class learningplancreatorComponent implements OnInit {
   }
   postLearningPlan() {
     this.plan.resources = this.resources;
+    console.log(this.plan);
     this.com.postLearningPlan(this.plan).subscribe(resp => {
 
       console.log("response is  " + resp);
