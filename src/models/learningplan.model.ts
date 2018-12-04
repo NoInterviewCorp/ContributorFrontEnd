@@ -1,8 +1,7 @@
-import { Topic } from "./topic.model";
 import { Resource } from "./resource.model";
 
 export class LearningPlan{
-    LearningPlanID:number;
+    LearningPlanID:string;
     LearningPlanName:string;
     Technology:string;
     Summary:string;
@@ -11,11 +10,4 @@ export class LearningPlan{
     Owner:string;
     Avatar:string;
     Resources:Resource[];
-}
-export class LearningPlanFeedBack{
-    LearningPlanFeedBackId:number;
-    LearningPlanID:string;
-    UserId:string;
-
-
 }

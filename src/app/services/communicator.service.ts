@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { LearningPlan } from 'src/models/learningplan.model';
 import { Resource } from 'src/models/resource.model';
 import { Questions } from '../question.model';
+import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
 
 
 @Injectable({
@@ -70,8 +71,8 @@ export class CommunicatorService {
 
 
   //soumya added all these :P
-  unsubscribe(learningplan:LearningPlan) {
-    return this.http.post('http://172.23.238.173:5004/UnSubscriberLearningPlan',learningplan);
+  unsubscribe(unsubPlan:LearningPlanFeedBack) {
+    return this.http.post('http://172.23.238.173:5004/UnSubscriberLearningPlan',unsubPlan);
   }
 
   setRating(r:number) {

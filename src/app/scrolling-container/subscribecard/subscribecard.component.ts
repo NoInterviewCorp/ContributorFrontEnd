@@ -14,4 +14,7 @@ export class SubscribecardComponent implements OnInit {
   ngOnInit() {
   }
 
+  subscribePlan() {
+    
+  }
 }
