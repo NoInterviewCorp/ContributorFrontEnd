@@ -8,12 +8,14 @@
     <input matInput placeholder="Username" [(ngModel)]="user.UserName">
   </mat-form-field>
   <mat-form-field appearance="outline">
-      <mat-label>Fullname</mat-label>
-      <input matInput placeholder="Fullname" [(ngModel)]="user.FullName">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-label>Describe yourself</mat-label>
-        <textarea matInput placeholder="Description" [(ngModel)]="user.Description"></textarea>
-      </mat-form-field>
-      <button mat-raised-button class="pom-c-button" (click)="clickedSave()">Save</button>
+    <mat-label>Fullname</mat-label>
+    <input matInput placeholder="Fullname" [(ngModel)]="user.FullName">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Describe yourself</mat-label>
+    <textarea matInput placeholder="Description" [(ngModel)]="user.Description"></textarea>
+  </mat-form-field>
 </div>
+<div>
+    <button mat-raised-button class="pom-c-button" (click)="clickedSave()">Save</button>
+  </div>

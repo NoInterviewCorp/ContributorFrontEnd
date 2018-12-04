@@ -17,6 +17,7 @@ export class CommunicatorService {
   private resourceArray: Resource[] = [];
   private lastResourceIndex: number;
   addQuestion: Question;
+  rating: number;
 
   constructor(private http: HttpClient) { }
   resourcecreator(resource: Resource) {
@@ -81,6 +82,21 @@ export class CommunicatorService {
   //   return this.http.post('http://172.23.238.173:5004/LearningPlan',user);
 
   // }
+  unsubscribe(learningplan:LearningPlan) {
+    return this.http.post('http://172.23.238.173:5004/UnSubscriberLearningPlan',learningplan);
+  }
+
+  setRating(r:number) {
+    this.rating=r;
+  }
+
+  getRating() {
+    return this.rating;
+  }
+
+  sendRating(r:number/*,id:string*/) {
+    return this.http.post('http://172.23.238.173:5004/RatingLearningPlan',r/*,id*/);
+  }
 
 
 }

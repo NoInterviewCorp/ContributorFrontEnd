@@ -26,6 +26,7 @@ export class EditlearningplanComponent implements OnInit {
   clickedSaveInEdit() {
     this.hasClickedSaveInEdit.emit(true);
     this.disableButton = true;
+    console.log(this.plan);
     this.com.putLearningPlan(this.plan).subscribe(res => {
       console.log("result is  " + res);
     });

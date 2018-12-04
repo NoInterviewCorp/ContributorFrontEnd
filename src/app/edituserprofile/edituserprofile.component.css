@@ -3,10 +3,18 @@
     flex-direction: column;
     flex-wrap: wrap;
 }
+
 mat-form-field{
     width: 50%;
     margin: auto;
     font-size: 17px;
+}
+
+button{
+    margin-top: 10px;
+    background-color: #080357;
+    color: white;
+    margin: auto;
 }
 
 @media (max-width: 425px){

@@ -11,16 +11,22 @@ import { CommunicatorService } from 'src/app/services/communicator.service';
 export class SubscriptionviewComponent implements OnInit {
 
   plan:LearningPlan;
+  rating: number;
   constructor(private com:CommunicatorService) { }
 
   ngOnInit() {
     this.plan=this.com.selectedLearningPlan;
-    console.log(this.plan);
+    // console.log(this.plan);
+    // console.log(this.plan.LearningPlanID);
   }
   onLearningPlanRating($event) {
     console.log("Rated the learning plan");
-    console.log($event);
+    // console.log($event);
+    this.rating=this.com.getRating();
+    // console.log(this.rating);
     // Call Service Methods to update the service in the backend - POST call
+    this.com.sendRating(this.rating/*,this.plan.LearningPlanID*/);
+    
   }
 
 }
