@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 // import { Technology } from 'src/models/technology.model';
 import { LearningPlan } from 'src/models/learningplan.model';
 import { CommunicatorService } from 'src/app/services/communicator.service';
+import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
 
 @Component({
   selector: 'app-subscriptionview',
@@ -11,7 +12,7 @@ import { CommunicatorService } from 'src/app/services/communicator.service';
 export class SubscriptionviewComponent implements OnInit {
 
   plan:LearningPlan;
-  rating: number;
+  rating= new LearningPlanFeedBack();
   constructor(private com:CommunicatorService) { }
 
   ngOnInit() {
@@ -22,10 +23,17 @@ export class SubscriptionviewComponent implements OnInit {
   onLearningPlanRating($event) {
     console.log("Rated the learning plan");
     // console.log($event);
-    this.rating=this.com.getRating();
+    this.rating.LearningPlanID=this.plan.LearningPlanID;
+    this.rating.UserId="user1";
+    this.rating.Star=this.com.getRating();
     // console.log(this.rating);
     // Call Service Methods to update the service in the backend - POST call
-    this.com.sendRating(this.rating/*,this.plan.LearningPlanID*/);
+    // this.com.sendRating(this.rating/*,this.plan.LearningPlanID*/);
+    this.com.sendRating(this.rating).subscribe((res:any)=>
+    {
+      console.log(res);
+    });
+
     
   }
 
