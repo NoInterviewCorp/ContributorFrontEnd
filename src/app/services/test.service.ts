@@ -37,8 +37,12 @@ export class TestService {
       .catch((err) => console.log('Error::: ', err));
   }
 
-  getConcepts(username:string, techname:string) {
-    this.connection.send('RequestConcepts', 'username', techname);
+  // getConcepts(username:string, techname:string) {
+  //   this.connection.send('RequestConcepts', 'username', techname);
+  // }
+
+  getConcepts() {
+    return this.http.get('http://172.23.238.173:5002/Concept/Java');
   }
 
   getTechnologies() {

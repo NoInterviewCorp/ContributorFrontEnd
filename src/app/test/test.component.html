@@ -22,7 +22,7 @@
       </p>
       <div class="concepts" *ngFor="let c of concepts; index as i">
         <button [attr.id]="'Concept_' + i" mat-raised-button (click)="toggleColor(i);selectConcept(i)" [ngClass]="{'green' : toggles[i], 'red': !toggles[i] }">
-          {{c?.Name}}</button>
+          {{c?.name}}</button>
       </div>
     </div>
 
