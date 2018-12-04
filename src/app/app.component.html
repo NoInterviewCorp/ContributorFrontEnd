@@ -5,17 +5,17 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <a mat-button class="companyName" *ngIf="!hasSignedIn" routerLink="/profile">
+   <a mat-button class="companyName" routerLink="/profile">
     <span>Potentiometer</span>
-  </a>
-  <a *ngIf="hasSignedIn" mat-button class="companyName" routerLink="/profile">
+  </a> 
+  <!-- <a mat-button class="companyName" routerLink="/profile">
     <span>Potentiometer </span>
-  </a>
+  </a> -->
   <span class="pom-l-spacer"></span>
   <div fxShow="true" fxHide.lt-md="true">
-    <a mat-button href="#learn">Learn</a>
+    <!-- <a mat-button href="#learn">Learn</a>
     <a mat-button href="#contribute">Contribute</a>
-    <a mat-button href="#blooms">Bloom's Taxonomy</a>
+    <a mat-button href="#blooms">Bloom's Taxonomy</a> -->
     <!-- <a mat-button routerLink="/learner">Learn</a> -->
     <a mat-button routerLink="/contribute">Contribute</a>
     <button mat-button  [matMenuTriggerFor]="menu">
@@ -28,40 +28,38 @@
       <button mat-menu-item style="font-size: 15px;color: black"><b>My Reports</b></button>
       <button mat-menu-item style="font-size: 15px;color: black"><b>Signout</b></button>
     </mat-menu>
-    <button mat-button *ngIf="!hasSignedIn" routerLink="/login">Login</button>
-    <button mat-button *ngIf="!hasSignedIn" (click)="openDialog(false)">Signup</button>
+    <!-- <button mat-button *ngIf="!hasSignedIn" routerLink="/login">Login</button>
+    <button mat-button *ngIf="!hasSignedIn" (click)="openDialog(false)">Signup</button> -->
   </div>
 </mat-toolbar>
 
 <mat-sidenav-container fxFlexFill class="example-container">
-
   <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
-    <div fxLayout="column">
-      <img class="header-image" *ngIf="hasSignedIn" src="../../assets/placeholder-team.jpg" style="height:30%;width:30%" />
-      <mat-card class="profile" *ngIf="hasSignedIn">
-        <mat-card-title>John Doe</mat-card-title>
-        <mat-card-subtitle><em>johndoe</em></mat-card-subtitle>
+    <div fxLayout="column" class="pom-c-column">
+      <!-- <img class="header-image1" src="../../assets/placeholder-team.jpg"/> -->
+      <mat-card class="profile">
+        <mat-card-title style="font-size: 15px;">John Doe</mat-card-title>
+        <mat-card-subtitle style="font-size: 15px;"><em>johndoe</em></mat-card-subtitle>
         <mat-card-footer class="less-margin">
         </mat-card-footer>
       </mat-card>
       <a mat-button routerLink="/profilepage" style="font-size: 15px;">My Profile</a>
       <a mat-button routerLink="/contact" style="font-size: 15px;">My Reports</a>
-      <a mat-button style="font-size: 15px;">Learn</a>
+      <a mat-button routerLink="/edituserprofile" style="font-size: 15px">
+          Edit profile</a>
+      <!-- <a mat-button style="font-size: 15px;">Learn</a> -->
       <a mat-button routerLink="/contribute" style="font-size: 15px;">Contribute</a>
       <!-- <a mat-button routerLink="/start-page" style="font-size: 15px;">Settings</a> -->
       <a mat-button style="font-size: 15px;">Sign Out</a>
-      <a mat-button  href="#learn" style="font-size: 15px;">Learn</a>
+      <!-- <a mat-button  href="#learn" style="font-size: 15px;">Learn</a>
       <a mat-button  href="#contribute" style="font-size: 15px;">Contribute</a>
-      <a mat-button  href="#blooms" style="font-size: 15px;">Bloom's Taxonomy</a>
-      <!-- <a mat-button *ngIf="!hasSignedIn" style="font-size: 15px;" (click)="openDialog(true)">LogIn</a> -->
+      <a mat-button  href="#blooms" style="font-size: 15px;">Bloom's Taxonomy</a> 
+       <a mat-button *ngIf="!hasSignedIn" style="font-size: 15px;" (click)="openDialog(true)">LogIn</a> 
       <button mat-button *ngIf="!hasSignedIn" routerLink="/login">Login</button>
-
-      <a mat-button *ngIf="!hasSignedIn" style="font-size: 15px;" (click)="openDialog(false)">Signup</a>
-
-
+      <a mat-button *ngIf="!hasSignedIn" style="font-size: 15px;" (click)="openDialog(false)">Signup</a>-->
     </div>
   </mat-sidenav>
-  <mat-sidenav-content >
+  <mat-sidenav-content fxFlexFill>
       <!-- fxFlexFill -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>

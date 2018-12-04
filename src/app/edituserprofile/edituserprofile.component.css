@@ -1,4 +1,5 @@
 .example-container{
+    margin-top: 90px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -10,11 +11,13 @@ mat-form-field{
     font-size: 17px;
 }
 
+.pom-c-button{
+    margin: auto;
+}
+
 button{
-    margin-top: 10px;
     background-color: #080357;
     color: white;
-    margin: auto;
 }
 
 @media (max-width: 425px){

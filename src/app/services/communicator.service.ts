@@ -57,7 +57,7 @@ export class CommunicatorService {
     return this.http.get('http://172.23.238.173:5002/LearningPlan')
   }
   getPlansById(LearningPlanID: string) {
-    return this.http.get('http://172.23.238.173:5002/LearningPlan' + LearningPlanID + '?text=id')
+    return this.http.get('http://172.23.238.173:5002/LearningPlan/' + LearningPlanID + '?text=id')
   }
 
   postResource(resource: Resource) {
@@ -75,13 +75,13 @@ export class CommunicatorService {
     return this.http.get('http://172.23.238.173:5002/LearningPlan');
   }
   getResourceById(UserId: string){
-      return this.http.get('http://172.23.238.173:5002/Resource'+ UserId);
+      return this.http.get('http://172.23.238.173:5002/Resource/'+ UserId);
   }
   putResource(resource: Resource) {
     return this.http.put('http://172.23.238.173:5002/Resource/' + resource.resourceId, resource);
   }
   getUser(UserId: string){
-    return this.http.get('http://172.23.238.173:5004/UserProfile' + UserId + '?text=id');
+    return this.http.get('http://172.23.238.173:5004/UserProfile/' + UserId + '?text=id');
   }
   putUser(user: UserProfile) {
     return this.http.put('http://172.23.238.173:5004/api/values/' + user.UserId, user);
@@ -91,7 +91,7 @@ export class CommunicatorService {
 
   // }
   unsubscribe(learningplan: LearningPlan) {
-    return this.http.post('http://172.23.238.173:5004/UnSubscriberLearningPlan', learningplan);
+    return this.http.post('http://172.23.238.173:5004/UnSubscriberLearningPlan/', learningplan);
   }
 
   setRating(r: number) {
