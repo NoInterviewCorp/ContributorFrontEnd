@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from '../services/test.service';
+import { Option } from '../option.model';
 
 // import { Technology } from '../../models/technology.model';
 
@@ -18,9 +19,13 @@ export class TestComponent implements OnInit {
   counter: number = this.duration;
   i: number = 0;
   questionCounter = 0;
-  selectedOption: string;
+
+  selectedOption= new Option();
+  quesId: string; //for storing the queeesId 
+  optionId: string; // for storing the optionId 
+
   shouldDisplayQuestions = false;
-  currentQuestion: any;
+  currentQuestion:any;
   showTimer = false;
   showNextButton = false;
   showQuesButton = true;
@@ -47,8 +52,8 @@ export class TestComponent implements OnInit {
       this.testService.connectionBuilder(this.username).then(() => {
       this.selectedTech = this.testService.getTechName().name;
       console.log(this.selectedTech);
-      this.getConceptsFunction();
-      this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
+      this.getConceptsFunction(); //get concepts
+      this.testService.getQuestions(this.username, this.selectedTech,this.concepts); //get quess
     });
   }
 
@@ -152,7 +157,10 @@ export class TestComponent implements OnInit {
 
   nextQuestion() {
     // this.resetTimer();
-    this.selectedOption = "";
+    // this.selectedOption = "";
+    this.quesId=this.currentQuestion.Id;
+    this.optionId=this.selectedOption.optionId;
+    this.testService.evaluateSelectedOption(this.username,this.quesId,this.optionId);
     this.questionCounter++;
     this.currentQuestion = this.questions[this.questionCounter];
     this.value = this.value + this.valueInc;
@@ -163,13 +171,5 @@ export class TestComponent implements OnInit {
       this.showProgressBar = false;
     }
   }
-
-  // resetTimer() {
-  //   this.quesCount++;
-  //   this.counter = this.duration;
-  // }
-
-
-
 }
 

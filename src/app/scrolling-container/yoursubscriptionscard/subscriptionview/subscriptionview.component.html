@@ -34,7 +34,9 @@
         </mat-expansion-panel-header>
         Concepts Covered:
         <div class="conceptsCovered" *ngFor="let c of r.Concepts">
-          {{c.Name}}
+          <ul>
+            <li>{{c.Name}}</li>
+          </ul>
         </div>
         <a class="button" href="{{r.ResourceLink}}" target="_blank">Go to Resource</a>
 

@@ -45,6 +45,10 @@ export class TestService {
     return this.http.get('http://172.23.238.173:5002/Technology');
   }
 
-  
+  //  4.12.
+  //call this when user clicks on next
+  evaluateSelectedOption(username:string, quesId:string, optionId:string) {
+    this.connection.send('EvaluateAnswer',username,quesId,optionId);
+  }
 
   }

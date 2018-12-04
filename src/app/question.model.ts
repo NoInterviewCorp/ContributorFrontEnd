@@ -1,9 +1,9 @@
 import { BloomTaxonomy } from "./bloomTaxonomy.model";
-import { Options } from "./option.model";
+import { Option } from "./option.model";
 
 export class Questions {
-    QuestionId: number  //Id
+    Id: string;  //Id
     ProblemStatement: string;
-    Options: Options[];
+    Options: Option[];
     BloomLevel: BloomTaxonomy;
 }

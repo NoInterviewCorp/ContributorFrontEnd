@@ -2,7 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { OptionForm } from './optionform.model';
 import { Questions } from '../question.model';
-import { Options } from '../option.model';
+import { Option } from '../option.model';
 import { BloomTaxonomy } from '../bloomTaxonomy.model';
 import { CommunicatorService } from '../services/communicator.service';
 
@@ -18,7 +18,7 @@ export class QuestionformComponent implements OnInit {
   disableButton: boolean;
   // options:Options[] = ?
   questions: Questions = {
-    QuestionId: 0,
+    Id: '0',
     ProblemStatement: "",
     Options: [],
     BloomLevel: 1,
@@ -40,9 +40,9 @@ export class QuestionformComponent implements OnInit {
   constructor(private fb: FormBuilder, private com: CommunicatorService) {
     for (let i = 0; i < 4; i++) {
       this.options.push(new OptionForm());
-      this.questions.Options.push(new Options());
+      this.questions.Options.push(new Option());
     }
-    this.questionObj.Options = new Array(4).fill(new Options());
+    this.questionObj.Options = new Array(4).fill(new Option());
     this.id = this.com.getLastResourceIndex();
   }
 
