@@ -40,9 +40,6 @@
     <mat-form-field class="example-full-width" *ngFor="let concept of item.concepts;let i=index ">
       <input matInput placeholder="Concept" value="{{item.concepts[i].name}}" [(ngModel)]="item.concepts[i].name">
     </mat-form-field>
-    <!-- <mat-form-field class="example-full-width">
-      <input matInput placeholder="Blooms Taxonomy" value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel">
-    </mat-form-field> -->
     <mat-form-field>
       <mat-select placeholder="Bloom's Level" value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel"
         [ngModelOptions]="{standalone: true}">
@@ -54,10 +51,7 @@
         <mat-option value="6">Evaluation</mat-option>
       </mat-select>
     </mat-form-field>
-    <!-- <div>
-        <button mat-raised-button *ngIf="hasClickedAddResource" (click)="clickedSubmitAddedResource()">Submit</button>
-      </div> -->
-    <mat-accordion>
+    <!-- <mat-accordion>
       <mat-expansion-panel *ngFor="let question of item.questions" class="pom-expansionpanelquestion">
         <mat-expansion-panel-header>
           <mat-panel-title>
@@ -78,9 +72,7 @@
         </mat-form-field>
 
       </mat-expansion-panel>
-    </mat-accordion>
-    <!-- <button mat-raised-button (click)="clickedAddQuestionsInEditLP()">Add Questions</button> -->
-    <!-- <app-questions *ngIf="hasClickedAddQuestionsInEditLP"></app-questions> -->
+    </mat-accordion> -->
   </mat-expansion-panel>
 </mat-accordion>
 <div class="pom-c-button">

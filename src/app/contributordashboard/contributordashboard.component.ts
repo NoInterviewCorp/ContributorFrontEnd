@@ -10,7 +10,7 @@ export class contributordashboardComponent implements OnInit {
   LearningPlan: Array<number> = [1, 2, 3, 4, 5];
   hasClickedContributions: boolean;
   hasClickedAddLP: boolean;
-  // hasClickedresourcecreator: boolean;
+  hasClickedViewQuestions: boolean;
   hasClickedRight: boolean;
   hasClickedLeft: boolean;
   constructor() { }
@@ -33,14 +33,14 @@ export class contributordashboardComponent implements OnInit {
 
   clickedAddLP() {
     this.hasClickedAddLP = true;
-    // this.hasClickedresourcecreator = false;
+    this.hasClickedViewQuestions = false;
     this.hasClickedContributions = false;
   }
-  // clickedresourcecreator() {
-  //   this.hasClickedresourcecreator = true;
-  //   this.hasClickedAddLP = false;
-  //   this.hasClickedContributions = false;
-  // }
+  clickedViewQuestions() {
+    this.hasClickedViewQuestions = true;
+    this.hasClickedAddLP = false;
+    this.hasClickedContributions = false;
+  }
   clickedContributions() {
     // this.hasClickedresourcecreator = false;
     this.hasClickedAddLP = false;

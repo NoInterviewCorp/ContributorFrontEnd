@@ -74,6 +74,9 @@ export class CommunicatorService {
   getYourSubs() {
     return this.http.get('http://172.23.238.173:5002/LearningPlan');
   }
+  getResourceById(UserId: string){
+      return this.http.get('http://172.23.238.173:5002/Resource'+ UserId);
+  }
   putResource(resource: Resource) {
     return this.http.put('http://172.23.238.173:5002/Resource/' + resource.resourceId, resource);
   }

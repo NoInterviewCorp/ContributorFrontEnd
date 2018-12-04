@@ -19,10 +19,17 @@
                 <mat-hint>Describe your plan</mat-hint>
             </mat-form-field>
             <div class="pom-c-resbutton">
-                <button mat-raised-button color="black" (click)="clickedresourcecreator()">Add Resource</button>
+                <button mat-raised-button color="black" (click)="clickedresourcecreator()">Add new Resource</button>
+                <button mat-raised-button color="black" class="pom-c-searchbutton" (click)="clickedSearchResource()">Search
+                    Resource</button>
                 <button mat-raised-button class="pom-c-submitbutton" color="black" (click)="postLearningPlan()">Submit</button>
             </div>
-
+            <!--search for existing resource-->
+            <mat-form-field appearance="outline" *ngIf="hasClickedSearchResource && !hasClickedSearch">
+                <input matInput placeholder="search">
+            </mat-form-field>
+            <button mat-button style="float: right" (click)="clickedSearch()" 
+            *ngIf="hasClickedSearchResource && !hasClickedSearch">search</button>
         </form>
         <div class="pom-c-resourcecard" *ngFor="let res of resources;let i = index">
             <button mat-button class="pom-c-card" (click)="clickedResourceToEdit(i)">

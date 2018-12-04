@@ -3,7 +3,7 @@
     <mat-list>
       <mat-list-item><button mat-button (click)="drawer.toggle();clickedContributions()">Your Contributions</button></mat-list-item>
       <mat-list-item><button mat-button (click)="drawer.toggle();clickedAddLP()">Add Learning Plan</button></mat-list-item>
-      <!-- <mat-list-item><button mat-button (click)="drawer.toggle();clickedresourcecreator()">Add Resource</button></mat-list-item> -->
+      <mat-list-item><button mat-button (click)="drawer.toggle();clickedViewQuestions()">View my Questions</button></mat-list-item>
     </mat-list>
   </mat-drawer>
   <button type="button" mat-button class="pom-c-button" (click)="drawer.toggle()">
@@ -11,7 +11,7 @@
   </button>
   <div class="example-sidenav-content">
     <app-contribute *ngIf="hasClickedContributions && !hasClickedAddLP"></app-contribute><br><br><br>
-    <app-learningplancreator *ngIf="hasClickedAddLP"></app-learningplancreator>
-    <!-- <app-resourcecreator *ngIf="hasClickedresourcecreator"></app-resourcecreator> && !hasClickedresourcecreator-->
+    <app-learningplancreator *ngIf="hasClickedAddLP && !hasClickedresourcecreator"></app-learningplancreator>
+     <app-questionsview *ngIf="hasClickedViewQuestions && !hasClickedAddLP"></app-questionsview> 
   </div>
 </mat-drawer-container>

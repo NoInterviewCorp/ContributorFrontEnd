@@ -43,6 +43,7 @@ import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptio
 import { TokenInterceptor } from './token-interceptor';
 import { RatingComponent } from './rating/rating.component';
 import { EdituserprofileComponent } from './edituserprofile/edituserprofile.component';
+import { QuestionsviewComponent } from './questionsview/questionsview.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -103,6 +104,8 @@ export function getAuthServiceConfigs() {
     RatingComponent,
 
     EdituserprofileComponent,
+
+    QuestionsviewComponent,
 
   ],
   imports: [
