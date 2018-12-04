@@ -4,7 +4,7 @@ export class Option {
     isCorrect: boolean;
 
     constructor(){
-        this.optionId = "";
+        this.optionId = null;
         this.content = "";
         this.isCorrect = false;
     }

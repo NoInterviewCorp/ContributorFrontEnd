@@ -14,18 +14,14 @@ export class Resource {
     concepts: Concept[];
     technologies: Technology[];
     constructor() {
-        this.resourceId = "",
+        this.resourceId = null,
             this.name = "",
             this.description = "",
             this.resourceLink = "",
             this.questions=[],    
             this.bloomLevel = 1,
             this.hasPublished = false,
-            this.concepts = [
-                {
-                    name: ""
-                }
-            ],
+            this.concepts = [],
             this.technologies = [{
                 name: ""
             }]

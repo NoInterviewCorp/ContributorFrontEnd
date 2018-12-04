@@ -5,7 +5,7 @@ export class UserProfile{
     Description:string;
 
     constructor(){
-        this.UserId="",
+        this.UserId= "1",
         this.UserName="",
         this.FullName="",
         this.Description=""

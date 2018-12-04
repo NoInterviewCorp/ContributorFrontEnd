@@ -15,6 +15,7 @@ export class EditlearningplanComponent implements OnInit {
   @Output() hasClickedClearInEdit = new EventEmitter;
   disableButton: boolean;
   hasClickedAddResource: boolean;
+  // hasClickedAddQuestionsInEditLP:boolean;
   // resources[]=LearningPlan.Resources[];
   constructor(private com: CommunicatorService) {
   }
@@ -27,7 +28,8 @@ export class EditlearningplanComponent implements OnInit {
     this.hasClickedSaveInEdit.emit(true);
     this.disableButton = true;
     console.log(this.plan);
-    this.com.putLearningPlan(this.plan).subscribe(res => {
+    this.com.putLearningPlan(this.plan)
+    .subscribe(res => {
       console.log("result is  " + res);
     });
   }
@@ -38,5 +40,8 @@ export class EditlearningplanComponent implements OnInit {
     this.plan.resources.push(new Resource);
     this.hasClickedAddResource = true;
   }
+  // clickedAddQuestionsInEditLP(){
+  //   this.hasClickedAddQuestionsInEditLP=true;
+  // }
 
 }

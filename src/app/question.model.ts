@@ -15,7 +15,7 @@ export class Question {
     concepts: Concept[];
 
     constructor() {
-        this.questionId = "",
+        this.questionId = null,
         this.problemStatement = "",
         this.options = [];
         this.correctOptionId = "",

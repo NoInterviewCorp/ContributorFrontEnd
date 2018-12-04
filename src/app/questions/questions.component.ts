@@ -83,7 +83,7 @@ export class QuestionsComponent implements OnInit {
 
   handleEventEmitter(errorstatus: ErrorStatus) {
     //this.noerror = hasNoError
-    // console.log(hasNoError);
+    console.log(errorstatus);
     let index = errorstatus.MemberId - 1;
     this.noerror[index] = errorstatus.HasError;
     this.questionObjs[index] = errorstatus.QuestionObj;

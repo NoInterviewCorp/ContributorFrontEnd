@@ -4,15 +4,15 @@
 <form class="example-form">
   <mat-form-field appearance="outline" class="field">
     <mat-label>Learning Plan Name</mat-label>
-    <input matInput value={{plan.name}}>
+    <input matInput value={{plan.name}} [(ngModel)]="plan.name" [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <mat-form-field appearance="outline" class="field">
     <mat-label>Technology Name</mat-label>
-    <input matInput value="{{plan.technology.name}}">
+    <input matInput value="{{plan.technology.name}}" [(ngModel)]="plan.technology.name" [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <mat-form-field appearance="outline" class="textarea">
     <mat-label>Description</mat-label>
-    <textarea matInput value="{{plan.description}}"></textarea>
+    <textarea matInput value="{{plan.description}}" [(ngModel)]="plan.description" [ngModelOptions]="{standalone: true}"></textarea>
   </mat-form-field>
 </form>
 <h5>Your Plan starts here....</h5>
@@ -44,7 +44,8 @@
       <input matInput placeholder="Blooms Taxonomy" value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel">
     </mat-form-field> -->
     <mat-form-field>
-      <mat-select value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel">
+      <mat-select placeholder="Bloom's Level" value="{{item.bloomLevel}}" [(ngModel)]="item.bloomLevel"
+        [ngModelOptions]="{standalone: true}">
         <mat-option value="1">Knowledge</mat-option>
         <mat-option value="2">Comprehension</mat-option>
         <mat-option value="3">Application</mat-option>
@@ -78,6 +79,8 @@
 
       </mat-expansion-panel>
     </mat-accordion>
+    <!-- <button mat-raised-button (click)="clickedAddQuestionsInEditLP()">Add Questions</button> -->
+    <!-- <app-questions *ngIf="hasClickedAddQuestionsInEditLP"></app-questions> -->
   </mat-expansion-panel>
 </mat-accordion>
 <div class="pom-c-button">

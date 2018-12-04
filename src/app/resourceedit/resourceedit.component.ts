@@ -18,8 +18,6 @@ export class ResourceeditComponent implements OnInit {
     this.hasClickedClearInResourceEdit.emit(true);
   }
   clickedSave(){
-    this.com.putResource(this.resource).subscribe(res => {
-      console.log("result is  " + res);
-    });
   }
+ 
 }

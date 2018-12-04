@@ -13,6 +13,7 @@ import { Technology } from '../technology.model';
   templateUrl: './questionform.component.html',
   styleUrls: ['./questionform.component.css']
 })
+
 export class QuestionformComponent implements OnInit {
   id: number;
   technologyName: string;
@@ -21,16 +22,16 @@ export class QuestionformComponent implements OnInit {
   disableButton: boolean;
   // options:Options[] = ?
   questions: Question = {
-    questionId:"",
+    questionId: "",
     problemStatement: "",
     options: [],
-    correctOptionId:"",
+    correctOptionId: "",
     bloomLevel: 1,
-    hasPublished:false,
-    technology:{
-      name:""
+    hasPublished: false,
+    technology: {
+      name: ""
     },
-    concepts:[]
+    concepts: []
   }
   question = new FormControl('', [Validators.required]);
   options: OptionForm[] = [];

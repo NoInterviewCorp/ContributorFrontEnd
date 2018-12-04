@@ -19,7 +19,7 @@ export class resourcecreatorComponent implements OnInit {
   hasnoerror: boolean = false;
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
-   resource= new Resource();
+  resource = new Resource();
   disableButton: boolean;
   @Output() hasClickedSave = new EventEmitter();
   index: number = -1;
@@ -35,11 +35,11 @@ export class resourcecreatorComponent implements OnInit {
     console.log("resourcecreator index is " + this.index)
     this.hasClickedSave.emit(this.index);
     this.disableButton = true;
-   
     // this.resource=this.com.resourcecreator;
     // console.log(this.resource);
   }
   handleDone(index) {
+    // this.onClick();
     this.hasClickedDone = true;
     this.index = index;
   }
@@ -72,8 +72,9 @@ export class resourcecreatorComponent implements OnInit {
       this.haserror = true;
       this.hasnoerror = false;
     }
+    console.log(result);
   }
- 
+
   clickedClose() {
     this.hasClickedClose = true;
   }

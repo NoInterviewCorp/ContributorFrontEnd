@@ -21,7 +21,8 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-select placeholder="Bloom's Level" value="{{resource.bloomsLevel}}" [(ngModel)]="resource.bloomsLevel">
+    <mat-select placeholder="Bloom's Level" value="{{resource.bloomLevel}}" 
+    [(ngModel)]="resource.bloomLevel" [ngModelOptions]="{standalone: true}">
       <mat-option value="1">Knowledge</mat-option>
       <mat-option value="2">Comprehension</mat-option>
       <mat-option value="3">Application</mat-option>
@@ -35,4 +36,5 @@
     <mat-icon class="help">help</mat-icon>
   </a>
 </form>
+
 <button mat-button (click)="clickedSave()">Save</button>
