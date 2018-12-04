@@ -75,6 +75,10 @@ export class CommunicatorService {
     return this.http.post('http://172.23.238.173:5004/UnSubscriberLearningPlan',unsubPlan);
   }
 
+  subscribe(subPlan:LearningPlanFeedBack) {
+    return this.http.post('http://172.23.238.173:5004/SubscriberLearningPlan',subPlan);
+  }
+
   setRating(r:number) {
     this.rating=r;
   }
