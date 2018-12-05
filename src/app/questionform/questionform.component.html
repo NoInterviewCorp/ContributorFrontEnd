@@ -19,7 +19,7 @@
     <div [formArrayName]="'items'" [class.invalid]="!form.controls.selectedItems.valid">
       <div class="options" *ngFor="let control of form.controls.items.controls; let i = index;" [formGroup]="control">
         <div class="inputs">
-          <input type="checkbox" formControlName="checkbox" id="{{ control.controls.id.value }}">
+          <input type="checkbox" formControlName="checkbox" id="{{ control.controls.id.value }}" [(ngModel)]="questions.options[i].isCorrect">
           <input matInput placeholder="options" [(ngModel)]="questions.options[i].content" [formControl]="options[i].formControl"
             required>
         </div>
