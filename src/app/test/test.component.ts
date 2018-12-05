@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from '../services/test.service';
 import { Option } from '../option.model';
-
+import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
 // import { Technology } from '../../models/technology.model';
 
 
@@ -45,7 +45,10 @@ export class TestComponent implements OnInit {
   hasSelectedMaxConcepts = false;
   deselectedConcept: string;
   hasSelected4 = false;
-  username="xyz";
+
+  //get username / userid..
+  lp=new LearningPlanFeedBack();
+  username=this.lp.UserId;
   constructor(private testService: TestService) { }
 
   ngOnInit() {
@@ -157,13 +160,14 @@ export class TestComponent implements OnInit {
 
   gameClock() {
     const intervalMain = setInterval(() => {
+      console.log(this.counter);
       this.counter--;
       // if (this.counter <= 0) {
       //   this.nextQuestion();
       // }
-      if (this.quesCount == this.totalQues) {
-        clearInterval(intervalMain);
-      }
+      // if (this.quesCount == this.totalQues) {
+      //   clearInterval(intervalMain);
+      // }
 
     }, 1000);
 

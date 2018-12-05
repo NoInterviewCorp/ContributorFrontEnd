@@ -24,11 +24,9 @@ export class SubscriptionviewComponent implements OnInit {
    console.log("Rated the learning plan");
    // console.log($event);
    this.rating.LearningPlanID=this.plan.learningPlanId;
-   this.rating.UserId="user1";
    this.rating.Star=this.com.getRating();
    // console.log(this.rating);
    // Call Service Methods to update the service in the backend - POST call
-   // this.com.sendRating(this.rating/*,this.plan.LearningPlanID*/);
    this.com.sendRating(this.rating).subscribe((res:any)=>
    {
      console.log(res);
