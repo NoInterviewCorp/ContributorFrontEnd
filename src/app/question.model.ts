@@ -21,7 +21,7 @@ export class Question {
         this.correctOptionId = "",
         this.bloomLevel = 1,
         this.hasPublished = false;
-        this.technology = Technology;
+        this.technology = new Technology;
         this.concepts = [];
     }
 }

@@ -1,6 +1,9 @@
- .inputs{
+.inputs{
     display: inline-flex;
     flex-direction: row;
+}
+h4{
+    color: red;
 }
 
 .options{
@@ -16,6 +19,18 @@
     flex-direction: row;
     flex-wrap: wrap;
     margin: auto;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-column mat-radio-button{
+    width: 100%;
+}
+.flex-column mat-form-field, mat-radio-label{
+    width: 100%;
 }
 
 mat-form-field{
