@@ -20,7 +20,7 @@ export class Concept {
 
 export class ResourceformComponent implements OnInit {
   @Input() id: number;
-  @Output() noError = new EventEmitter();
+  // @Output() noError = new EventEmitter();
   @Output() addQuestions = new EventEmitter();
   @Output() hasClickedDone = new EventEmitter();
   @Input() technologyName:string;
@@ -28,18 +28,28 @@ export class ResourceformComponent implements OnInit {
   //  hasClickedAddQuestions:boolean;
   results: any = [];
   disableButton: boolean;
-  constructor(private com: CommunicatorService) { }
+  hasErrors:boolean;
+  resourceFormGroup: FormGroup;
+  get getFormGroup() { return this.resourceFormGroup.controls; }
+
+  constructor(private fb: FormBuilder,private com: CommunicatorService) { }
 
   ngOnInit() {
     this.resource = new Resource;
     this.resource.technologies[0].name=this.technologyName;
+    this.resourceFormGroup = this.fb.group({
+      resourceLinkFC: ['', Validators.required],
+      technologyNameFC: ['', Validators.required],
+      conceptsFC: ['', Validators.required],
+      bloomLevelFC: ['', Validators.required]
+    })
     
     // this.concept.valueChanges.subscribe(concept=>this.conceptSearch());
   }
-  resourcelink = new FormControl('', [Validators.required]);
-  concept = new FormControl('', [Validators.required]);
-  bloomlevel = new FormControl('', [Validators.required]);
-  isValidArray: boolean[] = new Array(3).fill(false);
+  // resourcelink = new FormControl('', [Validators.required]);
+  // concept = new FormControl('', [Validators.required]);
+  // bloomlevel = new FormControl('', [Validators.required]);
+  // isValidArray: boolean[] = new Array(3).fill(false);
   visible = true;
   selectable = true;
   removable = true;
@@ -57,38 +67,14 @@ export class ResourceformComponent implements OnInit {
     }
   }
   remove(concept: Concept): void {
-    const index = this.concepts.indexOf(concept);
+    const index = this.resource.concepts.indexOf(concept);
     if (index >= 0) {
-      this.concepts.splice(index, 1);
+      this.resource.concepts.splice(index, 1);
     }
   }
 
 
-  getErrorMessage() {
-    this.noError.emit({ MemberId: this.id, HasError: false });
-    this.isValidArray[0] = false;
-    return this.resourcelink.hasError('required') ? 'You must enter a value' : '';
-  }
-  getErrorMessage1() {
-    this.noError.emit({ MemberId: this.id, HasError: false });
-    this.isValidArray[1] = false;
-    return this.concept.hasError('required') ? 'You must enter a value' : '';
-  }
-  getErrorMessage2() {
-    this.noError.emit({ MemberId: this.id, HasError: false });
-    this.isValidArray[2] = false;
-    return this.bloomlevel.hasError('required') ? 'You must enter a value' : '';
-  }
-
-  getValidMessage(index: number) {
-    this.isValidArray[index] = true;
-    let areAllValid = true;
-    // this.isValidArray.forEach(isValidItem => areAllValid = (areAllValid && isValidItem));
-    for (let i = 0; i < this.isValidArray.length; i++) {
-      areAllValid = (areAllValid && this.isValidArray[i]);
-    }
-    this.noError.emit({ MemberId: this.id, HasError: areAllValid });
-  }
+  
   clickedAddQuestions() {
     // this.hasClickedAddQuestions = true;
     this.addQuestions.emit(true);
@@ -100,7 +86,22 @@ export class ResourceformComponent implements OnInit {
     console.log("index is " + index);
     console.log(this.com.getResource(index));
     this.hasClickedDone.emit(index);
+    if (this.resourceFormGroup.invalid) {
+      this.hasErrors = true;
+      this.disableButton = false;
+      return;
+    }
     this.disableButton = true;
+    this.hasErrors = false;
+    let formcontrols = this.getFormGroup;
+    try {
+      this.resource.resourceLink = formcontrols.resourceLinkFC.value;
+      this.resource.technologies[0] = formcontrols.technologyNameFC.value;
+      this.resource.bloomLevel = formcontrols.bloomLevelFC.value;
+      console.log(this.resource);
+    } catch (e) {
+      console.log(e)
+    }
 
   }
 }

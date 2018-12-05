@@ -72,15 +72,15 @@ export class QuestionformComponent implements OnInit {
   }
 
   clickedSave() {
-    // this.com.addQuestionToResourceOfIndex(this.id, this.questions);
-    // this.hasClickedSave.emit(this.id);
-    // this.disableButton = true;
+     this.com.addQuestionToResourceOfIndex(this.id, this.question);
+    this.hasClickedSave.emit(this.id);
 
     if (this.questionFormGroup.invalid || this.optionsForm.invalid) {
       this.hasErrors = true;
+      this.disableButton = false;
       return;
     }
-
+    this.disableButton = true;
     this.hasErrors = false;
     let formcontrols = this.getFormGroup;
     try {
