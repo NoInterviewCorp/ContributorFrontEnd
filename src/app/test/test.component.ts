@@ -49,13 +49,13 @@ export class TestComponent implements OnInit {
   constructor(private testService: TestService) { }
 
   ngOnInit() {
-    //   this.testService.connectionBuilder(this.username).then(() => {
-    //   this.selectedTech = this.testService.getTechName().name;
-    //   console.log(this.selectedTech);
-    //   this.getConceptsFunction(); //get concepts
-    //   this.testService.getQuestions(this.username, this.selectedTech,this.concepts); //get quess
-    // });
-    this.getConceptsFunction();
+      this.testService.connectionBuilder(this.username).then(() => {
+      console.log("Connection Established");
+      this.selectedTech = this.testService.getTechName().name;
+      console.log(this.selectedTech);
+      this.getConceptsFunction(); //get concepts
+    });
+    // this.getConceptsFunction();
   }
 
   toggleColor(j) {
@@ -130,6 +130,11 @@ export class TestComponent implements OnInit {
   }
 
   display() {
+    // const conceptNames = this.concepts.map(concept => concept.name);
+    // console.log(conceptNames);
+    console.log(this.selectedConceptArray);
+    // this.testService.getQuestions(this.username, this.selectedTech, conceptNames); //get quess
+    this.testService.getQuestions(this.username, this.selectedTech, this.selectedConceptArray); //get quess
     this.showTimer = true;
     this.showProgressBar = true;
     this.selectedTech = this.testService.getTechName().name;
@@ -137,6 +142,7 @@ export class TestComponent implements OnInit {
     this.testService.connection.on('gotQuestions', (ques:any) =>
     {
       this.questions=ques;
+      console.log("questions::"+this.questions);
 
     });
     this.showNextButton = true;
@@ -168,7 +174,7 @@ export class TestComponent implements OnInit {
     // this.selectedOption = "";
     this.quesId=this.currentQuestion.Id;
     this.optionId=this.selectedOption.optionId;
-    // this.testService.evaluateSelectedOption(this.username,this.quesId,this.optionId);
+    this.testService.evaluateSelectedOption(this.username,this.quesId,this.optionId);
     this.questionCounter++;
     this.currentQuestion = this.questions[this.questionCounter];
     this.value = this.value + this.valueInc;
