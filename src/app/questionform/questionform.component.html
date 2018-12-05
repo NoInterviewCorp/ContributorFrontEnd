@@ -6,6 +6,18 @@
     <mat-error *ngIf="question.invalid">{{getErrorMessage()}}</mat-error>
     <mat-error *ngIf="question.valid">{{getValidMessage(6)}}</mat-error>
   </mat-form-field>
+  <mat-form-field class="example-chip-list">
+      <mat-chip-list #chipList>
+          <mat-chip *ngFor="let concept of questions.concepts" [selectable]="selectable" [removable]="removable" 
+          (removed)="remove(concept)" [(ngModel)]="concept.name">
+              {{concept.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="Concepts Covered" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" >
+                
+      </mat-chip-list>
+  </mat-form-field>
   <mat-form-field>
     <textarea matInput placeholder="Question goes here!" [(ngModel)]="questions.problemStatement" [formControl]="question"
       required></textarea>

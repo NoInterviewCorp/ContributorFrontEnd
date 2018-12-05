@@ -7,6 +7,9 @@ import { BloomTaxonomy } from '../bloomTaxonomy.model';
 import { CommunicatorService } from '../services/communicator.service';
 import { Resource } from 'src/models/resource.model';
 import { Technology } from '../technology.model';
+import { Concept } from '../resourceform/resourceform.component';
+import { MatChipInputEvent } from '@angular/material';
+import { ENTER, COMMA } from '@angular/cdk/keycodes';
 
 @Component({
   selector: 'app-questionform',
@@ -33,6 +36,29 @@ export class QuestionformComponent implements OnInit {
     },
     concepts: []
   }
+  visible = true;
+  selectable = true;
+  removable = true;
+  addOnBlur = true;
+  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  concepts: Concept[] = [];
+  add(event: MatChipInputEvent): void {
+    const input = event.input;
+    const value = event.value;
+    if ((value || '').trim()) {
+      this.questions.concepts.push({ name: value.trim() });
+    }
+    if (input) {
+      input.value = '';
+    }
+  }
+  remove(concept: Concept): void {
+    const index = this.concepts.indexOf(concept);
+    if (index >= 0) {
+      this.concepts.splice(index, 1);
+    }
+  }
+
   question = new FormControl('', [Validators.required]);
   options: OptionForm[] = [];
   questionObj: Question = new Question();
