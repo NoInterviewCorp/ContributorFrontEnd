@@ -4,6 +4,7 @@ import { LearningPlan } from 'src/models/learningplan.model';
 import { Resource } from 'src/models/resource.model';
 import { Question } from '../question.model';
 import { UserProfile } from 'src/models/userprofile.model';
+import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
 
 
 @Injectable({
@@ -13,6 +14,7 @@ export class CommunicatorService {
   private title: string;
   // hasClickedresourcecreators: boolean;
   editSelectedPlan: LearningPlan;
+  editSelectedResource:Resource;
   selectedLearningPlan: LearningPlan;
   private resourceArray: Resource[] = [];
   private lastResourceIndex: number;
@@ -104,9 +106,19 @@ export class CommunicatorService {
     return this.rating;
   }
 
-  sendRating(r: number/*,id:string*/) {
-    return this.http.post('http://172.23.238.173:5004/RatingLearningPlan', r/*,id*/);
+ 
+  unsubscribeToPlan(unsubPlan:LearningPlanFeedBack) {
+    return this.http.post('http://172.23.238.173:5004/values/UnSubscriberLearningPlan',unsubPlan);
   }
-
+ 
+  subscribeToPlan(subPlan:LearningPlanFeedBack) {
+    return this.http.post('http://172.23.238.173:5004/values/SubscriberLearningPlan',subPlan);
+  }
+ 
+  
+ 
+  sendRating(r:LearningPlanFeedBack) {
+    return this.http.post('http://172.23.238.173:5004/values/RatingLearningPlan',r);
+  }
 
 }

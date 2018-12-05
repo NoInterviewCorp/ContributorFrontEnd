@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Resource } from 'src/models/resource.model';
 import { CommunicatorService } from '../services/communicator.service';
+import { Question } from '../question.model';
 
 @Component({
   selector: 'app-questionsview',
@@ -8,19 +9,16 @@ import { CommunicatorService } from '../services/communicator.service';
   styleUrls: ['./questionsview.component.css']
 })
 export class QuestionsviewComponent implements OnInit {
-  resources: any;
-  userId="4321";
+  id:number;
+  resource:Resource;
+  questions:Question[];
   constructor(private com:CommunicatorService) { }
 
   ngOnInit() {
-    this.getresources();
+    this.resource=this.com.editSelectedResource;
+    this.questions=this.resource.questions;
   }
 
-getresources(){
-this.com.getResourceById(this.userId).subscribe(res => {
-  // console.log("result is  " + res);
-  this.resources=res;
-});
-}
+
 
 }

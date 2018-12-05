@@ -44,6 +44,8 @@ import { TokenInterceptor } from './token-interceptor';
 import { RatingComponent } from './rating/rating.component';
 import { EdituserprofileComponent } from './edituserprofile/edituserprofile.component';
 import { QuestionsviewComponent } from './questionsview/questionsview.component';
+import { ResourcesviewComponent } from './resourcesview/resourcesview.component';
+import { ResourcecardComponent } from './././resourcesview/resourcecard/resourcecard.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -106,6 +108,10 @@ export function getAuthServiceConfigs() {
     EdituserprofileComponent,
 
     QuestionsviewComponent,
+
+    ResourcesviewComponent,
+
+    ResourcecardComponent,
 
   ],
   imports: [

@@ -22,7 +22,7 @@
       </p>
       <div class="concepts" *ngFor="let c of concepts; index as i">
         <button [attr.id]="'Concept_' + i" mat-raised-button (click)="toggleColor(i);selectConcept(i)" [ngClass]="{'green' : toggles[i], 'red': !toggles[i] }">
-          {{c?.Name}}</button>
+          {{c?.name}}</button>
       </div>
     </div>
 
@@ -56,13 +56,12 @@
       </div>
       <div class="options">
         <mat-radio-group class="radio-group" [(ngModel)]="selectedOption">
-
-          <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.Options" [value]="o">
-            {{o?.Content}}
+          <!-- here, check whether you need to change the case for fields!!-->
+          <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.options" [value]="o">
+            {{o?.content}}
           </mat-radio-button>
-
         </mat-radio-group>
-        <p>{{selectedOption?.Content}}</p>
+        <p>{{selectedOption?.content}}</p>
       </div>
     </div>
 

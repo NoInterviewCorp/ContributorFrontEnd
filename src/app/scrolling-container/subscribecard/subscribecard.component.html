@@ -1,15 +1,15 @@
 <div class="pom-l-container">
-    <div class="pom-l-flex_container">
-      <mat-card class="pom-c-card">
-        <mat-card-title>
-          {{plan?.technology.name}}
-        </mat-card-title>
-        <mat-card-content class="pom-c-card__content">
-        </mat-card-content>
-        <mat-card-actions class="pom-l-action_buttons">
-          <button mat-button>Subscribe</button>
-          <!-- <button mat-button (click)="sendPlan()" routerLink="/subscriptionview" routerLinkActive="active">View</button> -->
-        </mat-card-actions>
-      </mat-card>
-    </div>
+  <div class="pom-l-flex_container">
+    <mat-card class="pom-c-card">
+      <mat-card-title>
+        {{plan?.technology.name}}
+      </mat-card-title>
+      <mat-card-content class="pom-c-card__content">
+      </mat-card-content>
+      <mat-card-actions class="pom-l-action_buttons">
+        <button mat-button (click)="subscribePlan()">Subscribe</button>
+        <!-- <button mat-button (click)="sendPlan()" routerLink="/subscriptionview" routerLinkActive="active">View</button> -->
+      </mat-card-actions>
+    </mat-card>
   </div>
+</div>

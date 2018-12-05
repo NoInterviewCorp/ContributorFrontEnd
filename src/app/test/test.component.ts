@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from '../services/test.service';
+import { Option } from '../option.model';
 
 // import { Technology } from '../../models/technology.model';
 
@@ -18,9 +19,13 @@ export class TestComponent implements OnInit {
   counter: number = this.duration;
   i: number = 0;
   questionCounter = 0;
-  selectedOption: string;
+
+  selectedOption= new Option();
+  quesId: string; //for storing the queeesId 
+  optionId: string; // for storing the optionId 
+
   shouldDisplayQuestions = false;
-  currentQuestion: any;
+  currentQuestion:any;
   showTimer = false;
   showNextButton = false;
   showQuesButton = true;
@@ -44,12 +49,13 @@ export class TestComponent implements OnInit {
   constructor(private testService: TestService) { }
 
   ngOnInit() {
-      this.testService.connectionBuilder(this.username).then(() => {
-      this.selectedTech = this.testService.getTechName().name;
-      console.log(this.selectedTech);
-      this.getConceptsFunction();
-      this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
-    });
+    //   this.testService.connectionBuilder(this.username).then(() => {
+    //   this.selectedTech = this.testService.getTechName().name;
+    //   console.log(this.selectedTech);
+    //   this.getConceptsFunction(); //get concepts
+    //   this.testService.getQuestions(this.username, this.selectedTech,this.concepts); //get quess
+    // });
+    this.getConceptsFunction();
   }
 
   toggleColor(j) {
@@ -65,7 +71,7 @@ export class TestComponent implements OnInit {
     if (this.isSelected[k] == false) {
       this.maxSelectableConcepts++;
       this.isSelected[k] = true;
-      this.selectedConceptArray.push(this.concepts[k].Name);
+      this.selectedConceptArray.push(this.concepts[k].name);
       console.log("selected concepts are:" + this.selectedConceptArray);
       if (this.maxSelectableConcepts >= 4) {
         console.log("dont select more");
@@ -77,7 +83,7 @@ export class TestComponent implements OnInit {
     else if (this.isSelected[k] == true) {
       this.isSelected[k] = false;
       this.maxSelectableConcepts--;
-      this.deselectedConcept = this.concepts[k].Name;
+      this.deselectedConcept = this.concepts[k].name;
       this.selectedConceptArray.splice(this.selectedConceptArray.indexOf(this.deselectedConcept), 1);
       console.log("selected concepts are now:" + this.selectedConceptArray);
       if (this.hasSelectedMaxConcepts && this.maxSelectableConcepts < 4) {
@@ -107,12 +113,19 @@ export class TestComponent implements OnInit {
   }
 
   getConceptsFunction() {
-    this.testService.getConcepts(this.username,this.selectedTech);
-    this.testService.connection.on('messageReceived', (res:any) => {
-    this.concepts = res;
-    this.toggles = new Array(this.concepts.length).fill(true);
-    this.isSelected = new Array(this.concepts.length).fill(false);
+    // this.testService.getConcepts(this.username,this.selectedTech);
+    this.testService.getConcepts()
+    .subscribe((res: any) => {
+      console.log(res);
+      this.concepts = res;
+      this.toggles = new Array(this.concepts.length).fill(true); //initialize all with true
+      this.isSelected = new Array(this.concepts.length).fill(false); //initialize all with false since nothing is selected at firssst
     });
+    // this.testService.connection.on('messageReceived', (res:any) => {
+    // this.concepts = res;
+    // this.toggles = new Array(this.concepts.length).fill(true);
+    // this.isSelected = new Array(this.concepts.length).fill(false);
+    // });
 
   }
 
@@ -152,7 +165,10 @@ export class TestComponent implements OnInit {
 
   nextQuestion() {
     // this.resetTimer();
-    this.selectedOption = "";
+    // this.selectedOption = "";
+    this.quesId=this.currentQuestion.Id;
+    this.optionId=this.selectedOption.optionId;
+    // this.testService.evaluateSelectedOption(this.username,this.quesId,this.optionId);
     this.questionCounter++;
     this.currentQuestion = this.questions[this.questionCounter];
     this.value = this.value + this.valueInc;
@@ -163,13 +179,5 @@ export class TestComponent implements OnInit {
       this.showProgressBar = false;
     }
   }
-
-  // resetTimer() {
-  //   this.quesCount++;
-  //   this.counter = this.duration;
-  // }
-
-
-
 }
 

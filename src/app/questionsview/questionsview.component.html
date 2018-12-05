@@ -1,26 +1,30 @@
 <mat-accordion>
-  <mat-expansion-panel *ngFor="let item of resources" class="pom-expansionpanel">
+  working.....
+  <mat-expansion-panel *ngFor="let item of questions;let id=index;" class="pom-expansionpanel">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{item.name}}
+        question {{id}}
       </mat-panel-title>
       <mat-panel-description>
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <mat-accordion>
-      <mat-expansion-panel *ngFor="let question of item.questions" class="pom-expansionpanel">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Question
-          </mat-panel-title>
-          <mat-panel-description>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <b>Technology:</b>
-        <p>{{question.technology.name}}</p>
-        <p>{{question.problemStatement}}</p><br>
-          <!-- <p *ngFor="option of question.options">{{option.content}}  {{option.isCorrect}}</p> -->
-      </mat-expansion-panel>
+    <div class="example-container">
+      <mat-form-field>
+        <input matInput placeholder="technology" value={{item.technology.name}} [(ngModel)]="item.technology.name">
+      </mat-form-field>
+    
+      <mat-form-field>
+        <textarea matInput placeholder="Question" value={{item.problemStatement}} [(ngModel)]="item.problemStatement"></textarea>
+      </mat-form-field>
+    
+      <div class="options">
+          <mat-radio-group class="radio-group" [(ngModel)]="item.isCorrect">
+            <!-- here, check whether you need to change the case for fields!!-->
+            <mat-radio-button class="radio-button" *ngFor="let o of item.options" value="{{item.isCorrect">
+              {{o.content}}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </mat-expansion-panel>
     </mat-accordion>
-  </mat-expansion-panel>
-</mat-accordion>

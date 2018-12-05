@@ -12,6 +12,6 @@
   <div class="example-sidenav-content">
     <app-contribute *ngIf="hasClickedContributions && !hasClickedAddLP"></app-contribute><br><br><br>
     <app-learningplancreator *ngIf="hasClickedAddLP && !hasClickedresourcecreator"></app-learningplancreator>
-     <app-questionsview *ngIf="hasClickedViewQuestions && !hasClickedAddLP"></app-questionsview> 
+     <app-resourcesview *ngIf="hasClickedViewQuestions && !hasClickedAddLP"></app-resourcesview> 
   </div>
 </mat-drawer-container>
