@@ -50,7 +50,7 @@ export class TestService {
 
   //  4.12.
   //call this when user clicks on next
-  evaluateSelectedOption(username:string, quesId:string, optionId:string) {
+  evaluateSelectedOption(username:string, quesId:string, optionId:number) {
     this.connection.send('EvaluateAnswer',username,quesId,optionId);
   }
 

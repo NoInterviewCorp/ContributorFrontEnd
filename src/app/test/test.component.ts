@@ -22,7 +22,7 @@ export class TestComponent implements OnInit {
 
   selectedOption = new Option();
   quesId: string; //for storing the queeesId 
-  optionId: string; // for storing the optionId 
+  optionId: number; // for storing the optionId 
 
   shouldDisplayQuestions = false;
   currentQuestion: any;
