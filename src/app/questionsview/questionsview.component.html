@@ -1,5 +1,5 @@
+<h5>Questions</h5>
 <mat-accordion>
-  working.....
   <mat-expansion-panel *ngFor="let item of questions;let id=index;" class="pom-expansionpanel">
     <mat-expansion-panel-header>
       <mat-panel-title>
@@ -8,7 +8,7 @@
       <mat-panel-description>
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <div class="example-container">
+    <div class="flex-container">
       <mat-form-field>
         <input matInput placeholder="technology" value={{item.technology.name}} [(ngModel)]="item.technology.name">
       </mat-form-field>

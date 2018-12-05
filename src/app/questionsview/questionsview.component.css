@@ -1,0 +1,54 @@
+.inputs{
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.options{
+    font-size: 15px;
+}
+
+.pom-c-p{
+    font-size: 15px;
+} 
+
+.flex-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+mat-form-field{
+    width: 90%;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+@media (max-width:425px){
+    mat-form-field{
+        width: 90%;
+        font-size: 15px;
+        margin-bottom: 20px;
+        margin-left: 5px;
+    }
+    h5{
+        margin-left: 5px;
+    }
+    .options{
+        margin-left: 5px;
+    }
+    p{
+        font-size: 15px;
+        margin-left: 5px;
+    }
+}
+
+.pom-c-button{
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
