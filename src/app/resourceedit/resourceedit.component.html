@@ -4,25 +4,25 @@
 <form class="example-form">
   <h4>{{resource.ResourceName}}</h4>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Resource Name" [(ngModel)]="resource.name" value="{{resource.name}}"
+    <input matInput placeholder="Resource Name" [(ngModel)]="resource.name" value="{{resource.name}}" [ngModelOptions]="{standalone: true}">
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Technology" value="{{resource.technologies[0].name}}" [(ngModel)]="resource.technologies[0].name"
       [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Technology" value="{{resource.technologies[0].name}}"
-    [(ngModel)]="resource.technologies[0].name" [ngModelOptions]="{standalone: true}">
+    <input matInput placeholder="Resource Link" value="{{resource.resourceLink}}" [(ngModel)]="resource.resourceLink"
+      [ngModelOptions]="{standalone: true}">
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Resource Link" value="{{resource.resourceLink}}"
-    [(ngModel)]="resource.resourceLink" [ngModelOptions]="{standalone: true}">
+    <textarea matInput placeholder="Description" value="{{resource.description}}" [(ngModel)]="resource.description"
+      [ngModelOptions]="{standalone: true}"></textarea>
   </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Description" value="{{resource.description}}"
-    [(ngModel)]="resource.description" [ngModelOptions]="{standalone: true}"></textarea>
-  </mat-form-field>
-
+  <mat-form-field *ngFor="let concept of resource.concepts">
+    <input matInput placeholder="concept" value="{{concept.name}}" [(ngModel)]="concept.name" [ngModelOptions]="{standalone: true}"> </mat-form-field>
   <mat-form-field>
-    <mat-select placeholder="Bloom's Level" value="{{resource.bloomLevel}}" 
-    [(ngModel)]="resource.bloomLevel" [ngModelOptions]="{standalone: true}">
+    <mat-select placeholder="Bloom's Level" value="{{resource.bloomLevel}}" [(ngModel)]="resource.bloomLevel"
+      [ngModelOptions]="{standalone: true}">
       <mat-option value="1">Knowledge</mat-option>
       <mat-option value="2">Comprehension</mat-option>
       <mat-option value="3">Application</mat-option>

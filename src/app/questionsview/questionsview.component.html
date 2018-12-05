@@ -12,7 +12,8 @@
       <mat-form-field>
         <input matInput placeholder="technology" value={{item.technology.name}} [(ngModel)]="item.technology.name">
       </mat-form-field>
-    
+      <mat-form-field *ngFor="let concept of item.concepts">
+          <input matInput placeholder="concept" value="{{concept.name}}" [(ngModel)]="concept.name" [ngModelOptions]="{standalone: true}"> </mat-form-field>
       <mat-form-field>
         <textarea matInput placeholder="Question" value={{item.problemStatement}} [(ngModel)]="item.problemStatement"></textarea>
       </mat-form-field>
@@ -26,5 +27,6 @@
           </mat-radio-group>
         </div>
       </div>
+
     </mat-expansion-panel>
     </mat-accordion>
