@@ -80,7 +80,7 @@ export class QuestionformComponent implements OnInit {
     }
     this.questionObj.options = new Array(4).fill(new Option());
     this.id = this.com.getLastResourceIndex();
-    this.technologyName = this.com.getTechnologyName(this.id);
+    this.questions.technology.name = this.com.getTechnologyName(this.id);
   }
 
   ngOnInit() {
