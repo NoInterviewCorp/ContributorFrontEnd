@@ -1,58 +1,39 @@
-<h5>Resource {{id+1}} Questions</h5>
-<div class="flex-container">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="technology Name" value="{{technologyName}}" [(ngModel)]="questions.technology.name" [formControl]="technologyname"
-      required>
-    <mat-error *ngIf="question.invalid">{{getErrorMessage()}}</mat-error>
-    <mat-error *ngIf="question.valid">{{getValidMessage(6)}}</mat-error>
-  </mat-form-field>
-  <mat-form-field class="example-chip-list">
-      <mat-chip-list #chipList>
-          <mat-chip *ngFor="let concept of questions.concepts" [selectable]="selectable" [removable]="removable" 
-          (removed)="remove(concept)" [(ngModel)]="concept.name">
-              {{concept.name}}
-              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-          </mat-chip>
-          <input placeholder="Concepts Covered" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-              [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" >
-                
-      </mat-chip-list>
+<h5>Questions for Resource #{{id+1}}</h5>
+<form class="flex-container" [formGroup]="questionFormGroup">
+  <mat-form-field class="form-group">
+    <input matInput class="form-control" formControlName="technologyNameFC" placeholder="Technology Name" required>
+    <mat-error *ngIf="getFormGroup.technologyNameFC.errors" class="invalid-feedback">Technology Name is Required!</mat-error>
   </mat-form-field>
   <mat-form-field>
-    <textarea matInput placeholder="Question goes here!" [(ngModel)]="questions.problemStatement" [formControl]="question"
-      required></textarea>
-    <mat-error *ngIf="question.invalid">{{getErrorMessage()}}</mat-error>
-    <mat-error *ngIf="question.valid">{{getValidMessage(0)}}</mat-error>
+    <mat-chip-list #chipList>
+      <mat-chip *ngFor="let concept of question.concepts" [selectable]="selectable" [removable]="removable" (removed)="remove(concept)">
+        {{concept?.name}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="Concepts Covered" formControlName="conceptsFC" [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)">
+      <mat-error *ngIf="getFormGroup.conceptsFC.errors" class="invalid-feedback">At least <strong>ONE Concept</strong>
+        is Required!</mat-error>
+    </mat-chip-list>
   </mat-form-field>
-  <form [formGroup]="form">
-    <div class="pom-c-p">
-      <p><b>NOTE:</b>You have to check the correct option</p>
-    </div>
-    <div [formArrayName]="'items'" [class.invalid]="!form.controls.selectedItems.valid">
-      <div class="options" *ngFor="let control of form.controls.items.controls; let i = index;" [formGroup]="control">
-        <div class="inputs">
-          <input type="checkbox" formControlName="checkbox" id="{{ control.controls.id.value }}" [(ngModel)]="questions.options[i].isCorrect">
-          <input matInput placeholder="options" [(ngModel)]="questions.options[i].content" [formControl]="options[i].formControl"
-            required>
-        </div>
-        <mat-error *ngIf="options[i].formControl.invalid">{{getErrorMessage1(i)}}</mat-error>
-        <mat-error *ngIf="options[i].formControl.valid">{{getValidMessage(i + 1)}}</mat-error>
-      </div>
-    </div>
-    <div [class.invalid]="!form.controls.selectedItems.valid" *ngIf="!form.controls.selectedItems.valid">
-      <p>checkbox group is required!</p>
-    </div>
+  <mat-form-field>
+    <textarea matInput placeholder="Question goes here!" formControlName="problemStatementFC" required></textarea>
+    <mat-error *ngIf="getFormGroup.problemStatementFC.errors" class="invalid-feedback">Problem Statement is Required!</mat-error>
+  </mat-form-field>
+  <form class="form-group flex-column" [formGroup]="optionsForm">
+    <mat-radio-group formControlName="optionFormControl">
+      <mat-radio-button *ngFor="let option of question.options;let i = index" [value]="i">
+        <mat-form-field>
+          <input matInput type="text" formControlName="option{{i+1}}" />
+        </mat-form-field>
+      </mat-radio-button>
+      <h4 *ngIf= "hasErrors" >Please fill all options and select one of the as correct answer</h4>
+    </mat-radio-group>
   </form>
-  <!-- <mat-form-field class="example-full-width">
-      <input matInput placeholder="Give a Resource Link" [formControl]="resourcelink" required>
-      <mat-error *ngIf="resourcelink.invalid">{{getErrorMessage5()}}</mat-error>
-      <mat-error *ngIf="resourcelink.valid">{{getValidMessage(5)}}</mat-error>
-    </mat-form-field><br><br><br> -->
   <mat-form-field>
-    <mat-select [(value)]="selected" placeholder="Give Bloom's Taxanomy Level" [formControl]="bloomlevel" [(ngModel)]="questions.bloomLevel"
-      required>
-      <mat-error *ngIf="bloomlevel.invalid">{{getErrorMessage5()}}</mat-error>
-      <mat-error *ngIf="bloomlevel.valid">{{getValidMessage(5)}}</mat-error>
+    <mat-error *ngIf="getFormGroup.bloomLevelFC.errors" class="invalid-feedback">Please Specify the <strong>Bloom
+        Taxonomy Level</strong></mat-error>
+    <mat-select [(value)]="selected" placeholder="Give Bloom's Taxonomy Level" formControlName="bloomLevelFC" required>
       <mat-option value="1">Knowledge</mat-option>
       <mat-option value="2">Comprehension</mat-option>
       <mat-option value="3">Application</mat-option>
@@ -61,7 +42,8 @@
       <mat-option value="6">Evaluation</mat-option>
     </mat-select>
   </mat-form-field>
-</div>
+  <h4 *ngIf="hasErrors">Please fill all the required fields</h4>
+</form>
 <div class="pom-c-button">
   <button mat-flat-button (click)="clickedSave()" [disabled]="disableButton">Save</button>
 </div>

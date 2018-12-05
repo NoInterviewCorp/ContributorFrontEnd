@@ -17,7 +17,7 @@
     <mat-form-field class="example-chip-list">
         <mat-chip-list #chipList>
             <mat-chip *ngFor="let concept of resource.concepts" [selectable]="selectable" [removable]="removable" 
-            (removed)="remove(concept)" [(ngModel)]="concept.name">
+            (removed)="remove(concept)">
                 {{concept.name}}
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
             </mat-chip>

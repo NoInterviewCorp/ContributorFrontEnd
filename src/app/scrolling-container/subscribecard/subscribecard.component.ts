@@ -18,8 +18,9 @@ export class SubscribecardComponent implements OnInit {
 
   subscribePlan() {
     this.subPlan.LearningPlanID=this.plan.learningPlanId;
-    this.subPlan.UserId="user123";
-    this.subPlan.Subscribe=1;
+    // this.subPlan.UserId="user123";
+    // this.subPlan.Subscribe=1;
+    console.log(this.subPlan);
     this.com.subscribeToPlan(this.subPlan).subscribe((res: any) => {
       console.log("res is"+res);
   });

@@ -23,6 +23,7 @@ export class learningplancreatorComponent implements OnInit {
     resources: [],
     hasPublished: false
   };
+  disableButton:boolean;
   resIndexForAddingQuestions: number;
   hasClickedresourcecreator: boolean;
   hasClickedSaveResource: boolean;
@@ -59,10 +60,10 @@ export class learningplancreatorComponent implements OnInit {
     this.hasClickedClearQuestions = clear;
   }
   postLearningPlan() {
+    this.disableButton = true;
     this.plan.resources = this.resources;
     console.log(this.plan);
     this.com.postLearningPlan(this.plan).subscribe(resp => {
-
       console.log("response is  " + resp);
     });
   }

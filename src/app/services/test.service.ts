@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Technology } from 'src/app/technology.model';
 import * as signalR from '@aspnet/signalr';
 import { LearningPlan } from 'src/models/learningplan.model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,25 +17,23 @@ export class TestService {
   setTechName(t: Technology) {
     TestService.tech = t;
   }
+
   getTechName() {
     return TestService.tech;
   }
 
   getQuestions(username:string, techname:string, concepts:any) {
-    // console.log("No of Questions are : "+TestService.tech.Questions );
-    // console.log((TestService.tech == null ? "NACHO NULL HUA" : TestService.tech.Questions));
-
-    this.connection.send('getQuestionsBatch', username, techname,concepts);
+    this.connection.on('ReceivedRequest', () => console.log("ReceivedMessagesFromServer"));
+    this.connection.send('GetQuestionsBatch', username, techname, concepts);
   }
 
   connectionBuilder(username:string) {
+    console.log(username);
     this.connection = new signalR.HubConnectionBuilder()
-    .withUrl('http://172.23.238.173:5001/test?=username='+username) 
+    .withUrl(`http://172.23.238.173:5001/test?username=${username}`) 
     .build();
   
-    return this.connection.start()
-      .then(() => console.log('connection established'))
-      .catch((err) => console.log('Error::: ', err));
+    return this.connection.start();
   }
 
   // getConcepts(username:string, techname:string) {
@@ -42,7 +41,7 @@ export class TestService {
   // }
 
   getConcepts() {
-    return this.http.get('http://172.23.238.173:5002/Concept/Java');
+    return this.http.get('http://172.23.238.173:5002/Concept/java');
   }
 
   getTechnologies() {

@@ -22,7 +22,8 @@
                 <button mat-raised-button color="black" (click)="clickedresourcecreator()">Add new Resource</button>
                 <button mat-raised-button color="black" class="pom-c-searchbutton" (click)="clickedSearchResource()">Search
                     Resource</button>
-                <button mat-raised-button class="pom-c-submitbutton" color="black" (click)="postLearningPlan()">Submit</button>
+                <button mat-raised-button class="pom-c-submitbutton" color="black" (click)="postLearningPlan()"
+                [disabled]="disableButton">Submit</button>
             </div>
             <!--search for existing resource-->
             <mat-form-field appearance="outline" *ngIf="hasClickedSearchResource && !hasClickedSearch">

@@ -95,9 +95,6 @@ export class CommunicatorService {
   //   return this.http.post('http://172.23.238.173:5004/LearningPlan',user);
 
   // }
-  unsubscribe(learningplan: LearningPlan) {
-    return this.http.post('http://172.23.238.173:5004/UnSubscriberLearningPlan/', learningplan);
-  }
 
   setRating(r: number) {
     this.rating = r;

@@ -5,4 +5,7 @@ import { LearningPlan } from "src/models/learningplan.model";
 
 export class Technology {
     name: string;
+    constructor() {
+        this.name = "";
+    }
 }

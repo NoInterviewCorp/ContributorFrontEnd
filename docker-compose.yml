@@ -6,3 +6,10 @@ services:
       - "8081:4200"
     labels:
       SERVICE_4200_NAME: potentiometer-contributor-learner-frontend
+    networks: 
+      - authentication-Front-network  
+
+networks:
+ authentication-Front-network:
+   name: potentiometer-network
+   external: true
