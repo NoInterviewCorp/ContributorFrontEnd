@@ -1,4 +1,4 @@
-<form class="example-form">
+<!-- <form class="example-form">
     <mat-form-field class="example-full-width">
         <input matInput [(ngModel)]="resource.name" [ngModelOptions]="{standalone: true}" placeholder="Resource Name">
     </mat-form-field>
@@ -45,11 +45,59 @@
         href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
         <mat-icon class="help">help</mat-icon>
     </a>
-    <!-- <div>
-                    <button mat-raised-button color="black" (click)="clickedAddQuestions()">Add Questions</button>
-                </div> -->
+    
+</form>
+<div class=pom-c-button>
+    <button mat-raised-button (click)="clickedDone()" [disabled]="disableButton">done</button>
+</div> -->
+<form class="flex-container" [formGroup]="resourceFormGroup">
+    <mat-form-field class="example-full-width">
+        <input matInput [(ngModel)]="resource.name" [ngModelOptions]="{standalone: true}" placeholder="Resource Name">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Description" [(ngModel)]="resource.description" [ngModelOptions]="{standalone: true}"></textarea>
+    </mat-form-field>
+    <mat-form-field class="form-group">
+        <input matInput class="form-control" formControlName="resourceLinkFC" placeholder="Resource Link" required>
+        <mat-error *ngIf="getFormGroup.resourceLinkFC.errors" class="invalid-feedback">Resource Link is Required!</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-group">
+        <input matInput class="form-control" formControlName="technologyNameFC" placeholder="Technology Name" required>
+        <mat-error *ngIf="getFormGroup.technologyNameFC.errors" class="invalid-feedback">Technology Name is Required!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-chip-list #chipList>
+            <mat-chip *ngFor="let concept of resource.concepts" [selectable]="selectable" [removable]="removable"
+                (removed)="remove(concept)">
+                {{concept?.name}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Concepts Covered" formControlName="conceptsFC" [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                (matChipInputTokenEnd)="add($event)">
+            <mat-error *ngIf="getFormGroup.conceptsFC.errors" class="invalid-feedback">At least <strong>ONE Concept</strong>
+                is Required!</mat-error>
+        </mat-chip-list>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-error *ngIf="getFormGroup.bloomLevelFC.errors" class="invalid-feedback">Please Specify the <strong>Bloom
+                Taxonomy Level</strong></mat-error>
+        <mat-select [(value)]="selected" placeholder="Give Bloom's Taxonomy Level" formControlName="bloomLevelFC"
+            required>
+            <mat-option value="1">Knowledge</mat-option>
+            <mat-option value="2">Comprehension</mat-option>
+            <mat-option value="3">Application</mat-option>
+            <mat-option value="4">Analysis</mat-option>
+            <mat-option value="5">Synthesis</mat-option>
+            <mat-option value="6">Evaluation</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <a matTooltip="know about Bloom's Taxonomy" aria-label="Button that displays a tooltip when focused or hovered over"
+        href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
+        <mat-icon class="help">help</mat-icon>
+    </a>
+    <h4 *ngIf="hasErrors">Please fill all the required fields</h4>
 </form>
 <div class=pom-c-button>
     <button mat-raised-button (click)="clickedDone()" [disabled]="disableButton">done</button>
 </div>
-<!-- </mat-expansion-panel> -->

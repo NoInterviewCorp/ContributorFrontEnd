@@ -14,7 +14,7 @@ export class CommunicatorService {
   private title: string;
   // hasClickedresourcecreators: boolean;
   editSelectedPlan: LearningPlan;
-  editSelectedResource:Resource;
+  editSelectedResource: Resource;
   selectedLearningPlan: LearningPlan;
   private resourceArray: Resource[] = [];
   private lastResourceIndex: number;
@@ -47,7 +47,7 @@ export class CommunicatorService {
   getTechnologyName(index: number) {
     return this.resourceArray[index].technologies[0].name;
   }
-  
+
   getconcepts() {
     return this.http.get('http://172.23.238.173:5002/Concept');
   }
@@ -73,22 +73,23 @@ export class CommunicatorService {
   putLearningPlan(learningplan: LearningPlan) {
     // console.log("PUTTING TO  http://172.23.238.173:5002/LearningPlan/" + learningplan.learningPlanId);
     // console.log(learningplan);
-    return this.http.put('http://172.23.238.173:5002/LearningPlan/'+ learningplan.learningPlanId ,learningplan);
+    return this.http.put('http://172.23.238.173:5002/LearningPlan/' + learningplan.learningPlanId, learningplan);
   }
   getYourSubs() {
     return this.http.get('http://172.23.238.173:5002/LearningPlan');
   }
-  getResourceById(UserId: string){
-      return this.http.get('http://172.23.238.173:5002/Resource/'+ UserId);
+  getResourceById(UserId: string) {
+    return this.http.get('http://172.23.238.173:5002/Resource/' + UserId);
   }
   putResource(resource: Resource) {
     return this.http.put('http://172.23.238.173:5002/Resource/' + resource.resourceId, resource);
   }
-  getUser(UserId: string){
-    return this.http.get('http://172.23.238.173:5004/UserProfile/' + UserId + '?text=id');
+  getUser(UserId: string) {
+    //console.log('http://172.23.238.173:5004/values/' + UserId);
+    return this.http.get('http://172.23.238.173:5004/values/' + UserId);
   }
   putUser(user: UserProfile) {
-    return this.http.put('http://172.23.238.173:5004/values/' + user.UserId, user);
+    return this.http.put('http://172.23.238.173:5004/values/' + user.userId, user);
   }
   // postUser(user:UserProfile){
   //   return this.http.post('http://172.23.238.173:5004/LearningPlan',user);
@@ -103,18 +104,19 @@ export class CommunicatorService {
     return this.rating;
   }
 
-  unsubscribeToPlan(unsubPlan:LearningPlanFeedBack) {
-    return this.http.post('http://172.23.238.173:5004/values/UnSubscriberLearningPlan',unsubPlan);
+
+  unsubscribeToPlan(unsubPlan: LearningPlanFeedBack) {
+    return this.http.post('http://172.23.238.173:5004/values/UnSubscriberLearningPlan', unsubPlan);
   }
- 
-  subscribeToPlan(subPlan:LearningPlanFeedBack) {
-    return this.http.post('http://172.23.238.173:5004/values/SubscriberLearningPlan',subPlan);
+
+  subscribeToPlan(subPlan: LearningPlanFeedBack) {
+    return this.http.post('http://172.23.238.173:5004/values/SubscriberLearningPlan', subPlan);
   }
- 
-  
- 
-  sendRating(r:LearningPlanFeedBack) {
-    return this.http.post('http://172.23.238.173:5004/values/RatingLearningPlan',r);
+
+
+
+  sendRating(r: LearningPlanFeedBack) {
+    return this.http.post('http://172.23.238.173:5004/values/RatingLearningPlan', r);
   }
 
 }

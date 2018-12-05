@@ -20,22 +20,36 @@ export class Concept {
 
 export class ResourceformComponent implements OnInit {
   @Input() id: number;
-  @Output() noError = new EventEmitter();
+  // @Output() noError = new EventEmitter();
   @Output() addQuestions = new EventEmitter();
   @Output() hasClickedDone = new EventEmitter();
-  @Input() technologyName:string;
+  @Input() technologyName: string;
   resource: Resource;
   //  hasClickedAddQuestions:boolean;
   results: any = [];
   disableButton: boolean;
-  constructor(private com: CommunicatorService) { }
+  hasErrors: boolean;
+  resourceFormGroup: FormGroup;
+  get getFormGroup() { return this.resourceFormGroup.controls; }
+
+  constructor(private fb: FormBuilder, private com: CommunicatorService) { }
 
   ngOnInit() {
     this.resource = new Resource;
-    this.resource.technologies[0].name=this.technologyName;
-  }
+    this.resource.technologies[0].name = this.technologyName;
+    this.resourceFormGroup = this.fb.group({
+      resourceLinkFC: ['', Validators.required],
+      technologyNameFC: ['', Validators.required],
+      conceptsFC: ['', Validators.required],
+      bloomLevelFC: ['', Validators.required]
+    })
 
-  isValidArray: boolean[] = new Array(3).fill(false);
+    // this.concept.valueChanges.subscribe(concept=>this.conceptSearch());
+  }
+  // resourcelink = new FormControl('', [Validators.required]);
+  // concept = new FormControl('', [Validators.required]);
+  // bloomlevel = new FormControl('', [Validators.required]);
+  // isValidArray: boolean[] = new Array(3).fill(false);
   visible = true;
   selectable = true;
   removable = true;
@@ -67,12 +81,28 @@ export class ResourceformComponent implements OnInit {
   }
 
   clickedDone() {
-    this.resource.authorId=this.com.resourceAuthorId;
+    this.resource.authorId = this.com.resourceAuthorId;
     console.log(this.resource + " is the author id");
     let index = this.com.resourcecreator(this.resource);
     console.log("index is " + index);
     console.log(this.com.getResource(index));
     this.hasClickedDone.emit(index);
+    if (this.resourceFormGroup.invalid) {
+      this.hasErrors = true;
+      this.disableButton = false;
+      return;
+    }
     this.disableButton = true;
+    this.hasErrors = false;
+    let formcontrols = this.getFormGroup;
+    try {
+      this.resource.resourceLink = formcontrols.resourceLinkFC.value;
+      this.resource.technologies[0] = formcontrols.technologyNameFC.value;
+      this.resource.bloomLevel = formcontrols.bloomLevelFC.value;
+      console.log(this.resource);
+    } catch (e) {
+      console.log(e)
+    }
+
   }
 }
