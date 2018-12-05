@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { LearningPlan } from 'src/models/learningplan.model';
-// import {LearningPlanFeedBack} from 'src/models/learningplan.model';
+import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
 // import { Technology } from 'src/models/technology.model';
 import { HttpClient } from '@angular/common/http';
 import { CommunicatorService } from 'src/app/services/communicator.service';
@@ -18,23 +18,30 @@ export class YoursubscriptionscardComponent implements OnInit {
 
   @Input() plan: LearningPlan;
   // @Input() 
+  unsubPlan= new LearningPlanFeedBack();
  
   constructor(private http:HttpClient,private com:CommunicatorService) { }
  
   ngOnInit() {
+    // this.unsubPlan.UserId="user1";
+    // this.unsubPlan.LearningPlanFeedBackId=0;
+    // this.unsubPlan.LearningPlanID="";
+    // this.unsubPlan.Subscribe=0;
  }
-  
-  animal: string;
-  name: string;
  
   sendPlan() {
+  //  console.log(this.plan);
    this.com.selectedLearningPlan=this.plan;
    console.log(this.com.selectedLearningPlan);
 }
 
  unsubscribePlan() {
-   this.com.unsubscribe(this.plan).subscribe((res: any) => {
-    console.log("res is"+res);
- })
+   this.unsubPlan.LearningPlanID=this.plan.learningPlanId;
+  //  this.unsubPlan.UserId
+   console.log(this.unsubPlan);
+   // console.log(this.plan);
+   this.com.unsubscribeToPlan(this.unsubPlan).subscribe((res: any) => {
+   console.log("res is:"+res);
+ });
 }
 }
