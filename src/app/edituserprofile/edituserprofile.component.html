@@ -3,18 +3,19 @@
 
 <div class="example-container">
   <mat-form-field appearance="outline">
-    <mat-label>Username</mat-label>
-    <input matInput placeholder="Username" [(ngModel)]="user.UserName">
+    <mat-label>UserName</mat-label>
+    <input matInput placeholder="Username" [(ngModel)]="user.userName">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Fullname</mat-label>
-    <input matInput placeholder="Fullname" [(ngModel)]="user.FullName">
+    <input matInput placeholder="Fullname" [(ngModel)]="user.fullName">
   </mat-form-field>
   <mat-form-field appearance="outline">
     <mat-label>Describe yourself</mat-label>
-    <textarea matInput placeholder="Description" [(ngModel)]="user.Description"></textarea>
+    <textarea matInput placeholder="Description" [(ngModel)]="user.description"></textarea>
   </mat-form-field>
   <div class="pom-c-button">
     <button mat-raised-button (click)="clickedSave()">Save</button>
   </div>
+  <!-- <input type="file" name="file" id="file" (change)="onFileChanged($event)" /> -->
 </div>

@@ -4,11 +4,10 @@
   </div>
   <div class=flex2 style="flex-grow: 5">
     <mat-card class="profile">
-      <mat-card-title>John Doe</mat-card-title>
-      <mat-card-subtitle><em>johndoe</em></mat-card-subtitle>
+      <mat-card-title>{{user.fullName}}</mat-card-title>
+      <mat-card-subtitle><em>{{user.userName}}</em></mat-card-subtitle>
       <mat-card-footer class="less-margin">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos nihil dolorum rem optio facilis voluptatibus
-        illo, laudantium repudiandae ipsum quaerat numquam velit excepturi doloribus.
+        {{user.description}}
       </mat-card-footer>
     </mat-card>
   </div>

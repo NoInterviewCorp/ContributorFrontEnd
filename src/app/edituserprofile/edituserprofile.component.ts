@@ -13,10 +13,18 @@ export class EdituserprofileComponent implements OnInit {
 
   ngOnInit() {
     this.user = new UserProfile();
+    this.user = this.getUser();
   }
   clickedSave() {
     this.com.putUser(this.user).subscribe(res => {
       console.log("result is  " + res);
     });
+  }
+  getUser() {
+    this.com.getUser(this.user.userId).subscribe((user: UserProfile) => {
+      this.user = user;
+      console.log("result is " + this.user.fullName);
+    });
+    return this.user;
   }
 }
