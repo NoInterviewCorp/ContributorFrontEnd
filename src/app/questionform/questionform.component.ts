@@ -83,7 +83,7 @@ export class QuestionformComponent implements OnInit {
       })
       this.question.problemStatement = formcontrols.problemStatementFC.value;
       this.question.options[this.getOptionGroup.optionFormControl.value].isCorrect = true;
-      this.question.technology = formcontrols.technologyNameFC.value;
+      this.question.technology.name = formcontrols.technologyNameFC.value;
       this.question.bloomLevel = formcontrols.bloomLevelFC.value;
       this.com.addQuestionToResourceOfIndex(this.id, this.question);
       this.hasClickedSave.emit(this.id);
