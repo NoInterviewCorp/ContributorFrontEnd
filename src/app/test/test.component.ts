@@ -20,12 +20,12 @@ export class TestComponent implements OnInit {
   i: number = 0;
   questionCounter = 0;
 
-  selectedOption= new Option();
+  selectedOption = new Option();
   quesId: string; //for storing the queeesId 
   optionId: string; // for storing the optionId 
 
   shouldDisplayQuestions = false;
-  currentQuestion:any;
+  currentQuestion: any;
   showTimer = false;
   showNextButton = false;
   showQuesButton = true;
@@ -47,12 +47,12 @@ export class TestComponent implements OnInit {
   hasSelected4 = false;
 
   //get username / userid..
-  lp=new LearningPlanFeedBack();
-  username=this.lp.UserId;
+  // lp = new LearningPlanFeedBack();
+  // username = this.lp.UserId;
   constructor(private testService: TestService) { }
 
   ngOnInit() {
-      this.testService.connectionBuilder(this.username).then(() => {
+    this.testService.connectionBuilder('4321').then(() => {
       console.log("Connection Established");
       this.selectedTech = this.testService.getTechName().name;
       console.log(this.selectedTech);
@@ -118,12 +118,12 @@ export class TestComponent implements OnInit {
   getConceptsFunction() {
     // this.testService.getConcepts(this.username,this.selectedTech);
     this.testService.getConcepts()
-    .subscribe((res: any) => {
-      console.log(res);
-      this.concepts = res;
-      this.toggles = new Array(this.concepts.length).fill(true); //initialize all with true
-      this.isSelected = new Array(this.concepts.length).fill(false); //initialize all with false since nothing is selected at firssst
-    });
+      .subscribe((res: any) => {
+        console.log(res);
+        this.concepts = res;
+        this.toggles = new Array(this.concepts.length).fill(true); //initialize all with true
+        this.isSelected = new Array(this.concepts.length).fill(false); //initialize all with false since nothing is selected at firssst
+      });
     // this.testService.connection.on('messageReceived', (res:any) => {
     // this.concepts = res;
     // this.toggles = new Array(this.concepts.length).fill(true);
@@ -137,15 +137,14 @@ export class TestComponent implements OnInit {
     // console.log(conceptNames);
     console.log(this.selectedConceptArray);
     // this.testService.getQuestions(this.username, this.selectedTech, conceptNames); //get quess
-    this.testService.getQuestions(this.username, this.selectedTech, this.selectedConceptArray); //get quess
+    this.testService.getQuestions('4321', this.selectedTech, this.selectedConceptArray); //get quess
     this.showTimer = true;
     this.showProgressBar = true;
     this.selectedTech = this.testService.getTechName().name;
     // this.questions = this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
-    this.testService.connection.on('gotQuestions', (ques:any) =>
-    {
-      this.questions=ques;
-      console.log("questions::"+this.questions);
+    this.testService.connection.on('gotQuestions', (ques: any) => {
+      this.questions = ques;
+      console.log("questions::" + this.questions);
 
     });
     this.showNextButton = true;
@@ -176,9 +175,9 @@ export class TestComponent implements OnInit {
   nextQuestion() {
     // this.resetTimer();
     // this.selectedOption = "";
-    this.quesId=this.currentQuestion.Id;
-    this.optionId=this.selectedOption.optionId;
-    this.testService.evaluateSelectedOption(this.username,this.quesId,this.optionId);
+    this.quesId = this.currentQuestion.Id;
+    this.optionId = this.selectedOption.optionId;
+    this.testService.evaluateSelectedOption('4321', this.quesId, this.optionId);
     this.questionCounter++;
     this.currentQuestion = this.questions[this.questionCounter];
     this.value = this.value + this.valueInc;

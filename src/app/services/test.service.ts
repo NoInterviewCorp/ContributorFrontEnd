@@ -30,7 +30,7 @@ export class TestService {
   connectionBuilder(username:string) {
     console.log(username);
     this.connection = new signalR.HubConnectionBuilder()
-    .withUrl(`http://172.23.238.173:5001/test?username=${username}`) 
+    .withUrl('http://172.23.238.173:5001/test?username=4321') 
     .build();
   
     return this.connection.start();

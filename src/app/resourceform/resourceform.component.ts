@@ -33,12 +33,8 @@ export class ResourceformComponent implements OnInit {
   ngOnInit() {
     this.resource = new Resource;
     this.resource.technologies[0].name=this.technologyName;
-    
-    // this.concept.valueChanges.subscribe(concept=>this.conceptSearch());
   }
-  resourcelink = new FormControl('', [Validators.required]);
-  concept = new FormControl('', [Validators.required]);
-  bloomlevel = new FormControl('', [Validators.required]);
+
   isValidArray: boolean[] = new Array(3).fill(false);
   visible = true;
   selectable = true;
@@ -46,6 +42,7 @@ export class ResourceformComponent implements OnInit {
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   concepts: Concept[] = [];
+
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -56,43 +53,19 @@ export class ResourceformComponent implements OnInit {
       input.value = '';
     }
   }
+
   remove(concept: Concept): void {
-    const index = this.concepts.indexOf(concept);
+    const index = this.resource.concepts.indexOf(concept);
     if (index >= 0) {
-      this.concepts.splice(index, 1);
+      this.resource.concepts.splice(index, 1);
     }
   }
 
-
-  getErrorMessage() {
-    this.noError.emit({ MemberId: this.id, HasError: false });
-    this.isValidArray[0] = false;
-    return this.resourcelink.hasError('required') ? 'You must enter a value' : '';
-  }
-  getErrorMessage1() {
-    this.noError.emit({ MemberId: this.id, HasError: false });
-    this.isValidArray[1] = false;
-    return this.concept.hasError('required') ? 'You must enter a value' : '';
-  }
-  getErrorMessage2() {
-    this.noError.emit({ MemberId: this.id, HasError: false });
-    this.isValidArray[2] = false;
-    return this.bloomlevel.hasError('required') ? 'You must enter a value' : '';
-  }
-
-  getValidMessage(index: number) {
-    this.isValidArray[index] = true;
-    let areAllValid = true;
-    // this.isValidArray.forEach(isValidItem => areAllValid = (areAllValid && isValidItem));
-    for (let i = 0; i < this.isValidArray.length; i++) {
-      areAllValid = (areAllValid && this.isValidArray[i]);
-    }
-    this.noError.emit({ MemberId: this.id, HasError: areAllValid });
-  }
   clickedAddQuestions() {
     // this.hasClickedAddQuestions = true;
     this.addQuestions.emit(true);
   }
+
   clickedDone() {
     this.resource.authorId=this.com.resourceAuthorId;
     console.log(this.resource + " is the author id");
@@ -101,6 +74,5 @@ export class ResourceformComponent implements OnInit {
     console.log(this.com.getResource(index));
     this.hasClickedDone.emit(index);
     this.disableButton = true;
-
   }
 }
