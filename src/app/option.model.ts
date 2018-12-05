@@ -1,10 +1,10 @@
 export class Option {
-    optionId: string;
+    optionId: number;
     content: string;
     isCorrect: boolean;
  
     constructor(){
-        this.optionId = null;
+        this.optionId = 0;
         this.content = "";
         this.isCorrect = false;
     }

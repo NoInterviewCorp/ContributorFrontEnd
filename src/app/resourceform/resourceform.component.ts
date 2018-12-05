@@ -97,7 +97,7 @@ export class ResourceformComponent implements OnInit {
     let formcontrols = this.getFormGroup;
     try {
       this.resource.resourceLink = formcontrols.resourceLinkFC.value;
-      this.resource.technologies[0] = formcontrols.technologyNameFC.value;
+      this.resource.technologies[0].name = formcontrols.technologyNameFC.value;
       this.resource.bloomLevel = formcontrols.bloomLevelFC.value;
       console.log(this.resource);
     } catch (e) {
