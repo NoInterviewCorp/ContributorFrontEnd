@@ -1,8 +1,6 @@
-<button mat-button class="pom-c-clearbutton" (click)="clickedClearInEdit()">
-  <mat-icon>clear</mat-icon>
-</button><br><br>
-<form class="example-form">
-  <mat-form-field appearance="outline" class="field">
+<div class="container">
+  <form class="example-form">
+  <mat-form-field appearance="outline" class="field" >
     <mat-label>Learning Plan Name</mat-label>
     <input matInput value={{plan.name}} [(ngModel)]="plan.name" [ngModelOptions]="{standalone: true}">
   </mat-form-field>
@@ -51,28 +49,6 @@
         <mat-option value="6">Evaluation</mat-option>
       </mat-select>
     </mat-form-field>
-    <!-- <mat-accordion>
-      <mat-expansion-panel *ngFor="let question of item.questions" class="pom-expansionpanelquestion">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            Question
-          </mat-panel-title>
-          <mat-panel-description>
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="ProblemStatement" value="{{question.problemStatement}}" [(ngModel)]="question.problemStatement">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" *ngFor="let option of question.options">
-          <input matInput placeholder="Option" value="{{option.content}}" [(ngModel)]="option.content">
-          <mat-checkbox>{{option.isCorrect}}</mat-checkbox>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="BloomsTaxonomy" value="{{question.bloomLevel}}" [(ngModel)]="question.bloomLevel">
-        </mat-form-field>
-
-      </mat-expansion-panel>
-    </mat-accordion> -->
   </mat-expansion-panel>
 </mat-accordion>
 <div class="pom-c-button">
@@ -84,4 +60,5 @@
   <div>
     <button mat-raised-button (click)="clickedSaveInEdit()" [disabled]="disableButton">Save</button>
   </div>
+</div>
 </div>

@@ -1,4 +1,4 @@
-<div class="pot-c-container">
+<!-- <div class="pot-c-container">
   <div *ngIf="isLoaderActivated; else showAssessment" class="pot-l-loader__container">
     <img
     class="pot-c-loader"
@@ -11,4 +11,39 @@
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis minus impedit illum cupiditate neque a dolores consequatur doloremque saepe. Quas architecto dolore modi, reprehenderit aliquam eligendi consequuntur nostrum officia officiis.
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, quasi quam atque ipsum consequuntur necessitatibus sapiente laudantium illo nihil, inventore minus fuga et minima rerum beatae totam unde culpa illum!
   </ng-template>
-</div>
+</div> -->
+<div class="test-box">
+    <div class="selectedTech">
+      Selected Tech is : {{selectedTech}}
+    </div>
+    <div class="timer-container">
+      <div class="timr" *ngIf="showTimer">Time Remaining: {{counter}}</div>
+    </div>
+    <div *ngIf="showProgressBar">
+      <section class="progressbar-section">
+        <mat-progress-bar mode="determinate" class="progressbar-margin" [value]="value">
+        </mat-progress-bar>
+      </section>
+    </div>
+    <div *ngIf="counter>=1" class="question">
+      <div class="ques-box">
+        <div class="ques-title">
+          <h3>
+            Q{{currentQuestion?.problemStatement}}
+          </h3>
+        </div>
+      </div>
+      <div class="options">
+        <mat-radio-group class="radio-group" [(ngModel)]="selectedOption">
+          <!-- here, check whether you need to change the case for fields!!-->
+          <mat-radio-button class="radio-button" *ngFor="let o of currentQuestion?.options" [value]="o">
+            {{o?.content}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <p>{{selectedOption?.content}}</p>
+      </div>
+    </div>
+        <button mat-raised-button class="Btn" (click)="nextQuestion()">Next</button>
+        <!-- <a routerLink="/result" routerLinkActive="active" class="Btn" button mat-raised-button color="primary" *ngIf="callResult">
+          Show Results</a> -->
+  </div>

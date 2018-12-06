@@ -14,15 +14,12 @@ export class learningplanviewerComponent implements OnInit {
   displayBloom(bloomLevel){
     return BloomTaxonomy[bloomLevel];
   }
-  @Output() hasClickedClearInView = new EventEmitter();
+  // @Output() hasClickedClearInView = new EventEmitter();
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
     this.plan = this.com.editSelectedPlan;
     console.log(this.plan);
     
-  }
-  clickedClearInView() {
-    this.hasClickedClearInView.emit(true);
   }
 }

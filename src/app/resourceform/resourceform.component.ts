@@ -81,12 +81,6 @@ export class ResourceformComponent implements OnInit {
   }
 
   clickedDone() {
-    this.resource.authorId = this.com.resourceAuthorId;
-    console.log(this.resource + " is the author id");
-    let index = this.com.resourcecreator(this.resource);
-    console.log("index is " + index);
-    console.log(this.com.getResource(index));
-    this.hasClickedDone.emit(index);
     if (this.resourceFormGroup.invalid) {
       this.hasErrors = true;
       this.disableButton = false;
@@ -100,6 +94,12 @@ export class ResourceformComponent implements OnInit {
       this.resource.technologies[0].name = formcontrols.technologyNameFC.value;
       this.resource.bloomLevel = formcontrols.bloomLevelFC.value;
       console.log(this.resource);
+      this.resource.authorId = this.com.resourceAuthorId;
+      console.log(this.resource + " is the author id");
+      let index = this.com.resourcecreator(this.resource);
+      console.log("index is " + index);
+      console.log(this.com.getResource(index));
+      this.hasClickedDone.emit(index);
     } catch (e) {
       console.log(e)
     }

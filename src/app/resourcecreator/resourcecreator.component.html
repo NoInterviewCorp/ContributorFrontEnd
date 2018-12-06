@@ -1,6 +1,6 @@
 <h3>Resource</h3>
 <app-resourceform *ngFor="let index of resources" [id]="index" (noError)="handleEventEmitter($event)" (addQuestions)="handleAddQuestions($event)"
   (hasClickedDone)="handleDone($event)" [technologyName]="technologyName"></app-resourceform>
-<!-- <div class="pom-c-button">
+<div class="pom-c-button">
   <button mat-raised-button *ngIf="hasClickedDone" (click)="clickedSave()" [disabled]="disableButton">Save</button>
-</div> -->
+</div>

@@ -11,8 +11,8 @@ import { Resource } from 'src/models/resource.model';
 export class EditlearningplanComponent implements OnInit {
   plan: LearningPlan;
   // resource: Resource;
-  @Output() hasClickedSaveInEdit = new EventEmitter;
-  @Output() hasClickedClearInEdit = new EventEmitter;
+  // @Output() hasClickedSaveInEdit = new EventEmitter;
+  // @Output() hasClickedClearInEdit = new EventEmitter;
   disableButton: boolean;
   hasClickedAddResource: boolean;
   // hasClickedAddQuestionsInEditLP:boolean;
@@ -25,7 +25,7 @@ export class EditlearningplanComponent implements OnInit {
     console.log(this.plan);
   }
   clickedSaveInEdit() {
-    this.hasClickedSaveInEdit.emit(true);
+    // this.hasClickedSaveInEdit.emit(true);
     this.disableButton = true;
     console.log(this.plan);
     this.com.putLearningPlan(this.plan)
@@ -33,9 +33,7 @@ export class EditlearningplanComponent implements OnInit {
       console.log("result is  " + res);
     });
   }
-  clickedClearInEdit() {
-    this.hasClickedClearInEdit.emit(true);
-  }
+  
   clickedresourcecreatorInEdit() {
     this.plan.resources.push(new Resource);
     this.hasClickedAddResource = true;

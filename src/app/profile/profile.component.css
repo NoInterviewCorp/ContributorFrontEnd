@@ -4,4 +4,5 @@
 
 .pot-l-contributions, .pot-l-subscriptions {
   display: flex;
+  flex: row;
 }
