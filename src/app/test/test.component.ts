@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TestService } from '../services/test.service';
 import { Option } from '../option.model';
 import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
+import { ActivatedRoute } from '@angular/router';
 // import { Technology } from '../../models/technology.model';
 
 
@@ -21,8 +22,8 @@ export class TestComponent implements OnInit {
   questionCounter = 0;
 
   selectedOption = new Option();
-  quesId: string; //for storing the queeesId 
-  optionId: number; // for storing the optionId 
+  quesId: string; //for storing the queeesId
+  optionId: number; // for storing the optionId
 
   shouldDisplayQuestions = false;
   currentQuestion: any;
@@ -46,17 +47,26 @@ export class TestComponent implements OnInit {
   deselectedConcept: string;
   hasSelected4 = false;
 
+// New Properties
+  isLoaderActivated: boolean;
+  domain: string;
+// End Of New Properties
+
   //get username / userid..
   // lp = new LearningPlanFeedBack();
   // username = this.lp.UserId;
-  constructor(private testService: TestService) { }
+  constructor(private testService: TestService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.domain = this.route.snapshot.paramMap.get('domain');
+    this.concepts = this.route.snapshot.paramMap.get('concepts').split(',');
+    this.isLoaderActivated = true;
     this.testService.connectionBuilder('4321').then(() => {
       console.log("Connection Established");
-      this.selectedTech = this.testService.getTechName().name;
-      console.log(this.selectedTech);
-      this.getConceptsFunction(); //get concepts
+      this.display();
+      // this.selectedTech = this.testService.getTechName().name;
+      // console.log(this.selectedTech);
+      // this.getConceptsFunction(); //get concepts
     });
     // this.getConceptsFunction();
   }
@@ -115,46 +125,49 @@ export class TestComponent implements OnInit {
     });
   }
 
-  getConceptsFunction() {
-    // this.testService.getConcepts(this.username,this.selectedTech);
-    this.testService.getConcepts()
-      .subscribe((res: any) => {
-        console.log(res);
-        this.concepts = res;
-        this.toggles = new Array(this.concepts.length).fill(true); //initialize all with true
-        this.isSelected = new Array(this.concepts.length).fill(false); //initialize all with false since nothing is selected at firssst
-      });
-    // this.testService.connection.on('messageReceived', (res:any) => {
-    // this.concepts = res;
-    // this.toggles = new Array(this.concepts.length).fill(true);
-    // this.isSelected = new Array(this.concepts.length).fill(false);
-    // });
+  // getConceptsFunction() {
+  //   // this.testService.getConcepts(this.username,this.selectedTech);
+  //   this.testService.getConcepts()
+  //     .subscribe((res: any) => {
+  //       console.log(res);
+  //       this.concepts = res;
+  //       this.toggles = new Array(this.concepts.length).fill(true); //initialize all with true
+  //       this.isSelected = new Array(this.concepts.length).fill(false); //initialize all with false since nothing is selected at firssst
+  //     });
+  //   // this.testService.connection.on('messageReceived', (res:any) => {
+  //   // this.concepts = res;
+  //   // this.toggles = new Array(this.concepts.length).fill(true);
+  //   // this.isSelected = new Array(this.concepts.length).fill(false);
+  //   // });
 
-  }
+  // }
 
   display() {
     // const conceptNames = this.concepts.map(concept => concept.name);
     // console.log(conceptNames);
+    console.log(this.domain);
+    console.log(this.concepts);
     console.log(this.selectedConceptArray);
     // this.testService.getQuestions(this.username, this.selectedTech, conceptNames); //get quess
-    this.testService.getQuestions('4321', this.selectedTech, this.selectedConceptArray); //get quess
+    this.testService.getQuestions('4321', this.domain, this.concepts); //get quess
     this.showTimer = true;
     this.showProgressBar = true;
-    this.selectedTech = this.testService.getTechName().name;
+    // this.selectedTech = this.testService.getTechName().name;
     // this.questions = this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
     this.testService.connection.on('gotQuestions', (ques: any) => {
+      console.log("Getting Questions");
+      this.isLoaderActivated = false;
       this.questions = ques;
       console.log("questions::" + this.questions);
-
     });
-    this.showNextButton = true;
-    this.showQuesButton = false;
-    this.questionCounter = 0;
-    this.currentQuestion = this.questions[this.questionCounter];
-    this.shouldDisplayQuestions = true;
-    this.totalQues = this.questions.length;
-    this.valueInc = 100 / this.totalQues;
-    this.gameClock();
+    // this.showNextButton = true;
+    // this.showQuesButton = false;
+    // this.questionCounter = 0;
+    // this.currentQuestion = this.questions[this.questionCounter];
+    // this.shouldDisplayQuestions = true;
+    // this.totalQues = this.questions.length;
+    // this.valueInc = 100 / this.totalQues;
+    // this.gameClock();
   }
 
   gameClock() {

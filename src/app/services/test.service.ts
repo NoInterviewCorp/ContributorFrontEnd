@@ -30,9 +30,9 @@ export class TestService {
   connectionBuilder(username:string) {
     console.log(username);
     this.connection = new signalR.HubConnectionBuilder()
-    .withUrl('http://172.23.238.173:5001/test?username=4321') 
+    .withUrl('http://172.23.238.173:5001/test?username=4321')
     .build();
-  
+
     return this.connection.start();
   }
 
@@ -40,8 +40,9 @@ export class TestService {
   //   this.connection.send('RequestConcepts', 'username', techname);
   // }
 
-  getConcepts() {
-    return this.http.get('http://172.23.238.173:5002/Concept/java');
+  getConcepts(domain) {
+    // The api endpoint needs to be changed
+    return this.http.get(`http://172.23.238.173:5002/Technology/${domain}`);
   }
 
   getTechnologies() {

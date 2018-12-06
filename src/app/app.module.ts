@@ -46,6 +46,7 @@ import { EdituserprofileComponent } from './edituserprofile/edituserprofile.comp
 import { QuestionsviewComponent } from './questionsview/questionsview.component';
 import { ResourcesviewComponent } from './resourcesview/resourcesview.component';
 import { ResourcecardComponent } from './././resourcesview/resourcecard/resourcecard.component';
+import { AssessmentLandingPageComponent } from './assessment-landing-page/assessment-landing-page.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -112,6 +113,8 @@ export function getAuthServiceConfigs() {
     ResourcesviewComponent,
 
     ResourcecardComponent,
+
+    AssessmentLandingPageComponent,
 
   ],
   imports: [
