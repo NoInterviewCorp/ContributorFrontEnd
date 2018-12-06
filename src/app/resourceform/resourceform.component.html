@@ -1,71 +1,23 @@
-<!-- <form class="example-form">
-    <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="resource.name" [ngModelOptions]="{standalone: true}" placeholder="Resource Name">
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Resource Link" [formControl]="resourcelink" [(ngModel)]="resource.resourceLink"
-            required>
-        <mat-error *ngIf="resourcelink.invalid">{{getErrorMessage()}}</mat-error>
-        <mat-error *ngIf="resourcelink.valid">{{getValidMessage(0)}}</mat-error>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Description" [(ngModel)]="resource.description" [ngModelOptions]="{standalone: true}"></textarea>
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <input matInput placeholder="Technology" [(ngModel)]="resource.technologies[0].name" [ngModelOptions]="{standalone: true}">
-    </mat-form-field>
-    <mat-form-field class="example-chip-list">
-        <mat-chip-list #chipList>
-            <mat-chip *ngFor="let concept of resource.concepts" [selectable]="selectable" [removable]="removable" 
-            (removed)="remove(concept)">
-                {{concept.name}}
-                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-            </mat-chip>
-            <input placeholder="Concepts Covered" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-                [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" [formControl]="concept"
-                  required >
-            <mat-error *ngIf="concept.invalid">{{getErrorMessage1()}}</mat-error>
-            <mat-error *ngIf="concept.valid">{{getValidMessage(1)}}</mat-error>
-        </mat-chip-list>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-select [(value)]="selected" placeholder="Give Bloom's Taxanomy Level" [(ngModel)]="resource.bloomLevel"
-            [formControl]="bloomlevel" required>
-            <mat-error *ngIf="bloomlevel.invalid">{{getErrorMessage2()}}</mat-error>
-            <mat-error *ngIf="bloomlevel.valid">{{getValidMessage(2)}}</mat-error>
-            <mat-option value="1">Knowledge</mat-option>
-            <mat-option value="2">Comprehension</mat-option>
-            <mat-option value="3">Application</mat-option>
-            <mat-option value="4">Analysis</mat-option>
-            <mat-option value="5">Synthesis</mat-option>
-            <mat-option value="6">Evaluation</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <a matTooltip="know about Bloom's Taxonomy" aria-label="Button that displays a tooltip when focused or hovered over"
-        href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
-        <mat-icon class="help">help</mat-icon>
-    </a>
-    
-</form>
-<div class=pom-c-button>
-    <button mat-raised-button (click)="clickedDone()" [disabled]="disableButton">done</button>
-</div> -->
 <form class="flex-container" [formGroup]="resourceFormGroup">
-    <mat-form-field class="example-full-width">
-        <input matInput [(ngModel)]="resource.name" [ngModelOptions]="{standalone: true}" placeholder="Resource Name">
+    <mat-form-field class="example-full-width" appearance="outline">
+      <input matInput [(ngModel)]="resource.name" [ngModelOptions]="{standalone: true}" placeholder="Resource Name">
+      <mat-hint>Name your resource</mat-hint>
     </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Description" [(ngModel)]="resource.description" [ngModelOptions]="{standalone: true}"></textarea>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <textarea matInput placeholder="Description" [(ngModel)]="resource.description" [ngModelOptions]="{standalone: true}"></textarea>
+      <mat-hint>Describe what your resource explains</mat-hint>
     </mat-form-field>
-    <mat-form-field class="form-group">
+    <mat-form-field class="form-group" appearance="outline">
         <input matInput class="form-control" formControlName="resourceLinkFC" placeholder="Resource Link" required>
         <mat-error *ngIf="getFormGroup.resourceLinkFC.errors" class="invalid-feedback">Resource Link is Required!</mat-error>
+        <mat-hint>Url of the resource, you want to point the learner to.</mat-hint>
     </mat-form-field>
-    <mat-form-field class="form-group">
+    <mat-form-field class="form-group" appearance="outline">
         <input matInput class="form-control" formControlName="technologyNameFC" placeholder="Technology Name" required>
         <mat-error *ngIf="getFormGroup.technologyNameFC.errors" class="invalid-feedback">Technology Name is Required!</mat-error>
+        <mat-hint>Targetting which technology</mat-hint>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-chip-list #chipList>
             <mat-chip *ngFor="let concept of resource.concepts" [selectable]="selectable" [removable]="removable"
                 (removed)="remove(concept)">
@@ -78,8 +30,9 @@
             <mat-error *ngIf="getFormGroup.conceptsFC.errors" class="invalid-feedback">At least <strong>ONE Concept</strong>
                 is Required!</mat-error>
         </mat-chip-list>
+        <mat-hint>Concepts which the resource explains</mat-hint>
     </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="outline">
         <mat-error *ngIf="getFormGroup.bloomLevelFC.errors" class="invalid-feedback">Please Specify the <strong>Bloom
                 Taxonomy Level</strong></mat-error>
         <mat-select [(value)]="selected" placeholder="Give Bloom's Taxonomy Level" formControlName="bloomLevelFC"
@@ -91,6 +44,7 @@
             <mat-option value="5">Synthesis</mat-option>
             <mat-option value="6">Evaluation</mat-option>
         </mat-select>
+        <mat-hint>Targets learning objective of a Concept</mat-hint>
     </mat-form-field>
     <a matTooltip="know about Bloom's Taxonomy" aria-label="Button that displays a tooltip when focused or hovered over"
         href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
@@ -99,5 +53,5 @@
     <h4 *ngIf="hasErrors">Please fill all the required fields</h4>
 </form>
 <div class=pom-c-button>
-    <button mat-raised-button (click)="clickedDone()" [disabled]="disableButton">done</button>
+    <button mat-raised-button (click)="clickedDone()" [disabled]="disableButton">Done</button>
 </div>

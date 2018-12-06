@@ -1,0 +1,10 @@
+.pot-c-card {
+  width: 250px;
+  margin: 7px;
+  border-radius: 8px;
+  justify-content: center;
+  min-height: 80px;
+  max-height: 80px;
+}
+
+

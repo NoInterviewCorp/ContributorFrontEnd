@@ -3,9 +3,9 @@
 }
 
 .pom-c-navbar {
-  position: fixed;
+  position: sticky;
   z-index: 99999;
-  height: 11vh; 
+  height: 11vh;
   top: 0;
   width: 100%;
 }

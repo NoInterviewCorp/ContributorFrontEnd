@@ -1,26 +1,19 @@
-<div class="container">
-  <div class=flex1 style="flex-grow: 2">
-    <img class="header-image" src="../../assets/placeholder-team.jpg" />
+<div class="pot-l-container">
+  <!-- Contributions -->
+  <div class="pot-l-contributions_wrapper">
+    <h2>Contributions</h2>
+    <a routerLink="/learningplancreator" mat-button>Add Learning Plan</a>
+    <div class="pot-l-contributions">
+      <app-yourcontributionscard *ngFor="let contribution of contributions" [plan]="contribution"></app-yourcontributionscard>
+    </div>
   </div>
-  <div class=flex2 style="flex-grow: 5">
-    <mat-card class="profile">
-      <mat-card-title>{{user.fullName}}</mat-card-title>
-      <mat-card-subtitle><em>{{user.userName}}</em></mat-card-subtitle>
-      <mat-card-footer class="less-margin">
-        {{user.description}}
-      </mat-card-footer>
-    </mat-card>
-  </div>
-  <!-- </mat-card> -->
-  <div class=flex3 style="flex-grow: 2">
-    <mat-card class="info-card">
-      <mat-card-header>
-        <mat-card-title>Proficient In</mat-card-title>
-        <mat-card-subtitle><em>HTML5</em></mat-card-subtitle>
-        <mat-card-subtitle><em>CSS3</em></mat-card-subtitle>
-        <mat-card-subtitle><em>.NetCore2.1</em></mat-card-subtitle>
-        <mat-card-subtitle><em>Angular6</em></mat-card-subtitle>
-      </mat-card-header>
-    </mat-card>
+  <!-- End of Contributions -->
+
+  <div class="pot-l-subscriptions_wrapper">
+    <h2>Subscriptions</h2>
+    <a mat-button href="">Subscribe to Learning Plans</a>
+    <div class="pot-l-subscriptions">
+      <app-yoursubscriptionscard *ngFor="let subscription of subscriptions" [plan]="subscription"></app-yoursubscriptionscard>
+    </div>
   </div>
 </div>

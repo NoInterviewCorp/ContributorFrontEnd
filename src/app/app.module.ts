@@ -30,16 +30,16 @@ import { ResourceformComponent } from './resourceform/resourceform.component';
 import { QuestionformComponent } from './questionform/questionform.component';
 import { QuestionsComponent } from './questions/questions.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { SubscribecardComponent } from './scrolling-container/subscribecard/subscribecard.component';
-import { YourcontributionscardComponent } from './scrolling-container/yourcontributionscard/yourcontributionscard.component';
+import { SubscribecardComponent } from './subscribecard/subscribecard.component';
+import { YourcontributionscardComponent } from './yourcontributionscard/yourcontributionscard.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
 import { learningplanviewerComponent } from './learningplanviewer/learningplanviewer.component';
 import { LearnComponent } from './learn/learn.component';
 import { LearnerComponent } from './learner/learner.component';
 import { SearchComponent } from './learner/search/search.component';
-import { YoursubscriptionscardComponent } from './scrolling-container/yoursubscriptionscard/yoursubscriptionscard.component';
+import { YoursubscriptionscardComponent } from './yoursubscriptionscard/yoursubscriptionscard.component';
 import { ResourceeditComponent } from './resourceedit/resourceedit.component';
-import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
+import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
 import { TokenInterceptor } from './token-interceptor';
 import { RatingComponent } from './rating/rating.component';
 import { EdituserprofileComponent } from './edituserprofile/edituserprofile.component';
@@ -47,6 +47,7 @@ import { QuestionsviewComponent } from './questionsview/questionsview.component'
 import { ResourcesviewComponent } from './resourcesview/resourcesview.component';
 import { ResourcecardComponent } from './././resourcesview/resourcecard/resourcecard.component';
 import { AssessmentLandingPageComponent } from './assessment-landing-page/assessment-landing-page.component';
+import { AddEntityComponentComponent } from './add-entity-component/add-entity-component.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -115,6 +116,8 @@ export function getAuthServiceConfigs() {
     ResourcecardComponent,
 
     AssessmentLandingPageComponent,
+
+    AddEntityComponentComponent,
 
   ],
   imports: [

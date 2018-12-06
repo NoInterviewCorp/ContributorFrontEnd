@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UserProfile } from 'src/models/userprofile.model';
 import { CommunicatorService } from '../services/communicator.service';
+import { LearningPlan } from 'src/models/learningplan.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -8,24 +9,27 @@ import { CommunicatorService } from '../services/communicator.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: UserProfile;
-  constructor(private com: CommunicatorService) {
-    this.user = new UserProfile();
+
+  contributions: LearningPlan[];
+  subscriptions: LearningPlan[];
+  constructor(private communicator: CommunicatorService) {
   }
 
   ngOnInit() {
-    console.log(this.user.fullName);
-    // this.getUser();
-    this.user = this.getUser();
-    // console.log(this.user);
+    this.getContributions();
+    this.getSubscriptions();
   }
 
-  getUser() {
-    this.com.getUser(this.user.userId).subscribe((user: UserProfile) => {
-      this.user = user;
-      console.log("result is " + this.user.fullName);
+  getContributions() {
+    this.communicator.getContributions().subscribe((contributions: LearningPlan[]) => {
+      this.contributions = contributions;
     });
-    return this.user;
+  }
+
+  getSubscriptions() {
+    this.communicator.getSubscriptions().subscribe((subscriptions: LearningPlan[]) => {
+      this.subscriptions = subscriptions;
+    })
   }
 
 }

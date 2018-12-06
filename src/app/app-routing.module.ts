@@ -14,15 +14,15 @@ import { AppComponent } from './app.component';
 import { EditlearningplanComponent } from './editlearningplan/editlearningplan.component';
 import { learningplanviewerComponent } from './learningplanviewer/learningplanviewer.component';
 import { LearnerComponent } from './learner/learner.component';
-import { SubscriptionviewComponent } from './scrolling-container/yoursubscriptionscard/subscriptionview/subscriptionview.component';
+import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
 import { EdituserprofileComponent } from './edituserprofile/edituserprofile.component';
 import { AssessmentLandingPageComponent } from './assessment-landing-page/assessment-landing-page.component';
 
 const routes: Routes = [
   //{path: 'home',component: HomeComponent},
-  { path: '', component: LearnerComponent },
+  { path: '', component: ProfileComponent },
   {path:'edituserprofile', component:EdituserprofileComponent},
-  { path: 'profile', component: LandingComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'contribute', component: contributordashboardComponent },
   { path: 'questions', component: QuestionsComponent },
   { path: 'resourcecreator', component: resourcecreatorComponent },

@@ -1,22 +1,23 @@
-.LPresource{
+.LPresource {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  height: 100%;
-  margin-bottom: 20px;
-  margin-left: 8px;
+  /* flex-wrap: wrap; */
+  height: 100vh;
+  overflow: hidden;
 }
 
-.learningplan{
-  flex: 5;
+.learningplan {
+  background-color: #8BC6EC;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.learningplan, .resource {
+  padding: 20px;
   height: 100%;
 }
 
-.resource{
-  flex: 5;
-  padding-left: 20px;
-  height: 100%;
-  background-color: rgb(230, 230, 230);
+.resource {
 }
 
 @media (max-width: 425px){
@@ -43,26 +44,26 @@ mat-form-field{
   }
 }
 
-.pom-c-resbutton{
+.pom-c-resbutton {
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
-.pom-c-submitbutton{
+.pom-c-submitbutton {
   margin-left: 10px;
   margin-top: 10px;
 }
 
-.pom-c-searchbutton{
+.pom-c-searchbutton {
   margin-left: 10px;
   margin-top: 10px;
 }
 
-.pom-c-resourcecard{
+.pom-c-resourcecard {
   /* word-wrap: break-word; */
   margin-top: 20px;
    display: flex;
-  flex-direction: row; 
+  flex-direction: row;
 }
 
 @media (max-width: 425px){
@@ -74,7 +75,7 @@ mat-form-field{
   }
 }
 
-.pom-c-card{
+.pom-c-card {
   word-wrap: break-word;
   flex: 7;
   margin-right: 20px;
@@ -103,9 +104,6 @@ mat-form-field{
   }
 }
 
-h3{
-  margin: 0;
-}
 
 .pom-c-clearbtn{
   float: right;
