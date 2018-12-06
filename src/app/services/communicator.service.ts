@@ -89,6 +89,9 @@ export class CommunicatorService {
     //console.log('http://172.23.238.173:5004/values/' + UserId);
     return this.http.get('http://172.23.238.173:5004/values/' + UserId);
   }
+  getQuestions(resource:Resource){
+    return this.http.get('http://172.23.238.173:5002/Question/'+resource.resourceId)
+  }
   putUser(user: UserProfile) {
     return this.http.put('http://172.23.238.173:5004/values/' + user.userId, user);
   }
