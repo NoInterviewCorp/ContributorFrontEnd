@@ -8,7 +8,7 @@ export class Question {
     questionId: string;
     problemStatement: string;
     options: Option[];
-    correctOptionId: string;
+    correctOption: Option;
     bloomLevel: BloomTaxonomy;
     hasPublished: boolean;
     technology: Technology;
@@ -18,7 +18,7 @@ export class Question {
         this.questionId = null,
         this.problemStatement = "",
         this.options = [];
-        this.correctOptionId = "",
+        this.correctOption = new Option(),
         this.bloomLevel = 1,
         this.hasPublished = false;
         this.technology = new Technology;

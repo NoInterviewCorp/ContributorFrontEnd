@@ -23,27 +23,27 @@ export class ResourceformComponent implements OnInit {
   // @Output() noError = new EventEmitter();
   @Output() addQuestions = new EventEmitter();
   @Output() hasClickedDone = new EventEmitter();
-  @Input() technologyName:string;
+  @Input() technologyName: string;
   resource: Resource;
   //  hasClickedAddQuestions:boolean;
   results: any = [];
   disableButton: boolean;
-  hasErrors:boolean;
+  hasErrors: boolean;
   resourceFormGroup: FormGroup;
   get getFormGroup() { return this.resourceFormGroup.controls; }
 
-  constructor(private fb: FormBuilder,private com: CommunicatorService) { }
+  constructor(private fb: FormBuilder, private com: CommunicatorService) { }
 
   ngOnInit() {
     this.resource = new Resource;
-    this.resource.technologies[0].name=this.technologyName;
+    this.resource.technologies[0].name = this.technologyName;
     this.resourceFormGroup = this.fb.group({
       resourceLinkFC: ['', Validators.required],
       technologyNameFC: ['', Validators.required],
       conceptsFC: ['', Validators.required],
       bloomLevelFC: ['', Validators.required]
     })
-    
+
     // this.concept.valueChanges.subscribe(concept=>this.conceptSearch());
   }
   // resourcelink = new FormControl('', [Validators.required]);
@@ -56,6 +56,7 @@ export class ResourceformComponent implements OnInit {
   addOnBlur = true;
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   concepts: Concept[] = [];
+
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -66,6 +67,7 @@ export class ResourceformComponent implements OnInit {
       input.value = '';
     }
   }
+
   remove(concept: Concept): void {
     const index = this.resource.concepts.indexOf(concept);
     if (index >= 0) {
@@ -73,14 +75,13 @@ export class ResourceformComponent implements OnInit {
     }
   }
 
-
-  
   clickedAddQuestions() {
     // this.hasClickedAddQuestions = true;
     this.addQuestions.emit(true);
   }
+
   clickedDone() {
-    this.resource.authorId=this.com.resourceAuthorId;
+    this.resource.authorId = this.com.resourceAuthorId;
     console.log(this.resource + " is the author id");
     let index = this.com.resourcecreator(this.resource);
     console.log("index is " + index);
@@ -96,7 +97,7 @@ export class ResourceformComponent implements OnInit {
     let formcontrols = this.getFormGroup;
     try {
       this.resource.resourceLink = formcontrols.resourceLinkFC.value;
-      this.resource.technologies[0] = formcontrols.technologyNameFC.value;
+      this.resource.technologies[0].name = formcontrols.technologyNameFC.value;
       this.resource.bloomLevel = formcontrols.bloomLevelFC.value;
       console.log(this.resource);
     } catch (e) {

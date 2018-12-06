@@ -36,12 +36,7 @@ export class QuestionformComponent implements OnInit {
   options: OptionForm[] = [];
   optionsForm: FormGroup;
   questionFormGroup: FormGroup;
-  items = [
-    { key: 'item1' },
-    { key: 'item2' },
-    { key: 'item3' },
-    { key: 'item4' },
-  ];
+  
   get getFormGroup() { return this.questionFormGroup.controls; }
   get getOptionGroup() { return this.optionsForm.controls; }
 
@@ -51,7 +46,7 @@ export class QuestionformComponent implements OnInit {
     }
     this.questionObj.options = new Array(4).fill(new Option());
     this.id = this.com.getLastResourceIndex();
-    
+
   }
 
   ngOnInit() {
@@ -62,19 +57,17 @@ export class QuestionformComponent implements OnInit {
       bloomLevelFC: ['', Validators.required]
     })
     this.optionsForm = this.fb.group({
-      option1: ['', Validators.minLength(1)],
-      option2: ['', Validators.minLength(1)],
-      option3: ['', Validators.minLength(1)],
-      option4: ['', Validators.minLength(1)],
+      option1: ['', Validators.required],
+      option2: ['', Validators.required],
+      option3: ['', Validators.required],
+      option4: ['', Validators.required],
       optionFormControl: ['', Validators.required]
     })
     this.getFormGroup.technologyNameFC.setValue(this.com.getTechnologyName(this.id));
   }
 
   clickedSave() {
-     this.com.addQuestionToResourceOfIndex(this.id, this.question);
-    this.hasClickedSave.emit(this.id);
-
+    
     if (this.questionFormGroup.invalid || this.optionsForm.invalid) {
       this.hasErrors = true;
       this.disableButton = false;
@@ -88,14 +81,17 @@ export class QuestionformComponent implements OnInit {
         index++;
         option.content = this.optionsForm.get('option' + index).value;
       })
-      console.log("Correct option is " + this.getOptionGroup.optionFormControl.value);
       this.question.problemStatement = formcontrols.problemStatementFC.value;
       this.question.options[this.getOptionGroup.optionFormControl.value].isCorrect = true;
-      this.question.technology = formcontrols.technologyNameFC.value;
+      this.question.technology.name = formcontrols.technologyNameFC.value;
       this.question.bloomLevel = formcontrols.bloomLevelFC.value;
-      console.log(this.question);
+      this.com.addQuestionToResourceOfIndex(this.id, this.question);
+      this.hasClickedSave.emit(this.id);
+      this.disableButton = true;
     } catch (e) {
-      console.log(e)
+      console.log("=====================================================");
+      console.log(e);
+      console.log("=====================================================");
     }
   }
 
@@ -109,6 +105,7 @@ export class QuestionformComponent implements OnInit {
       input.value = '';
     }
   }
+
   remove(concept: Concept): void {
     console.log("Concept to be removed is " + concept.name);
     const index = this.question.concepts.indexOf(concept);
