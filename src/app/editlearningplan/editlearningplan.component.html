@@ -1,4 +1,5 @@
 <div class="container">
+  <h4>{{plan.name}}</h4>
   <form class="example-form">
   <mat-form-field appearance="outline" class="field" >
     <mat-label>Learning Plan Name</mat-label>
@@ -13,7 +14,6 @@
     <textarea matInput value="{{plan.description}}" [(ngModel)]="plan.description" [ngModelOptions]="{standalone: true}"></textarea>
   </mat-form-field>
 </form>
-<h5>Your Plan starts here....</h5>
 <mat-accordion>
   <mat-expansion-panel *ngFor="let item of plan.resources" class="pom-expansionpanel">
     <mat-expansion-panel-header>
