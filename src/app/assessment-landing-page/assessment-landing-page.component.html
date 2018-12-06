@@ -1,0 +1,31 @@
+<div class="pot-l-container">
+  <div class="pot-l-shapes-container"></div>
+  <div class="pot-l-domain-selector-wrapper">
+    <!-- Domain Selector -->
+    <div class="pot-l-domain-selector-info">
+      <h2>Take a Test</h2>
+      <!-- Text needs to be changed -->
+      <div class="pot-c-domain-selector-info__description">Test your skills and judge whether the dots are really in the middle of the shapes. We’ve prepared 10 shapes for you to select from, but you have to get all 10 correct to win the game. Can you do it?</div>
+      <div class="pot-c-domain-selector">
+        <mat-form-field>
+          <mat-select [(ngModel)]="selectedDomain" [value]="selectedDomain" (selectionChange)="getConcepts($event)" placeholder="Domain">
+            <mat-option *ngFor="let domain of domains" [value]="domain.name">
+              {{domain.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Concept Selector -->
+      <mat-chip-list [multiple]="true">
+        <mat-chip *ngFor="let concept of concepts" [value]="concept.name" [selectable]="true" [selected]="concept.toggled" (click)="onConceptSelected(concept)">{{concept.name}}</mat-chip>
+      </mat-chip-list>
+      <!-- End of Concept Selector -->
+
+      <button mat-stroked-button (click)="beginAssessment()" class="pot-c-begin__btn">
+        Begin
+      </button>
+    </div>
+    <!-- End of Domain Selector -->
+  </div>
+</div>
