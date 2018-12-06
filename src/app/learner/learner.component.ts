@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CommunicatorService } from '../services/communicator.service';
+import { UserWrapper } from 'src/models/userprofile.model';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Component({
   selector: 'app-learner',
@@ -6,8 +9,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./learner.component.css']
 })
 export class LearnerComponent implements OnInit {
-
-  constructor() { }
+user:UserWrapper;
+res:any;
+  constructor(private com:CommunicatorService) {
+    this.user=new UserWrapper;
+   }
 
   hasClickedTech: boolean;
   hasClickedSubs: boolean;
@@ -16,11 +22,21 @@ export class LearnerComponent implements OnInit {
   hasClickedLeft: boolean;
 
   ngOnInit() {
+    this.postUserId();
     this.hasClickedTech = true;
     this.hasClickedLeft = true;
     this.hasClickedRight = false;
   }
 
+  postUserId(){
+    
+    this.com.postUser(this.user).subscribe(res=>{
+     
+      this.res=res;
+      console.log(res);
+    })
+    this.user=this.res;
+  }
   clickedRight() {
     this.hasClickedRight = true;
     this.hasClickedLeft = false;
