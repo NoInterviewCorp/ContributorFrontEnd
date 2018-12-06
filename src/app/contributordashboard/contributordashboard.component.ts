@@ -42,8 +42,8 @@ export class contributordashboardComponent implements OnInit {
     this.hasClickedContributions = false;
   }
   clickedContributions() {
-    // this.hasClickedresourcecreator = false;
-    this.hasClickedAddLP = false;
     this.hasClickedContributions = true;
+     this.hasClickedViewQuestions = false;
+    this.hasClickedAddLP = false;
   }
 }

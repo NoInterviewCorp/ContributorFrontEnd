@@ -1,39 +1,30 @@
-.contribution-card-container{
+.contribution-card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.subscription-card-container{
+.contributionedit {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-.contributionedit{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.pom-card{
-  flex: 5;
-}
-
+.pom-card {
+  flex: 5; 
+} 
 .editview{
   flex: 5;
 }
+  
+/* .pom-c-card{
+  flex: 5;
+} */
 
-h3{
+/* .editview {
+  flex: 5;
+} */
+
+/* h3  {
   padding-left: 30px;
-}
+} */
 
-@media (max-width: 425px){
-  .subscription-card-container{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:  center;
-   }
- 
-  }

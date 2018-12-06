@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="resource">
-        <button mat-button *ngIf="hasClickedresourcecreator && !hasClickedClearInresourcecreatorInLP" (click)="clickedClearInresourcecreatorInLP()">
+        <button mat-button class="pom-c-clearbtn" *ngIf="hasClickedresourcecreator && !hasClickedClearInresourcecreatorInLP" (click)="clickedClearInresourcecreatorInLP()">
             <mat-icon>clear</mat-icon>
         </button>
         <app-resourcecreator *ngIf="hasClickedresourcecreator && !hasClickedSaveResource && 
