@@ -3,6 +3,7 @@ import { TestService } from '../services/test.service';
 import { Option } from '../option.model';
 import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
 import { ActivatedRoute } from '@angular/router';
+import { Question } from '../question.model';
 // import { Technology } from '../../models/technology.model';
 
 
@@ -15,7 +16,7 @@ export class TestComponent implements OnInit {
   toggle: any;
   status = 'Enable';
   selectedTech: any;
-  questions: any;
+  questions: Question[]=[];
   duration = 1000; //timer duration
   counter: number = this.duration;
   i: number = 0;
@@ -143,31 +144,26 @@ export class TestComponent implements OnInit {
   // }
 
   display() {
-    // const conceptNames = this.concepts.map(concept => concept.name);
-    // console.log(conceptNames);
-    console.log(this.domain);
-    console.log(this.concepts);
-    console.log(this.selectedConceptArray);
-    // this.testService.getQuestions(this.username, this.selectedTech, conceptNames); //get quess
+   
     this.testService.getQuestions('4321', this.domain, this.concepts); //get quess
     this.showTimer = true;
     this.showProgressBar = true;
-    // this.selectedTech = this.testService.getTechName().name;
-    // this.questions = this.testService.getQuestions(this.username, this.selectedTech,this.concepts);
-    this.testService.connection.on('gotQuestions', (ques: any) => {
+    
+    this.testService.connection.on('GetQuestion', (ques: any) => {
       console.log("Getting Questions");
       this.isLoaderActivated = false;
       this.questions = ques;
-      console.log("questions::" + this.questions);
+      console.log(this.questions[0].problemStatement);
+      console.log(this.questions[0].options[0]);
+      this.questionCounter=0;
+       this.currentQuestion = this.questions[this.questionCounter];
     });
-    // this.showNextButton = true;
-    // this.showQuesButton = false;
-    // this.questionCounter = 0;
-    // this.currentQuestion = this.questions[this.questionCounter];
-    // this.shouldDisplayQuestions = true;
-    // this.totalQues = this.questions.length;
-    // this.valueInc = 100 / this.totalQues;
-    // this.gameClock();
+    this.showNextButton = true;
+    this.showQuesButton = false;
+    this.shouldDisplayQuestions = true;
+    this.totalQues = this.questions.length;
+    this.valueInc = 100 / this.totalQues;
+    this.gameClock();
   }
 
   gameClock() {

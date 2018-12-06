@@ -6,13 +6,14 @@ import { Concept } from "./resourceform/resourceform.component";
 
 export class Question {
     questionId: string;
+    concepts: Concept[];
+    resourceId: string;
+    bloomLevel: BloomTaxonomy;
     problemStatement: string;
     options: Option[];
     correctOption: Option;
-    bloomLevel: BloomTaxonomy;
-    hasPublished: boolean;
     technology: Technology;
-    concepts: Concept[];
+    
 
     constructor() {
         this.questionId = null,
@@ -20,7 +21,6 @@ export class Question {
         this.options = [];
         this.correctOption = new Option(),
         this.bloomLevel = 1,
-        this.hasPublished = false;
         this.technology = new Technology;
         this.concepts = [];
     }
