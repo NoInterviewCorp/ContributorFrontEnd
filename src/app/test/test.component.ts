@@ -168,7 +168,7 @@ export class TestComponent implements OnInit {
 
   gameClock() {
     const intervalMain = setInterval(() => {
-      console.log(this.counter);
+      // console.log(this.counter);
       this.counter--;
       // if (this.counter <= 0) {
       //   this.nextQuestion();

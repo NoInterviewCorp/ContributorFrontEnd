@@ -18,7 +18,7 @@
         <div class="ques-box">
           <div class="ques-title">
             <h3>
-              Q{{currentQuestion?.questionId}} {{currentQuestion?.problemStatement}}
+              Q{{currentQuestion?.problemStatement}}
             </h3>
           </div>
         </div>
@@ -33,4 +33,9 @@
         </div>
       </div>
 
+     
+          <button mat-raised-button class="Btn" (click)="nextQuestion()">Next</button>
+          <!-- <a routerLink="/result" routerLinkActive="active" class="Btn" button mat-raised-button color="primary" *ngIf="callResult">
+            Show Results</a> -->
+       
     </div>

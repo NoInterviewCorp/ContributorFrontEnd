@@ -24,17 +24,15 @@ export class AssessmentLandingPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  getConcepts(selectedDomain) {
-    this.testService.getConcepts(selectedDomain.value).subscribe(
+  getConcepts(domain) {
+    this.concepts = [];
+    this.testService.getConcepts(domain.value).subscribe(
       (domain:any) => {
       console.log(domain);
       const domainConcepts = domain[0].concepts.map(concept => ({...concept, toggled: false }))
       this.concepts.push(...domainConcepts);
     },
-    (err) => {
-      this.concepts.push({ name: 'TestConcept', toggled: false }, { name: 'TestConcept1', toggled: false });
-    }
-  );
+    console.log);
   }
 
   onConceptSelected(concept) {
