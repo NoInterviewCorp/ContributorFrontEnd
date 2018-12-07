@@ -17,23 +17,21 @@ import { LearnerComponent } from './learner/learner.component';
 import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.component';
 import { EdituserprofileComponent } from './edituserprofile/edituserprofile.component';
 import { AssessmentLandingPageComponent } from './assessment-landing-page/assessment-landing-page.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
-  //{path: 'home',component: HomeComponent},
   { path: '', component: ProfileComponent },
   {path:'edituserprofile', component:EdituserprofileComponent},
   { path: 'profile', component: ProfileComponent },
-  { path: 'contribute', component: contributordashboardComponent },
+  // TODO: COPY ', canActivate: [AuthGuardService]' TO EVERY ROUTE WHICH SHOULD BE PROTECTED!!!!
+  { path: 'contribute', component: contributordashboardComponent, canActivate: [AuthGuardService] },
   { path: 'questions', component: QuestionsComponent },
   { path: 'resourcecreator', component: resourcecreatorComponent },
   { path: 'learningplancreator', component: learningplancreatorComponent },
   { path: 'test/:domain', component: TestComponent },
   { path: 'home' , component: AppComponent},
-  // {path: 'profilepage',component: ProfileComponent},
   {path: 'learningplanedit/:plan', component: EditlearningplanComponent},
   {path: 'learningplanviewer', component: learningplanviewerComponent},
-  // { path: 'userprofile',component: ProfileComponent},
-  // { path: 'editlearningplan', component: EditlearningplanComponent},
   { path: 'test', component: TestComponent },
   { path: 'learner', component: LearnerComponent },
   { path: 'login', component: SignInComponent },

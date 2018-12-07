@@ -48,6 +48,8 @@ import { ResourcesviewComponent } from './resourcesview/resourcesview.component'
 import { ResourcecardComponent } from './././resourcesview/resourcecard/resourcecard.component';
 import { AssessmentLandingPageComponent } from './assessment-landing-page/assessment-landing-page.component';
 import { AddEntityComponentComponent } from './add-entity-component/add-entity-component.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { CookieService } from 'ngx-cookie-service';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -137,6 +139,8 @@ export function getAuthServiceConfigs() {
     SignInComponent
   ],
   providers: [
+    AuthGuardService,
+    CookieService,
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
