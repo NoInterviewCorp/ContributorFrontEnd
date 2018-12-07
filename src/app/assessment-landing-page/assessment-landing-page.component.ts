@@ -36,16 +36,12 @@ export class AssessmentLandingPageComponent implements OnInit {
       }
     )
   }
-  getConcepts(domain) {
+  
+  getConcepts() {
+    console.log(this.selectedDomain);
     this.concepts = [];
-    this.testService.getConcepts(domain.value).subscribe(
-      // this.testService.getTechnologies(domain).subscribe(
-      (domain: any) => {
-        console.log(domain);
-        const domainConcepts = domain[0].concepts.map(concept => ({ ...concept, toggled: false }))
-        this.concepts.push(...domainConcepts);
-      },
-      console.log);
+    const domainConcepts = this.selectedDomain.concepts.map(concept => ({ ...concept, toggled: false }));
+    this.concepts.push(...domainConcepts);
   }
 
   onConceptSelected(concept) {
@@ -55,7 +51,7 @@ export class AssessmentLandingPageComponent implements OnInit {
   beginAssessment() {
     console.log(this.selectedDomain);
     const selectedConcepts = this.concepts.filter(concept => concept.toggled).map(c => c.name);
-    this.router.navigate([`/test/${this.selectedDomain}`, { concepts: selectedConcepts }])
+    this.router.navigate([`/test/${this.selectedDomain.name}`, { concepts: selectedConcepts }])
   }
 
 }

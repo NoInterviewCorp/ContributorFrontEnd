@@ -9,7 +9,7 @@
       <div class="pot-c-domain-selector">
         <mat-form-field>
           <mat-select [(ngModel)]="selectedDomain" [value]="selectedDomain" (selectionChange)="getConcepts($event)" placeholder="Domain">
-            <mat-option *ngFor="let domain of domains" [value]="domain.name">
+            <mat-option *ngFor="let domain of domains" [value]="domain">
               {{domain.name}}
             </mat-option>
           </mat-select>
