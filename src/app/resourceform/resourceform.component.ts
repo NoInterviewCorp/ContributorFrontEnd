@@ -20,12 +20,10 @@ export class Concept {
 
 export class ResourceformComponent implements OnInit {
   @Input() id: number;
-  // @Output() noError = new EventEmitter();
   @Output() addQuestions = new EventEmitter();
   @Output() hasClickedDone = new EventEmitter();
   @Input() technologyName: string;
   resource: Resource;
-  //  hasClickedAddQuestions:boolean;
   results: any = [];
   disableButton: boolean;
   hasErrors: boolean;
@@ -39,17 +37,9 @@ export class ResourceformComponent implements OnInit {
     this.resource.technologies[0].name = this.technologyName;
     this.resourceFormGroup = this.fb.group({
       resourceLinkFC: ['', Validators.required],
-      technologyNameFC: ['', Validators.required],
       conceptsFC: ['', Validators.required],
-      bloomLevelFC: ['', Validators.required]
     })
-
-    // this.concept.valueChanges.subscribe(concept=>this.conceptSearch());
   }
-  // resourcelink = new FormControl('', [Validators.required]);
-  // concept = new FormControl('', [Validators.required]);
-  // bloomlevel = new FormControl('', [Validators.required]);
-  // isValidArray: boolean[] = new Array(3).fill(false);
   visible = true;
   selectable = true;
   removable = true;
@@ -76,7 +66,6 @@ export class ResourceformComponent implements OnInit {
   }
 
   clickedAddQuestions() {
-    // this.hasClickedAddQuestions = true;
     this.addQuestions.emit(true);
   }
 
@@ -91,8 +80,6 @@ export class ResourceformComponent implements OnInit {
     let formcontrols = this.getFormGroup;
     try {
       this.resource.resourceLink = formcontrols.resourceLinkFC.value;
-      this.resource.technologies[0].name = formcontrols.technologyNameFC.value;
-      this.resource.bloomLevel = formcontrols.bloomLevelFC.value;
       console.log(this.resource);
       this.resource.authorId = this.com.resourceAuthorId;
       console.log(this.resource + " is the author id");

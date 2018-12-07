@@ -8,12 +8,12 @@
     </div>
   </div>
   <!-- End of Contributions -->
-
+ 
   <div class="pot-l-subscriptions_wrapper">
     <h2>Subscriptions</h2>
     <a mat-button href="">Subscribe to Learning Plans</a>
     <div class="pot-l-subscriptions">
-      <app-yoursubscriptionscard *ngFor="let subscription of subscriptions" [plan]="subscription"></app-yoursubscriptionscard>
+      <app-yoursubscriptionscard *ngFor="let subscription of subscriptions" (hasUnsubscribed)="handleUnsubscribe($event)" [plan]="subscription"></app-yoursubscriptionscard>
     </div>
   </div>
-</div>
+ </div>

@@ -1,52 +1,44 @@
-.streamer--complete {
-    padding-bottom: 60px;
-}
-
-/* .full-width--streamer {
-    
-} */
-.full-width {
-    width: 75%;
-    margin:auto;
-}
-.container {
-    margin-top: 65px;
-    
-    background-color: #080357;
-    color: #fff;
-}
-
-.conceptsCovered {
-    display: inline;
-    /* border-radius: 50%; */
-    
-}
-
- .button {
-    display: block;
-    width: 115px;
-    height: 25px;
-    background: #080357;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-}
-
-
-.title {
-    font-size: 36px;
-    line-height: 41px;
-}
-.summary {
-    font-size: 21px;
-    line-height: 35px;
-}
-.author {
-    font-size: 18px;
-    line-height: 27px;
-}
-.resourcesHeading {
-    margin: 25px;
-}
+.pom-c-view  {
+    margin: auto;
+    width: 70%;
+    height: 200vh;
+    background: #4CA1AF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+  
+  @media (max-width:425px) {
+    .pom-c-view {
+      margin:0;
+      width: 100%;
+      height: 100vh;
+      background: #4CA1AF;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #C4E0E5, #4CA1AF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+  }
+  
+  .pom-c-card {
+    background-color: transparent;
+  }
+  
+  .pom-c-resource {
+    background-color: transparent;
+  }
+  
+  .pom-c-link {
+    text-decoration: none;
+  }
+  
+  .pom-l-content {
+    margin-left: 10px;
+  }
+  
+  h3 {
+    margin:10px;
+  }
+  
+  .pom-l-cardcontent{
+    font-size: 17px;
+    margin-left: 20px;
+  }

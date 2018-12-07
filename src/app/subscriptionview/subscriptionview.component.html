@@ -1,4 +1,4 @@
-<div class="full-width">
+<!-- <div class="full-width">
   <div class="container">
     <div class="col-xxs-8 left-col">
       <div class="title">
@@ -7,17 +7,12 @@
           {{plan?.description}}
         </div>
         <div class="author">
-          <!-- by {{plan?.Owner}} -->
-          <!-- <div class="pos"> -->
           <app-rating (onRating)="onLearningPlanRating($event)"></app-rating>
-          <!-- </div> -->
         </div>
       </div>
     </div>
     
   </div>
-  
-
   <div class="row row--component-margin">
     <div class="resourcesHeading">
       <h4>Resources:</h4>
@@ -40,5 +35,30 @@
 
       </mat-expansion-panel>
     </mat-accordion>
+  </div>
+</div> -->
+<div class="pom-c-view">
+  <h3>{{plan.name}}</h3>
+  <div class="author">
+    <app-rating (onRating)="onLearningPlanRating($event)"></app-rating>
+  </div>
+  <div class="pom-l-content">
+    <p>{{plan.technology.name}}</p>
+    <p>{{plan.description}}</p>
+  </div>
+  <div class="pom-c-resources">
+    <div *ngFor="let item of plan.resources">
+      <a class="pom-c-link" href="{{item.resourceLink}}" target="_blank">
+        <mat-card class="pom-c-resource">
+          <mat-card-title>{{item.name}}</mat-card-title>
+          <div class="pom-l-cardcontent">
+            <p>{{item.description}}</p>
+            <div *ngFor="let concept of item.concepts">
+              <p>{{concept.name}}</p>
+            </div>
+          </div>
+        </mat-card>
+      </a>
+    </div>
   </div>
 </div>

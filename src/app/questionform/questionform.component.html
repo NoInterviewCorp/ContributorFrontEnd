@@ -1,10 +1,10 @@
 <h5>Questions for Resource #{{id+1}}</h5>
 <form class="flex-container" [formGroup]="questionFormGroup">
-  <mat-form-field class="form-group" appearance="outline">
+  <!-- <mat-form-field class="form-group" appearance="outline">
     <input matInput class="form-control" formControlName="technologyNameFC" placeholder="Technology Name" required>
     <mat-error *ngIf="getFormGroup.technologyNameFC.errors" class="invalid-feedback">Technology Name is Required!</mat-error>
   <mat-hint>Targetting technology</mat-hint>
-  </mat-form-field>
+  </mat-form-field> -->
   <mat-form-field appearance="outline">
     <mat-chip-list #chipList>
       <mat-chip *ngFor="let concept of question.concepts" [selectable]="selectable" [removable]="removable" (removed)="remove(concept)">
