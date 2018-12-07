@@ -4,6 +4,7 @@ import { Option } from '../option.model';
 import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
 import { ActivatedRoute } from '@angular/router';
 import { Question } from '../question.model';
+import { UserWrapper } from 'src/models/userprofile.model';
 // import { Technology } from '../../models/technology.model';
 
 
@@ -25,7 +26,7 @@ export class TestComponent implements OnInit {
  selectedOption = new Option();
  quesId: string; //for storing the queeesId
  optionId: number; // for storing the optionId
-
+ user:UserWrapper = new UserWrapper();
  shouldDisplayQuestions = false;
  currentQuestion: any;
  showTimer = false;
@@ -59,7 +60,7 @@ export class TestComponent implements OnInit {
    this.domain = this.route.snapshot.paramMap.get('domain');
    this.concepts = this.route.snapshot.paramMap.get('concepts').split(',');
    this.isLoaderActivated = true;
-   this.testService.connectionBuilder('4321').then(() => {
+   this.testService.connectionBuilder(this.user.userId).then(() => {
      console.log("Connection Established");
      this.display();
    });
@@ -67,7 +68,7 @@ export class TestComponent implements OnInit {
 
  display() {
 
-   this.testService.getQuestions('4321', this.domain, this.concepts); //get quess
+   this.testService.getQuestions(this.user.userId, this.domain, this.concepts); //get quess
    this.showTimer = true;
    this.showProgressBar = true;
    this.testService.connection.on('GetQuestion', (ques: any) => {
@@ -108,7 +109,7 @@ export class TestComponent implements OnInit {
    this.quesId = this.currentQuestion.questionId;
    this.optionId = this.selectedOption.optionId;
    console.log("option id is::"+ this.optionId)+ "  question id is::"+this.quesId;
-   this.testService.evaluateSelectedOption('4321', this.quesId, this.optionId);
+   this.testService.evaluateSelectedOption(this.user.userId, this.quesId, this.optionId);
    this.questionCounter++;
    this.currentQuestion = this.questions[this.questionCounter];
    this.value = this.value + this.valueInc;
