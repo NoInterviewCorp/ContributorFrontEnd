@@ -33,16 +33,24 @@
   
 </mat-tab-group> -->
 <div class="pom-c-view">
-  <mat-card class="pom-c-card">
-    <mat-card-title class="pom-c-title">{{plan.name}}</mat-card-title>
-  </mat-card>
+  <h3>{{plan.name}}</h3>
   <div class="pom-l-content">
     <p>{{plan.technology.name}}</p>
     <p>{{plan.description}}</p>
   </div>
   <div class="pom-c-resources">
-    <mat-card *ngFor="let item of plan.resources" class="pom-c-resource">
-      <mat-card-title>{{item.name}}</mat-card-title>
-    </mat-card>
+    <div *ngFor="let item of plan.resources">
+      <a class="pom-c-link" href="{{item.resourceLink}}" target="_blank">
+        <mat-card class="pom-c-resource">
+          <mat-card-title>{{item.name}}</mat-card-title>
+          <div class="pom-l-cardcontent">
+            <p>{{item.description}}</p>
+            <div *ngFor="let concept of item.concepts">
+              <p>{{concept.name}}</p>
+            </div>
+          </div>
+        </mat-card>
+      </a>
+    </div>
   </div>
 </div>

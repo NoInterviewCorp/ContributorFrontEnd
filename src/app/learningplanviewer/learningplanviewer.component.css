@@ -1,29 +1,6 @@
-/* *{
-font-size: 16px;
-}
-a{
-  background-color: white;
-  color: black;
-}
-.pom-c-clearbutton{
-  float: right;
-  background-color:whitesmoke;
-  color: black;
-}
-
-label{
-  font-size: 16px;
-  padding-right: 10px;
-} 
-
-mat-expansion-panel{
-  width: 97%;
-  padding-top: 10px;
-} */
-
 .pom-c-view  {
   margin: auto;
-  width: 80%;
+  width: 70%;
   height: 100vh;
   background: #4CA1AF;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #C4E0E5, #4CA1AF);  /* Chrome 10-25, Safari 5.1-6 */
@@ -45,11 +22,23 @@ mat-expansion-panel{
   background-color: transparent;
 }
 
-.pom-c-title {
-  margin:auto;
-  widows: 50%;
-}
-
 .pom-c-resource {
   background-color: transparent;
+}
+
+.pom-c-link {
+  text-decoration: none;
+}
+
+.pom-l-content {
+  margin-left: 10px;
+}
+
+h3 {
+  margin:10px;
+}
+
+.pom-l-cardcontent{
+  font-size: 17px;
+  margin-left: 20px;
 }
