@@ -4,6 +4,7 @@ import { CommunicatorService } from '../services/communicator.service';
 import { Question } from '../question.model';
 import { Technology } from '../technology.model';
 import { LearningPlan } from 'src/models/learningplan.model';
+import { UserProfile } from 'src/models/userprofile.model';
 
 
 @Component({
@@ -12,9 +13,10 @@ import { LearningPlan } from 'src/models/learningplan.model';
   styleUrls: ['./learningplancreator.component.css']
 })
 export class learningplancreatorComponent implements OnInit {
+  user=new UserProfile;
   plan: LearningPlan = {
     learningPlanId: null,
-    authorId: "4321",
+    authorId: this.user.userId,
     name: "",
     description: "",
     technology: {

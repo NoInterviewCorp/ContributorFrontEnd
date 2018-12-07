@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
   }
 
   getContributions() {
-    this.communicator.getContributions().subscribe((contributions: LearningPlan[]) => {
+    this.communicator.getContributions(this.user.userId).subscribe((contributions: LearningPlan[]) => {
       this.contributions = contributions;
     });
   }

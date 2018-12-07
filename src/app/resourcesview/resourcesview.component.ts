@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommunicatorService } from '../services/communicator.service';
+import { UserProfile } from 'src/models/userprofile.model';
 
 @Component({
   selector: 'app-resourcesview',
@@ -7,9 +8,10 @@ import { CommunicatorService } from '../services/communicator.service';
   styleUrls: ['./resourcesview.component.css']
 })
 export class ResourcesviewComponent implements OnInit {
+  user: UserProfile;
   resources: any;
-  userId = "4321";
-  hasClickedView:boolean;
+  userId = this.user.userId;
+  hasClickedView: boolean;
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -23,9 +25,9 @@ export class ResourcesviewComponent implements OnInit {
     });
   }
 
-  handleView(view){
+  handleView(view) {
     console.log("has clicked view");
-    this.hasClickedView=view;
+    this.hasClickedView = view;
   }
-  
+
 }

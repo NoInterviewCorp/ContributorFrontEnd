@@ -12,6 +12,7 @@ import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
   providedIn: 'root'
 })
 export class CommunicatorService {
+  user=new UserProfile;
   private title: string;
   // hasClickedresourcecreators: boolean;
   editSelectedPlan: LearningPlan;
@@ -19,7 +20,7 @@ export class CommunicatorService {
   selectedLearningPlan: LearningPlan;
   private resourceArray: Resource[] = [];
   private lastResourceIndex: number;
-  resourceAuthorId = "4321";
+  resourceAuthorId = this.user.userId;
   addQuestion: Question;
   rating: number;
 
@@ -60,8 +61,8 @@ export class CommunicatorService {
   getconcepts() {
     return this.http.get('http://172.23.238.173:5002/Concept');
   }
-  getContributions() {
-    return this.http.get('http://172.23.238.173:5002/LearningPlan')
+  getContributions(userId: string) {
+    return this.http.get('http://172.23.238.173:5002/LearningPlan/' + userId);
   }
   getSubscriptions() {
     return this.http.get('http://172.23.238.173:5002/LearningPlan')

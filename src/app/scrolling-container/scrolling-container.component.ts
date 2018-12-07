@@ -24,13 +24,13 @@ export class ScrollingContainerComponent implements OnInit {
   }
   getPlans() {
     switch (this.choice) {
-      case 1: {
-        this.com.getContributions().subscribe((res: any) => {
-          this.plan = res;
-          console.log(res);
-        });
-        break;
-      }
+      // case 1: {
+      //   this.com.getContributions().subscribe((res: any) => {
+      //     this.plan = res;
+      //     console.log(res);
+      //   });
+      //   break;
+      // }
       case 2: {
         this.com.getSubscriptions().subscribe((res: any) => {
           this.plan = res;
