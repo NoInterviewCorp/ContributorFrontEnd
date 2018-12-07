@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'test/:domain', component: TestComponent },
   { path: 'home' , component: AppComponent},
   // {path: 'profilepage',component: ProfileComponent},
-  {path: 'learningplanedit', component: EditlearningplanComponent},
+  {path: 'learningplanedit/:plan', component: EditlearningplanComponent},
   {path: 'learningplanviewer', component: learningplanviewerComponent},
   // { path: 'userprofile',component: ProfileComponent},
   // { path: 'editlearningplan', component: EditlearningplanComponent},
