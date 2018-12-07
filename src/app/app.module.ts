@@ -50,6 +50,7 @@ import { AssessmentLandingPageComponent } from './assessment-landing-page/assess
 import { AddEntityComponentComponent } from './add-entity-component/add-entity-component.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { CookieService } from 'ngx-cookie-service';
+import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnologies.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -120,6 +121,8 @@ export function getAuthServiceConfigs() {
     AssessmentLandingPageComponent,
 
     AddEntityComponentComponent,
+
+    TestedtechnologiesComponent,
 
   ],
   imports: [
