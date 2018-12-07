@@ -22,16 +22,16 @@ export class TestService {
     return TestService.tech;
   }
 
-  getQuestions(username:string, techname:string, concepts:any) {
+  getQuestions(username: string, techname: string, concepts: any) {
     this.connection.on('ReceivedRequest', () => console.log("ReceivedMessagesFromServer"));
     this.connection.send('GetQuestionsBatch', username, techname, concepts);
   }
 
-  connectionBuilder(username:string) {
+  connectionBuilder(username: string) {
     console.log(username);
     this.connection = new signalR.HubConnectionBuilder()
-    .withUrl('http://172.23.238.173:5001/test?username=4321')
-    .build();
+      .withUrl('http://172.23.238.173:5001/test?username=4321')
+      .build();
 
     return this.connection.start();
   }
@@ -51,8 +51,9 @@ export class TestService {
 
   //  4.12.
   //call this when user clicks on next
-  evaluateSelectedOption(username:string, quesId:string, optionId:number) {
-    this.connection.send('EvaluateAnswer',username,quesId,optionId);
+  evaluateSelectedOption(username: string, quesId: string, optionId: number) {
+    console.log("Username is "+username+" qId is "+quesId+" optionsId is "+optionId);
+    this.connection.send('EvaluateAnswer', username, quesId, optionId);
   }
 
-  }
+}

@@ -15,14 +15,14 @@
   <div fxShow="true" fxHide.lt-md="true">
     <a mat-button routerLink="/assessment">Take Test</a>
     <button mat-button  [matMenuTriggerFor]="menu">
-      <img class="header-image" src="../../assets/placeholder-team.jpg" style="height: 50px; width: 50px;" />
+      <img class="header-image" src="./assets/placeholder-team.jpg" style="height: 50px; width: 50px;" />
     </button>
     <mat-menu #menu>
       <button mat-menu-item  routerLink="/userprofile"style="font-size: 15px;color: black"><b>View my Profile</b></button>
       <button mat-menu-item routerLink="/edituserprofile" style="font-size: 15px;color: black"><b>
         Edit profile</b></button>
       <button mat-menu-item style="font-size: 15px;color: black"><b>My Reports</b></button>
-      <button mat-menu-item style="font-size: 15px;color: black"><b>Signout</b></button>
+      <button mat-menu-item style="font-size: 15px;color: black" (click)="logout()" ><b>Logout</b></button>
     </mat-menu>
     <!-- <button mat-button *ngIf="!hasSignedIn" routerLink="/login">Login</button>
     <button mat-button *ngIf="!hasSignedIn" (click)="openDialog(false)">Signup</button> -->
