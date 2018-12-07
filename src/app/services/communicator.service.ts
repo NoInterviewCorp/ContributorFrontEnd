@@ -61,8 +61,8 @@ export class CommunicatorService {
   getconcepts() {
     return this.http.get('http://172.23.238.173:5002/Concept');
   }
-  getContributions(userId: string) {
-    return this.http.get('http://172.23.238.173:5002/LearningPlan/' + userId);
+  getContributions() {
+    return this.http.get('http://172.23.238.173:5002/LearningPlan/');
   }
   getSubscriptions() {
     return this.http.get('http://172.23.238.173:5002/LearningPlan')

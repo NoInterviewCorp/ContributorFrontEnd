@@ -40,8 +40,6 @@ export class learningplancreatorComponent implements OnInit {
   hasClickedResourceToEdit: boolean;
   hasClickedClearInResourceEdit: boolean;
   hasClickedClearInresourcecreatorInLP: boolean;
-  hasClickedSearchResource: boolean;
-  hasClickedSearch: boolean;
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -96,13 +94,5 @@ export class learningplancreatorComponent implements OnInit {
   }
   clickedClearInresourcecreatorInLP() {
     this.hasClickedClearInresourcecreatorInLP = true;
-  }
-  clickedSearchResource() {
-    this.hasClickedSearchResource = true;
-    this.hasClickedSearch = false;
-  }
-  clickedSearch() {
-    this.hasClickedSearch = true;
-    this.hasClickedSearchResource = false;
   }
 }

@@ -20,16 +20,9 @@
             </mat-form-field>
             <div class="pom-c-resbutton">
                 <button mat-raised-button color="black" (click)="clickedresourcecreator()">Add new Resource</button>
-                <button mat-raised-button color="black" class="pom-c-searchbutton" (click)="clickedSearchResource()">Search
-                    Resource</button>
                 <button mat-raised-button class="pom-c-submitbutton" color="black" (click)="postLearningPlan()"
-                [disabled]="disableButton">Submit</button>
+                    [disabled]="disableButton">Submit</button>
             </div>
-            <!--search for existing resource-->
-            <mat-form-field appearance="outline" *ngIf="hasClickedSearchResource && !hasClickedSearch">
-                <input matInput placeholder="search">
-            </mat-form-field>
-            <button mat-button style="float: right" (click)="clickedSearch()" *ngIf="hasClickedSearchResource && !hasClickedSearch">search</button>
         </form>
         <div class="pom-c-resourcecard" *ngFor="let res of resources;let i = index">
             <button mat-button class="pom-c-card" (click)="clickedResourceToEdit(i)">
@@ -39,18 +32,19 @@
         </div>
     </div>
     <div class="resource">
-      <button mat-button class="pom-c-clearbtn" *ngIf="hasClickedresourcecreator && !hasClickedClearInresourcecreatorInLP" (click)="clickedClearInresourcecreatorInLP()">
-          <mat-icon>clear</mat-icon>
-      </button>
-      <app-resourcecreator *ngIf="hasClickedresourcecreator && !hasClickedSaveResource &&
+        <button mat-button class="pom-c-clearbtn" *ngIf="hasClickedresourcecreator && !hasClickedClearInresourcecreatorInLP"
+            (click)="clickedClearInresourcecreatorInLP()">
+            <mat-icon>clear</mat-icon>
+        </button>
+        <app-resourcecreator *ngIf="hasClickedresourcecreator && !hasClickedSaveResource &&
       !hasClickedClearInresourcecreatorInLP"
-          (hasClickedSave)="handleSave($event)" [technologyName]="plan.technology.name"></app-resourcecreator>
+            (hasClickedSave)="handleSave($event)" [technologyName]="plan.technology.name"></app-resourcecreator>
 
-      <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion && !hasClickedClearQuestions"
-          (hasClickedSubmit)="handleSubmit($event)" (hasClickedClearInQuestions)="handleClearInQuestions($event)"
-          [technologyName]="plan.technology.name"></app-questions>
+        <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion && !hasClickedClearQuestions"
+            (hasClickedSubmit)="handleSubmit($event)" (hasClickedClearInQuestions)="handleClearInQuestions($event)"
+            [technologyName]="plan.technology.name"></app-questions>
 
-      <app-resourceedit [resource]="resource" *ngIf="hasClickedResourceToEdit && !hasClickedClearInResourceEdit"
-          (hasClickedClearInResourceEdit)="handleClearInResourceEdit($event)"></app-resourceedit>
+        <app-resourceedit [resource]="resource" *ngIf="hasClickedResourceToEdit && !hasClickedClearInResourceEdit"
+            (hasClickedClearInResourceEdit)="handleClearInResourceEdit($event)"></app-resourceedit>
     </div>
 </div>
