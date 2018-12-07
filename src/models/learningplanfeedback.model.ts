@@ -13,10 +13,12 @@ export class LearningPlanFeedBack {
   
     let token=localStorage.getItem("TOKEN");
     // parseJwt (token);
-    let jwtData = token.split('.')[1];
-    let decodedJwtJsonData = window.atob(jwtData);
-    let decodedJwtData = JSON.parse(decodedJwtJsonData);
-    this.UserId= decodedJwtData.UserId;
+    if(token != null){
+        let jwtData = token.split('.')[1];
+        let decodedJwtJsonData = window.atob(jwtData);
+        let decodedJwtData = JSON.parse(decodedJwtJsonData);
+        this.UserId= decodedJwtData.UserId;
+    }
    // this.FullName=decodedJwtData.FullName;
      }
  }

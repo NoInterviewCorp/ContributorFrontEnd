@@ -12,11 +12,6 @@
         <mat-error *ngIf="getFormGroup.resourceLinkFC.errors" class="invalid-feedback">Resource Link is Required!</mat-error>
         <mat-hint>Url of the resource, you want to point the learner to.</mat-hint>
     </mat-form-field>
-    <mat-form-field class="form-group" appearance="outline">
-        <input matInput class="form-control" formControlName="technologyNameFC" placeholder="Technology Name" required>
-        <mat-error *ngIf="getFormGroup.technologyNameFC.errors" class="invalid-feedback">Technology Name is Required!</mat-error>
-        <mat-hint>Targetting which technology</mat-hint>
-    </mat-form-field>
     <mat-form-field appearance="outline">
         <mat-chip-list #chipList>
             <mat-chip *ngFor="let concept of resource.concepts" [selectable]="selectable" [removable]="removable"
@@ -32,24 +27,6 @@
         </mat-chip-list>
         <mat-hint>Concepts which the resource explains</mat-hint>
     </mat-form-field>
-    <mat-form-field appearance="outline">
-        <mat-error *ngIf="getFormGroup.bloomLevelFC.errors" class="invalid-feedback">Please Specify the <strong>Bloom
-                Taxonomy Level</strong></mat-error>
-        <mat-select [(value)]="selected" placeholder="Give Bloom's Taxonomy Level" formControlName="bloomLevelFC"
-            required>
-            <mat-option value="1">Knowledge</mat-option>
-            <mat-option value="2">Comprehension</mat-option>
-            <mat-option value="3">Application</mat-option>
-            <mat-option value="4">Analysis</mat-option>
-            <mat-option value="5">Synthesis</mat-option>
-            <mat-option value="6">Evaluation</mat-option>
-        </mat-select>
-        <mat-hint>Targets learning objective of a Concept</mat-hint>
-    </mat-form-field>
-    <a matTooltip="know about Bloom's Taxonomy" aria-label="Button that displays a tooltip when focused or hovered over"
-        href="http://www.mandela.ac.za/cyberhunts/bloom.htm" target="_blank">
-        <mat-icon class="help">help</mat-icon>
-    </a>
     <h4 *ngIf="hasErrors">Please fill all the required fields</h4>
 </form>
 <div class=pom-c-button>

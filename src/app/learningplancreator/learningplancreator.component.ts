@@ -21,9 +21,11 @@ export class learningplancreatorComponent implements OnInit {
       name: ""
     },
     resources: [],
-    hasPublished: false
+    hasPublished: false,
+    AverageRating: 1,
+    TotalSubscribers: 1
   };
-  disableButton:boolean;
+  disableButton: boolean;
   resIndexForAddingQuestions: number;
   hasClickedresourcecreator: boolean;
   hasClickedSaveResource: boolean;
@@ -37,7 +39,7 @@ export class learningplancreatorComponent implements OnInit {
   hasClickedClearInResourceEdit: boolean;
   hasClickedClearInresourcecreatorInLP: boolean;
   hasClickedSearchResource: boolean;
-  hasClickedSearch:boolean;
+  hasClickedSearch: boolean;
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
@@ -92,12 +94,12 @@ export class learningplancreatorComponent implements OnInit {
   clickedClearInresourcecreatorInLP() {
     this.hasClickedClearInresourcecreatorInLP = true;
   }
-  clickedSearchResource(){
-    this.hasClickedSearchResource=true;
-    this.hasClickedSearch=false;
+  clickedSearchResource() {
+    this.hasClickedSearchResource = true;
+    this.hasClickedSearch = false;
   }
-  clickedSearch(){
-    this.hasClickedSearch=true;
-    this.hasClickedSearchResource=false;
+  clickedSearch() {
+    this.hasClickedSearch = true;
+    this.hasClickedSearchResource = false;
   }
 }

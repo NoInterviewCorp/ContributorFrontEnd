@@ -52,7 +52,7 @@ export class QuestionformComponent implements OnInit {
   ngOnInit() {
     this.questionFormGroup = this.fb.group({
       problemStatementFC: ['', Validators.required],
-      technologyNameFC: ['', Validators.required],
+      // technologyNameFC: ['', Validators.required],
       conceptsFC: ['', Validators.required],
       bloomLevelFC: ['', Validators.required]
     })
@@ -63,7 +63,7 @@ export class QuestionformComponent implements OnInit {
       option4: ['', Validators.required],
       optionFormControl: ['', Validators.required]
     })
-    this.getFormGroup.technologyNameFC.setValue(this.com.getTechnologyName(this.id));
+    // this.getFormGroup.technologyNameFC.setValue(this.com.getTechnologyName(this.id));
   }
 
   clickedSave() {
@@ -83,7 +83,7 @@ export class QuestionformComponent implements OnInit {
       })
       this.question.problemStatement = formcontrols.problemStatementFC.value;
       this.question.options[this.getOptionGroup.optionFormControl.value].isCorrect = true;
-      this.question.technology.name = formcontrols.technologyNameFC.value;
+      // this.question.technology.name = formcontrols.technologyNameFC.value;
       this.question.bloomLevel = formcontrols.bloomLevelFC.value;
       this.com.addQuestionToResourceOfIndex(this.id, this.question);
       this.hasClickedSave.emit(this.id);
