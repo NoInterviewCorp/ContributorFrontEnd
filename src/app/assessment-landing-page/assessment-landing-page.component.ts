@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TestService } from '../services/test.service';
 import { Router } from '@angular/router'
+import { Technology } from '../technology.model';
+import { Concept } from '../resourceform/resourceform.component';
 
 @Component({
   selector: 'app-assessment-landing-page',
@@ -10,10 +12,11 @@ import { Router } from '@angular/router'
 export class AssessmentLandingPageComponent implements OnInit {
 
 
-  domains: any[] = [
-    { name: "Java" },
-    { name: "C#" },
-  ];
+  // domains: any[] = [
+  //   { name: "Java" },
+  //   { name: "C#" },
+  // ];
+  domains: any[];
   selectedDomain: any;
   concepts: any[];
 
@@ -22,19 +25,27 @@ export class AssessmentLandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getDomains();
   }
 
-  getConcepts(selectedDomain) {
-    this.testService.getConcepts(selectedDomain.value).subscribe(
-      (domain:any) => {
-      console.log(domain);
-      const domainConcepts = domain[0].concepts.map(concept => ({...concept, toggled: false }))
-      this.concepts.push(...domainConcepts);
-    },
-    (err) => {
-      this.concepts.push({ name: 'TestConcept', toggled: false }, { name: 'TestConcept1', toggled: false });
-    }
-  );
+  getDomains() {
+    this.testService.getTechnologies().subscribe(
+      (d: any) => {
+        console.log(d);
+        this.domains = d;
+      }
+    )
+  }
+  getConcepts(domain) {
+    this.concepts = [];
+    this.testService.getConcepts(domain.value).subscribe(
+      // this.testService.getTechnologies(domain).subscribe(
+      (domain: any) => {
+        console.log(domain);
+        const domainConcepts = domain[0].concepts.map(concept => ({ ...concept, toggled: false }))
+        this.concepts.push(...domainConcepts);
+      },
+      console.log);
   }
 
   onConceptSelected(concept) {
