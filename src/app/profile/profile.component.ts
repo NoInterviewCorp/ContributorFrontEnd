@@ -10,8 +10,7 @@ import { UserWrapper } from 'src/models/userprofile.model';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  user: UserWrapper;
-  res: any;
+  user: UserWrapper = new UserWrapper();
 
   contributions: LearningPlan[];
   subscriptions: LearningPlan[];
@@ -19,15 +18,15 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.postUserId();
     this.getContributions();
     this.getSubscriptions();
-    this.postUserId();
   }
 
   postUserId() {
     this.communicator.postUser(this.user).subscribe((res: UserWrapper) => {
-      this.user = res;
-      console.log(this.user);
+
+      console.log(res);
     })
   }
 

@@ -96,7 +96,7 @@ export class CommunicatorService {
     return this.http.put('http://172.23.238.173:5004/values/' + user.userId, user);
   }
   postUser(user: UserWrapper){
-    return this.http.post('http://172.23.238.173:5004/values/usernode',user);
+    return this.http.post('http://172.23.238.173:5004/values/UserNode',user);
   }
   // postUser(user:UserProfile){
   //   return this.http.post('http://172.23.238.173:5004/LearningPlan',user);
