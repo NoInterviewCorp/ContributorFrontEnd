@@ -48,7 +48,7 @@
 
       <app-questions *ngIf="hasClickedAddQuestions && !hasClickedSubmitQuestion && !hasClickedClearQuestions"
           (hasClickedSubmit)="handleSubmit($event)" (hasClickedClearInQuestions)="handleClearInQuestions($event)"
-          [technologyName]="technologyName"></app-questions>
+          [technologyName]="plan.technology.name"></app-questions>
 
       <app-resourceedit [resource]="resource" *ngIf="hasClickedResourceToEdit && !hasClickedClearInResourceEdit"
           (hasClickedClearInResourceEdit)="handleClearInResourceEdit($event)"></app-resourceedit>

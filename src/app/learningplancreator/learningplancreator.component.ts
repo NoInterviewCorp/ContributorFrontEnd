@@ -55,6 +55,7 @@ export class learningplancreatorComponent implements OnInit {
 
   handleSubmit(index) {
     this.hasClickedSubmitQuestion = true;
+    this.com.addTechnologyToAllEntities(this.plan.technology.name);
     this.resources[index].questions = this.com.getQuestionOfResource(index);
     console.log(this.resources);
   }

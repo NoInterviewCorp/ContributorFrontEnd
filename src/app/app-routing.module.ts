@@ -18,6 +18,7 @@ import { SubscriptionviewComponent } from './subscriptionview/subscriptionview.c
 import { EdituserprofileComponent } from './edituserprofile/edituserprofile.component';
 import { AssessmentLandingPageComponent } from './assessment-landing-page/assessment-landing-page.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnologies.component';
 
 const routes: Routes = [
   { path: '', component: ProfileComponent },
@@ -36,7 +37,8 @@ const routes: Routes = [
   { path: 'learner', component: LearnerComponent },
   { path: 'login', component: SignInComponent },
   { path: 'subscriptionview', component: SubscriptionviewComponent },
-  { path: 'assessment', component: AssessmentLandingPageComponent }
+  { path: 'assessment', component: AssessmentLandingPageComponent },
+  { path: 'testedtechnologies', component: TestedtechnologiesComponent}
 ];
 
 @NgModule({

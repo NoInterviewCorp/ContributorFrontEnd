@@ -36,6 +36,14 @@ export class CommunicatorService {
   addQuestionToResourceOfIndex(index: number, question: Question) {
     this.resourceArray[index].questions.push(question);
   }
+  addTechnologyToAllEntities(techName:string){
+    this.resourceArray.forEach((r)=>{
+      r.technologies[0].name = techName;
+      r.questions.forEach(q=>{
+        q.technology.name = techName;
+      })
+    })
+  }
   getQuestionOfResource(index: number) {
     return this.resourceArray[index].questions;
   }

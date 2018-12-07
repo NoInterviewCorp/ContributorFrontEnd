@@ -105,9 +105,9 @@ export class TestComponent implements OnInit {
  nextQuestion() {
    // this.resetTimer();
    // this.selectedOption = "";
-   this.quesId = this.currentQuestion.Id;
+   this.quesId = this.currentQuestion.questionId;
    this.optionId = this.selectedOption.optionId;
-   console.log("option id is::"+ this.optionId);
+   console.log("option id is::"+ this.optionId)+ "  question id is::"+this.quesId;
    this.testService.evaluateSelectedOption('4321', this.quesId, this.optionId);
    this.questionCounter++;
    this.currentQuestion = this.questions[this.questionCounter];

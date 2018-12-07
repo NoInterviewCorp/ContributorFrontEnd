@@ -20,7 +20,7 @@ export class resourcecreatorComponent implements OnInit {
   hasClickedAddQuestions: boolean;
   hasClickedClose: boolean;
   resource = new Resource();
-  @Input() technologyName:string;
+  @Input() technologyName: string = "";
   disableButton: boolean;
   @Output() hasClickedSave = new EventEmitter();
   index: number = -1;
@@ -30,10 +30,10 @@ export class resourcecreatorComponent implements OnInit {
   constructor(private com: CommunicatorService) { }
 
   ngOnInit() {
-
   }
   clickedSave() {
     console.log("resourcecreator index is " + this.index)
+    this.resource.technologies[0].name = this.technologyName;
     this.hasClickedSave.emit(this.index);
     this.disableButton = true;
     // this.resource=this.com.resourcecreator;
