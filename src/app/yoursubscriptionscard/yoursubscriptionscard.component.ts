@@ -6,10 +6,7 @@ import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
 // import { Technology } from 'src/models/technology.model';
 import { HttpClient } from '@angular/common/http';
 import { CommunicatorService } from 'src/app/services/communicator.service';
-export interface DialogData {
- animal: string;
- name: string;
-}
+
 @Component({
 selector: 'app-yoursubscriptionscard',
 templateUrl: './yoursubscriptionscard.component.html',
