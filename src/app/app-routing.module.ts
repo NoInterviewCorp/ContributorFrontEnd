@@ -21,6 +21,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnologies.component';
 import { BarComponent } from './testedtechnologies/bar.component';
 
+import { ResultsComponent } from './results/results.component';
 const routes: Routes = [
   { path: '', component: ProfileComponent },
   { path: 'edituserprofile', component: EdituserprofileComponent },
@@ -32,16 +33,19 @@ const routes: Routes = [
   { path: 'learningplancreator', component: learningplancreatorComponent },
   { path: 'test/:domain', component: TestComponent },
   { path: 'home', component: AppComponent },
-  { path: 'learningplanedit/:plan', component: EditlearningplanComponent },
   { path: 'reportcard/:technology', component: BarComponent },
   // { path:'quizresults/:technology',component:}
   { path: 'learningplanviewer', component: learningplanviewerComponent },
+  { path: 'home' , component: AppComponent},
+  {path: 'learningplanedit/:plan', component: EditlearningplanComponent},
+  {path: 'learningplanview/:plan', component: learningplanviewerComponent},
   { path: 'test', component: TestComponent },
   { path: 'learner', component: LearnerComponent },
   { path: 'login', component: SignInComponent },
   { path: 'subscriptionview', component: SubscriptionviewComponent },
   { path: 'assessment', component: AssessmentLandingPageComponent },
-  { path: 'testedtechnologies', component: TestedtechnologiesComponent }
+  { path: 'testedtechnologies', component: TestedtechnologiesComponent},
+  { path: 'results', component: ResultsComponent}
 ];
 
 @NgModule({

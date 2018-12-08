@@ -53,6 +53,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnologies.component';
 import { BarComponent } from './testedtechnologies/bar.component';
 import { ReportTechCardComponent } from './report-tech-card/report-tech-card.component';
+import { ResultsComponent } from './results/results.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -128,6 +129,7 @@ export function getAuthServiceConfigs() {
     TestedtechnologiesComponent,
 
     ReportTechCardComponent,
+    ResultsComponent
 
   ],
   imports: [

@@ -25,9 +25,8 @@ export class ProfileComponent implements OnInit {
 
   postUserId() {
     this.communicator.postUser(this.user).subscribe((res: UserWrapper) => {
-
       console.log(res);
-    })
+    });
   }
 
   getContributions() {
