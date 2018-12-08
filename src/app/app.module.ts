@@ -55,7 +55,7 @@ import { BarComponent } from './testedtechnologies/bar.component';
 import { ReportTechCardComponent } from './report-tech-card/report-tech-card.component';
 import { ResultsComponent } from './results/results.component';
 import { PopularplansComponent } from './popularplans/popularplans.component';
-import { PopularPlanCardComponent } from './popularplans/popular-plan-card/popular-plan-card.component';
+// import { PopularPlanCardComponent } from './popularplans/popular-plan-card/popular-plan-card.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -132,8 +132,8 @@ export function getAuthServiceConfigs() {
 
     ReportTechCardComponent,
     ResultsComponent,
-    PopularplansComponent,
-    PopularPlanCardComponent
+    PopularplansComponent
+    // PopularPlanCardComponent
 
   ],
   imports: [
