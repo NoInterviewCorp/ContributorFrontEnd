@@ -19,7 +19,7 @@ import { EdituserprofileComponent } from './edituserprofile/edituserprofile.comp
 import { AssessmentLandingPageComponent } from './assessment-landing-page/assessment-landing-page.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnologies.component';
-
+import { ResultsComponent } from './results/results.component';
 const routes: Routes = [
   { path: '', component: ProfileComponent },
   {path:'edituserprofile', component:EdituserprofileComponent},
@@ -32,13 +32,14 @@ const routes: Routes = [
   { path: 'test/:domain', component: TestComponent },
   { path: 'home' , component: AppComponent},
   {path: 'learningplanedit/:plan', component: EditlearningplanComponent},
-  {path: 'learningplanviewer', component: learningplanviewerComponent},
+  {path: 'learningplanview/:plan', component: learningplanviewerComponent},
   { path: 'test', component: TestComponent },
   { path: 'learner', component: LearnerComponent },
   { path: 'login', component: SignInComponent },
   { path: 'subscriptionview', component: SubscriptionviewComponent },
   { path: 'assessment', component: AssessmentLandingPageComponent },
-  { path: 'testedtechnologies', component: TestedtechnologiesComponent}
+  { path: 'testedtechnologies', component: TestedtechnologiesComponent},
+  { path: 'results', component: ResultsComponent}
 ];
 
 @NgModule({

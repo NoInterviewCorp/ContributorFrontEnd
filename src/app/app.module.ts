@@ -51,6 +51,7 @@ import { AddEntityComponentComponent } from './add-entity-component/add-entity-c
 import { AuthGuardService } from './services/auth-guard.service';
 import { CookieService } from 'ngx-cookie-service';
 import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnologies.component';
+import { ResultsComponent } from './results/results.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -123,6 +124,8 @@ export function getAuthServiceConfigs() {
     AddEntityComponentComponent,
 
     TestedtechnologiesComponent,
+
+    ResultsComponent,
 
   ],
   imports: [

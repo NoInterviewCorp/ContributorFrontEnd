@@ -29,6 +29,7 @@ export class YourcontributionscardComponent implements OnInit {
   viewPlanOfId(){
     this.com.editSelectedPlan=this.plan;
     this.hasClickedView.emit(true);
+    this.router.navigate([`/learningplanview/${this.plan}`,{id:this.plan.learningPlanId}]);
   }
 
 }
