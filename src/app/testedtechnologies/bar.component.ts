@@ -28,6 +28,8 @@ export class BarComponent implements OnInit {
     constructor(private route: ActivatedRoute) {
         this.route.queryParams.subscribe(params => {
             this.technologyReport = JSON.parse(params["techReport"]);
+            // COMMENT THIS BEFORE DEPLOYING
+            //***************************************************************************
             this.technologyReport.conceptReports.forEach((c, i) => {
                 c.knowledgeIntensity = i + 1;
                 c.comprehensionIntensity = i + 1;
@@ -36,6 +38,8 @@ export class BarComponent implements OnInit {
                 c.synthesisIntensity = i + 1;
                 c.evaluationIntensity = i + 1;
             })
+            //*****************************************************************************
+            // TILL HERE!!!!
             this.generateDataPoints();
         });
     }
