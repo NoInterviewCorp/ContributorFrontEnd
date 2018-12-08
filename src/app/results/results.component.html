@@ -1,3 +1,27 @@
-<p>
-  results works!
-</p>
+
+<div class="pot-l-container">
+  <div class="pot-l-shapes-container"></div>
+  <div class="pot-l-domain-selector-wrapper">
+    <div class="pot-l-domain-selector-info">
+      <h2>Quiz Results..</h2>
+        <!-- Text needs to be changed -->
+      <div class="pot-c-domain-selector-info__description">
+        <div>Test Attempted on: {{techName}}</div>
+        <!-- <div>{{plan.description}}</div> -->
+         <!-- <mat-chip-list [multiple]="true">
+          <mat-chip *ngFor="let concept of conceptsAttempted" [value]="concept.name">
+            {{concept.conceptName}} : {{concept.totalQuestionAttempted}}</mat-chip>
+        </mat-chip-list> -->
+      </div><br>
+       <div *ngFor="let concept of conceptsAttempted">
+           <h6>{{concept.conceptName}}:</h6>
+           <b>Questions Attempted:</b>{{concept.totalQuestionAttempted}}
+           <b>Answered Correctly:</b>{{concept.questionAttemptedCorrect}}
+         </div> 
+
+         <!-- questionAttemptedCorrect: number;
+         totalQuestionAttempted: number; -->
+       
+    </div>
+  </div>
+</div>

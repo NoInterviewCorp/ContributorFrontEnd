@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TestService } from '../services/test.service';
 import { Option } from '../option.model';
 import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { Question } from '../question.model';
 import { UserData } from '../../models/userdata.model';
 import { UserWrapper } from 'src/models/userprofile.model';
@@ -54,7 +54,7 @@ export class TestComponent implements OnInit {
   isLoaderActivated: boolean;
   domain: string;
   userdata: UserData;
-  gameover=false;
+  gameover = false;
   // End Of New Properties
 
   constructor(private testService: TestService, private route: ActivatedRoute, private router: Router) { }
@@ -71,7 +71,12 @@ export class TestComponent implements OnInit {
     this.testService.connection.on('Quiz Over', (user: any) => {
       this.gameover = true;
       this.userdata = user;
-      this.router.navigate(['/results', { user }]);
+      let options: NavigationExtras = {
+        queryParams: {
+          "user": JSON.stringify(this.userdata)
+        }
+      }
+      this.router.navigate(['/results'], options);
       console.log(user);
     })
   }
@@ -81,7 +86,7 @@ export class TestComponent implements OnInit {
     this.testService.getQuestions(this.user.userId, this.domain, this.concepts); //get quess
     this.showTimer = true;
     this.showProgressBar = true;
-    this.selectedTech=this.domain;
+    this.selectedTech = this.domain;
     this.testService.connection.on('GetQuestion', (ques: any) => {
       console.log("Getting Questions");
       this.isLoaderActivated = false;
@@ -94,7 +99,7 @@ export class TestComponent implements OnInit {
       this.showQuesButton = false;
       this.shouldDisplayQuestions = true;
       this.totalQues = this.questions.length;
-      console.log("total ques are :: "+this.totalQues);
+      console.log("total ques are :: " + this.totalQues);
       this.valueInc = 100 / this.totalQues;
       this.gameClock();
     });
@@ -126,15 +131,15 @@ export class TestComponent implements OnInit {
     this.quesCount++;
     this.currentQuestion = this.questions[this.quesCount];
     this.value = this.value + this.valueInc;
-    console.log("ques count::"+this.quesCount+"   total::"+this.totalQues);
+    console.log("ques count::" + this.quesCount + "   total::" + this.totalQues);
     if (this.quesCount == this.totalQues) {
       this.showNextButton = false;
       this.callResult = true;
       this.showTimer = false;
       this.showProgressBar = false;
       this.gameover = true;
-      this.testService.connection.send('EndQuiz', this.user.userId );
-      
+      this.testService.connection.send('EndQuiz', this.user.userId);
+
     }
   }
 }

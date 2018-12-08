@@ -1,0 +1,45 @@
+
+.pot-l-container {
+    display: flex;
+    height: 300vh;
+    overflow: hidden;
+  }
+  
+  .pot-l-shapes-container {
+    flex: 1;
+    background-color: whitesmoke;
+    background-image: url('https://www.supremo.co.uk/designers-eye/assets/images/shapes.png');
+  }
+  
+  .pot-l-domain-selector-wrapper {
+    flex: 1;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    background: lightskyblue;
+  }
+  
+  .pot-c-domain-selector-info__description {
+    font-weight: 400 !important;
+  }
+  
+  .pot-l-domain-selector-info {
+    margin-left: 3em;
+    margin-right: 3em;
+  }
+  
+  .pot-c-domain-selector, .pot-c-begin_btn {
+    margin-top: 1.01em;
+  }
+  
+  .pot-c-begin__btn {
+    height: 48px;
+    font-size: 1.01em;
+    border-radius: 48px;
+    min-width: 120px;
+    /* margin-top: 1.01em; */
+  }
+  
+  .pom-c-resources{
+    margin-top:10px;
+  }

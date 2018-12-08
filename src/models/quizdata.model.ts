@@ -1,4 +1,4 @@
-import { AttemptedConcept } from "./attemptedconcepts.model";
+import { AttemptedConcept } from "./attemptedconcept.model";
 
 export class QuizData {
     techName: string;

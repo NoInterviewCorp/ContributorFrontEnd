@@ -1,9 +1,9 @@
 import { QuizData } from "./quizdata.model";
 export class UserData {
     username: string;
-    quizData: QuizData;
+    data: QuizData;
     constructor() {
         this.username="";
-        this.quizData= new QuizData;
+        this.data= new QuizData;
     }
 }
