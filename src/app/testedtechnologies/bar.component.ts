@@ -8,7 +8,8 @@ import { DataPoint } from './DataPoint';
 
 @Component({
     selector: 'app-bar',
-    templateUrl: './bar.component.html'
+    templateUrl: './bar.component.html',
+    styleUrls: ['./bar.component.css']
 })
 
 export class BarComponent implements OnInit {
@@ -30,14 +31,14 @@ export class BarComponent implements OnInit {
             this.technologyReport = JSON.parse(params["techReport"]);
             // COMMENT THIS BEFORE DEPLOYING
             //***************************************************************************
-            this.technologyReport.conceptReports.forEach((c, i) => {
-                c.knowledgeIntensity = i + 1;
-                c.comprehensionIntensity = i + 1;
-                c.applicationIntensity = i + 1;
-                c.analysisIntensity = i + 1;
-                c.synthesisIntensity = i + 1;
-                c.evaluationIntensity = i + 1;
-            })
+            // this.technologyReport.conceptReports.forEach((c, i) => {
+            //     c.knowledgeIntensity = i + 1;
+            //     c.comprehensionIntensity = i + 1;
+            //     c.applicationIntensity = i + 1;
+            //     c.analysisIntensity = i + 1;
+            //     c.synthesisIntensity = i + 1;
+            //     c.evaluationIntensity = i + 1;
+            // })
             //*****************************************************************************
             // TILL HERE!!!!
             this.generateDataPoints();
@@ -48,10 +49,13 @@ export class BarComponent implements OnInit {
         this.chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             title: {
-                text: "Bloom Taxonomy Intensity in " + this.technologyReport.technologyName
+                text: "Bloom Taxonomy Intensity in " + this.technologyReport.technologyName,
+                fontFamily: 'Product Sans',
+                margin: 15
             },
             axisY: {
-                title: "Bloom Intensity"
+                title: "Bloom Intensity",
+                maximum: 60,
             },
             legend: {
                 cursor: "pointer",
