@@ -1,10 +1,6 @@
-<p>
-  testedtechnologies works!
-</p>
-<div class="technology-container">
-  <mat-card class="pom-c-card">
-    <mat-card-title>
-      
-    </mat-card-title>
-  </mat-card>
+<div class="pot-l-shapes-container" *ngIf="!gotReport"></div>
+<div *ngIf="gotReport">
+  <div class="user-report-container" *ngFor="let technologyReport of userReport.technologyReports;">
+    <app-report-tech-card [techReport]="technologyReport"></app-report-tech-card>
+  </div>
 </div>

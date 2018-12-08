@@ -1,19 +1,19 @@
 export class ConceptReport {
-    name: string;
+    conceptName: string;
     knowledgeIntensity: number;
-    comprehensionReport: number;
-    applicationReport: number;
-    analysisReport: number;
-    synthesisReport: number;
-    evaluationReport: number;
+    comprehensionIntensity: number;
+    applicationIntensity: number;
+    analysisIntensity: number;
+    synthesisIntensity: number;
+    evaluationIntensity: number;
 
     constructor() {
-        this.name = "";
+        this.conceptName = "";
         this.knowledgeIntensity = 0;
-        this.comprehensionReport = 0;
-        this.applicationReport = 0;
-        this.analysisReport = 0;
-        this.synthesisReport = 0;
-        this.evaluationReport = 0;
+        this.comprehensionIntensity = 0;
+        this.applicationIntensity = 0;
+        this.analysisIntensity = 0;
+        this.synthesisIntensity = 0;
+        this.evaluationIntensity = 0;
     }
 }

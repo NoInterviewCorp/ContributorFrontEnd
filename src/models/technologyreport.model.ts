@@ -1,11 +1,11 @@
 import { ConceptReport } from "./conceptreport.model";
 
 export class TechnologyReport {
-    name: string;
-    conceptReport: ConceptReport[];
+    technologyName: string;
+    conceptReports: ConceptReport[];
 
     constructor() {
-        this.name = "";
-        this.conceptReport = [];
+        this.technologyName = "";
+        this.conceptReports = [];
     }
 }

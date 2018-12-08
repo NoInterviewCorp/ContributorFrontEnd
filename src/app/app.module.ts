@@ -51,6 +51,8 @@ import { AddEntityComponentComponent } from './add-entity-component/add-entity-c
 import { AuthGuardService } from './services/auth-guard.service';
 import { CookieService } from 'ngx-cookie-service';
 import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnologies.component';
+import { BarComponent } from './testedtechnologies/bar.component';
+import { ReportTechCardComponent } from './report-tech-card/report-tech-card.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -79,6 +81,7 @@ export function getAuthServiceConfigs() {
     SignUpComponent,
     NavbarComponent,
     HomeComponent,
+    BarComponent,
 
     // Contributor Page Components
     ContributeComponent,
@@ -123,6 +126,8 @@ export function getAuthServiceConfigs() {
     AddEntityComponentComponent,
 
     TestedtechnologiesComponent,
+
+    ReportTechCardComponent,
 
   ],
   imports: [

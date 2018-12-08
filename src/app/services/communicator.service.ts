@@ -12,7 +12,7 @@ import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
   providedIn: 'root'
 })
 export class CommunicatorService {
-  user=new UserProfile;
+  user = new UserProfile;
   private title: string;
   // hasClickedresourcecreators: boolean;
   editSelectedPlan: LearningPlan;
@@ -37,10 +37,10 @@ export class CommunicatorService {
   addQuestionToResourceOfIndex(index: number, question: Question) {
     this.resourceArray[index].questions.push(question);
   }
-  addTechnologyToAllEntities(techName:string){
-    this.resourceArray.forEach((r)=>{
+  addTechnologyToAllEntities(techName: string) {
+    this.resourceArray.forEach((r) => {
       r.technologies[0].name = techName;
-      r.questions.forEach(q=>{
+      r.questions.forEach(q => {
         q.technology.name = techName;
       })
     })
@@ -98,14 +98,20 @@ export class CommunicatorService {
     //console.log('http://172.23.238.173:5004/values/' + UserId);
     return this.http.get('http://172.23.238.173:5004/values/' + UserId);
   }
-  getQuestions(resource:Resource){
-    return this.http.get('http://172.23.238.173:5002/Question/'+resource.resourceId)
+  getUserReport() {
+    return this.http.get('http://172.23.238.173:5004/values/userreport/' + this.user.userId);
+  }
+  getQuizResults(UserId:string){
+    return this.http.get('http://172.23.238.173:5004/values/quizresult/' + this.user.userId);
+  }
+  getQuestions(resource: Resource) {
+    return this.http.get('http://172.23.238.173:5002/Question/' + resource.resourceId)
   }
   putUser(user: UserProfile) {
     return this.http.put('http://172.23.238.173:5004/values/' + user.userId, user);
   }
-  postUser(user: UserWrapper){
-    return this.http.post('http://172.23.238.173:5004/values/UserNode',user);
+  postUser(user: UserWrapper) {
+    return this.http.post('http://172.23.238.173:5004/values/UserNode', user);
   }
   // postUser(user:UserProfile){
   //   return this.http.post('http://172.23.238.173:5004/LearningPlan',user);

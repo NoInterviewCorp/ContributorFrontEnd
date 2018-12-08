@@ -19,10 +19,11 @@ import { EdituserprofileComponent } from './edituserprofile/edituserprofile.comp
 import { AssessmentLandingPageComponent } from './assessment-landing-page/assessment-landing-page.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnologies.component';
+import { BarComponent } from './testedtechnologies/bar.component';
 
 const routes: Routes = [
   { path: '', component: ProfileComponent },
-  {path:'edituserprofile', component:EdituserprofileComponent},
+  { path: 'edituserprofile', component: EdituserprofileComponent },
   { path: 'profile', component: ProfileComponent },
   // TODO: COPY ', canActivate: [AuthGuardService]' TO EVERY ROUTE WHICH SHOULD BE PROTECTED!!!!
   { path: 'contribute', component: contributordashboardComponent, canActivate: [AuthGuardService] },
@@ -30,15 +31,17 @@ const routes: Routes = [
   { path: 'resourcecreator', component: resourcecreatorComponent },
   { path: 'learningplancreator', component: learningplancreatorComponent },
   { path: 'test/:domain', component: TestComponent },
-  { path: 'home' , component: AppComponent},
-  {path: 'learningplanedit/:plan', component: EditlearningplanComponent},
-  {path: 'learningplanviewer', component: learningplanviewerComponent},
+  { path: 'home', component: AppComponent },
+  { path: 'learningplanedit/:plan', component: EditlearningplanComponent },
+  { path: 'reportcard/:technology', component: BarComponent },
+  // { path:'quizresults/:technology',component:}
+  { path: 'learningplanviewer', component: learningplanviewerComponent },
   { path: 'test', component: TestComponent },
   { path: 'learner', component: LearnerComponent },
   { path: 'login', component: SignInComponent },
   { path: 'subscriptionview', component: SubscriptionviewComponent },
   { path: 'assessment', component: AssessmentLandingPageComponent },
-  { path: 'testedtechnologies', component: TestedtechnologiesComponent}
+  { path: 'testedtechnologies', component: TestedtechnologiesComponent }
 ];
 
 @NgModule({
