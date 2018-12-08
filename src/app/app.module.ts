@@ -54,6 +54,7 @@ import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnolo
 import { BarComponent } from './testedtechnologies/bar.component';
 import { ReportTechCardComponent } from './report-tech-card/report-tech-card.component';
 import { ResultsComponent } from './results/results.component';
+import { PopularplansComponent } from './popularplans/popularplans.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -129,7 +130,8 @@ export function getAuthServiceConfigs() {
     TestedtechnologiesComponent,
 
     ReportTechCardComponent,
-    ResultsComponent
+    ResultsComponent,
+    PopularplansComponent
 
   ],
   imports: [
@@ -143,7 +145,6 @@ export function getAuthServiceConfigs() {
     NgMatSearchBarModule,
     FlexLayoutModule,
     NgMatSearchBarModule,
-    HttpClientModule
   ],
   entryComponents: [
     SignInComponent

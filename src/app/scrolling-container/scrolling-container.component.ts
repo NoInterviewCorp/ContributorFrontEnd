@@ -38,13 +38,13 @@ export class ScrollingContainerComponent implements OnInit {
         });
         break;
       }
-      case 3: {
-        this.com.getPopularPlans().subscribe((res: any) => {
-          this.plan = res;
-          console.log(res);
-        });
-        break;
-      }
+      // case 3: {
+      //   this.com.getPopularPlans().subscribe((res: any) => {
+      //     this.plan = res;
+      //     console.log(res);
+      //   });
+      //   break;
+      // }
       default: {
         break;
       }

@@ -20,7 +20,7 @@ import { AssessmentLandingPageComponent } from './assessment-landing-page/assess
 import { AuthGuardService } from './services/auth-guard.service';
 import { TestedtechnologiesComponent } from './testedtechnologies/testedtechnologies.component';
 import { BarComponent } from './testedtechnologies/bar.component';
-
+import { PopularplansComponent } from './popularplans/popularplans.component';
 import { ResultsComponent } from './results/results.component';
 const routes: Routes = [
   { path: '', component: ProfileComponent },
@@ -36,16 +36,17 @@ const routes: Routes = [
   { path: 'reportcard/:technology', component: BarComponent },
   // { path:'quizresults/:technology',component:}
   { path: 'learningplanviewer', component: learningplanviewerComponent },
-  { path: 'home' , component: AppComponent},
-  {path: 'learningplanedit/:plan', component: EditlearningplanComponent},
-  {path: 'learningplanview/:plan', component: learningplanviewerComponent},
+  { path: 'home', component: AppComponent },
+  { path: 'learningplanedit/:plan', component: EditlearningplanComponent },
+  { path: 'learningplanview/:plan', component: learningplanviewerComponent },
   { path: 'test', component: TestComponent },
   { path: 'learner', component: LearnerComponent },
   { path: 'login', component: SignInComponent },
   { path: 'subscriptionview', component: SubscriptionviewComponent },
   { path: 'assessment', component: AssessmentLandingPageComponent },
-  { path: 'testedtechnologies', component: TestedtechnologiesComponent},
-  { path: 'results', component: ResultsComponent}
+  { path: 'testedtechnologies', component: TestedtechnologiesComponent },
+  { path: 'results', component: ResultsComponent },
+  { path: 'popular', component: PopularplansComponent }
 ];
 
 @NgModule({

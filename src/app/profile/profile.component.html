@@ -19,10 +19,13 @@
 
   <div class="pot-l-subscriptions_wrapper">
     <h2>Subscriptions</h2>
-    <a mat-button href="">Subscribe to Learning Plans</a>
+    <a routerLink="/popular" routerLinkActive="active" mat-button >Subscribe to Learning Plans</a>
     <div class="pot-l-subscriptions">
       <app-yoursubscriptionscard *ngFor="let subscription of subscriptions" (hasUnsubscribed)="handleUnsubscribe($event)"
         [plan]="subscription"></app-yoursubscriptionscard>
     </div>
   </div>
 </div>
+
+ <!-- <a routerLink="/result" routerLinkActive="active" class="Btn" button mat-raised-button color="primary" *ngIf="callResult">
+          Show Results</a> -->

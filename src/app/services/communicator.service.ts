@@ -62,16 +62,16 @@ export class CommunicatorService {
     return this.http.get('http://172.23.238.173:5002/Concept');
   }
   getContributions() {
-    return this.http.get('http://172.23.238.173:5002/LearningPlan/');
+    return this.http.get('http://172.23.238.173:5002/LearningPlan/' + this.user.userId + '?type=username');
   }
   getSubscriptions() {
-    return this.http.get('http://172.23.238.173:5002/LearningPlan')
+    return this.http.get('http://172.23.238.173:5002/LearningPlan/' + this.user.userId + '?type=subscriptions');
   }
-  getPopularPlans() {
-    return this.http.get('http://172.23.238.173:5002/LearningPlan')
+  getPopularPlans(techName) {
+    return this.http.get('http://172.23.238.173:5002/LearningPlan/'+ techName + '?type=popular');
   }
   getPlansById(LearningPlanID: string) {
-    return this.http.get('http://172.23.238.173:5002/LearningPlan/' + LearningPlanID + '?text=id')
+    return this.http.get('http://172.23.238.173:5002/LearningPlan/' + LearningPlanID + '?text=id');
   }
 
   postResource(resource: Resource) {
@@ -101,7 +101,7 @@ export class CommunicatorService {
   getUserReport() {
     return this.http.get('http://172.23.238.173:5004/values/userreport/' + this.user.userId);
   }
-  getQuizResults(UserId:string){
+  getQuizResults(UserId: string) {
     return this.http.get('http://172.23.238.173:5004/values/quizresult/' + this.user.userId);
   }
   getQuestions(resource: Resource) {
