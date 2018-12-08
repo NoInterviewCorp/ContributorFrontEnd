@@ -3,6 +3,7 @@ import { TestService } from '../services/test.service';
 import { CommunicatorService } from '../services/communicator.service';
 import { LearningPlan } from 'src/models/learningplan.model';
 import { Technology } from '../technology.model';
+import { LearningPlanFeedBack } from 'src/models/learningplanfeedback.model';
 @Component({
   selector: 'app-popularplans',
   templateUrl: './popularplans.component.html',
@@ -39,23 +40,21 @@ export class PopularplansComponent implements OnInit {
       }
     );
   }
-
-  // getPopular() {
-  //   this.com.getPopularPlans('java').subscribe(
-  //     (p:any) => {
-  //       console.log("popular plans:"+ p);
-  //     }
-  //   )
-  // }
+  subscribePlan(leaningPlan:LearningPlan) {
+    // leaningPlan.learningPlanId=this.plan.learningPlanId;
+    let lpFeedback = new LearningPlanFeedBack();
+    lpFeedback.LearningPlanID = leaningPlan.learningPlanId;
+    
+    // leaningPlan.UserId="user123";
+    // leaningPlan.Subscribe=1;
+    console.log(leaningPlan);
+    this.com.subscribeToPlan(lpFeedback).subscribe((res: any) => {
+      console.log("res is"+res);
+  });
+  }
 
 
 
 }
 
-  // getPopular() {
-  //   this.com.getPopularPlans().subscribe(
-  //     (p:any) => {
-  //       this.popularPlans=p;
-  //     }
-  //   )
-  // }
+  

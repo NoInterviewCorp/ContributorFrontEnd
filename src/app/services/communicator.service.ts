@@ -68,7 +68,7 @@ export class CommunicatorService {
     return this.http.get('http://172.23.238.173:5002/LearningPlan/' + this.user.userId + '?type=subscriptions');
   }
   getPopularPlans(techName) {
-    return this.http.get('http://172.23.238.173:5002/LearningPlan/'+ techName + '?type=popular');
+    return this.http.get('http://172.23.238.173:5002/LearningPlan/' + techName + '?type=popular');
   }
   getPlansById(LearningPlanID: string) {
     return this.http.get('http://172.23.238.173:5002/LearningPlan/' + LearningPlanID + '?text=id');
@@ -132,6 +132,7 @@ export class CommunicatorService {
   }
 
   subscribeToPlan(subPlan: LearningPlanFeedBack) {
+    subPlan.UserId = this.user.userId;
     return this.http.post('http://172.23.238.173:5004/values/SubscriberLearningPlan', subPlan);
   }
 

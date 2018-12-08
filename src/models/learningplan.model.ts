@@ -10,6 +10,6 @@ export class LearningPlan{
     technology:Technology;
     resources:Resource[];
     hasPublished:boolean;
-    AverageRating:number;
-    TotalSubscribers:number;
+    averageRating:number;
+    totalSubscribers:number;
 }
