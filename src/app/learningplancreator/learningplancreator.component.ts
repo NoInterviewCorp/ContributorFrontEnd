@@ -24,8 +24,8 @@ export class learningplancreatorComponent implements OnInit {
     },
     resources: [],
     hasPublished: false,
-    AverageRating: 1,
-    TotalSubscribers: 1
+    averageRating: 1,
+    totalSubscribers: 1
   };
   disableButton: boolean;
   resIndexForAddingQuestions: number;
