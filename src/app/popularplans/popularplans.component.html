@@ -1,0 +1,15 @@
+<div class="flex-container">
+  <div *ngFor="let plan of popularPlans">
+    <mat-card class="pom-c-card">
+      <mat-card-header>
+        <mat-card-title class="pom-c-cardtitle">{{plan.name}}</mat-card-title>
+        <mat-card-subtitle>{{plan.technology.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="pom-c-card__content">
+      </mat-card-content>
+      <mat-card-actions class="pom-l-action_buttons">
+        <button mat-button (click)="subscribePlan()">Subscribe</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
