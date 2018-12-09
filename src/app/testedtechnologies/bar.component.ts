@@ -55,7 +55,7 @@ export class BarComponent implements OnInit {
             },
             axisY: {
                 title: "Bloom Intensity",
-                maximum: 60,
+                maximum: 30,
             },
             legend: {
                 cursor: "pointer",
@@ -66,39 +66,39 @@ export class BarComponent implements OnInit {
                 content: this.toolTipFormatter
             },
             data: [{
-                type: "stackedBar",
+                type: "stackedColumn",
                 showInLegend: true,
                 name: "Knowledge",
                 color: this.colors[0],
                 dataPoints: this.knowledgeDataPoints
             },
             {
-                type: "stackedBar",
+                type: "stackedColumn",
                 showInLegend: true,
                 name: "Comprehension",
                 color: this.colors[1],
                 dataPoints: this.comprehensionDataPoints
             },
             {
-                type: "stackedBar",
+                type: "stackedColumn",
                 showInLegend: true,
                 name: "Application",
                 color: this.colors[2],
                 dataPoints: this.applicationDataPoints
             }, {
-                type: "stackedBar",
+                type: "stackedColumn",
                 showInLegend: true,
                 name: "Analysis",
                 color: this.colors[3],
                 dataPoints: this.analysisDataPoints
             }, {
-                type: "stackedBar",
+                type: "stackedColumn",
                 showInLegend: true,
                 name: "Synthesis",
                 color: this.colors[4],
                 dataPoints: this.synthesisDataPoints
             }, {
-                type: "stackedBar",
+                type: "stackedColumn",
                 showInLegend: true,
                 name: "Evaluation",
                 color: this.colors[5],
