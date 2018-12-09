@@ -18,10 +18,11 @@
       <img class="header-image" src="./assets/placeholder-team.jpg" style="height: 50px; width: 50px;" />
     </button>
     <mat-menu #menu>
-      <button mat-menu-item  routerLink="/userprofile"style="font-size: 15px;color: black"><b>View my Profile</b></button>
+      <!-- <button mat-menu-item  routerLink="/userprofile"style="font-size: 15px;color: black"><b>View my Profile</b></button> -->
       <button mat-menu-item routerLink="/edituserprofile" style="font-size: 15px;color: black"><b>
         Edit profile</b></button>
-      <button mat-menu-item style="font-size: 15px;color: black"><b>My Reports</b></button>
+      <button mat-menu-item style="font-size: 15px;color: black" routerLink="/testedtechnologies">
+        <b>My Reports</b></button>
       <button mat-menu-item style="font-size: 15px;color: black" (click)="logout()" ><b>Logout</b></button>
     </mat-menu>
     <!-- <button mat-button *ngIf="!hasSignedIn" routerLink="/login">Login</button>
@@ -32,14 +33,15 @@
 <mat-sidenav-container fxFlexFill class="example-container">
   <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
     <div fxLayout="column" class="pom-c-column">
-      <mat-card class="profile">
+      <!-- <mat-card class="profile">
         <mat-card-title style="font-size: 15px;">John Doe</mat-card-title>
         <mat-card-subtitle style="font-size: 15px;"><em>johndoe</em></mat-card-subtitle>
         <mat-card-footer class="less-margin">
         </mat-card-footer>
-      </mat-card>
+      </mat-card> -->
       <a mat-button routerLink="/profilepage" style="font-size: 15px;">My Profile</a>
-      <a mat-button routerLink="/contact" style="font-size: 15px;">My Reports</a>
+      <a mat-button routerLink="/contact" style="font-size: 15px;" routerLink="/testedtechnologies">
+        My Reports</a>
       <a mat-button routerLink="/edituserprofile" style="font-size: 15px">
           Edit profile</a>
       <a mat-button routerLink="/assessment" style="font-size: 15px;">Take Test</a>

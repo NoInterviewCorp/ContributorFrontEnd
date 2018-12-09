@@ -1,8 +1,18 @@
 .user-report-container{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
+
+.user-report-containers{
+  margin-left: 30px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
 .pot-l-shapes-container {
-  flex: 1;
+  /* flex: 1; */
   background-color: whitesmoke;
   background-image: url('https://www.supremo.co.uk/designers-eye/assets/images/shapes.png');
 }

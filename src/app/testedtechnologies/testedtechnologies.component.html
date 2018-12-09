@@ -1,6 +1,9 @@
+<h2 style="margin-left: 30px;">Reports</h2>
 <div class="pot-l-shapes-container" *ngIf="!gotReport"></div>
-<div *ngIf="gotReport">
+<div *ngIf="gotReport" class="user-report-containers">
   <div class="user-report-container" *ngFor="let technologyReport of userReport.technologyReports;">
+    <div>
     <app-report-tech-card [techReport]="technologyReport"></app-report-tech-card>
+  </div>
   </div>
 </div>
