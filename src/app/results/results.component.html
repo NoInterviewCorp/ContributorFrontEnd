@@ -1,27 +1,25 @@
-
 <div class="pot-l-container">
-  <div class="pot-l-shapes-container"></div>
-  <div class="pot-l-domain-selector-wrapper">
-    <div class="pot-l-domain-selector-info">
-      <h2>Quiz Results..</h2>
+    <div class="pot-l-shapes-container"></div>
+    <div class="pot-l-domain-selector-wrapper">
+      <div class="pot-l-domain-selector-info">
+        <h2>Quiz Results..</h2>
         <!-- Text needs to be changed -->
-      <div class="pot-c-domain-selector-info__description">
-        <div>Test Attempted on: {{techName}}</div>
-        <!-- <div>{{plan.description}}</div> -->
-         <!-- <mat-chip-list [multiple]="true">
-          <mat-chip *ngFor="let concept of conceptsAttempted" [value]="concept.name">
-            {{concept.conceptName}} : {{concept.totalQuestionAttempted}}</mat-chip>
-        </mat-chip-list> -->
-      </div><br>
-       <div *ngFor="let concept of conceptsAttempted">
-           <h6>{{concept.conceptName}}:</h6>
-           <b>Questions Attempted:</b>{{concept.totalQuestionAttempted}}
-           <b>Answered Correctly:</b>{{concept.questionAttemptedCorrect}}
-         </div> 
-
-         <!-- questionAttemptedCorrect: number;
-         totalQuestionAttempted: number; -->
-       
+        <div class="pot-c-domain-selector-info__description">
+          <h4>Test Attempted on -> <em>{{techName}}</em></h4>
+          <div class="concepts">
+            <h4>Concepts :</h4>
+            <mat-chip-list [multiple]="true" *ngFor="let concept of conceptsAttempted">
+              <mat-chip>
+                {{concept.conceptName}}
+              </mat-chip>
+              <span class="green">
+                {{concept.questionAttemptedCorrect}}
+              </span>
+              /{{concept.totalQuestionAttempted}}
+            </mat-chip-list>
+          </div>
+        </div><br>
+        
+      </div>
     </div>
   </div>
-</div>
