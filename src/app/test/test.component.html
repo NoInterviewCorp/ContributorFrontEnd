@@ -7,7 +7,7 @@
       <ng-template #showAssessment>
           <div class="test-box" *ngIf="!gameover">
               <div class="selectedTech">
-                Selected Tech is : {{selectedTech}}
+                Selected Domain is : {{selectedTech}}
               </div>
               <div class="timer-container">
                 <div class="timr" *ngIf="showTimer">Time Remaining: {{counter}}</div>
@@ -32,7 +32,7 @@
                       {{o?.content}}
                     </mat-radio-button>
                   </mat-radio-group>
-                  <p>{{selectedOption?.content}}</p>
+                  
                 </div>
               </div>
               <div class="button-flex">

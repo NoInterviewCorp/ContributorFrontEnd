@@ -19,7 +19,7 @@ export class TestComponent implements OnInit {
   status = 'Enable';
   selectedTech: any;
   questions: Question[] = [];
-  duration = 1000; //timer duration
+  duration = 15; //timer duration
   counter: number = this.duration;
   i: number = 0;
   questionCounter = 0;
